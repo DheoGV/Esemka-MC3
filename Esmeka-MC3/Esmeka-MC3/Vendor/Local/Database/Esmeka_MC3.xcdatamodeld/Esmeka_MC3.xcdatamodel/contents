@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20D80" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AssessmentEntity" representedClassName="AssessmentEntity" syncable="YES">
+        <attribute name="assessment_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="assessment_question" optional="YES" attributeType="String"/>
+        <relationship name="ofInterviewAssessment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="InterviewEntity" inverseName="assessments" inverseEntity="InterviewEntity"/>
+    </entity>
+    <entity name="InterviewEntity" representedClassName="InterviewEntity" syncable="YES">
+        <attribute name="interview_date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="interview_duration" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="interview_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="interview_title" optional="YES" attributeType="String"/>
+        <attribute name="interview_video_url_path" optional="YES" attributeType="String"/>
+        <relationship name="assessments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AssessmentEntity" inverseName="ofInterviewAssessment" inverseEntity="AssessmentEntity"/>
+        <relationship name="scores" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ScoreTypeEntity" inverseName="ofInterviewScores" inverseEntity="ScoreTypeEntity"/>
+    </entity>
+    <entity name="ScoreTypeEntity" representedClassName="ScoreTypeEntity" syncable="YES">
+        <attribute name="score_type_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="score_type_name" optional="YES" attributeType="String"/>
+        <attribute name="score_value" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="ofInterviewScores" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="InterviewEntity" inverseName="scores" inverseEntity="InterviewEntity"/>
+    </entity>
+    <elements>
+        <element name="InterviewEntity" positionX="-63" positionY="-18" width="128" height="134"/>
+        <element name="AssessmentEntity" positionX="-54" positionY="-9" width="128" height="74"/>
+        <element name="ScoreTypeEntity" positionX="-36" positionY="9" width="128" height="89"/>
+    </elements>
+</model>
