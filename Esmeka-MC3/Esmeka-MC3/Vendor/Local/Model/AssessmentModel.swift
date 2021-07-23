@@ -8,6 +8,6 @@
 import Foundation
 
 struct AssessmentModel {
-    let assessmentId: Int = 0
-    let assessmentQuestion: String = ""
+    let assessmentId: Int?
+    let assessmentQuestion: String?
 }

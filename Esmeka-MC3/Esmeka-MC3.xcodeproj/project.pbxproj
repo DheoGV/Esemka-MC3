@@ -22,6 +22,8 @@
 		52B678DD26AA7BCA0080533A /* InterviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B678DC26AA7BCA0080533A /* InterviewModel.swift */; };
 		52B678DF26AA7EB10080533A /* AssessmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B678DE26AA7EB10080533A /* AssessmentModel.swift */; };
 		52B678E126AA7F3A0080533A /* ScoreTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B678E026AA7F3A0080533A /* ScoreTypeModel.swift */; };
+		52B678E426AA8D270080533A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B678E226AA8D270080533A /* HomeViewController.swift */; };
+		52B678E526AA8D270080533A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52B678E326AA8D270080533A /* HomeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		52B678DC26AA7BCA0080533A /* InterviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewModel.swift; sourceTree = "<group>"; };
 		52B678DE26AA7EB10080533A /* AssessmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentModel.swift; sourceTree = "<group>"; };
 		52B678E026AA7F3A0080533A /* ScoreTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTypeModel.swift; sourceTree = "<group>"; };
+		52B678E226AA8D270080533A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		52B678E326AA8D270080533A /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,8 @@
 		21CB53B726A9936D005EB944 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				52B678E226AA8D270080533A /* HomeViewController.swift */,
+				52B678E326AA8D270080533A /* HomeViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -265,6 +271,7 @@
 			files = (
 				21F1A75526A9476000E6A1B5 /* LaunchScreen.storyboard in Resources */,
 				21F1A75226A9476000E6A1B5 /* Assets.xcassets in Resources */,
+				52B678E526AA8D270080533A /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +287,7 @@
 				21F1A74626A9475F00E6A1B5 /* AppDelegate.swift in Sources */,
 				52B678DF26AA7EB10080533A /* AssessmentModel.swift in Sources */,
 				52B678DD26AA7BCA0080533A /* InterviewModel.swift in Sources */,
+				52B678E426AA8D270080533A /* HomeViewController.swift in Sources */,
 				52B678E126AA7F3A0080533A /* ScoreTypeModel.swift in Sources */,
 				52B678D426AA79450080533A /* AssessmentEntity+CoreDataClass.swift in Sources */,
 				52B678D326AA79450080533A /* InterviewEntity+CoreDataProperties.swift in Sources */,

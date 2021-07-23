@@ -8,7 +8,7 @@
 import Foundation
 
 struct ScoreTypeModel {
-    let scoreTypeId: Int = 0
-    let scoreTypeName: String = ""
-    let score: Int = 0 
+    let scoreTypeId: Int?
+    let scoreTypeName: String?
+    let score: Int?
 }
