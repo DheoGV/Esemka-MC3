@@ -9,6 +9,24 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    //MARK:: Button going to Simulator
+   static let identifier = "HomeViewController"
+    
+    @IBOutlet weak var goToSimulatorButton: UIButton!
+    
+   
+
+    @IBAction func goToVoiceSegregation(_ sender: Any) {
+        let voiceSegregationVc = VoiceSegregetionViewController(nibName: VoiceSegregetionViewController.identifier, bundle: nil)
+        navigationController?.pushViewController(voiceSegregationVc, animated: true)
+    }
+    
+    @IBAction func GoToSimulator(_ sender: Any) {
+        let simulatorVc = SimulatorViewController(nibName: SimulatorViewController.identifier, bundle: nil)
+               navigationController?.pushViewController( simulatorVc, animated: true)
+    }
+    // Try Navigation - END
+    
     //MARK:: Make Lazy for single isntance only, it prevent memory leak
     private lazy var coredataProvider: CoredataProvider = {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -17,9 +35,10 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       
     }
+    
+    
+    
     
     //MARK:: Example to Insert The value
     private func insertInterview(){

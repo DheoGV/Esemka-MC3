@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SimulatorViewController" customModule="Esmeka_MC3" customModuleProvider="target">
+            <connections>
+                <outlet property="PreviewView" destination="Zn9-8a-Edf" id="leQ-Q3-nqO"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zn9-8a-Edf" userLabel="PreviewView">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iZh-Is-wLa" userLabel="PromptView">
+                            <rect key="frame" x="35" y="114" width="337" height="128"/>
+                            <color key="backgroundColor" systemColor="systemTealColor"/>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="iZh-Is-wLa" secondAttribute="bottom" constant="654" id="2S3-Ax-BfM"/>
+                        <constraint firstItem="iZh-Is-wLa" firstAttribute="leading" secondItem="Zn9-8a-Edf" secondAttribute="leading" constant="35" id="AZ2-4w-Bhn"/>
+                        <constraint firstItem="iZh-Is-wLa" firstAttribute="top" secondItem="Zn9-8a-Edf" secondAttribute="top" constant="114" id="L1R-hM-DjC"/>
+                        <constraint firstAttribute="trailing" secondItem="iZh-Is-wLa" secondAttribute="trailing" constant="42" id="NFl-eX-Y55"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Zn9-8a-Edf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="R7f-11-5Jv"/>
+                <constraint firstAttribute="bottom" secondItem="Zn9-8a-Edf" secondAttribute="bottom" id="frf-Xq-wcQ"/>
+                <constraint firstItem="Zn9-8a-Edf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="i5M-oz-vDy"/>
+                <constraint firstAttribute="trailing" secondItem="Zn9-8a-Edf" secondAttribute="trailing" id="ndu-IU-Scy"/>
+            </constraints>
+            <point key="canvasLocation" x="57.971014492753625" y="64.955357142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
