@@ -7,25 +7,22 @@
 
 import Foundation
 
-extension VoiceSegregetionViewController : SpeakClassifierDelegate {
+extension VoiceSegregetionViewController {
     func displayPredictionResult(identifier: String, confidence: Double) {
         DispatchQueue.main.async {
-            if identifier == "Interjection" && self.keepCounting{
-                self.labelClassify.text = "Interjection"
-                self.interjection += 1
-                self.labelNumber.text = "Num : \(self.interjection)"
+            if self.keepCounting{
+                self.labelClassify.text = identifier
+                if identifier == "Interjection"{
+                    self.interjection += 1
+                    self.labelNumber.text = "Num : \(self.interjection)"
+                }
             }
-            
-            if identifier == "Speak" && self.keepCounting{
-                self.labelClassify.text = "Speaking"
-            }
-            
-            if identifier == "Noise" && self.keepCounting {
-                self.labelClassify.text = "Noise"
-               
-            }
-            if self.keepCounting == false {
-            
+        }
+    }
+    func displayPredictionResult2(identifier: String, confidence: Double) {
+        DispatchQueue.main.async {
+            if self.keepCounting{
+                print(identifier)
             }
         }
     }

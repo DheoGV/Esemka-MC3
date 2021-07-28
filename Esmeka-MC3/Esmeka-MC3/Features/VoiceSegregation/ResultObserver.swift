@@ -13,13 +13,12 @@ import UIKit
 import SoundAnalysis
 
 
-protocol SpeakClassifierDelegate {
+protocol SegregationClassifierDelegate {
     func displayPredictionResult(identifier: String, confidence: Double)
 }
 
-
-class ResultsObserver: NSObject, SNResultsObserving {
-    var delegate: SpeakClassifierDelegate?
+class SegregationObserver: NSObject, SNResultsObserving {
+    var delegate: SegregationClassifierDelegate?
     func request(_ request: SNRequest, didProduce result: SNResult) {
         guard let result = result as? SNClassificationResult,
             let classification = result.classifications.first else { return }
@@ -28,6 +27,24 @@ class ResultsObserver: NSObject, SNResultsObserving {
         
         if confidence > 60 {
             delegate?.displayPredictionResult(identifier: classification.identifier, confidence: confidence)
+        }
+    }
+}
+
+protocol EmotionClassifierDelegate {
+    func displayPredictionResult2(identifier: String, confidence: Double)
+}
+
+class EmotionObserver: NSObject, SNResultsObserving {
+    var delegate: EmotionClassifierDelegate?
+    func request(_ request: SNRequest, didProduce result: SNResult) {
+        guard let result = result as? SNClassificationResult,
+            let classification = result.classifications.first else { return }
+        
+        let confidence = classification.confidence * 100.0
+        
+        if confidence > 90 {
+            delegate?.displayPredictionResult2(identifier: classification.identifier, confidence: confidence)
         }
     }
 }

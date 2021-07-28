@@ -15,11 +15,15 @@ extension VoiceSegregetionViewController {
    func startAudioEngine() {
         do {
             let request = try SNClassifySoundRequest(mlModel: voiceSegregetion.model)
-            try analyzer.add(request, withObserver: resultsObserver)
+            try analyzer.add(request, withObserver: segregationObserver)
+            let request2 = try SNClassifySoundRequest(mlModel: voiceEmotion.model)
+            try analyzer.add(request2, withObserver: emotionObserver)
         } catch {
             print("unable to start audio")
             return
         }
+        // to remove the Tap bug
+        audioEngine.inputNode.removeTap(onBus: 0)
         audioEngine.inputNode.installTap(onBus: 0, bufferSize: 8000, format: inputFormat) { buffer, time in
             self.analyzer.analyze(buffer, atAudioFramePosition: time.sampleTime)
         }
@@ -32,7 +36,6 @@ extension VoiceSegregetionViewController {
         
     }
     
-    //    Remove Audio Engine : Tap Troubled
     func removeAudioEngine() {
         audioEngine.stop()
         audioEngine.inputNode.reset()

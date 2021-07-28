@@ -9,16 +9,13 @@ import UIKit
 import AVFoundation
 import SoundAnalysis
 
-//MARK:: ERROR when stop avaudioEngine
-// Terminating app due to uncaught exception 'com.apple.coreaudio.avfaudio',
-//reason: 'required condition is false: nullptr == Tap()'
-//terminating with uncaught exception of type NSException
-
-class VoiceSegregetionViewController: UIViewController{
+class VoiceSegregetionViewController: UIViewController, SegregationClassifierDelegate, EmotionClassifierDelegate{
     static let identifier = "VoiceSegregetionViewController"
-    var resultsObserver = ResultsObserver()
+    var segregationObserver = SegregationObserver()
+    var emotionObserver = EmotionObserver()
     let audioEngine = AVAudioEngine()
     let voiceSegregetion = InterjectionClassifier()
+    let voiceEmotion = SoundEmotionClassifier_1()
     var inputFormat : AVAudioFormat!
     var analyzer: SNAudioStreamAnalyzer!
     let analysisQueue = DispatchQueue(label: "com.custom.AnalysisQueue")
@@ -28,6 +25,7 @@ class VoiceSegregetionViewController: UIViewController{
     
     @IBOutlet weak var labelNumber: UILabel!
     @IBOutlet weak var labelClassify: UILabel!
+//    @IBOutlet weak var labelClassify2: UILabel!
     @IBAction func startVoice(_ sender: Any) {
             startAudioEngine()
     }
@@ -37,9 +35,9 @@ class VoiceSegregetionViewController: UIViewController{
     }
 
     
-    
     override func viewDidLoad() {
-        resultsObserver.delegate = self
+        segregationObserver.delegate = self
+        emotionObserver.delegate = self
         inputFormat = audioEngine.inputNode.inputFormat(forBus: 0)
         analyzer = SNAudioStreamAnalyzer(format: inputFormat)
         
