@@ -9,27 +9,69 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="scorecell" rowHeight="100" id="KGk-i7-Jjw" customClass="ScoreTableViewCell" customModule="Esmeka_MC3" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="308" height="100"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="scorecell" rowHeight="90" id="KGk-i7-Jjw" customClass="ScoreTableViewCell" customModule="Esmeka_MC3" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="308" height="90"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="308" height="100"/>
+                <rect key="frame" x="0.0" y="0.0" width="308" height="90"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score Nih" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wST-rV-dBH">
-                        <rect key="frame" x="116" y="40" width="75" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ekspresi Wajah" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wST-rV-dBH">
+                        <rect key="frame" x="16" y="24" width="155" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="155" id="WGS-g3-6fj"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOt-pK-x8C">
+                        <rect key="frame" x="16" y="43" width="43" height="29"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/ 100 poin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gA4-w8-I7w">
+                        <rect key="frame" x="60" y="48" width="60" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smiley.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5IK-b8-Oin">
+                        <rect key="frame" x="252" y="25.5" width="40" height="39"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="9N0-2L-FCf"/>
+                            <constraint firstAttribute="height" constant="40" id="vth-Ih-aWu"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="HOt-pK-x8C" secondAttribute="bottom" constant="18" id="5v0-z0-5tE"/>
+                    <constraint firstItem="HOt-pK-x8C" firstAttribute="top" secondItem="wST-rV-dBH" secondAttribute="bottom" constant="1" id="Eee-pG-c1t"/>
+                    <constraint firstAttribute="bottom" secondItem="gA4-w8-I7w" secondAttribute="bottom" constant="26" id="EuD-od-TsX"/>
+                    <constraint firstAttribute="trailing" secondItem="5IK-b8-Oin" secondAttribute="trailing" constant="16" id="MDy-2v-sfK"/>
+                    <constraint firstItem="5IK-b8-Oin" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="SvC-Zt-V6s"/>
+                    <constraint firstItem="wST-rV-dBH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="YZD-iL-u1k"/>
+                    <constraint firstAttribute="bottom" secondItem="5IK-b8-Oin" secondAttribute="bottom" constant="25" id="Zhc-zm-VO1"/>
+                    <constraint firstItem="wST-rV-dBH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="cSr-Vp-XkX"/>
+                    <constraint firstItem="HOt-pK-x8C" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="edY-Zr-Rti"/>
+                    <constraint firstItem="gA4-w8-I7w" firstAttribute="top" secondItem="wST-rV-dBH" secondAttribute="bottom" constant="6" id="hf6-05-DZm"/>
+                    <constraint firstItem="gA4-w8-I7w" firstAttribute="leading" secondItem="HOt-pK-x8C" secondAttribute="trailing" constant="1" id="vBY-YU-RB2"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="lblScore" destination="wST-rV-dBH" id="gkA-IA-A2F"/>
+                <outlet property="ivLogo" destination="5IK-b8-Oin" id="WkE-9P-aAG"/>
+                <outlet property="lblDefaultPoint" destination="gA4-w8-I7w" id="AHT-Ys-REx"/>
+                <outlet property="lblEkspresi" destination="wST-rV-dBH" id="VyR-EZ-U9K"/>
+                <outlet property="lblScore" destination="HOt-pK-x8C" id="dPb-rX-jxV"/>
+                <outlet property="viewContainer" destination="H2p-sc-9uM" id="4ve-GK-Anc"/>
             </connections>
-            <point key="canvasLocation" x="49.275362318840585" y="141.96428571428569"/>
+            <point key="canvasLocation" x="49.275362318840585" y="136.60714285714286"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="smiley.fill" catalog="system" width="128" height="121"/>
+    </resources>
 </document>

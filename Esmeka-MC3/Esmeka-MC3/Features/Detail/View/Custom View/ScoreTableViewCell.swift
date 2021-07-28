@@ -10,6 +10,10 @@ import UIKit
 class ScoreTableViewCell: UITableViewCell {
 static let identifer = "scorecell"
     @IBOutlet weak var lblScore: UILabel!
+    @IBOutlet weak var lblEkspresi: UILabel!
+    @IBOutlet weak var lblDefaultPoint: UILabel!
+    @IBOutlet weak var ivLogo: UIImageView!
+    @IBOutlet weak var viewContainer: UIView!
     
     static var nib: UINib {
         get {
@@ -19,6 +23,14 @@ static let identifer = "scorecell"
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        setupView()
+    }
+    
+    private func setupView() {
+        viewContainer.layer.cornerRadius = 10
+        lblScore.textColor = .white
+        lblEkspresi.textColor = .white
+        lblDefaultPoint.textColor = .white
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
