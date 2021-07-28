@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		219747EE26B0125B00A81309 /* DaftarSimulasiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219747EC26B0125B00A81309 /* DaftarSimulasiViewController.swift */; };
+		219747EF26B0125B00A81309 /* DaftarSimulasiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 219747ED26B0125B00A81309 /* DaftarSimulasiViewController.xib */; };
+		219747F826B01EC600A81309 /* DaftarSimulasiKosongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219747F626B01EC600A81309 /* DaftarSimulasiKosongViewController.swift */; };
+		219747F926B01EC600A81309 /* DaftarSimulasiKosongViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 219747F726B01EC600A81309 /* DaftarSimulasiKosongViewController.xib */; };
 		21F1A74626A9475F00E6A1B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F1A74526A9475F00E6A1B5 /* AppDelegate.swift */; };
 		21F1A74826A9475F00E6A1B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F1A74726A9475F00E6A1B5 /* SceneDelegate.swift */; };
 		21F1A75026A9475F00E6A1B5 /* Esmeka_MC3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21F1A74E26A9475F00E6A1B5 /* Esmeka_MC3.xcdatamodeld */; };
@@ -35,6 +39,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		219747EC26B0125B00A81309 /* DaftarSimulasiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaftarSimulasiViewController.swift; sourceTree = "<group>"; };
+		219747ED26B0125B00A81309 /* DaftarSimulasiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaftarSimulasiViewController.xib; sourceTree = "<group>"; };
+		219747F626B01EC600A81309 /* DaftarSimulasiKosongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaftarSimulasiKosongViewController.swift; sourceTree = "<group>"; };
+		219747F726B01EC600A81309 /* DaftarSimulasiKosongViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaftarSimulasiKosongViewController.xib; sourceTree = "<group>"; };
 		21F1A74226A9475F00E6A1B5 /* Esmeka-MC3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Esmeka-MC3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21F1A74526A9475F00E6A1B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21F1A74726A9475F00E6A1B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,10 +83,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		219747EA26B0122300A81309 /* DaftarSimulasi */ = {
+			isa = PBXGroup;
+			children = (
+				219747FB26B0466600A81309 /* ViewModel */,
+				219747FA26B0465700A81309 /* Model */,
+				219747EB26B0123100A81309 /* View */,
+			);
+			path = DaftarSimulasi;
+			sourceTree = "<group>";
+		};
+		219747EB26B0123100A81309 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				219747FC26B0496A00A81309 /* WithData */,
+				219747F526B01DFC00A81309 /* NoData */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		219747F526B01DFC00A81309 /* NoData */ = {
+			isa = PBXGroup;
+			children = (
+				219747F626B01EC600A81309 /* DaftarSimulasiKosongViewController.swift */,
+				219747F726B01EC600A81309 /* DaftarSimulasiKosongViewController.xib */,
+			);
+			path = NoData;
+			sourceTree = "<group>";
+		};
+		219747FA26B0465700A81309 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		219747FB26B0466600A81309 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		219747FC26B0496A00A81309 /* WithData */ = {
+			isa = PBXGroup;
+			children = (
+				219747EC26B0125B00A81309 /* DaftarSimulasiViewController.swift */,
+				219747ED26B0125B00A81309 /* DaftarSimulasiViewController.xib */,
+			);
+			path = WithData;
+			sourceTree = "<group>";
+		};
 		21CB53B426A99351005EB944 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+
 				525204CA26B01A3F006D6E98 /* Custom View */,
+
+				219747EA26B0122300A81309 /* DaftarSimulasi */,
+
 				21F1A75326A9476000E6A1B5 /* LaunchScreen.storyboard */,
 				525204C226B00DD9006D6E98 /* Detail */,
 				21CB53B626A99366005EB944 /* Home */,
@@ -346,8 +409,13 @@
 				525204C826B00E0E006D6E98 /* DetailPageViewController.xib in Resources */,
 				21F1A75526A9476000E6A1B5 /* LaunchScreen.storyboard in Resources */,
 				21F1A75226A9476000E6A1B5 /* Assets.xcassets in Resources */,
+
 				525204CC26B01A4C006D6E98 /* CustomButton.xib in Resources */,
+
+				219747EF26B0125B00A81309 /* DaftarSimulasiViewController.xib in Resources */,
+
 				52B678E526AA8D270080533A /* HomeViewController.xib in Resources */,
+				219747F926B01EC600A81309 /* DaftarSimulasiKosongViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,7 +440,9 @@
 				52B678D326AA79450080533A /* InterviewEntity+CoreDataProperties.swift in Sources */,
 				21F1A74826A9475F00E6A1B5 /* SceneDelegate.swift in Sources */,
 				52B678D626AA79450080533A /* ScoreTypeEntity+CoreDataClass.swift in Sources */,
+				219747F826B01EC600A81309 /* DaftarSimulasiKosongViewController.swift in Sources */,
 				52B678DA26AA799D0080533A /* CoredataProvider.swift in Sources */,
+				219747EE26B0125B00A81309 /* DaftarSimulasiViewController.swift in Sources */,
 				52B678D526AA79450080533A /* AssessmentEntity+CoreDataProperties.swift in Sources */,
 				21F1A75026A9475F00E6A1B5 /* Esmeka_MC3.xcdatamodeld in Sources */,
 				525204DE26B02A4E006D6E98 /* VideoTableViewCell.swift in Sources */,
