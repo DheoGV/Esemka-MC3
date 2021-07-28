@@ -27,8 +27,12 @@ class DetailPageViewController: UIViewController {
        
     }
     
+    private func setupView() {
+      
+    }
+    
     private func registerTableView() {
-        tvDetail.register(UINib(nibName: "ScoreTableViewCell", bundle: nil), forCellReuseIdentifier: "scorecell")
+        tvDetail.register(ScoreTableViewCell.nib, forCellReuseIdentifier: ScoreTableViewCell.identifer)
         
         tvDetail.register(UINib(nibName: "VideoTableViewCell", bundle: nil), forCellReuseIdentifier: "videocell")
     }
@@ -59,7 +63,7 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
       
         switch indexPath.section {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "scorecell") as! ScoreTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: ScoreTableViewCell.identifer) as! ScoreTableViewCell
             print(dataScore[indexPath.section][indexPath.row])
             cell.lblScore.text = "HAHAHA"
             

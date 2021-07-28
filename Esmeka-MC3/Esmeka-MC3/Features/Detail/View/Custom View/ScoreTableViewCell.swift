@@ -8,8 +8,14 @@
 import UIKit
 
 class ScoreTableViewCell: UITableViewCell {
-
+static let identifer = "scorecell"
     @IBOutlet weak var lblScore: UILabel!
+    
+    static var nib: UINib {
+        get {
+            return UINib(nibName: "ScoreTableViewCell", bundle: nil)
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
