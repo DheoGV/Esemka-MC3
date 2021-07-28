@@ -12,6 +12,7 @@ class ToggleButton: UIButton {
     private var fallingImage: UIImage?
     
     // MARK: - IBInspectable
+    // Enable editing in IB to lessen coding inside Brief View Controller + make it reusable
     @IBInspectable var defaultImage: UIImage? {
         didSet {
             setImage(defaultImage, for: .normal)
@@ -50,10 +51,11 @@ class ToggleButton: UIButton {
         
         if isSelected {
             bounceAnimation()
-            fallingAnimation()
+            // Do core data handling here : 
+            
         }
     }
-    
+    //    Create animation as if the button is clicked : aka Bouncing
     private func bounceAnimation() {
         DispatchQueue.main.async {
             UIView.animate(withDuration: 0, animations: {
@@ -65,56 +67,6 @@ class ToggleButton: UIButton {
                 })
             })
         }
-    }
-    
-    private func fallingAnimation() {
-        let x = frame.width / 2
-        let y = frame.height / 2
-        
-        for _ in 0...3 {
-            let duration = 0.5 + drand48() * 0.5
-            
-            let imageView = UIImageView(image: fallingImage)
-            imageView.frame = CGRect(x: x, y: y, width: frame.width * 0.7, height: frame.height * 0.7)
-            
-            addSubview(imageView)
-            
-            let animation = CAKeyframeAnimation(keyPath: "position")
-            animation.path = createFallingPath(center: CGPoint(x: x, y: y))
-            animation.duration = duration
-            animation.fillMode = CAMediaTimingFillMode.forwards
-            animation.isRemovedOnCompletion = false
-            animation.timingFunctions = [CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)]
-            
-            imageView.layer.add(animation, forKey: nil)
-            
-            UIView.animate(withDuration: duration, animations: {
-                imageView.alpha = 0
-            }, completion: { success in
-                imageView.removeFromSuperview()
-            })
-        }
-    }
-    
-    private func createFallingPath(center: CGPoint) -> CGPath {
-        let lowerValue = -50
-        let upperValue = 50
-        let random = Double(Int(arc4random_uniform(UInt32(upperValue - lowerValue + 1))) + lowerValue)
-        
-        let path = UIBezierPath()
-        path.move(to: CGPoint(x: center.x, y: center.y))
-        
-        let y = center.y + 200
-        let endPoint = CGPoint(x: center.x + CGFloat(random), y: y)
-        
-        let cp1 = CGPoint(x: Double(center.x) + random, y: Double(center.y) - 80)
-        let cp2 = CGPoint(x: Double(center.x) + random, y: Double(center.y) - 80)
-        
-        path.addCurve(to: endPoint, controlPoint1: cp1, controlPoint2: cp2)
-        path.stroke()
-        path.lineWidth = 3
-        
-        return path.cgPath
     }
 
 }

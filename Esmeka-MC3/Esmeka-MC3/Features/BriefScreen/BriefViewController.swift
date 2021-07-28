@@ -15,11 +15,7 @@ class BriefViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var ShowAgainSwitch: UISwitch!
     @IBOutlet weak var showAgainButton: UIButton!
-    @IBAction func showAgainActionButton(_ sender: Any) {
-      
-        // MARK: - Do Something in Core Data
-        print(isChecked)
-    }
+ 
     var briefInstructions : [BriefModel] = BriefModel.BriefData
     
     override func viewDidLoad() {
