@@ -16,25 +16,8 @@ class BriefViewController: UIViewController {
     @IBOutlet weak var ShowAgainSwitch: UISwitch!
     @IBOutlet weak var showAgainButton: UIButton!
     @IBAction func showAgainActionButton(_ sender: Any) {
-        print(isChecked)
-        isChecked = !isChecked
-        guard  let switchOff = UIImage(named: "SwitchOff") else {
-            return
-        }
-        guard  let switchOn = UIImage(named: "SwitchOn") else {
-            return
-        }
-        if isChecked {
-            showAgainButton.setImage(switchOn, for: UIControl.State.normal)
-            showAgainButton.setImage(switchOn, for: UIControl.State.selected)
-            showAgainButton.setImage(switchOn, for: UIControl.State.highlighted)
-            
-        } else {
-            showAgainButton.setImage(switchOn, for: UIControl.State.normal)
-            showAgainButton.setImage(switchOff, for: UIControl.State.selected)
-            showAgainButton.setImage(switchOff, for: UIControl.State.highlighted)
-            
-        }
+      
+        // MARK: - Do Something in Core Data
         print(isChecked)
     }
     var briefInstructions : [BriefModel] = BriefModel.BriefData
@@ -53,13 +36,7 @@ class BriefViewController: UIViewController {
         briefTable.delegate = self
         briefTable.layer.cornerRadius = 10
         startButton.layer.cornerRadius = 25
-        guard  let switchOff = UIImage(named: "SwitchOff") else {
-            return
-        }
-        guard  let switchOn = UIImage(named: "SwitchOn") else {
-            return
-        }
-        
+  
     }
 
 }

@@ -6,68 +6,115 @@
 //
 
 import UIKit
-
+@IBDesignable
 class ToggleButton: UIButton {
-
-    var isToggled: Bool = false {
+    // MARK: - Variables
+    private var fallingImage: UIImage?
+    
+    // MARK: - IBInspectable
+    @IBInspectable var defaultImage: UIImage? {
         didSet {
-            setImageForState()
+            setImage(defaultImage, for: .normal)
         }
     }
     
-    /// The image that will be shown when the button is toggled off.
-    @IBInspectable var offImage: UIImage? {
+    @IBInspectable var selectedImage: UIImage? {
         didSet {
-            if oldValue == nil {
-                setImage(offImage, for: .normal)
-            }
+            setImage(selectedImage, for: .selected)
         }
     }
     
-    /// The image that will be shown when the button is toggled on.
-    @IBInspectable var onImage: UIImage?
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        commonInit()
+    @IBInspectable var imageToAnimate: UIImage? {
+        didSet {
+            fallingImage = imageToAnimate
+        }
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        commonInit()
+        setup()
     }
     
-    init(frame: CGRect, offImage: UIImage?, onImage: UIImage?) {
-        super.init(frame: frame)
-        self.onImage = onImage
-        self.offImage = offImage
-        commonInit()
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
     }
     
-    func commonInit() {
-        addTarget(self, action: #selector(toggle), for: .touchUpInside)
-        setImageForState()
+    private func setup() {
+        isSelected = false
+        addTarget(self, action: #selector(tap), for: .touchUpInside)
     }
     
-    /// Toggle the button state to the given boolean.
-    func setToggled(on: Bool) {
-        isToggled = on
-    }
-    
-    /// Toggle the button.
-    @objc func toggle() {
-        isToggled = !isToggled
-    }
-    
-    /// Set the right image
-    private func setImageForState() {
-        if isToggled {
-            guard let onImage = onImage else { print("\(self) onImage is nil."); return }
-            setImage(onImage, for: .normal)
-        } else {
-            guard let offImage = offImage else { print("\(self) offImage is nil."); return }
-            setImage(offImage, for: .normal)
+    @objc private func tap() {
+        isSelected = !isSelected
+        
+        if isSelected {
+            bounceAnimation()
+            fallingAnimation()
         }
+    }
+    
+    private func bounceAnimation() {
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0, animations: {
+                self.transform = CGAffineTransform.identity.scaledBy(x: 1.5, y: 1.5)
+            
+            }, completion: { _ in
+                UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0, options: .allowUserInteraction, animations: {
+                    self.transform = CGAffineTransform.identity.scaledBy(x: 1, y: 1)
+                })
+            })
+        }
+    }
+    
+    private func fallingAnimation() {
+        let x = frame.width / 2
+        let y = frame.height / 2
+        
+        for _ in 0...3 {
+            let duration = 0.5 + drand48() * 0.5
+            
+            let imageView = UIImageView(image: fallingImage)
+            imageView.frame = CGRect(x: x, y: y, width: frame.width * 0.7, height: frame.height * 0.7)
+            
+            addSubview(imageView)
+            
+            let animation = CAKeyframeAnimation(keyPath: "position")
+            animation.path = createFallingPath(center: CGPoint(x: x, y: y))
+            animation.duration = duration
+            animation.fillMode = CAMediaTimingFillMode.forwards
+            animation.isRemovedOnCompletion = false
+            animation.timingFunctions = [CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)]
+            
+            imageView.layer.add(animation, forKey: nil)
+            
+            UIView.animate(withDuration: duration, animations: {
+                imageView.alpha = 0
+            }, completion: { success in
+                imageView.removeFromSuperview()
+            })
+        }
+    }
+    
+    private func createFallingPath(center: CGPoint) -> CGPath {
+        let lowerValue = -50
+        let upperValue = 50
+        let random = Double(Int(arc4random_uniform(UInt32(upperValue - lowerValue + 1))) + lowerValue)
+        
+        let path = UIBezierPath()
+        path.move(to: CGPoint(x: center.x, y: center.y))
+        
+        let y = center.y + 200
+        let endPoint = CGPoint(x: center.x + CGFloat(random), y: y)
+        
+        let cp1 = CGPoint(x: Double(center.x) + random, y: Double(center.y) - 80)
+        let cp2 = CGPoint(x: Double(center.x) + random, y: Double(center.y) - 80)
+        
+        path.addCurve(to: endPoint, controlPoint1: cp1, controlPoint2: cp2)
+        path.stroke()
+        path.lineWidth = 3
+        
+        return path.cgPath
     }
 
 }
