@@ -24,6 +24,14 @@
 		52B678E126AA7F3A0080533A /* ScoreTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B678E026AA7F3A0080533A /* ScoreTypeModel.swift */; };
 		52B678E426AA8D270080533A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B678E226AA8D270080533A /* HomeViewController.swift */; };
 		52B678E526AA8D270080533A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52B678E326AA8D270080533A /* HomeViewController.xib */; };
+		84B5E33026AFE12200FC9C09 /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5E32E26AFE12200FC9C09 /* CompleteViewController.swift */; };
+		84B5E33126AFE12200FC9C09 /* CompleteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B5E32F26AFE12200FC9C09 /* CompleteViewController.xib */; };
+		84B5E33526B0100400FC9C09 /* BriefViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5E33326B0100400FC9C09 /* BriefViewController.swift */; };
+		84B5E33626B0100400FC9C09 /* BriefViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B5E33426B0100400FC9C09 /* BriefViewController.xib */; };
+		84B5E33926B0156400FC9C09 /* BriefModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5E33826B0156400FC9C09 /* BriefModel.swift */; };
+		84B5E33C26B0194600FC9C09 /* BriefCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5E33A26B0194600FC9C09 /* BriefCell.swift */; };
+		84B5E33D26B0194600FC9C09 /* BriefCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B5E33B26B0194600FC9C09 /* BriefCell.xib */; };
+		84B5E33F26B1242400FC9C09 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5E33E26B1242400FC9C09 /* ToggleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +54,14 @@
 		52B678E026AA7F3A0080533A /* ScoreTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTypeModel.swift; sourceTree = "<group>"; };
 		52B678E226AA8D270080533A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		52B678E326AA8D270080533A /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		84B5E32E26AFE12200FC9C09 /* CompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
+		84B5E32F26AFE12200FC9C09 /* CompleteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompleteViewController.xib; sourceTree = "<group>"; };
+		84B5E33326B0100400FC9C09 /* BriefViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefViewController.swift; sourceTree = "<group>"; };
+		84B5E33426B0100400FC9C09 /* BriefViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BriefViewController.xib; sourceTree = "<group>"; };
+		84B5E33826B0156400FC9C09 /* BriefModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefModel.swift; sourceTree = "<group>"; };
+		84B5E33A26B0194600FC9C09 /* BriefCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefCell.swift; sourceTree = "<group>"; };
+		84B5E33B26B0194600FC9C09 /* BriefCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BriefCell.xib; sourceTree = "<group>"; };
+		84B5E33E26B1242400FC9C09 /* ToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +78,8 @@
 		21CB53B426A99351005EB944 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				84B5E33226AFEC8100FC9C09 /* BriefScreen */,
+				84B5E32D26AFE0FB00FC9C09 /* CompleteSimulationScreen */,
 				21F1A75326A9476000E6A1B5 /* LaunchScreen.storyboard */,
 				21CB53B626A99366005EB944 /* Home */,
 			);
@@ -208,8 +226,38 @@
 				52B678DC26AA7BCA0080533A /* InterviewModel.swift */,
 				52B678DE26AA7EB10080533A /* AssessmentModel.swift */,
 				52B678E026AA7F3A0080533A /* ScoreTypeModel.swift */,
+				84B5E33826B0156400FC9C09 /* BriefModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		84B5E32D26AFE0FB00FC9C09 /* CompleteSimulationScreen */ = {
+			isa = PBXGroup;
+			children = (
+				84B5E32E26AFE12200FC9C09 /* CompleteViewController.swift */,
+				84B5E32F26AFE12200FC9C09 /* CompleteViewController.xib */,
+			);
+			path = CompleteSimulationScreen;
+			sourceTree = "<group>";
+		};
+		84B5E33226AFEC8100FC9C09 /* BriefScreen */ = {
+			isa = PBXGroup;
+			children = (
+				84B5E33726B0152700FC9C09 /* BriefCell */,
+				84B5E33326B0100400FC9C09 /* BriefViewController.swift */,
+				84B5E33426B0100400FC9C09 /* BriefViewController.xib */,
+				84B5E33E26B1242400FC9C09 /* ToggleButton.swift */,
+			);
+			path = BriefScreen;
+			sourceTree = "<group>";
+		};
+		84B5E33726B0152700FC9C09 /* BriefCell */ = {
+			isa = PBXGroup;
+			children = (
+				84B5E33A26B0194600FC9C09 /* BriefCell.swift */,
+				84B5E33B26B0194600FC9C09 /* BriefCell.xib */,
+			);
+			path = BriefCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,9 +317,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B5E33626B0100400FC9C09 /* BriefViewController.xib in Resources */,
 				21F1A75526A9476000E6A1B5 /* LaunchScreen.storyboard in Resources */,
+				84B5E33D26B0194600FC9C09 /* BriefCell.xib in Resources */,
 				21F1A75226A9476000E6A1B5 /* Assets.xcassets in Resources */,
 				52B678E526AA8D270080533A /* HomeViewController.xib in Resources */,
+				84B5E33126AFE12200FC9C09 /* CompleteViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,14 +335,19 @@
 			files = (
 				52B678D226AA79450080533A /* InterviewEntity+CoreDataClass.swift in Sources */,
 				52B678D726AA79450080533A /* ScoreTypeEntity+CoreDataProperties.swift in Sources */,
+				84B5E33F26B1242400FC9C09 /* ToggleButton.swift in Sources */,
 				21F1A74626A9475F00E6A1B5 /* AppDelegate.swift in Sources */,
 				52B678DF26AA7EB10080533A /* AssessmentModel.swift in Sources */,
 				52B678DD26AA7BCA0080533A /* InterviewModel.swift in Sources */,
 				52B678E426AA8D270080533A /* HomeViewController.swift in Sources */,
 				52B678E126AA7F3A0080533A /* ScoreTypeModel.swift in Sources */,
+				84B5E33926B0156400FC9C09 /* BriefModel.swift in Sources */,
 				52B678D426AA79450080533A /* AssessmentEntity+CoreDataClass.swift in Sources */,
+				84B5E33026AFE12200FC9C09 /* CompleteViewController.swift in Sources */,
+				84B5E33C26B0194600FC9C09 /* BriefCell.swift in Sources */,
 				52B678D326AA79450080533A /* InterviewEntity+CoreDataProperties.swift in Sources */,
 				21F1A74826A9475F00E6A1B5 /* SceneDelegate.swift in Sources */,
+				84B5E33526B0100400FC9C09 /* BriefViewController.swift in Sources */,
 				52B678D626AA79450080533A /* ScoreTypeEntity+CoreDataClass.swift in Sources */,
 				52B678DA26AA799D0080533A /* CoredataProvider.swift in Sources */,
 				52B678D526AA79450080533A /* AssessmentEntity+CoreDataProperties.swift in Sources */,

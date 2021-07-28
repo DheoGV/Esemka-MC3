@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BriefViewController" customModule="Esmeka_MC3" customModuleProvider="target">
+            <connections>
+                <outlet property="ShowAgainSwitch" destination="mSb-Sk-ppf" id="03n-LC-0B5"/>
+                <outlet property="briefTable" destination="bM4-i9-iYa" id="LWx-bz-S2x"/>
+                <outlet property="showAgainButton" destination="CjL-U1-N7U" id="7Yu-9j-O9M"/>
+                <outlet property="startButton" destination="Fxg-wf-3tD" id="HpW-5x-kQe"/>
+                <outlet property="titleLabel" destination="fPA-0t-CQG" id="Zvc-Ag-Ro3"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bM4-i9-iYa">
+                    <rect key="frame" x="20" y="150" width="374" height="570"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Persiapan Simulasi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPA-0t-CQG">
+                    <rect key="frame" x="20" y="69" width="374" height="41"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tandai untuk tidak menampilkan kembali halaman persiapan simulasi" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zoR-iD-CB3">
+                    <rect key="frame" x="80" y="742" width="320" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="XSj-h0-2vh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mSb-Sk-ppf">
+                    <rect key="frame" x="20" y="753" width="52" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="Fxe-sp-LT3"/>
+                    </constraints>
+                </switch>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fxg-wf-3tD">
+                    <rect key="frame" x="20" y="800" width="374" height="55"/>
+                    <color key="backgroundColor" red="0.1137254902" green="0.20392156859999999" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <state key="normal" title="Mulai Sekarang">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" highlighted="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CjL-U1-N7U">
+                    <rect key="frame" x="30" y="112" width="354" height="30"/>
+                    <state key="normal" image="􀃳SwitchOff"/>
+                    <state key="selected" image="􀃳SwitchOn"/>
+                    <state key="highlighted" image="􀃳SwitchOn"/>
+                    <connections>
+                        <action selector="showAgainActionButton:" destination="-1" eventType="touchUpInside" id="R11-Mu-FBS"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemGray6Color"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zoR-iD-CB3" secondAttribute="trailing" constant="14" id="5AZ-Hc-ZI1"/>
+                <constraint firstItem="bM4-i9-iYa" firstAttribute="top" secondItem="CjL-U1-N7U" secondAttribute="bottom" constant="8" symbolic="YES" id="7U2-WT-Scj"/>
+                <constraint firstItem="CjL-U1-N7U" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="9Ak-wH-n81"/>
+                <constraint firstItem="bM4-i9-iYa" firstAttribute="top" secondItem="fPA-0t-CQG" secondAttribute="bottom" constant="40" id="B5j-Yw-O8z"/>
+                <constraint firstItem="Fxg-wf-3tD" firstAttribute="top" secondItem="mSb-Sk-ppf" secondAttribute="bottom" constant="-3" id="CIj-wN-M6W"/>
+                <constraint firstItem="zoR-iD-CB3" firstAttribute="centerY" secondItem="mSb-Sk-ppf" secondAttribute="centerY" constant="-11" id="HQB-qf-uRT"/>
+                <constraint firstItem="zoR-iD-CB3" firstAttribute="leading" secondItem="mSb-Sk-ppf" secondAttribute="trailing" constant="10" id="MTT-5p-Wgn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bM4-i9-iYa" secondAttribute="trailing" constant="20" id="N9m-AP-jFC"/>
+                <constraint firstItem="fPA-0t-CQG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="SIb-4z-k4w"/>
+                <constraint firstItem="CjL-U1-N7U" firstAttribute="top" secondItem="fPA-0t-CQG" secondAttribute="bottom" constant="2" id="TDq-W5-wMH"/>
+                <constraint firstItem="Fxg-wf-3tD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="U4H-1F-t4b"/>
+                <constraint firstItem="fPA-0t-CQG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="Uf0-e1-v1b"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="zoR-iD-CB3" secondAttribute="bottom" constant="70" id="VyG-z9-2bu"/>
+                <constraint firstItem="mSb-Sk-ppf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Ynq-kd-oVb"/>
+                <constraint firstItem="zoR-iD-CB3" firstAttribute="leading" secondItem="mSb-Sk-ppf" secondAttribute="trailing" constant="10" id="dT0-6G-jgW"/>
+                <constraint firstItem="bM4-i9-iYa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="dYA-6C-k8U"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CjL-U1-N7U" secondAttribute="trailing" constant="30" id="jRI-h6-TpE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fPA-0t-CQG" secondAttribute="trailing" constant="20" id="ln6-ql-XMq"/>
+                <constraint firstItem="Fxg-wf-3tD" firstAttribute="top" secondItem="zoR-iD-CB3" secondAttribute="bottom" constant="8" id="mpS-wG-6Bb"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Fxg-wf-3tD" secondAttribute="trailing" constant="20" id="nJ9-rG-00Q"/>
+                <constraint firstAttribute="bottom" secondItem="Fxg-wf-3tD" secondAttribute="bottom" constant="41" id="qjp-7a-fqX"/>
+                <constraint firstItem="zoR-iD-CB3" firstAttribute="top" secondItem="bM4-i9-iYa" secondAttribute="bottom" constant="22" id="tXk-oy-0il"/>
+                <constraint firstItem="zoR-iD-CB3" firstAttribute="leading" secondItem="mSb-Sk-ppf" secondAttribute="trailing" constant="10" id="ymU-jd-1qA"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="131.91964285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="􀃳SwitchOff" width="23" height="23"/>
+        <image name="􀃳SwitchOn" width="23" height="23"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
