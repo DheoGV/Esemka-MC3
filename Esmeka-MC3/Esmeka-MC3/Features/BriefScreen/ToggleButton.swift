@@ -25,11 +25,7 @@ class ToggleButton: UIButton {
         }
     }
     
-    @IBInspectable var imageToAnimate: UIImage? {
-        didSet {
-            fallingImage = imageToAnimate
-        }
-    }
+   
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -51,7 +47,7 @@ class ToggleButton: UIButton {
         
         if isSelected {
             bounceAnimation()
-            // Do core data handling here : 
+            // Do core data handling here :
             
         }
     }

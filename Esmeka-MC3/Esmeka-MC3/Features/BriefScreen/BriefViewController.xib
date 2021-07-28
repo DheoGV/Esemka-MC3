@@ -63,9 +63,6 @@
                         <userDefinedRuntimeAttribute type="image" keyPath="defaultImage" value="􀃳SwitchOff"/>
                         <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="􀃳SwitchOn"/>
                     </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="showAgainActionButton:" destination="-1" eventType="touchUpInside" id="R11-Mu-FBS"/>
-                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
