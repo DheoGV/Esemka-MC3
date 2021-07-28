@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		215847DD26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215847DB26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift */; };
+		215847DE26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 215847DC26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib */; };
+		215847E026B1552900CCBEC9 /* Simulasi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215847DF26B1552900CCBEC9 /* Simulasi.swift */; };
+		215847E226B1560600CCBEC9 /* SimulasiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215847E126B1560600CCBEC9 /* SimulasiData.swift */; };
 		219747EE26B0125B00A81309 /* DaftarSimulasiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219747EC26B0125B00A81309 /* DaftarSimulasiViewController.swift */; };
 		219747EF26B0125B00A81309 /* DaftarSimulasiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 219747ED26B0125B00A81309 /* DaftarSimulasiViewController.xib */; };
 		219747F826B01EC600A81309 /* DaftarSimulasiKosongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219747F626B01EC600A81309 /* DaftarSimulasiKosongViewController.swift */; };
@@ -39,6 +43,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		215847DB26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulasiCollectionViewCell.swift; sourceTree = "<group>"; };
+		215847DC26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimulasiCollectionViewCell.xib; sourceTree = "<group>"; };
+		215847DF26B1552900CCBEC9 /* Simulasi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simulasi.swift; sourceTree = "<group>"; };
+		215847E126B1560600CCBEC9 /* SimulasiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulasiData.swift; sourceTree = "<group>"; };
 		219747EC26B0125B00A81309 /* DaftarSimulasiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaftarSimulasiViewController.swift; sourceTree = "<group>"; };
 		219747ED26B0125B00A81309 /* DaftarSimulasiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaftarSimulasiViewController.xib; sourceTree = "<group>"; };
 		219747F626B01EC600A81309 /* DaftarSimulasiKosongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaftarSimulasiKosongViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +91,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		215847DA26B148A700CCBEC9 /* Simulasi Cell */ = {
+			isa = PBXGroup;
+			children = (
+				215847DB26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift */,
+				215847DC26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib */,
+			);
+			path = "Simulasi Cell";
+			sourceTree = "<group>";
+		};
 		219747EA26B0122300A81309 /* DaftarSimulasi */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +113,7 @@
 		219747EB26B0123100A81309 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				215847DA26B148A700CCBEC9 /* Simulasi Cell */,
 				219747FC26B0496A00A81309 /* WithData */,
 				219747F526B01DFC00A81309 /* NoData */,
 			);
@@ -114,6 +132,8 @@
 		219747FA26B0465700A81309 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				215847DF26B1552900CCBEC9 /* Simulasi.swift */,
+				215847E126B1560600CCBEC9 /* SimulasiData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -413,7 +433,7 @@
 				525204CC26B01A4C006D6E98 /* CustomButton.xib in Resources */,
 
 				219747EF26B0125B00A81309 /* DaftarSimulasiViewController.xib in Resources */,
-
+				215847DE26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib in Resources */,
 				52B678E526AA8D270080533A /* HomeViewController.xib in Resources */,
 				219747F926B01EC600A81309 /* DaftarSimulasiKosongViewController.xib in Resources */,
 			);
@@ -430,6 +450,7 @@
 				52B678D226AA79450080533A /* InterviewEntity+CoreDataClass.swift in Sources */,
 				52B678D726AA79450080533A /* ScoreTypeEntity+CoreDataProperties.swift in Sources */,
 				21F1A74626A9475F00E6A1B5 /* AppDelegate.swift in Sources */,
+				215847DD26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift in Sources */,
 				525204CF26B01A75006D6E98 /* CustomButton.swift in Sources */,
 				52B678DF26AA7EB10080533A /* AssessmentModel.swift in Sources */,
 				525204D826B02A21006D6E98 /* ScoreTableViewCell.swift in Sources */,
@@ -439,9 +460,11 @@
 				52B678D426AA79450080533A /* AssessmentEntity+CoreDataClass.swift in Sources */,
 				52B678D326AA79450080533A /* InterviewEntity+CoreDataProperties.swift in Sources */,
 				21F1A74826A9475F00E6A1B5 /* SceneDelegate.swift in Sources */,
+				215847E226B1560600CCBEC9 /* SimulasiData.swift in Sources */,
 				52B678D626AA79450080533A /* ScoreTypeEntity+CoreDataClass.swift in Sources */,
 				219747F826B01EC600A81309 /* DaftarSimulasiKosongViewController.swift in Sources */,
 				52B678DA26AA799D0080533A /* CoredataProvider.swift in Sources */,
+				215847E026B1552900CCBEC9 /* Simulasi.swift in Sources */,
 				219747EE26B0125B00A81309 /* DaftarSimulasiViewController.swift in Sources */,
 				52B678D526AA79450080533A /* AssessmentEntity+CoreDataProperties.swift in Sources */,
 				21F1A75026A9475F00E6A1B5 /* Esmeka_MC3.xcdatamodeld in Sources */,
