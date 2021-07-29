@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="videocell" rowHeight="189" id="KGk-i7-Jjw" customClass="VideoTableViewCell" customModule="Esmeka_MC3" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="313" height="189"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="313" height="189"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Tob-Hx-6ck">
+                        <rect key="frame" x="16" y="10.5" width="16" height="14"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="16" id="CYE-Sc-wQE"/>
+                            <constraint firstAttribute="height" constant="18.5" id="YGR-8p-Gsf"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hasil Rekaman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVa-zs-dqZ">
+                        <rect key="frame" x="38" y="8" width="99" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="99" id="joG-sc-qr0"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tZ7-9j-c4A">
+                        <rect key="frame" x="9" y="32" width="294" height="140"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="294" id="6Wp-qd-7j3"/>
+                            <constraint firstAttribute="width" constant="294" id="WQe-Zw-OfP"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="118" id="XC1-mr-8mO"/>
+                            <constraint firstAttribute="height" constant="140" id="tLp-e6-EHS"/>
+                        </constraints>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8H1-xg-v5S">
+                        <rect key="frame" x="137" y="88" width="38" height="28"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="38" id="6J9-cG-CJh"/>
+                            <constraint firstAttribute="height" constant="29" id="bgv-x2-HI6"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="tZ7-9j-c4A" secondAttribute="trailing" constant="10" id="4ZX-dS-eBC"/>
+                    <constraint firstItem="8H1-xg-v5S" firstAttribute="centerX" secondItem="tZ7-9j-c4A" secondAttribute="centerX" id="IpP-gq-xbu"/>
+                    <constraint firstItem="8H1-xg-v5S" firstAttribute="centerY" secondItem="tZ7-9j-c4A" secondAttribute="centerY" id="Rif-sp-48b"/>
+                    <constraint firstItem="RVa-zs-dqZ" firstAttribute="leading" secondItem="Tob-Hx-6ck" secondAttribute="trailing" constant="6" id="SLL-SA-hnL"/>
+                    <constraint firstItem="tZ7-9j-c4A" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="9" id="X4x-9R-4rO"/>
+                    <constraint firstAttribute="trailing" secondItem="RVa-zs-dqZ" secondAttribute="trailing" constant="176" id="aL4-cF-hxw"/>
+                    <constraint firstItem="RVa-zs-dqZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="cTE-R5-t7O"/>
+                    <constraint firstItem="Tob-Hx-6ck" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="ieR-VI-C5d"/>
+                    <constraint firstItem="tZ7-9j-c4A" firstAttribute="top" secondItem="Tob-Hx-6ck" secondAttribute="bottom" constant="5.5" id="mEV-OD-5kD"/>
+                    <constraint firstItem="Tob-Hx-6ck" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="qJg-eE-JtL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="ivPlay" destination="8H1-xg-v5S" id="sSb-7f-Mqj"/>
+                <outlet property="ivThumbail" destination="tZ7-9j-c4A" id="G66-GP-ZSy"/>
+                <outlet property="lblVideo" destination="RVa-zs-dqZ" id="n9z-Nk-4km"/>
+                <outlet property="videoContainerView" destination="H2p-sc-9uM" id="UOo-pN-7Fr"/>
+            </connections>
+            <point key="canvasLocation" x="52.898550724637687" y="172.43303571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="play.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="video.fill" catalog="system" width="128" height="82"/>
+    </resources>
+</document>
