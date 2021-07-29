@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		215847DD26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215847DB26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift */; };
+		215847DE26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 215847DC26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib */; };
+		215847E026B1552900CCBEC9 /* Simulasi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215847DF26B1552900CCBEC9 /* Simulasi.swift */; };
+		215847E226B1560600CCBEC9 /* SimulasiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215847E126B1560600CCBEC9 /* SimulasiData.swift */; };
 		219747EE26B0125B00A81309 /* DaftarSimulasiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219747EC26B0125B00A81309 /* DaftarSimulasiViewController.swift */; };
 		219747EF26B0125B00A81309 /* DaftarSimulasiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 219747ED26B0125B00A81309 /* DaftarSimulasiViewController.xib */; };
 		219747F826B01EC600A81309 /* DaftarSimulasiKosongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219747F626B01EC600A81309 /* DaftarSimulasiKosongViewController.swift */; };
@@ -36,9 +40,21 @@
 		52B678E126AA7F3A0080533A /* ScoreTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B678E026AA7F3A0080533A /* ScoreTypeModel.swift */; };
 		52B678E426AA8D270080533A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B678E226AA8D270080533A /* HomeViewController.swift */; };
 		52B678E526AA8D270080533A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52B678E326AA8D270080533A /* HomeViewController.xib */; };
+		84B5E36026B25F9500FC9C09 /* BriefViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5E35D26B25F9500FC9C09 /* BriefViewController.swift */; };
+		84B5E36126B25F9500FC9C09 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5E35E26B25F9500FC9C09 /* ToggleButton.swift */; };
+		84B5E36226B25F9500FC9C09 /* BriefViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B5E35F26B25F9500FC9C09 /* BriefViewController.xib */; };
+		84B5E36726B25FAE00FC9C09 /* BriefCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5E36526B25FAE00FC9C09 /* BriefCell.swift */; };
+		84B5E36826B25FAE00FC9C09 /* BriefCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B5E36626B25FAE00FC9C09 /* BriefCell.xib */; };
+		84B5E36C26B2600600FC9C09 /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5E36A26B2600600FC9C09 /* CompleteViewController.swift */; };
+		84B5E36D26B2600600FC9C09 /* CompleteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B5E36B26B2600600FC9C09 /* CompleteViewController.xib */; };
+		84B5E36F26B260BD00FC9C09 /* BriefInstructionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5E36E26B260BD00FC9C09 /* BriefInstructionModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		215847DB26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulasiCollectionViewCell.swift; sourceTree = "<group>"; };
+		215847DC26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimulasiCollectionViewCell.xib; sourceTree = "<group>"; };
+		215847DF26B1552900CCBEC9 /* Simulasi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simulasi.swift; sourceTree = "<group>"; };
+		215847E126B1560600CCBEC9 /* SimulasiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulasiData.swift; sourceTree = "<group>"; };
 		219747EC26B0125B00A81309 /* DaftarSimulasiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaftarSimulasiViewController.swift; sourceTree = "<group>"; };
 		219747ED26B0125B00A81309 /* DaftarSimulasiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaftarSimulasiViewController.xib; sourceTree = "<group>"; };
 		219747F626B01EC600A81309 /* DaftarSimulasiKosongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaftarSimulasiKosongViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +86,14 @@
 		52B678E026AA7F3A0080533A /* ScoreTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTypeModel.swift; sourceTree = "<group>"; };
 		52B678E226AA8D270080533A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		52B678E326AA8D270080533A /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		84B5E35D26B25F9500FC9C09 /* BriefViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BriefViewController.swift; sourceTree = "<group>"; };
+		84B5E35E26B25F9500FC9C09 /* ToggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
+		84B5E35F26B25F9500FC9C09 /* BriefViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BriefViewController.xib; sourceTree = "<group>"; };
+		84B5E36526B25FAE00FC9C09 /* BriefCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BriefCell.swift; sourceTree = "<group>"; };
+		84B5E36626B25FAE00FC9C09 /* BriefCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BriefCell.xib; sourceTree = "<group>"; };
+		84B5E36A26B2600600FC9C09 /* CompleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
+		84B5E36B26B2600600FC9C09 /* CompleteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompleteViewController.xib; sourceTree = "<group>"; };
+		84B5E36E26B260BD00FC9C09 /* BriefInstructionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefInstructionModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +107,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		215847DA26B148A700CCBEC9 /* Simulasi Cell */ = {
+			isa = PBXGroup;
+			children = (
+				215847DB26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift */,
+				215847DC26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib */,
+			);
+			path = "Simulasi Cell";
+			sourceTree = "<group>";
+		};
 		219747EA26B0122300A81309 /* DaftarSimulasi */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +129,7 @@
 		219747EB26B0123100A81309 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				215847DA26B148A700CCBEC9 /* Simulasi Cell */,
 				219747FC26B0496A00A81309 /* WithData */,
 				219747F526B01DFC00A81309 /* NoData */,
 			);
@@ -114,6 +148,8 @@
 		219747FA26B0465700A81309 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				215847DF26B1552900CCBEC9 /* Simulasi.swift */,
+				215847E126B1560600CCBEC9 /* SimulasiData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -137,11 +173,10 @@
 		21CB53B426A99351005EB944 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-
+				84B5E36926B25FF400FC9C09 /* CompleteSimulationView */,
+				84B5E35C26B25F7000FC9C09 /* BriefView */,
 				525204CA26B01A3F006D6E98 /* Custom View */,
-
 				219747EA26B0122300A81309 /* DaftarSimulasi */,
-
 				21F1A75326A9476000E6A1B5 /* LaunchScreen.storyboard */,
 				525204C226B00DD9006D6E98 /* Detail */,
 				21CB53B626A99366005EB944 /* Home */,
@@ -299,6 +334,7 @@
 		525204CD26B01A64006D6E98 /* Button */ = {
 			isa = PBXGroup;
 			children = (
+				84B5E35E26B25F9500FC9C09 /* ToggleButton.swift */,
 				525204CB26B01A4C006D6E98 /* CustomButton.xib */,
 				525204CE26B01A75006D6E98 /* CustomButton.swift */,
 			);
@@ -343,8 +379,45 @@
 				52B678DC26AA7BCA0080533A /* InterviewModel.swift */,
 				52B678DE26AA7EB10080533A /* AssessmentModel.swift */,
 				52B678E026AA7F3A0080533A /* ScoreTypeModel.swift */,
+				84B5E36E26B260BD00FC9C09 /* BriefInstructionModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		84B5E35C26B25F7000FC9C09 /* BriefView */ = {
+			isa = PBXGroup;
+			children = (
+				84B5E37026B2612A00FC9C09 /* View */,
+				84B5E36426B25FA200FC9C09 /* BriefCell */,
+			);
+			path = BriefView;
+			sourceTree = "<group>";
+		};
+		84B5E36426B25FA200FC9C09 /* BriefCell */ = {
+			isa = PBXGroup;
+			children = (
+				84B5E36526B25FAE00FC9C09 /* BriefCell.swift */,
+				84B5E36626B25FAE00FC9C09 /* BriefCell.xib */,
+			);
+			path = BriefCell;
+			sourceTree = "<group>";
+		};
+		84B5E36926B25FF400FC9C09 /* CompleteSimulationView */ = {
+			isa = PBXGroup;
+			children = (
+				84B5E36A26B2600600FC9C09 /* CompleteViewController.swift */,
+				84B5E36B26B2600600FC9C09 /* CompleteViewController.xib */,
+			);
+			path = CompleteSimulationView;
+			sourceTree = "<group>";
+		};
+		84B5E37026B2612A00FC9C09 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84B5E35D26B25F9500FC9C09 /* BriefViewController.swift */,
+				84B5E35F26B25F9500FC9C09 /* BriefViewController.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,18 +477,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B5E36D26B2600600FC9C09 /* CompleteViewController.xib in Resources */,
 				525204DF26B02A4E006D6E98 /* VideoTableViewCell.xib in Resources */,
 				525204D926B02A21006D6E98 /* ScoreTableViewCell.xib in Resources */,
+				84B5E36826B25FAE00FC9C09 /* BriefCell.xib in Resources */,
 				525204C826B00E0E006D6E98 /* DetailPageViewController.xib in Resources */,
 				21F1A75526A9476000E6A1B5 /* LaunchScreen.storyboard in Resources */,
 				21F1A75226A9476000E6A1B5 /* Assets.xcassets in Resources */,
-
 				525204CC26B01A4C006D6E98 /* CustomButton.xib in Resources */,
-
 				219747EF26B0125B00A81309 /* DaftarSimulasiViewController.xib in Resources */,
-
+				215847DE26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib in Resources */,
 				52B678E526AA8D270080533A /* HomeViewController.xib in Resources */,
 				219747F926B01EC600A81309 /* DaftarSimulasiKosongViewController.xib in Resources */,
+				84B5E36226B25F9500FC9C09 /* BriefViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,9 +501,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				525204C726B00E0E006D6E98 /* DetailPageViewController.swift in Sources */,
+				84B5E36F26B260BD00FC9C09 /* BriefInstructionModel.swift in Sources */,
+				84B5E36026B25F9500FC9C09 /* BriefViewController.swift in Sources */,
 				52B678D226AA79450080533A /* InterviewEntity+CoreDataClass.swift in Sources */,
 				52B678D726AA79450080533A /* ScoreTypeEntity+CoreDataProperties.swift in Sources */,
+				84B5E36126B25F9500FC9C09 /* ToggleButton.swift in Sources */,
 				21F1A74626A9475F00E6A1B5 /* AppDelegate.swift in Sources */,
+				215847DD26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift in Sources */,
 				525204CF26B01A75006D6E98 /* CustomButton.swift in Sources */,
 				52B678DF26AA7EB10080533A /* AssessmentModel.swift in Sources */,
 				525204D826B02A21006D6E98 /* ScoreTableViewCell.swift in Sources */,
@@ -439,9 +517,13 @@
 				52B678D426AA79450080533A /* AssessmentEntity+CoreDataClass.swift in Sources */,
 				52B678D326AA79450080533A /* InterviewEntity+CoreDataProperties.swift in Sources */,
 				21F1A74826A9475F00E6A1B5 /* SceneDelegate.swift in Sources */,
+				215847E226B1560600CCBEC9 /* SimulasiData.swift in Sources */,
+				84B5E36C26B2600600FC9C09 /* CompleteViewController.swift in Sources */,
 				52B678D626AA79450080533A /* ScoreTypeEntity+CoreDataClass.swift in Sources */,
 				219747F826B01EC600A81309 /* DaftarSimulasiKosongViewController.swift in Sources */,
 				52B678DA26AA799D0080533A /* CoredataProvider.swift in Sources */,
+				84B5E36726B25FAE00FC9C09 /* BriefCell.swift in Sources */,
+				215847E026B1552900CCBEC9 /* Simulasi.swift in Sources */,
 				219747EE26B0125B00A81309 /* DaftarSimulasiViewController.swift in Sources */,
 				52B678D526AA79450080533A /* AssessmentEntity+CoreDataProperties.swift in Sources */,
 				21F1A75026A9475F00E6A1B5 /* Esmeka_MC3.xcdatamodeld in Sources */,
