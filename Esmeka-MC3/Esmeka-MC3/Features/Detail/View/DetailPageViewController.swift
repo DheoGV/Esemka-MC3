@@ -178,7 +178,7 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
             return footerView
         } else {
             let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tvDetail.frame.size.width, height: 0))
-            footerView.backgroundColor = .red
+            footerView.backgroundColor = UIColor(red: 0.98, green: 0.98, blue: 0.98, alpha: 1.00)
 
             return footerView
         }
@@ -186,9 +186,9 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         if section == 3 {
-            return 10
+            return 7
         } else {
-            return  0
+            return  3
         }
     }
    
