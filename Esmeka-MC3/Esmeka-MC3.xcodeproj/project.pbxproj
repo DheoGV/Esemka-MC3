@@ -40,6 +40,11 @@
 		52B678E126AA7F3A0080533A /* ScoreTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B678E026AA7F3A0080533A /* ScoreTypeModel.swift */; };
 		52B678E426AA8D270080533A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B678E226AA8D270080533A /* HomeViewController.swift */; };
 		52B678E526AA8D270080533A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52B678E326AA8D270080533A /* HomeViewController.xib */; };
+		D85D1AE326B1C39A00B8E806 /* InterviewSimulationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85D1AE126B1C39A00B8E806 /* InterviewSimulationViewController.swift */; };
+		D85D1AE426B1C39A00B8E806 /* InterviewSimulationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85D1AE226B1C39A00B8E806 /* InterviewSimulationViewController.xib */; };
+		D85D1AE926B2588600B8E806 /* PromptQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85D1AE826B2588600B8E806 /* PromptQuestionView.swift */; };
+		D85D1AEF26B2596600B8E806 /* PromptQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85D1AEE26B2596600B8E806 /* PromptQuestionView.xib */; };
+		D85D1AF226B2A97700B8E806 /* ColorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85D1AF126B2A97700B8E806 /* ColorLibrary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +83,11 @@
 		52B678E026AA7F3A0080533A /* ScoreTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTypeModel.swift; sourceTree = "<group>"; };
 		52B678E226AA8D270080533A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		52B678E326AA8D270080533A /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		D85D1AE126B1C39A00B8E806 /* InterviewSimulationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewSimulationViewController.swift; sourceTree = "<group>"; };
+		D85D1AE226B1C39A00B8E806 /* InterviewSimulationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InterviewSimulationViewController.xib; sourceTree = "<group>"; };
+		D85D1AE826B2588600B8E806 /* PromptQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptQuestionView.swift; sourceTree = "<group>"; };
+		D85D1AEE26B2596600B8E806 /* PromptQuestionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromptQuestionView.xib; sourceTree = "<group>"; };
+		D85D1AF126B2A97700B8E806 /* ColorLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorLibrary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,11 +167,9 @@
 		21CB53B426A99351005EB944 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-
+				D85D1ADD26B1C25F00B8E806 /* InterviewSimulation */,
 				525204CA26B01A3F006D6E98 /* Custom View */,
-
 				219747EA26B0122300A81309 /* DaftarSimulasi */,
-
 				21F1A75326A9476000E6A1B5 /* LaunchScreen.storyboard */,
 				525204C226B00DD9006D6E98 /* Detail */,
 				21CB53B626A99366005EB944 /* Home */,
@@ -328,6 +336,7 @@
 		52B678CA26AA71B20080533A /* Local */ = {
 			isa = PBXGroup;
 			children = (
+				D85D1AF026B2A92600B8E806 /* Theme */,
 				52B678DB26AA7BBC0080533A /* Model */,
 				52B678D826AA79910080533A /* Database */,
 				52B678CB26AA71E70080533A /* Entity */,
@@ -365,6 +374,57 @@
 				52B678E026AA7F3A0080533A /* ScoreTypeModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D85D1ADD26B1C25F00B8E806 /* InterviewSimulation */ = {
+			isa = PBXGroup;
+			children = (
+				D85D1ADE26B1C30700B8E806 /* View */,
+			);
+			path = InterviewSimulation;
+			sourceTree = "<group>";
+		};
+		D85D1ADE26B1C30700B8E806 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D85D1AE726B254F500B8E806 /* PromptQuestionView */,
+				D85D1AE526B254DF00B8E806 /* MainPage */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D85D1AE526B254DF00B8E806 /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				D85D1AE126B1C39A00B8E806 /* InterviewSimulationViewController.swift */,
+				D85D1AE226B1C39A00B8E806 /* InterviewSimulationViewController.xib */,
+			);
+			path = MainPage;
+			sourceTree = "<group>";
+		};
+		D85D1AE726B254F500B8E806 /* PromptQuestionView */ = {
+			isa = PBXGroup;
+			children = (
+				D85D1AE826B2588600B8E806 /* PromptQuestionView.swift */,
+				D85D1AEE26B2596600B8E806 /* PromptQuestionView.xib */,
+			);
+			path = PromptQuestionView;
+			sourceTree = "<group>";
+		};
+		D85D1AF026B2A92600B8E806 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				D85D1AF326B2A98900B8E806 /* Color */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		D85D1AF326B2A98900B8E806 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				D85D1AF126B2A97700B8E806 /* ColorLibrary.swift */,
+			);
+			path = Color;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -427,12 +487,12 @@
 				525204DF26B02A4E006D6E98 /* VideoTableViewCell.xib in Resources */,
 				525204D926B02A21006D6E98 /* ScoreTableViewCell.xib in Resources */,
 				525204C826B00E0E006D6E98 /* DetailPageViewController.xib in Resources */,
+				D85D1AE426B1C39A00B8E806 /* InterviewSimulationViewController.xib in Resources */,
 				21F1A75526A9476000E6A1B5 /* LaunchScreen.storyboard in Resources */,
 				21F1A75226A9476000E6A1B5 /* Assets.xcassets in Resources */,
-
 				525204CC26B01A4C006D6E98 /* CustomButton.xib in Resources */,
-
 				219747EF26B0125B00A81309 /* DaftarSimulasiViewController.xib in Resources */,
+				D85D1AEF26B2596600B8E806 /* PromptQuestionView.xib in Resources */,
 				215847DE26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib in Resources */,
 				52B678E526AA8D270080533A /* HomeViewController.xib in Resources */,
 				219747F926B01EC600A81309 /* DaftarSimulasiKosongViewController.xib in Resources */,
@@ -447,8 +507,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				525204C726B00E0E006D6E98 /* DetailPageViewController.swift in Sources */,
+				D85D1AF226B2A97700B8E806 /* ColorLibrary.swift in Sources */,
 				52B678D226AA79450080533A /* InterviewEntity+CoreDataClass.swift in Sources */,
 				52B678D726AA79450080533A /* ScoreTypeEntity+CoreDataProperties.swift in Sources */,
+				D85D1AE326B1C39A00B8E806 /* InterviewSimulationViewController.swift in Sources */,
+				D85D1AE926B2588600B8E806 /* PromptQuestionView.swift in Sources */,
 				21F1A74626A9475F00E6A1B5 /* AppDelegate.swift in Sources */,
 				215847DD26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift in Sources */,
 				525204CF26B01A75006D6E98 /* CustomButton.swift in Sources */,
