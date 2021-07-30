@@ -11,6 +11,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DaftarSimulasiViewController" customModule="Esmeka_MC3" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="ofo-5Z-Jg9" id="23I-L5-M7c"/>
+                <outlet property="imgNoData" destination="ZhJ-AC-Ku3" id="d4J-Ew-bfH"/>
+                <outlet property="noData1Lbl" destination="jRH-ob-uGJ" id="YVu-F1-oDz"/>
+                <outlet property="noData2Lbl" destination="NQ8-cK-60u" id="2zl-Qu-iP9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -52,6 +55,24 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="20"/>
                     </userDefinedRuntimeAttributes>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illustration_home_1x" translatesAutoresizingMaskIntoConstraints="NO" id="ZhJ-AC-Ku3">
+                    <rect key="frame" x="35" y="119" width="320" height="320"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="320" id="P19-Ih-ezb"/>
+                        <constraint firstAttribute="width" constant="320" id="YiX-MK-7NV"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sepertinya kamu belum pernah melakukan simulasi wawancara di aplikasi ini." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQ8-cK-60u">
+                    <rect key="frame" x="30" y="486" width="330" height="36"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rekaman Simulasi Kosong" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRH-ob-uGJ">
+                    <rect key="frame" x="63" y="455" width="264" height="23"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -59,17 +80,27 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ofo-5Z-Jg9" secondAttribute="trailing" id="Kh9-le-LLi"/>
                 <constraint firstItem="UD6-le-AZV" firstAttribute="top" secondItem="ofo-5Z-Jg9" secondAttribute="bottom" constant="35" id="Kok-eh-eBd"/>
                 <constraint firstItem="ie3-R0-tI2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="MPi-Kg-HDc"/>
+                <constraint firstItem="NQ8-cK-60u" firstAttribute="top" secondItem="jRH-ob-uGJ" secondAttribute="bottom" constant="8" id="OL4-rP-6ui"/>
+                <constraint firstItem="ZhJ-AC-Ku3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="75" id="RMG-6j-8uJ"/>
                 <constraint firstItem="ie3-R0-tI2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Sl7-Pj-6Bv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ie3-R0-tI2" secondAttribute="trailing" constant="20" id="Tm5-mK-4ZS"/>
+                <constraint firstItem="ZhJ-AC-Ku3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="35" id="Zyv-yk-48N"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jRH-ob-uGJ" secondAttribute="trailing" constant="63" id="c9K-rl-l0W"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UD6-le-AZV" secondAttribute="trailing" constant="32" id="e2k-cV-UZh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZhJ-AC-Ku3" secondAttribute="trailing" constant="35" id="eDR-AV-ULX"/>
+                <constraint firstItem="NQ8-cK-60u" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="eka-Hn-dv9"/>
                 <constraint firstItem="ofo-5Z-Jg9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lyr-ZK-e1O"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NQ8-cK-60u" secondAttribute="trailing" constant="30" id="ni4-Gs-rvH"/>
+                <constraint firstItem="jRH-ob-uGJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="63" id="oiB-QZ-XNH"/>
                 <constraint firstItem="ofo-5Z-Jg9" firstAttribute="top" secondItem="ie3-R0-tI2" secondAttribute="bottom" constant="16" id="ooX-Cq-ak8"/>
+                <constraint firstItem="jRH-ob-uGJ" firstAttribute="top" secondItem="ZhJ-AC-Ku3" secondAttribute="bottom" constant="16" id="pho-ZZ-qfL"/>
                 <constraint firstItem="UD6-le-AZV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="w8O-8U-t7N"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="108.48214285714285"/>
         </view>
     </objects>
     <resources>
+        <image name="illustration_home_1x" width="106.66666412353516" height="106.66666412353516"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

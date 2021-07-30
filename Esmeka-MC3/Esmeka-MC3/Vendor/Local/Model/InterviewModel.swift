@@ -8,11 +8,11 @@
 import Foundation
 
 struct InterviewModel {
-    let interviewId: Int?
-    let duration: Int?
-    let interviewTitle: String?
-    let interviewDate: Date?
-    let interviewURLPath: String?
+    let interviewId: Int
+    let duration: Int
+    let interviewTitle: String
+    let interviewDate: Date
+    let interviewURLPath: String
 //    let listAssessment: [AssessmentModel]?
 //    let listScore: [ScoreTypeModel]?
 }
