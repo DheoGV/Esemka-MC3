@@ -17,11 +17,12 @@ class SimulasiCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "SimulasiCollectionViewCell"
     
-    var simulasi: Simulasi?{
+    
+    var simulasi: InterviewModel?{
         didSet{
             if let filled = simulasi{
-                waktuSimulasiLbl.text = "\(filled.waktu) AM "
-                tanggalSimulasiLbl.text = "\(filled.tanggal)"
+                waktuSimulasiLbl.text = "Test AM "
+                tanggalSimulasiLbl.text = "\(filled.interviewDate)"
                 durasiSimulasiLbl.text = "\(filled.duration) Menit "
             }
         }
