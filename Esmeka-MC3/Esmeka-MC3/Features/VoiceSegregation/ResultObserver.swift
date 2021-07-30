@@ -32,7 +32,7 @@ class SegregationObserver: NSObject, SNResultsObserving {
 }
 
 protocol EmotionClassifierDelegate {
-    func displayPredictionResult2(identifier: String, confidence: Double)
+    func countEmotionParameter(identifier: String, confidence: Double)
 }
 
 class EmotionObserver: NSObject, SNResultsObserving {
@@ -44,7 +44,7 @@ class EmotionObserver: NSObject, SNResultsObserving {
         let confidence = classification.confidence * 100.0
         
         if confidence > 90 {
-            delegate?.displayPredictionResult2(identifier: classification.identifier, confidence: confidence)
+            delegate?.countEmotionParameter(identifier: classification.identifier, confidence: confidence)
         }
     }
 }
