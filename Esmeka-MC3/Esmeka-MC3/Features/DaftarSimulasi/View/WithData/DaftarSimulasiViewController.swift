@@ -51,6 +51,12 @@ class DaftarSimulasiViewController: UIViewController {
             noData2Lbl.isHidden = true
         }
     }
+    
+    @IBAction func simulasiButtonAction(_ sender: Any) {
+        let briefVC = BriefViewController(nibName: "BriefViewController", bundle: nil)
+        self.navigationController?.pushViewController(briefVC, animated: true)
+    }
+    
 }
 
 extension DaftarSimulasiViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {

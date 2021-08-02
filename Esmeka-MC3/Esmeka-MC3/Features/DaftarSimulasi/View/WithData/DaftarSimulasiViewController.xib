@@ -54,6 +54,9 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="20"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="simulasiButtonAction:" destination="-1" eventType="touchUpInside" id="iBC-ke-nFP"/>
+                    </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illustration_home_1x" translatesAutoresizingMaskIntoConstraints="NO" id="ZhJ-AC-Ku3">
                     <rect key="frame" x="35" y="119" width="320" height="320"/>
