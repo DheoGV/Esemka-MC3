@@ -10,7 +10,7 @@ import ARKit
 import AVFoundation
 import SoundAnalysis
 
-class InterviewSimulationViewController: UIViewController {
+class InterviewSimulationViewController: UIViewController, SegregationClassifierDelegate, EmotionClassifierDelegate {
     static let identifier = "InterviewSimulationViewController"
     @IBOutlet weak var scene: ARSCNView!
     @IBOutlet weak var recordButton: UIButton!
