@@ -9,6 +9,7 @@ import UIKit
 import ARKit
 
 class InterviewSimulationViewController: UIViewController {
+    static let identifier = "InterviewSimulationViewController"
     @IBOutlet weak var scene: ARSCNView!
     @IBOutlet weak var recordButton: UIButton!
     
