@@ -38,7 +38,7 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
     // ---------------------------------------------------
     var isStart : Bool = false
     var idealInterjectionNumber : Double = 0
-    var outputInterjection : Int = 0
+    var outputInterjection : Double = 0
     var promptWindow: UIView!
     
     override func viewDidLoad() {
@@ -51,19 +51,6 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
         super.viewDidLoad()
         buttonSetup()
         // Do any additional setup after loading the view.
-    }
-    
-    func calculateOutputInterjection() {
-        if idealInterjectionNumber > 0 {
-            outputInterjection = Int(idealInterjectionNumber/interjection*100)
-            if outputInterjection > 100 {
-                outputInterjection = 100
-            }
-            
-        }
-        
-        print("OUTPUT : ",outputInterjection)
-        // do something about the output : send to core data
     }
     
     func buttonSetup(){
@@ -101,31 +88,18 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
         }
         isStart = !isStart
         calculateOutputInterjection()
-        startTimerView()
+        timerInterview()
         
         
       
     }
     
+    
+    
     func startTimerView(){
-        timer =  Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(printTimer), userInfo: nil, repeats: true)
+       
     }
-    @objc func printTimer() {
-        if isStart {
-            timerToMinute = (timerTimeNow/60)
-            idealInterjectionNumber = timerToMinute*15
-            print("Seconds : ",timerTimeNow)
-            print("Minute : ",timerToMinute)
-            print("Ideal Interjection Number : ",idealInterjectionNumber)
-            print("Simulation Interjection Number : ",interjection)
-            timerTimeNow += 1
-     
-        } else {
-            timer?.invalidate()
-            keepCounting = false
-            
-        }
-    }
+  
     
     func startRecording(){
         

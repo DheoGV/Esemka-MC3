@@ -40,6 +40,7 @@
 		52B678E126AA7F3A0080533A /* ScoreTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B678E026AA7F3A0080533A /* ScoreTypeModel.swift */; };
 		52B678E426AA8D270080533A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B678E226AA8D270080533A /* HomeViewController.swift */; };
 		52B678E526AA8D270080533A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52B678E326AA8D270080533A /* HomeViewController.xib */; };
+		846AF3F426B7C12100164868 /* ExtensionVoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846AF3F326B7C12100164868 /* ExtensionVoice.swift */; };
 		84B5E36026B25F9500FC9C09 /* BriefViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5E35D26B25F9500FC9C09 /* BriefViewController.swift */; };
 		84B5E36126B25F9500FC9C09 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5E35E26B25F9500FC9C09 /* ToggleButton.swift */; };
 		84B5E36226B25F9500FC9C09 /* BriefViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B5E35F26B25F9500FC9C09 /* BriefViewController.xib */; };
@@ -60,7 +61,6 @@
 		84B5E38B26B42ACA00FC9C09 /* VoiceSegregetionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5E38426B42AC900FC9C09 /* VoiceSegregetionViewController.swift */; };
 		84B5E38C26B42ACA00FC9C09 /* ResultObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5E38526B42AC900FC9C09 /* ResultObserver.swift */; };
 		84B5E38D26B42ACA00FC9C09 /* SoundEmotionClassifier 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 84B5E38626B42ACA00FC9C09 /* SoundEmotionClassifier 1.mlmodel */; };
-		84B5E39026B42DFA00FC9C09 /* ExtensionVoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5E38F26B42DFA00FC9C09 /* ExtensionVoice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +99,7 @@
 		52B678E026AA7F3A0080533A /* ScoreTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTypeModel.swift; sourceTree = "<group>"; };
 		52B678E226AA8D270080533A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		52B678E326AA8D270080533A /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		846AF3F326B7C12100164868 /* ExtensionVoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionVoice.swift; sourceTree = "<group>"; };
 		84B5E35D26B25F9500FC9C09 /* BriefViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BriefViewController.swift; sourceTree = "<group>"; };
 		84B5E35E26B25F9500FC9C09 /* ToggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
 		84B5E35F26B25F9500FC9C09 /* BriefViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BriefViewController.xib; sourceTree = "<group>"; };
@@ -119,7 +120,6 @@
 		84B5E38426B42AC900FC9C09 /* VoiceSegregetionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceSegregetionViewController.swift; sourceTree = "<group>"; };
 		84B5E38526B42AC900FC9C09 /* ResultObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultObserver.swift; sourceTree = "<group>"; };
 		84B5E38626B42ACA00FC9C09 /* SoundEmotionClassifier 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "SoundEmotionClassifier 1.mlmodel"; sourceTree = "<group>"; };
-		84B5E38F26B42DFA00FC9C09 /* ExtensionVoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionVoice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -462,8 +462,9 @@
 			isa = PBXGroup;
 			children = (
 				84B5E37426B3952D00FC9C09 /* InterviewSimulationViewController.swift */,
-				84B5E38F26B42DFA00FC9C09 /* ExtensionVoice.swift */,
+				846AF3F326B7C12100164868 /* ExtensionVoice.swift */,
 				84B5E37526B3952D00FC9C09 /* InterviewSimulationViewController.xib */,
+				84B5E38E26B42C4A00FC9C09 /* VoiceMLModel */,
 			);
 			path = MainPage;
 			sourceTree = "<group>";
@@ -488,7 +489,6 @@
 		84B5E37F26B42AB500FC9C09 /* VoiceAnalyzer */ = {
 			isa = PBXGroup;
 			children = (
-				84B5E38E26B42C4A00FC9C09 /* VoiceMLModel */,
 				84B5E38026B42AC800FC9C09 /* AudioEngineExtension.swift */,
 				84B5E38326B42AC900FC9C09 /* PredictionObserverExtension.swift */,
 				84B5E38526B42AC900FC9C09 /* ResultObserver.swift */,
@@ -592,7 +592,7 @@
 			files = (
 				525204C726B00E0E006D6E98 /* DetailPageViewController.swift in Sources */,
 				84B5E38B26B42ACA00FC9C09 /* VoiceSegregetionViewController.swift in Sources */,
-				84B5E39026B42DFA00FC9C09 /* ExtensionVoice.swift in Sources */,
+				846AF3F426B7C12100164868 /* ExtensionVoice.swift in Sources */,
 				84B5E36F26B260BD00FC9C09 /* BriefInstructionModel.swift in Sources */,
 				84B5E36026B25F9500FC9C09 /* BriefViewController.swift in Sources */,
 				52B678D226AA79450080533A /* InterviewEntity+CoreDataClass.swift in Sources */,
