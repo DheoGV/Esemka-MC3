@@ -8,6 +8,7 @@
 import UIKit
 
 class BriefViewController: UIViewController {
+    static let identifier = "BriefViewController"
 
     private var isChecked = false
     @IBOutlet weak var briefTable: UITableView!
@@ -15,7 +16,11 @@ class BriefViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var ShowAgainSwitch: UISwitch!
     @IBOutlet weak var showAgainButton: UIButton!
- 
+    @IBAction func StartSimulationActionButton(_ sender: Any) {
+        let simulationVc = InterviewSimulationViewController(nibName: InterviewSimulationViewController.identifier, bundle: nil)
+        self.navigationController?.pushViewController(simulationVc, animated: true)
+    }
+    
     var briefInstructions : [BriefModel] = BriefModel.BriefData
     
     override func viewDidLoad() {

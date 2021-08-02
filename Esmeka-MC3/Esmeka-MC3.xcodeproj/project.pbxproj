@@ -9,17 +9,17 @@
 /* Begin PBXBuildFile section */
 		215847DD26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215847DB26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift */; };
 		215847DE26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 215847DC26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib */; };
-		215847E026B1552900CCBEC9 /* Simulasi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215847DF26B1552900CCBEC9 /* Simulasi.swift */; };
-		215847E226B1560600CCBEC9 /* SimulasiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215847E126B1560600CCBEC9 /* SimulasiData.swift */; };
+		217F467126B3B07400AE6AFA /* SimulasiDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217F467026B3B07400AE6AFA /* SimulasiDataManager.swift */; };
+		217F467826B3CD7F00AE6AFA /* InterviewEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217F467626B3CD7F00AE6AFA /* InterviewEntity+CoreDataClass.swift */; };
+		217F467926B3CD7F00AE6AFA /* InterviewEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217F467726B3CD7F00AE6AFA /* InterviewEntity+CoreDataProperties.swift */; };
 		219747EE26B0125B00A81309 /* DaftarSimulasiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219747EC26B0125B00A81309 /* DaftarSimulasiViewController.swift */; };
 		219747EF26B0125B00A81309 /* DaftarSimulasiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 219747ED26B0125B00A81309 /* DaftarSimulasiViewController.xib */; };
-		219747F826B01EC600A81309 /* DaftarSimulasiKosongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219747F626B01EC600A81309 /* DaftarSimulasiKosongViewController.swift */; };
-		219747F926B01EC600A81309 /* DaftarSimulasiKosongViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 219747F726B01EC600A81309 /* DaftarSimulasiKosongViewController.xib */; };
 		21F1A74626A9475F00E6A1B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F1A74526A9475F00E6A1B5 /* AppDelegate.swift */; };
 		21F1A74826A9475F00E6A1B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F1A74726A9475F00E6A1B5 /* SceneDelegate.swift */; };
 		21F1A75026A9475F00E6A1B5 /* Esmeka_MC3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21F1A74E26A9475F00E6A1B5 /* Esmeka_MC3.xcdatamodeld */; };
 		21F1A75226A9476000E6A1B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21F1A75126A9476000E6A1B5 /* Assets.xcassets */; };
 		21F1A75526A9476000E6A1B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21F1A75326A9476000E6A1B5 /* LaunchScreen.storyboard */; };
+		21F5168326B2D4EA0004DDAB /* FaceEmotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F5168226B2D4EA0004DDAB /* FaceEmotionViewController.swift */; };
 		525204C726B00E0E006D6E98 /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525204C526B00E0E006D6E98 /* DetailPageViewController.swift */; };
 		525204C826B00E0E006D6E98 /* DetailPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525204C626B00E0E006D6E98 /* DetailPageViewController.xib */; };
 		525204CC26B01A4C006D6E98 /* CustomButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525204CB26B01A4C006D6E98 /* CustomButton.xib */; };
@@ -28,8 +28,6 @@
 		525204D926B02A21006D6E98 /* ScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525204D726B02A21006D6E98 /* ScoreTableViewCell.xib */; };
 		525204DE26B02A4E006D6E98 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525204DC26B02A4E006D6E98 /* VideoTableViewCell.swift */; };
 		525204DF26B02A4E006D6E98 /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525204DD26B02A4E006D6E98 /* VideoTableViewCell.xib */; };
-		52B678D226AA79450080533A /* InterviewEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B678CC26AA79450080533A /* InterviewEntity+CoreDataClass.swift */; };
-		52B678D326AA79450080533A /* InterviewEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B678CD26AA79450080533A /* InterviewEntity+CoreDataProperties.swift */; };
 		52B678D426AA79450080533A /* AssessmentEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B678CE26AA79450080533A /* AssessmentEntity+CoreDataClass.swift */; };
 		52B678D526AA79450080533A /* AssessmentEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B678CF26AA79450080533A /* AssessmentEntity+CoreDataProperties.swift */; };
 		52B678D626AA79450080533A /* ScoreTypeEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B678D026AA79450080533A /* ScoreTypeEntity+CoreDataClass.swift */; };
@@ -66,12 +64,11 @@
 /* Begin PBXFileReference section */
 		215847DB26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulasiCollectionViewCell.swift; sourceTree = "<group>"; };
 		215847DC26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimulasiCollectionViewCell.xib; sourceTree = "<group>"; };
-		215847DF26B1552900CCBEC9 /* Simulasi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simulasi.swift; sourceTree = "<group>"; };
-		215847E126B1560600CCBEC9 /* SimulasiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulasiData.swift; sourceTree = "<group>"; };
+		217F467026B3B07400AE6AFA /* SimulasiDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulasiDataManager.swift; sourceTree = "<group>"; };
+		217F467626B3CD7F00AE6AFA /* InterviewEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterviewEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		217F467726B3CD7F00AE6AFA /* InterviewEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterviewEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		219747EC26B0125B00A81309 /* DaftarSimulasiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaftarSimulasiViewController.swift; sourceTree = "<group>"; };
 		219747ED26B0125B00A81309 /* DaftarSimulasiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaftarSimulasiViewController.xib; sourceTree = "<group>"; };
-		219747F626B01EC600A81309 /* DaftarSimulasiKosongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaftarSimulasiKosongViewController.swift; sourceTree = "<group>"; };
-		219747F726B01EC600A81309 /* DaftarSimulasiKosongViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaftarSimulasiKosongViewController.xib; sourceTree = "<group>"; };
 		21F1A74226A9475F00E6A1B5 /* Esmeka-MC3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Esmeka-MC3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21F1A74526A9475F00E6A1B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21F1A74726A9475F00E6A1B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +76,7 @@
 		21F1A75126A9476000E6A1B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21F1A75426A9476000E6A1B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21F1A75626A9476000E6A1B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21F5168226B2D4EA0004DDAB /* FaceEmotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceEmotionViewController.swift; sourceTree = "<group>"; };
 		525204C526B00E0E006D6E98 /* DetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewController.swift; sourceTree = "<group>"; };
 		525204C626B00E0E006D6E98 /* DetailPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPageViewController.xib; sourceTree = "<group>"; };
 		525204CB26B01A4C006D6E98 /* CustomButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomButton.xib; sourceTree = "<group>"; };
@@ -87,8 +85,6 @@
 		525204D726B02A21006D6E98 /* ScoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreTableViewCell.xib; sourceTree = "<group>"; };
 		525204DC26B02A4E006D6E98 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		525204DD26B02A4E006D6E98 /* VideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
-		52B678CC26AA79450080533A /* InterviewEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterviewEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		52B678CD26AA79450080533A /* InterviewEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterviewEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		52B678CE26AA79450080533A /* AssessmentEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AssessmentEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		52B678CF26AA79450080533A /* AssessmentEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AssessmentEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		52B678D026AA79450080533A /* ScoreTypeEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScoreTypeEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -157,25 +153,13 @@
 			children = (
 				215847DA26B148A700CCBEC9 /* Simulasi Cell */,
 				219747FC26B0496A00A81309 /* WithData */,
-				219747F526B01DFC00A81309 /* NoData */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		219747F526B01DFC00A81309 /* NoData */ = {
-			isa = PBXGroup;
-			children = (
-				219747F626B01EC600A81309 /* DaftarSimulasiKosongViewController.swift */,
-				219747F726B01EC600A81309 /* DaftarSimulasiKosongViewController.xib */,
-			);
-			path = NoData;
 			sourceTree = "<group>";
 		};
 		219747FA26B0465700A81309 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				215847DF26B1552900CCBEC9 /* Simulasi.swift */,
-				215847E126B1560600CCBEC9 /* SimulasiData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -183,6 +167,7 @@
 		219747FB26B0466600A81309 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				217F467026B3B07400AE6AFA /* SimulasiDataManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -199,6 +184,8 @@
 		21CB53B426A99351005EB944 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				21F5168126B2D4BA0004DDAB /* FaceEmotion */,
+				D85D1AF626B39A6400B8E806 /* VoiceSegregation */,
 				84B5E37F26B42AB500FC9C09 /* VoiceAnalyzer */,
 				84B5E37126B394E000FC9C09 /* InterviewSimulation */,
 				84B5E36926B25FF400FC9C09 /* CompleteSimulationView */,
@@ -314,6 +301,14 @@
 			path = "Esmeka-MC3";
 			sourceTree = "<group>";
 		};
+		21F5168126B2D4BA0004DDAB /* FaceEmotion */ = {
+			isa = PBXGroup;
+			children = (
+				21F5168226B2D4EA0004DDAB /* FaceEmotionViewController.swift */,
+			);
+			path = FaceEmotion;
+			sourceTree = "<group>";
+		};
 		525204C226B00DD9006D6E98 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -383,8 +378,8 @@
 		52B678CB26AA71E70080533A /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				52B678CC26AA79450080533A /* InterviewEntity+CoreDataClass.swift */,
-				52B678CD26AA79450080533A /* InterviewEntity+CoreDataProperties.swift */,
+				217F467626B3CD7F00AE6AFA /* InterviewEntity+CoreDataClass.swift */,
+				217F467726B3CD7F00AE6AFA /* InterviewEntity+CoreDataProperties.swift */,
 				52B678CE26AA79450080533A /* AssessmentEntity+CoreDataClass.swift */,
 				52B678CF26AA79450080533A /* AssessmentEntity+CoreDataProperties.swift */,
 				52B678D026AA79450080533A /* ScoreTypeEntity+CoreDataClass.swift */,
@@ -576,7 +571,6 @@
 				219747EF26B0125B00A81309 /* DaftarSimulasiViewController.xib in Resources */,
 				215847DE26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib in Resources */,
 				52B678E526AA8D270080533A /* HomeViewController.xib in Resources */,
-				219747F926B01EC600A81309 /* DaftarSimulasiKosongViewController.xib in Resources */,
 				84B5E36226B25F9500FC9C09 /* BriefViewController.xib in Resources */,
 				84B5E38926B42ACA00FC9C09 /* VoiceSegregetionViewController.xib in Resources */,
 				84B5E37B26B3953700FC9C09 /* PromptQuestionView.xib in Resources */,
@@ -595,7 +589,7 @@
 				846AF3F426B7C12100164868 /* ExtensionVoice.swift in Sources */,
 				84B5E36F26B260BD00FC9C09 /* BriefInstructionModel.swift in Sources */,
 				84B5E36026B25F9500FC9C09 /* BriefViewController.swift in Sources */,
-				52B678D226AA79450080533A /* InterviewEntity+CoreDataClass.swift in Sources */,
+				21F5168326B2D4EA0004DDAB /* FaceEmotionViewController.swift in Sources */,
 				84B5E37A26B3953700FC9C09 /* PromptQuestionView.swift in Sources */,
 				84B5E38C26B42ACA00FC9C09 /* ResultObserver.swift in Sources */,
 				52B678D726AA79450080533A /* ScoreTypeEntity+CoreDataProperties.swift in Sources */,
@@ -613,21 +607,21 @@
 				84B5E38D26B42ACA00FC9C09 /* SoundEmotionClassifier 1.mlmodel in Sources */,
 				52B678E126AA7F3A0080533A /* ScoreTypeModel.swift in Sources */,
 				52B678D426AA79450080533A /* AssessmentEntity+CoreDataClass.swift in Sources */,
-				52B678D326AA79450080533A /* InterviewEntity+CoreDataProperties.swift in Sources */,
 				21F1A74826A9475F00E6A1B5 /* SceneDelegate.swift in Sources */,
-				215847E226B1560600CCBEC9 /* SimulasiData.swift in Sources */,
 				84B5E36C26B2600600FC9C09 /* CompleteViewController.swift in Sources */,
+				217F467126B3B07400AE6AFA /* SimulasiDataManager.swift in Sources */,
 				52B678D626AA79450080533A /* ScoreTypeEntity+CoreDataClass.swift in Sources */,
-				219747F826B01EC600A81309 /* DaftarSimulasiKosongViewController.swift in Sources */,
 				52B678DA26AA799D0080533A /* CoredataProvider.swift in Sources */,
 				84B5E36726B25FAE00FC9C09 /* BriefCell.swift in Sources */,
 				84B5E38726B42ACA00FC9C09 /* AudioEngineExtension.swift in Sources */,
 				215847E026B1552900CCBEC9 /* Simulasi.swift in Sources */,
 				84B5E38826B42ACA00FC9C09 /* InterjectionClassifier.mlmodel in Sources */,
 				219747EE26B0125B00A81309 /* DaftarSimulasiViewController.swift in Sources */,
+				217F467826B3CD7F00AE6AFA /* InterviewEntity+CoreDataClass.swift in Sources */,
 				52B678D526AA79450080533A /* AssessmentEntity+CoreDataProperties.swift in Sources */,
 				21F1A75026A9475F00E6A1B5 /* Esmeka_MC3.xcdatamodeld in Sources */,
 				525204DE26B02A4E006D6E98 /* VideoTableViewCell.swift in Sources */,
+				217F467926B3CD7F00AE6AFA /* InterviewEntity+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

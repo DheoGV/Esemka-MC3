@@ -19,10 +19,11 @@ extension VoiceSegregetionViewController {
             }
         }
     }
-    func displayPredictionResult2(identifier: String, confidence: Double) {
+    func countEmotionParameter(identifier: String, confidence: Double) {
         DispatchQueue.main.async {
             if self.keepCounting{
-                print(identifier)
+                self.totalEmotions += 1
+                self.binaryEmotions[availableEmotions[identifier]] += 1
             }
         }
     }

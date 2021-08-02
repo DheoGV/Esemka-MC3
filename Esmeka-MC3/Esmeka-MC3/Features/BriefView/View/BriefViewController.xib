@@ -22,11 +22,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bM4-i9-iYa">
-                    <rect key="frame" x="16" y="130" width="358" height="551"/>
+                    <rect key="frame" x="16" y="98" width="358" height="583"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Persiapan Simulasi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPA-0t-CQG">
-                    <rect key="frame" x="16" y="69" width="358" height="41"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" text="Persiapan Simulasi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPA-0t-CQG">
+                    <rect key="frame" x="16" y="37" width="358" height="41"/>
                     <fontDescription key="fontDescription" type="system" pointSize="34"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -50,6 +50,9 @@
                     <state key="normal" title="Mulai Sekarang">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="StartSimulationActionButton:" destination="-1" eventType="touchUpInside" id="tIq-XR-5Ev"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CjL-U1-N7U" customClass="ToggleButton" customModule="Esmeka_MC3" customModuleProvider="target">
                     <rect key="frame" x="20" y="704" width="22" height="27"/>
@@ -71,11 +74,11 @@
                 <constraint firstItem="CjL-U1-N7U" firstAttribute="top" secondItem="bM4-i9-iYa" secondAttribute="bottom" constant="23" id="79N-1i-ehq"/>
                 <constraint firstItem="zoR-iD-CB3" firstAttribute="leading" secondItem="CjL-U1-N7U" secondAttribute="trailing" constant="15" id="AfM-Gs-Nnm"/>
                 <constraint firstItem="zoR-iD-CB3" firstAttribute="top" secondItem="bM4-i9-iYa" secondAttribute="bottom" constant="20" id="Bmg-h7-6tH"/>
-                <constraint firstItem="fPA-0t-CQG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="BqG-lD-Hn0"/>
                 <constraint firstItem="Fxg-wf-3tD" firstAttribute="top" secondItem="zoR-iD-CB3" secondAttribute="bottom" constant="18" id="D14-fk-59Z"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fPA-0t-CQG" secondAttribute="trailing" constant="16" id="FLb-rA-6fh"/>
                 <constraint firstItem="Fxg-wf-3tD" firstAttribute="centerX" secondItem="bM4-i9-iYa" secondAttribute="centerX" id="IR9-C5-sh2"/>
                 <constraint firstItem="fPA-0t-CQG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="IkW-tf-Mb8"/>
+                <constraint firstItem="fPA-0t-CQG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-7" id="S4f-no-i6h"/>
                 <constraint firstItem="bM4-i9-iYa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Uyf-MF-MqY"/>
                 <constraint firstItem="Fxg-wf-3tD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="22" id="YOP-C5-oUL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zoR-iD-CB3" secondAttribute="trailing" constant="20" id="Z1I-PP-1ec"/>

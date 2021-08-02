@@ -18,9 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window = window
             
             let navController = UINavigationController(rootViewController: DaftarSimulasiViewController())
-//            window.rootViewController = navController
-            window.rootViewController = InterviewSimulationViewController()
-//            window.rootViewController = VoiceSegregetionViewController()
+            window.rootViewController = navController
+            //window.rootViewController = DaftarSimulasiViewController()
             window.makeKeyAndVisible()
             
         }

@@ -23,6 +23,12 @@ class VoiceSegregetionViewController: UIViewController, SegregationClassifierDel
     var interjection = 0
     var keepCounting = true
     
+    //variables to count the final results
+    var availableEmotions [String : String]= ["angry":"bad", "disgust":"bad", "fear":"bad", "happy":"good", "neutral":"good", "ps":"good", "sad":"bad"]
+    var totalEmotions = 0
+    var binaryEmotions:[String: Int] = ["good":0, "bad":0]
+    var voiceEmotionScore:Int
+    
     @IBOutlet weak var labelNumber: UILabel!
     @IBOutlet weak var labelClassify: UILabel!
     @IBAction func startVoice(_ sender: Any) {
@@ -31,8 +37,15 @@ class VoiceSegregetionViewController: UIViewController, SegregationClassifierDel
     
     @IBAction func stopVoice(_ sender: Any) {
         removeAudioEngine()
+        savesVoiceEmotionScore()
     }
-
+    
+    
+    func savesVoiceEmotionScore(){
+        voiceEmotionScore = Int(binaryEmotions["good"] * 100 /totalEmotions)
+        
+        //and then save it to the core data
+    }
     
     override func viewDidLoad() {
         segregationObserver.delegate = self
