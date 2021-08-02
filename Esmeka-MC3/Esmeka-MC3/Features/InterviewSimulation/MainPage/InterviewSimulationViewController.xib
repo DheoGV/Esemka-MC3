@@ -38,6 +38,9 @@
                     <state key="normal">
                         <imageReference key="image" image="video.fill.badge.plus" catalog="system" symbolScale="large"/>
                     </state>
+                    <connections>
+                        <action selector="recordButtonAction:" destination="-1" eventType="touchUpInside" id="xPD-S4-lUn"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
