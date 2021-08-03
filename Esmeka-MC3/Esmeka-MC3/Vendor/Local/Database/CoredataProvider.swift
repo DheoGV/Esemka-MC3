@@ -90,4 +90,12 @@ class CoredataProvider {
         }
         return listInterviewEntity
     }
+    
+    //need this function untuk ambil ScoreTypeEntity yang berhubungan dengan sebuah InterviewModel
+    func getScoresWhereInterviewEntityIs(interview:InterviewModel)->[ScoreTypeEntity]{
+        var listInterviewEntity = [ScoreTypeEntity]()
+        
+        
+        return listInterviewEntity
+    }
 }
