@@ -72,6 +72,8 @@ extension DaftarSimulasiViewController: UICollectionViewDataSource, UICollection
         cell.simulasi = self.simulasiData?[indexPath.row]
         cell.layer.cornerRadius = 10
         
+        
+        
         return cell
     }
     
