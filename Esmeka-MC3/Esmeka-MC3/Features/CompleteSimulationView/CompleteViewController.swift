@@ -6,6 +6,11 @@
 //
 
 import UIKit
+
+protocol DataSendingDelegateProtocol {
+    func sendDataToDetailPage() //isi tipe data InterviewEntity
+}
+
 // MARK: - Complete View
 class CompleteViewController: UIViewController {
 
@@ -17,6 +22,8 @@ class CompleteViewController: UIViewController {
         super.viewDidLoad()
         setView()
     }
+    
+    var delegate: DataSendingDelegateProtocol? = nil
     
     // customize view
     func setView() {
@@ -31,4 +38,23 @@ class CompleteViewController: UIViewController {
         
     }
 
+    
+    //navigate
+    
+    @IBAction func backToSimulationlist(_sender: Any){
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    // delegate function waiting for clear database
+    @IBAction func toSimulationResult(_sender: Any){
+        if self.delegate != nil{
+//            let dataToBeSent = //object Interview
+//            self.delegate?.sendDataToDetailPage(myData: dataToBeSent!)
+//            dismiss(animated: true, completion: nil)
+        }
+        let detailVC = DetailPageViewController(nibName: "DetailPageViewController", bundle: nil)
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
+    
+    //receive data
 }
