@@ -147,8 +147,9 @@
 		219747EB26B0123100A81309 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				219747EC26B0125B00A81309 /* DaftarSimulasiViewController.swift */,
+				219747ED26B0125B00A81309 /* DaftarSimulasiViewController.xib */,
 				215847DA26B148A700CCBEC9 /* Simulasi Cell */,
-				219747FC26B0496A00A81309 /* WithData */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -166,15 +167,6 @@
 				217F467026B3B07400AE6AFA /* SimulasiDataManager.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		219747FC26B0496A00A81309 /* WithData */ = {
-			isa = PBXGroup;
-			children = (
-				219747EC26B0125B00A81309 /* DaftarSimulasiViewController.swift */,
-				219747ED26B0125B00A81309 /* DaftarSimulasiViewController.xib */,
-			);
-			path = WithData;
 			sourceTree = "<group>";
 		};
 		21CB53B426A99351005EB944 /* Features */ = {
