@@ -72,7 +72,7 @@
                 <outlet property="durasiSimulasiLbl" destination="3dD-1N-ADW" id="8sO-XJ-YDN"/>
                 <outlet property="imageSimulasi" destination="F6e-ae-Ja3" id="ZQ5-je-EKm"/>
                 <outlet property="tanggalSimulasiLbl" destination="COm-hM-Y15" id="bqf-XB-X6L"/>
-                <outlet property="viewSimulasiCell" destination="69K-1P-6RU" id="TNj-FW-0bz"/>
+                <outlet property="viewSimulasiCell" destination="69K-1P-6RU" id="ieW-R2-dOc"/>
                 <outlet property="waktuSimulasiLbl" destination="Rov-bc-7VQ" id="0ag-J2-TeH"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="145.98214285714286"/>
