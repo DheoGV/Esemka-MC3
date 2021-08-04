@@ -2,7 +2,7 @@
 //  InterviewEntity+CoreDataClass.swift
 //  Esmeka-MC3
 //
-//  Created by Dheo Gildas Varian on 30/07/21.
+//  Created by Christopher Teddy  on 04/08/21.
 //
 //
 
