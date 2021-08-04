@@ -20,6 +20,7 @@
 		21F1A75026A9475F00E6A1B5 /* Esmeka_MC3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21F1A74E26A9475F00E6A1B5 /* Esmeka_MC3.xcdatamodeld */; };
 		21F1A75226A9476000E6A1B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21F1A75126A9476000E6A1B5 /* Assets.xcassets */; };
 		21F1A75526A9476000E6A1B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21F1A75326A9476000E6A1B5 /* LaunchScreen.storyboard */; };
+		5218FE0A26BAD2540075D75F /* CNNEmotions.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5218FE0926BAD2540075D75F /* CNNEmotions.mlmodel */; };
 		52433A3326B7D37A0048C0D4 /* s1c1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 52433A3226B7D37A0048C0D4 /* s1c1.mp4 */; };
 		525204C726B00E0E006D6E98 /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525204C526B00E0E006D6E98 /* DetailPageViewController.swift */; };
 		525204C826B00E0E006D6E98 /* DetailPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525204C626B00E0E006D6E98 /* DetailPageViewController.xib */; };
@@ -41,7 +42,6 @@
 		52B678E126AA7F3A0080533A /* ScoreTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B678E026AA7F3A0080533A /* ScoreTypeModel.swift */; };
 		52B678E426AA8D270080533A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B678E226AA8D270080533A /* HomeViewController.swift */; };
 		52B678E526AA8D270080533A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52B678E326AA8D270080533A /* HomeViewController.xib */; };
-		52D051A726BA37FB00B47045 /* CNNEmotions.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 52D051A626BA37FB00B47045 /* CNNEmotions.mlmodel */; };
 		84B5E36026B25F9500FC9C09 /* BriefViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5E35D26B25F9500FC9C09 /* BriefViewController.swift */; };
 		84B5E36126B25F9500FC9C09 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5E35E26B25F9500FC9C09 /* ToggleButton.swift */; };
 		84B5E36226B25F9500FC9C09 /* BriefViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B5E35F26B25F9500FC9C09 /* BriefViewController.xib */; };
@@ -75,6 +75,7 @@
 		21F1A75126A9476000E6A1B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21F1A75426A9476000E6A1B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21F1A75626A9476000E6A1B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5218FE0926BAD2540075D75F /* CNNEmotions.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CNNEmotions.mlmodel; sourceTree = "<group>"; };
 		52433A3226B7D37A0048C0D4 /* s1c1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = s1c1.mp4; sourceTree = "<group>"; };
 		525204C526B00E0E006D6E98 /* DetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewController.swift; sourceTree = "<group>"; };
 		525204C626B00E0E006D6E98 /* DetailPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPageViewController.xib; sourceTree = "<group>"; };
@@ -96,7 +97,6 @@
 		52B678E026AA7F3A0080533A /* ScoreTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTypeModel.swift; sourceTree = "<group>"; };
 		52B678E226AA8D270080533A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		52B678E326AA8D270080533A /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		52D051A626BA37FB00B47045 /* CNNEmotions.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CNNEmotions.mlmodel; sourceTree = "<group>"; };
 		84B5E35D26B25F9500FC9C09 /* BriefViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BriefViewController.swift; sourceTree = "<group>"; };
 		84B5E35E26B25F9500FC9C09 /* ToggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
 		84B5E35F26B25F9500FC9C09 /* BriefViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BriefViewController.xib; sourceTree = "<group>"; };
@@ -498,7 +498,7 @@
 		D85D1AFB26B861FB00B8E806 /* MLModel */ = {
 			isa = PBXGroup;
 			children = (
-				52D051A626BA37FB00B47045 /* CNNEmotions.mlmodel */,
+				5218FE0926BAD2540075D75F /* CNNEmotions.mlmodel */,
 			);
 			path = MLModel;
 			sourceTree = "<group>";
@@ -603,6 +603,7 @@
 				525204CF26B01A75006D6E98 /* CustomButton.swift in Sources */,
 				52B678DF26AA7EB10080533A /* AssessmentModel.swift in Sources */,
 				525204D826B02A21006D6E98 /* ScoreTableViewCell.swift in Sources */,
+				5218FE0A26BAD2540075D75F /* CNNEmotions.mlmodel in Sources */,
 				84B5E37E26B395E400FC9C09 /* ColorLibrary.swift in Sources */,
 				21859E0C26B91C4B00117361 /* FaceEmotionsViewController.swift in Sources */,
 				52B678DD26AA7BCA0080533A /* InterviewModel.swift in Sources */,
@@ -610,7 +611,6 @@
 				52B678E126AA7F3A0080533A /* ScoreTypeModel.swift in Sources */,
 				21F1A74826A9475F00E6A1B5 /* SceneDelegate.swift in Sources */,
 				84B5E36C26B2600600FC9C09 /* CompleteViewController.swift in Sources */,
-				52D051A726BA37FB00B47045 /* CNNEmotions.mlmodel in Sources */,
 				217F467126B3B07400AE6AFA /* SimulasiDataManager.swift in Sources */,
 				52A8337D26BACC850010E3DA /* InterviewEntity+CoreDataProperties.swift in Sources */,
 				52B678DA26AA799D0080533A /* CoredataProvider.swift in Sources */,
