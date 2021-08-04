@@ -15,7 +15,10 @@ class BriefViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var ShowAgainSwitch: UISwitch!
     @IBOutlet weak var showAgainButton: UIButton!
- 
+    @IBAction func dada(_ sender: Any) {
+        navigationController?.pushViewController(InterviewSimulationViewController(nibName: InterviewSimulationViewController.identifier, bundle: nil), animated: true)
+    }
+    
     var briefInstructions : [BriefModel] = BriefModel.BriefData
     
     override func viewDidLoad() {
