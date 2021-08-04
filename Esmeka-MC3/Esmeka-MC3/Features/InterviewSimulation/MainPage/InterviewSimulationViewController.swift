@@ -65,6 +65,7 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
         inputFormat = audioEngine.inputNode.inputFormat(forBus: 0)
         analyzer = SNAudioStreamAnalyzer(format: inputFormat)
         super.viewDidLoad()
+        buttonSetup()
         setup()
         // Do any additional setup after loading the view.
     }
