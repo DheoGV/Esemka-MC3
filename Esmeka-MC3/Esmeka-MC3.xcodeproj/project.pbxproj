@@ -40,6 +40,7 @@
 		52D051A326B9C93E00B47045 /* AssessmentEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0519D26B9C93E00B47045 /* AssessmentEntity+CoreDataProperties.swift */; };
 		52D051A426B9C93E00B47045 /* InterviewEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0519E26B9C93E00B47045 /* InterviewEntity+CoreDataClass.swift */; };
 		52D051A526B9C93E00B47045 /* InterviewEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0519F26B9C93E00B47045 /* InterviewEntity+CoreDataProperties.swift */; };
+		52D051A726BA37FB00B47045 /* CNNEmotions.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 52D051A626BA37FB00B47045 /* CNNEmotions.mlmodel */; };
 		84B5E36026B25F9500FC9C09 /* BriefViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5E35D26B25F9500FC9C09 /* BriefViewController.swift */; };
 		84B5E36126B25F9500FC9C09 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5E35E26B25F9500FC9C09 /* ToggleButton.swift */; };
 		84B5E36226B25F9500FC9C09 /* BriefViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B5E35F26B25F9500FC9C09 /* BriefViewController.xib */; };
@@ -93,6 +94,7 @@
 		52D0519D26B9C93E00B47045 /* AssessmentEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AssessmentEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		52D0519E26B9C93E00B47045 /* InterviewEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterviewEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		52D0519F26B9C93E00B47045 /* InterviewEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterviewEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		52D051A626BA37FB00B47045 /* CNNEmotions.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CNNEmotions.mlmodel; sourceTree = "<group>"; };
 		84B5E35D26B25F9500FC9C09 /* BriefViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BriefViewController.swift; sourceTree = "<group>"; };
 		84B5E35E26B25F9500FC9C09 /* ToggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
 		84B5E35F26B25F9500FC9C09 /* BriefViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BriefViewController.xib; sourceTree = "<group>"; };
@@ -259,12 +261,6 @@
 		21F1A73926A9475F00E6A1B5 = {
 			isa = PBXGroup;
 			children = (
-				52D0519A26B9C93E00B47045 /* ScoreTypeEntity+CoreDataClass.swift */,
-				52D0519B26B9C93E00B47045 /* ScoreTypeEntity+CoreDataProperties.swift */,
-				52D0519C26B9C93E00B47045 /* AssessmentEntity+CoreDataClass.swift */,
-				52D0519D26B9C93E00B47045 /* AssessmentEntity+CoreDataProperties.swift */,
-				52D0519E26B9C93E00B47045 /* InterviewEntity+CoreDataClass.swift */,
-				52D0519F26B9C93E00B47045 /* InterviewEntity+CoreDataProperties.swift */,
 				21F1A74426A9475F00E6A1B5 /* Esmeka-MC3 */,
 				21F1A74326A9475F00E6A1B5 /* Products */,
 			);
@@ -377,6 +373,12 @@
 		52B678CB26AA71E70080533A /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				52D0519A26B9C93E00B47045 /* ScoreTypeEntity+CoreDataClass.swift */,
+				52D0519B26B9C93E00B47045 /* ScoreTypeEntity+CoreDataProperties.swift */,
+				52D0519C26B9C93E00B47045 /* AssessmentEntity+CoreDataClass.swift */,
+				52D0519D26B9C93E00B47045 /* AssessmentEntity+CoreDataProperties.swift */,
+				52D0519E26B9C93E00B47045 /* InterviewEntity+CoreDataClass.swift */,
+				52D0519F26B9C93E00B47045 /* InterviewEntity+CoreDataProperties.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -485,6 +487,7 @@
 		D85D1AFB26B861FB00B8E806 /* MLModel */ = {
 			isa = PBXGroup;
 			children = (
+				52D051A626BA37FB00B47045 /* CNNEmotions.mlmodel */,
 			);
 			path = MLModel;
 			sourceTree = "<group>";
@@ -597,6 +600,7 @@
 				84B5E36C26B2600600FC9C09 /* CompleteViewController.swift in Sources */,
 				52D051A026B9C93E00B47045 /* ScoreTypeEntity+CoreDataClass.swift in Sources */,
 				52D051A526B9C93E00B47045 /* InterviewEntity+CoreDataProperties.swift in Sources */,
+				52D051A726BA37FB00B47045 /* CNNEmotions.mlmodel in Sources */,
 				217F467126B3B07400AE6AFA /* SimulasiDataManager.swift in Sources */,
 				52D051A326B9C93E00B47045 /* AssessmentEntity+CoreDataProperties.swift in Sources */,
 				52B678DA26AA799D0080533A /* CoredataProvider.swift in Sources */,

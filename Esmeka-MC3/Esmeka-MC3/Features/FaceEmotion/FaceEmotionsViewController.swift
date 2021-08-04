@@ -8,7 +8,7 @@
 import UIKit
 import ARKit
 
-/*
+
 class FaceEmotionsViewController: UIViewController {
 
     @IBOutlet weak var sceneView: ARSCNView!
@@ -91,5 +91,5 @@ extension FaceEmotionsViewController: ARSCNViewDelegate{
     }
 }
 
- */
+ 
  
