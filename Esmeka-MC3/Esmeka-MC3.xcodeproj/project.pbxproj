@@ -12,7 +12,6 @@
 		217F467126B3B07400AE6AFA /* SimulasiDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217F467026B3B07400AE6AFA /* SimulasiDataManager.swift */; };
 		217F467826B3CD7F00AE6AFA /* InterviewEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217F467626B3CD7F00AE6AFA /* InterviewEntity+CoreDataClass.swift */; };
 		217F467926B3CD7F00AE6AFA /* InterviewEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217F467726B3CD7F00AE6AFA /* InterviewEntity+CoreDataProperties.swift */; };
-		21859E0926B9115600117361 /* CNNEmotions.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 21859E0826B9115600117361 /* CNNEmotions.mlmodel */; };
 		21859E0C26B91C4B00117361 /* FaceEmotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21859E0A26B91C4B00117361 /* FaceEmotionsViewController.swift */; };
 		21859E0D26B91C4B00117361 /* FaceEmotionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21859E0B26B91C4B00117361 /* FaceEmotionsViewController.xib */; };
 		219747EE26B0125B00A81309 /* DaftarSimulasiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219747EC26B0125B00A81309 /* DaftarSimulasiViewController.swift */; };
@@ -22,7 +21,6 @@
 		21F1A75026A9475F00E6A1B5 /* Esmeka_MC3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21F1A74E26A9475F00E6A1B5 /* Esmeka_MC3.xcdatamodeld */; };
 		21F1A75226A9476000E6A1B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21F1A75126A9476000E6A1B5 /* Assets.xcassets */; };
 		21F1A75526A9476000E6A1B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21F1A75326A9476000E6A1B5 /* LaunchScreen.storyboard */; };
-		21F5168326B2D4EA0004DDAB /* FaceEmotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F5168226B2D4EA0004DDAB /* FaceEmotionViewController.swift */; };
 		52433A3326B7D37A0048C0D4 /* s1c1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 52433A3226B7D37A0048C0D4 /* s1c1.mp4 */; };
 		525204C726B00E0E006D6E98 /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525204C526B00E0E006D6E98 /* DetailPageViewController.swift */; };
 		525204C826B00E0E006D6E98 /* DetailPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525204C626B00E0E006D6E98 /* DetailPageViewController.xib */; };
@@ -76,7 +74,6 @@
 		217F467026B3B07400AE6AFA /* SimulasiDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulasiDataManager.swift; sourceTree = "<group>"; };
 		217F467626B3CD7F00AE6AFA /* InterviewEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterviewEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		217F467726B3CD7F00AE6AFA /* InterviewEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterviewEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		21859E0826B9115600117361 /* CNNEmotions.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = CNNEmotions.mlmodel; path = ../../../../../CNNEmotions.mlmodel; sourceTree = "<group>"; };
 		21859E0A26B91C4B00117361 /* FaceEmotionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceEmotionsViewController.swift; sourceTree = "<group>"; };
 		21859E0B26B91C4B00117361 /* FaceEmotionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FaceEmotionsViewController.xib; sourceTree = "<group>"; };
 		219747EC26B0125B00A81309 /* DaftarSimulasiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaftarSimulasiViewController.swift; sourceTree = "<group>"; };
@@ -88,7 +85,6 @@
 		21F1A75126A9476000E6A1B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21F1A75426A9476000E6A1B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21F1A75626A9476000E6A1B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		21F5168226B2D4EA0004DDAB /* FaceEmotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceEmotionViewController.swift; sourceTree = "<group>"; };
 		52433A3226B7D37A0048C0D4 /* s1c1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = s1c1.mp4; sourceTree = "<group>"; };
 		525204C526B00E0E006D6E98 /* DetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewController.swift; sourceTree = "<group>"; };
 		525204C626B00E0E006D6E98 /* DetailPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPageViewController.xib; sourceTree = "<group>"; };
@@ -315,7 +311,6 @@
 		21F5168126B2D4BA0004DDAB /* FaceEmotion */ = {
 			isa = PBXGroup;
 			children = (
-				21859E0826B9115600117361 /* CNNEmotions.mlmodel */,
 				21859E0A26B91C4B00117361 /* FaceEmotionsViewController.swift */,
 				21859E0B26B91C4B00117361 /* FaceEmotionsViewController.xib */,
 			);
@@ -660,7 +655,6 @@
 				84B5E38826B42ACA00FC9C09 /* InterjectionClassifier.mlmodel in Sources */,
 				219747EE26B0125B00A81309 /* DaftarSimulasiViewController.swift in Sources */,
 				217F467826B3CD7F00AE6AFA /* InterviewEntity+CoreDataClass.swift in Sources */,
-				21859E0926B9115600117361 /* CNNEmotions.mlmodel in Sources */,
 				52B678D526AA79450080533A /* AssessmentEntity+CoreDataProperties.swift in Sources */,
 				21F1A75026A9475F00E6A1B5 /* Esmeka_MC3.xcdatamodeld in Sources */,
 				525204DE26B02A4E006D6E98 /* VideoTableViewCell.swift in Sources */,
