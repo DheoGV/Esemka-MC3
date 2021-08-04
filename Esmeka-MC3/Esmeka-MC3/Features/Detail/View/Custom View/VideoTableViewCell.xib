@@ -69,7 +69,7 @@
                 <outlet property="ivPlay" destination="8H1-xg-v5S" id="sSb-7f-Mqj"/>
                 <outlet property="ivThumbail" destination="tZ7-9j-c4A" id="G66-GP-ZSy"/>
                 <outlet property="lblVideo" destination="RVa-zs-dqZ" id="n9z-Nk-4km"/>
-                <outlet property="videoContainerView" destination="H2p-sc-9uM" id="UOo-pN-7Fr"/>
+                <outlet property="videoContainerView" destination="H2p-sc-9uM" id="XcA-CM-Ns9"/>
             </connections>
             <point key="canvasLocation" x="52.898550724637687" y="172.43303571428569"/>
         </tableViewCell>
