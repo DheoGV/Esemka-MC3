@@ -10,6 +10,9 @@
 		215847DD26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215847DB26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift */; };
 		215847DE26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 215847DC26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib */; };
 		217F467126B3B07400AE6AFA /* SimulasiDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217F467026B3B07400AE6AFA /* SimulasiDataManager.swift */; };
+
+		217F467826B3CD7F00AE6AFA /* InterviewEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217F467626B3CD7F00AE6AFA /* InterviewEntity+CoreDataClass.swift */; };
+		217F467926B3CD7F00AE6AFA /* InterviewEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217F467726B3CD7F00AE6AFA /* InterviewEntity+CoreDataProperties.swift */; };
 		21859E0C26B91C4B00117361 /* FaceEmotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21859E0A26B91C4B00117361 /* FaceEmotionsViewController.swift */; };
 		21859E0D26B91C4B00117361 /* FaceEmotionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21859E0B26B91C4B00117361 /* FaceEmotionsViewController.xib */; };
 		219747EE26B0125B00A81309 /* DaftarSimulasiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219747EC26B0125B00A81309 /* DaftarSimulasiViewController.swift */; };
@@ -62,6 +65,8 @@
 		215847DB26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulasiCollectionViewCell.swift; sourceTree = "<group>"; };
 		215847DC26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimulasiCollectionViewCell.xib; sourceTree = "<group>"; };
 		217F467026B3B07400AE6AFA /* SimulasiDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulasiDataManager.swift; sourceTree = "<group>"; };
+		217F467626B3CD7F00AE6AFA /* InterviewEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterviewEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		217F467726B3CD7F00AE6AFA /* InterviewEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterviewEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		21859E0A26B91C4B00117361 /* FaceEmotionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceEmotionsViewController.swift; sourceTree = "<group>"; };
 		21859E0B26B91C4B00117361 /* FaceEmotionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FaceEmotionsViewController.xib; sourceTree = "<group>"; };
 		219747EC26B0125B00A81309 /* DaftarSimulasiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaftarSimulasiViewController.swift; sourceTree = "<group>"; };
@@ -606,6 +611,11 @@
 				52B678DA26AA799D0080533A /* CoredataProvider.swift in Sources */,
 				84B5E36726B25FAE00FC9C09 /* BriefCell.swift in Sources */,
 				219747EE26B0125B00A81309 /* DaftarSimulasiViewController.swift in Sources */,
+
+
+				217F467826B3CD7F00AE6AFA /* InterviewEntity+CoreDataClass.swift in Sources */,
+				52B678D526AA79450080533A /* AssessmentEntity+CoreDataProperties.swift in Sources */,
+
 				21F1A75026A9475F00E6A1B5 /* Esmeka_MC3.xcdatamodeld in Sources */,
 				525204DE26B02A4E006D6E98 /* VideoTableViewCell.swift in Sources */,
 			);
