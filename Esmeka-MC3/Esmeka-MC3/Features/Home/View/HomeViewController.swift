@@ -18,6 +18,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        getSingleInterview(interviewId: 1)
     }
     
     //MARK:: Example to Insert the Data

@@ -10,9 +10,7 @@
 		215847DD26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215847DB26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift */; };
 		215847DE26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 215847DC26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib */; };
 		217F467126B3B07400AE6AFA /* SimulasiDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217F467026B3B07400AE6AFA /* SimulasiDataManager.swift */; };
-
 		217F467826B3CD7F00AE6AFA /* InterviewEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217F467626B3CD7F00AE6AFA /* InterviewEntity+CoreDataClass.swift */; };
-		217F467926B3CD7F00AE6AFA /* InterviewEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217F467726B3CD7F00AE6AFA /* InterviewEntity+CoreDataProperties.swift */; };
 		21859E0C26B91C4B00117361 /* FaceEmotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21859E0A26B91C4B00117361 /* FaceEmotionsViewController.swift */; };
 		21859E0D26B91C4B00117361 /* FaceEmotionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21859E0B26B91C4B00117361 /* FaceEmotionsViewController.xib */; };
 		219747EE26B0125B00A81309 /* DaftarSimulasiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219747EC26B0125B00A81309 /* DaftarSimulasiViewController.swift */; };
@@ -31,18 +29,18 @@
 		525204D926B02A21006D6E98 /* ScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525204D726B02A21006D6E98 /* ScoreTableViewCell.xib */; };
 		525204DE26B02A4E006D6E98 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525204DC26B02A4E006D6E98 /* VideoTableViewCell.swift */; };
 		525204DF26B02A4E006D6E98 /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525204DD26B02A4E006D6E98 /* VideoTableViewCell.xib */; };
+		52A8337A26BACC850010E3DA /* AssessmentEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8337426BACC850010E3DA /* AssessmentEntity+CoreDataClass.swift */; };
+		52A8337B26BACC850010E3DA /* AssessmentEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8337526BACC850010E3DA /* AssessmentEntity+CoreDataProperties.swift */; };
+		52A8337C26BACC850010E3DA /* InterviewEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8337626BACC850010E3DA /* InterviewEntity+CoreDataClass.swift */; };
+		52A8337D26BACC850010E3DA /* InterviewEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8337726BACC850010E3DA /* InterviewEntity+CoreDataProperties.swift */; };
+		52A8337E26BACC850010E3DA /* ScoreTypeEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8337826BACC850010E3DA /* ScoreTypeEntity+CoreDataClass.swift */; };
+		52A8337F26BACC850010E3DA /* ScoreTypeEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A8337926BACC850010E3DA /* ScoreTypeEntity+CoreDataProperties.swift */; };
 		52B678DA26AA799D0080533A /* CoredataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B678D926AA799D0080533A /* CoredataProvider.swift */; };
 		52B678DD26AA7BCA0080533A /* InterviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B678DC26AA7BCA0080533A /* InterviewModel.swift */; };
 		52B678DF26AA7EB10080533A /* AssessmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B678DE26AA7EB10080533A /* AssessmentModel.swift */; };
 		52B678E126AA7F3A0080533A /* ScoreTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B678E026AA7F3A0080533A /* ScoreTypeModel.swift */; };
 		52B678E426AA8D270080533A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B678E226AA8D270080533A /* HomeViewController.swift */; };
 		52B678E526AA8D270080533A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52B678E326AA8D270080533A /* HomeViewController.xib */; };
-		52D051A026B9C93E00B47045 /* ScoreTypeEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0519A26B9C93E00B47045 /* ScoreTypeEntity+CoreDataClass.swift */; };
-		52D051A126B9C93E00B47045 /* ScoreTypeEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0519B26B9C93E00B47045 /* ScoreTypeEntity+CoreDataProperties.swift */; };
-		52D051A226B9C93E00B47045 /* AssessmentEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0519C26B9C93E00B47045 /* AssessmentEntity+CoreDataClass.swift */; };
-		52D051A326B9C93E00B47045 /* AssessmentEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0519D26B9C93E00B47045 /* AssessmentEntity+CoreDataProperties.swift */; };
-		52D051A426B9C93E00B47045 /* InterviewEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0519E26B9C93E00B47045 /* InterviewEntity+CoreDataClass.swift */; };
-		52D051A526B9C93E00B47045 /* InterviewEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0519F26B9C93E00B47045 /* InterviewEntity+CoreDataProperties.swift */; };
 		52D051A726BA37FB00B47045 /* CNNEmotions.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 52D051A626BA37FB00B47045 /* CNNEmotions.mlmodel */; };
 		84B5E36026B25F9500FC9C09 /* BriefViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5E35D26B25F9500FC9C09 /* BriefViewController.swift */; };
 		84B5E36126B25F9500FC9C09 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5E35E26B25F9500FC9C09 /* ToggleButton.swift */; };
@@ -66,7 +64,6 @@
 		215847DC26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimulasiCollectionViewCell.xib; sourceTree = "<group>"; };
 		217F467026B3B07400AE6AFA /* SimulasiDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulasiDataManager.swift; sourceTree = "<group>"; };
 		217F467626B3CD7F00AE6AFA /* InterviewEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterviewEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		217F467726B3CD7F00AE6AFA /* InterviewEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterviewEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		21859E0A26B91C4B00117361 /* FaceEmotionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceEmotionsViewController.swift; sourceTree = "<group>"; };
 		21859E0B26B91C4B00117361 /* FaceEmotionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FaceEmotionsViewController.xib; sourceTree = "<group>"; };
 		219747EC26B0125B00A81309 /* DaftarSimulasiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaftarSimulasiViewController.swift; sourceTree = "<group>"; };
@@ -87,18 +84,18 @@
 		525204D726B02A21006D6E98 /* ScoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreTableViewCell.xib; sourceTree = "<group>"; };
 		525204DC26B02A4E006D6E98 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		525204DD26B02A4E006D6E98 /* VideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
+		52A8337426BACC850010E3DA /* AssessmentEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AssessmentEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		52A8337526BACC850010E3DA /* AssessmentEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AssessmentEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		52A8337626BACC850010E3DA /* InterviewEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterviewEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		52A8337726BACC850010E3DA /* InterviewEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterviewEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		52A8337826BACC850010E3DA /* ScoreTypeEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScoreTypeEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		52A8337926BACC850010E3DA /* ScoreTypeEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScoreTypeEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		52B678D926AA799D0080533A /* CoredataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoredataProvider.swift; sourceTree = "<group>"; };
 		52B678DC26AA7BCA0080533A /* InterviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewModel.swift; sourceTree = "<group>"; };
 		52B678DE26AA7EB10080533A /* AssessmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentModel.swift; sourceTree = "<group>"; };
 		52B678E026AA7F3A0080533A /* ScoreTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTypeModel.swift; sourceTree = "<group>"; };
 		52B678E226AA8D270080533A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		52B678E326AA8D270080533A /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		52D0519A26B9C93E00B47045 /* ScoreTypeEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScoreTypeEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		52D0519B26B9C93E00B47045 /* ScoreTypeEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScoreTypeEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		52D0519C26B9C93E00B47045 /* AssessmentEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AssessmentEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		52D0519D26B9C93E00B47045 /* AssessmentEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AssessmentEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		52D0519E26B9C93E00B47045 /* InterviewEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterviewEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		52D0519F26B9C93E00B47045 /* InterviewEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterviewEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		52D051A626BA37FB00B47045 /* CNNEmotions.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CNNEmotions.mlmodel; sourceTree = "<group>"; };
 		84B5E35D26B25F9500FC9C09 /* BriefViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BriefViewController.swift; sourceTree = "<group>"; };
 		84B5E35E26B25F9500FC9C09 /* ToggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
@@ -266,8 +263,15 @@
 		21F1A73926A9475F00E6A1B5 = {
 			isa = PBXGroup;
 			children = (
+				52A8337426BACC850010E3DA /* AssessmentEntity+CoreDataClass.swift */,
+				52A8337526BACC850010E3DA /* AssessmentEntity+CoreDataProperties.swift */,
+				52A8337626BACC850010E3DA /* InterviewEntity+CoreDataClass.swift */,
+				52A8337726BACC850010E3DA /* InterviewEntity+CoreDataProperties.swift */,
+				52A8337826BACC850010E3DA /* ScoreTypeEntity+CoreDataClass.swift */,
+				52A8337926BACC850010E3DA /* ScoreTypeEntity+CoreDataProperties.swift */,
 				21F1A74426A9475F00E6A1B5 /* Esmeka-MC3 */,
 				21F1A74326A9475F00E6A1B5 /* Products */,
+				52A8336726BACAD10010E3DA /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -364,6 +368,14 @@
 			path = Button;
 			sourceTree = "<group>";
 		};
+		52A8336726BACAD10010E3DA /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				217F467626B3CD7F00AE6AFA /* InterviewEntity+CoreDataClass.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		52B678CA26AA71B20080533A /* Local */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,12 +390,6 @@
 		52B678CB26AA71E70080533A /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				52D0519A26B9C93E00B47045 /* ScoreTypeEntity+CoreDataClass.swift */,
-				52D0519B26B9C93E00B47045 /* ScoreTypeEntity+CoreDataProperties.swift */,
-				52D0519C26B9C93E00B47045 /* AssessmentEntity+CoreDataClass.swift */,
-				52D0519D26B9C93E00B47045 /* AssessmentEntity+CoreDataProperties.swift */,
-				52D0519E26B9C93E00B47045 /* InterviewEntity+CoreDataClass.swift */,
-				52D0519F26B9C93E00B47045 /* InterviewEntity+CoreDataProperties.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -582,10 +588,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				525204C726B00E0E006D6E98 /* DetailPageViewController.swift in Sources */,
+				52A8337F26BACC850010E3DA /* ScoreTypeEntity+CoreDataProperties.swift in Sources */,
 				84B5E36F26B260BD00FC9C09 /* BriefInstructionModel.swift in Sources */,
-				52D051A426B9C93E00B47045 /* InterviewEntity+CoreDataClass.swift in Sources */,
-				52D051A226B9C93E00B47045 /* AssessmentEntity+CoreDataClass.swift in Sources */,
+				52A8337C26BACC850010E3DA /* InterviewEntity+CoreDataClass.swift in Sources */,
+				52A8337A26BACC850010E3DA /* AssessmentEntity+CoreDataClass.swift in Sources */,
 				D85D1AF926B8612200B8E806 /* scoreType.swift in Sources */,
+				52A8337E26BACC850010E3DA /* ScoreTypeEntity+CoreDataClass.swift in Sources */,
 				84B5E36026B25F9500FC9C09 /* BriefViewController.swift in Sources */,
 				84B5E37A26B3953700FC9C09 /* PromptQuestionView.swift in Sources */,
 				84B5E36126B25F9500FC9C09 /* ToggleButton.swift in Sources */,
@@ -593,7 +601,6 @@
 				215847DD26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift in Sources */,
 				84B5E37626B3952D00FC9C09 /* InterviewSimulationViewController.swift in Sources */,
 				525204CF26B01A75006D6E98 /* CustomButton.swift in Sources */,
-				52D051A126B9C93E00B47045 /* ScoreTypeEntity+CoreDataProperties.swift in Sources */,
 				52B678DF26AA7EB10080533A /* AssessmentModel.swift in Sources */,
 				525204D826B02A21006D6E98 /* ScoreTableViewCell.swift in Sources */,
 				84B5E37E26B395E400FC9C09 /* ColorLibrary.swift in Sources */,
@@ -603,19 +610,14 @@
 				52B678E126AA7F3A0080533A /* ScoreTypeModel.swift in Sources */,
 				21F1A74826A9475F00E6A1B5 /* SceneDelegate.swift in Sources */,
 				84B5E36C26B2600600FC9C09 /* CompleteViewController.swift in Sources */,
-				52D051A026B9C93E00B47045 /* ScoreTypeEntity+CoreDataClass.swift in Sources */,
-				52D051A526B9C93E00B47045 /* InterviewEntity+CoreDataProperties.swift in Sources */,
 				52D051A726BA37FB00B47045 /* CNNEmotions.mlmodel in Sources */,
 				217F467126B3B07400AE6AFA /* SimulasiDataManager.swift in Sources */,
-				52D051A326B9C93E00B47045 /* AssessmentEntity+CoreDataProperties.swift in Sources */,
+				52A8337D26BACC850010E3DA /* InterviewEntity+CoreDataProperties.swift in Sources */,
 				52B678DA26AA799D0080533A /* CoredataProvider.swift in Sources */,
+				52A8337B26BACC850010E3DA /* AssessmentEntity+CoreDataProperties.swift in Sources */,
 				84B5E36726B25FAE00FC9C09 /* BriefCell.swift in Sources */,
 				219747EE26B0125B00A81309 /* DaftarSimulasiViewController.swift in Sources */,
-
-
 				217F467826B3CD7F00AE6AFA /* InterviewEntity+CoreDataClass.swift in Sources */,
-				52B678D526AA79450080533A /* AssessmentEntity+CoreDataProperties.swift in Sources */,
-
 				21F1A75026A9475F00E6A1B5 /* Esmeka_MC3.xcdatamodeld in Sources */,
 				525204DE26B02A4E006D6E98 /* VideoTableViewCell.swift in Sources */,
 			);
