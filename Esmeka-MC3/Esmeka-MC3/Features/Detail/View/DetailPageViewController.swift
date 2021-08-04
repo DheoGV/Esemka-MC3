@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVKit
 
 struct Score {
     var score: Int?
@@ -16,14 +17,14 @@ struct Video {
     var imageURL: String
 }
 
-class DetailPageViewController: UIViewController {
+class DetailPageViewController: UIViewController{
     
     @IBOutlet weak var tvDetail: UITableView!
     @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var btnFinish: UIButton!
     
     let dateCurrent = Date()
-
+    
     let sections:[String] = ["Nilai Simulasi","","","", "Rekaman Simulasi"]
     let dataScore3: [[Score]] = [[
                                     Score(score: 81, colorCell: UIColor(red: 0.11, green: 0.44, blue: 0.53, alpha: 1.00))],
@@ -129,10 +130,14 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: "videocell") as! VideoTableViewCell
             cell.ivThumbail.image = UIImage(named: dataSimulasi[0][indexPath.row].imageURL)
             
+            cell.videoDelegate = self
+            
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "videocell") as! VideoTableViewCell
             cell.ivThumbail.image = UIImage(named: dataSimulasi[0][indexPath.row].imageURL)
+            
+            cell.videoDelegate = self
             
             return cell
         }
@@ -159,7 +164,7 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
         } else {
             return 24
         }
-       
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -179,7 +184,7 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
         } else {
             let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tvDetail.frame.size.width, height: 0))
             footerView.backgroundColor = UIColor(red: 0.98, green: 0.98, blue: 0.98, alpha: 1.00)
-
+            
             return footerView
         }
     }
@@ -191,5 +196,34 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
             return  3
         }
     }
-   
+    
+}
+
+extension DetailPageViewController : VideoProtocolDelegate {
+    func playVideo() {
+       print("TEST")
+        if let path = Bundle.main.path(forResource: "s1c1", ofType: "mp4") {
+            let video = AVPlayer(url: URL(fileURLWithPath: path))
+            let videoPlayerController = AVPlayerViewController()
+            videoPlayerController.player = video
+            
+            present(videoPlayerController, animated: true) {
+                video.play()
+            }
+        }
+    }
+}
+
+extension DetailPageViewController: DataSendingDelegateProtocol{
+    //function from protocoldelegate
+    func sendDataToDetailPage() {
+       //
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "getDataSegue" {
+//            let secondVC: SecondViewController = segue.destination as! SecondViewController
+//            secondVC.delegate = self
+//        }
+    }
+    
 }

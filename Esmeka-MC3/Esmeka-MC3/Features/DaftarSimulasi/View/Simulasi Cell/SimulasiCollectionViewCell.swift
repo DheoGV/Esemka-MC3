@@ -15,6 +15,7 @@ class SimulasiCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var tanggalSimulasiLbl: UILabel!
     @IBOutlet weak var durasiSimulasiLbl: UILabel!
     
+    var didClick: (() -> ())?
     static let identifier = "SimulasiCollectionViewCell"
     
     
@@ -24,6 +25,8 @@ class SimulasiCollectionViewCell: UICollectionViewCell {
                 waktuSimulasiLbl.text = "Test AM "
                 tanggalSimulasiLbl.text = "\(filled.interviewDate)"
                 durasiSimulasiLbl.text = "\(filled.duration) Menit "
+                let tap = UITapGestureRecognizer(target: self, action: #selector(self.simulasiPressed(_:)))
+                viewSimulasiCell.addGestureRecognizer(tap)
             }
         }
     }
@@ -35,6 +38,10 @@ class SimulasiCollectionViewCell: UICollectionViewCell {
     
     static func nib() -> UINib {
         return UINib(nibName: "SimulasiCollectionViewCell", bundle: nil)
+    }
+    
+    @objc func simulasiPressed(_: UITapGestureRecognizer) {
+        didClick?()
     }
 
 }
