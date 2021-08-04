@@ -53,6 +53,9 @@
 		84B5E37A26B3953700FC9C09 /* PromptQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5E37826B3953700FC9C09 /* PromptQuestionView.swift */; };
 		84B5E37B26B3953700FC9C09 /* PromptQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B5E37926B3953700FC9C09 /* PromptQuestionView.xib */; };
 		84B5E37E26B395E400FC9C09 /* ColorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5E37D26B395E400FC9C09 /* ColorLibrary.swift */; };
+		84C4BB2C26BAA7B6007FE5ED /* ExtensionVoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4BB2B26BAA7B6007FE5ED /* ExtensionVoice.swift */; };
+		84C4BB2E26BAA843007FE5ED /* SoundEmotionClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 84C4BB2D26BAA843007FE5ED /* SoundEmotionClassifier.mlmodel */; };
+		84C4BB3026BAA85C007FE5ED /* InterjectionClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 84C4BB2F26BAA85C007FE5ED /* InterjectionClassifier.mlmodel */; };
 		D85D1AF726B39A6400B8E806 /* VoiceSegregation in Resources */ = {isa = PBXBuildFile; fileRef = D85D1AF626B39A6400B8E806 /* VoiceSegregation */; };
 		D85D1AF926B8612200B8E806 /* scoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85D1AF826B8612200B8E806 /* scoreType.swift */; };
 /* End PBXBuildFile section */
@@ -106,6 +109,9 @@
 		84B5E37826B3953700FC9C09 /* PromptQuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptQuestionView.swift; sourceTree = "<group>"; };
 		84B5E37926B3953700FC9C09 /* PromptQuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PromptQuestionView.xib; sourceTree = "<group>"; };
 		84B5E37D26B395E400FC9C09 /* ColorLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorLibrary.swift; sourceTree = "<group>"; };
+		84C4BB2B26BAA7B6007FE5ED /* ExtensionVoice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionVoice.swift; sourceTree = "<group>"; };
+		84C4BB2D26BAA843007FE5ED /* SoundEmotionClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SoundEmotionClassifier.mlmodel; sourceTree = "<group>"; };
+		84C4BB2F26BAA85C007FE5ED /* InterjectionClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = InterjectionClassifier.mlmodel; sourceTree = "<group>"; };
 		D85D1AF626B39A6400B8E806 /* VoiceSegregation */ = {isa = PBXFileReference; lastKnownFileType = folder; path = VoiceSegregation; sourceTree = "<group>"; };
 		D85D1AF826B8612200B8E806 /* scoreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scoreType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -452,8 +458,11 @@
 		84B5E37226B394F300FC9C09 /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
+				84C4BB2D26BAA843007FE5ED /* SoundEmotionClassifier.mlmodel */,
 				84B5E37426B3952D00FC9C09 /* InterviewSimulationViewController.swift */,
+				84C4BB2F26BAA85C007FE5ED /* InterjectionClassifier.mlmodel */,
 				84B5E37526B3952D00FC9C09 /* InterviewSimulationViewController.xib */,
+				84C4BB2B26BAA7B6007FE5ED /* ExtensionVoice.swift */,
 			);
 			path = MainPage;
 			sourceTree = "<group>";
@@ -575,6 +584,7 @@
 			files = (
 				525204C726B00E0E006D6E98 /* DetailPageViewController.swift in Sources */,
 				84B5E36F26B260BD00FC9C09 /* BriefInstructionModel.swift in Sources */,
+				84C4BB2C26BAA7B6007FE5ED /* ExtensionVoice.swift in Sources */,
 				D85D1AF926B8612200B8E806 /* scoreType.swift in Sources */,
 				84B5E36026B25F9500FC9C09 /* BriefViewController.swift in Sources */,
 				84B5E37A26B3953700FC9C09 /* PromptQuestionView.swift in Sources */,
@@ -602,8 +612,10 @@
 				217F467826B3CD7F00AE6AFA /* InterviewEntity+CoreDataClass.swift in Sources */,
 				52B678D526AA79450080533A /* AssessmentEntity+CoreDataProperties.swift in Sources */,
 				21F1A75026A9475F00E6A1B5 /* Esmeka_MC3.xcdatamodeld in Sources */,
+				84C4BB2E26BAA843007FE5ED /* SoundEmotionClassifier.mlmodel in Sources */,
 				525204DE26B02A4E006D6E98 /* VideoTableViewCell.swift in Sources */,
 				217F467926B3CD7F00AE6AFA /* InterviewEntity+CoreDataProperties.swift in Sources */,
+				84C4BB3026BAA85C007FE5ED /* InterjectionClassifier.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
