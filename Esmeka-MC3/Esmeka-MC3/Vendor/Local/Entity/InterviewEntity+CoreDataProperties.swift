@@ -2,7 +2,7 @@
 //  InterviewEntity+CoreDataProperties.swift
 //  Esmeka-MC3
 //
-//  Created by Dheo Gildas Varian on 30/07/21.
+//  Created by Christopher Teddy  on 04/08/21.
 //
 //
 
@@ -19,7 +19,6 @@ extension InterviewEntity {
     @NSManaged public var interview_date: Date?
     @NSManaged public var interview_duration: Int32
     @NSManaged public var interview_id: Int32
-    @NSManaged public var interview_title: String?
     @NSManaged public var interview_video_url_path: String?
     @NSManaged public var assessments: NSSet?
     @NSManaged public var scores: NSSet?
