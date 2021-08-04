@@ -72,6 +72,12 @@ extension DaftarSimulasiViewController: UICollectionViewDataSource, UICollection
         cell.simulasi = self.simulasiData?[indexPath.row]
         cell.layer.cornerRadius = 10
         
+        cell.didClick = { [weak self] in
+            let simulasiDetailVC = DetailPageViewController(nibName: "DetaiilPageViewController", bundle: nil)
+            
+            self?.navigationController?.pushViewController(simulasiDetailVC, animated: true)
+        }
+        
         return cell
     }
     
