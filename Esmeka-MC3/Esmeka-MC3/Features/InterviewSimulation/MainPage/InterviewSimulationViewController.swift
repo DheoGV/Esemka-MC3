@@ -15,7 +15,6 @@ struct Coordinate {
     var y: Int
 }
 
-class InterviewSimulationViewController: UIViewController {
 class InterviewSimulationViewController: UIViewController, SegregationClassifierDelegate, EmotionClassifierDelegate {
     
     func countEmotionParameter(identifier: String, confidence: Double) {
