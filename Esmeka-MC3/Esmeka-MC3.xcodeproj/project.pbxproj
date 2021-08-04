@@ -54,6 +54,10 @@
 		84B5E37A26B3953700FC9C09 /* PromptQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5E37826B3953700FC9C09 /* PromptQuestionView.swift */; };
 		84B5E37B26B3953700FC9C09 /* PromptQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B5E37926B3953700FC9C09 /* PromptQuestionView.xib */; };
 		84B5E37E26B395E400FC9C09 /* ColorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5E37D26B395E400FC9C09 /* ColorLibrary.swift */; };
+		84C4BB3A26BAD011007FE5ED /* InterjectionClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 84C4BB3826BAD011007FE5ED /* InterjectionClassifier.mlmodel */; };
+		84C4BB3B26BAD011007FE5ED /* SoundEmotionClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 84C4BB3926BAD011007FE5ED /* SoundEmotionClassifier.mlmodel */; };
+		84C4BB3D26BAD0CF007FE5ED /* ExtensionVoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4BB3C26BAD0CF007FE5ED /* ExtensionVoice.swift */; };
+		84C4BB4126BAD215007FE5ED /* ResultObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4BB4026BAD215007FE5ED /* ResultObserver.swift */; };
 		D85D1AF726B39A6400B8E806 /* VoiceSegregation in Resources */ = {isa = PBXBuildFile; fileRef = D85D1AF626B39A6400B8E806 /* VoiceSegregation */; };
 		D85D1AF926B8612200B8E806 /* scoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85D1AF826B8612200B8E806 /* scoreType.swift */; };
 /* End PBXBuildFile section */
@@ -108,6 +112,10 @@
 		84B5E37826B3953700FC9C09 /* PromptQuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptQuestionView.swift; sourceTree = "<group>"; };
 		84B5E37926B3953700FC9C09 /* PromptQuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PromptQuestionView.xib; sourceTree = "<group>"; };
 		84B5E37D26B395E400FC9C09 /* ColorLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorLibrary.swift; sourceTree = "<group>"; };
+		84C4BB3826BAD011007FE5ED /* InterjectionClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = InterjectionClassifier.mlmodel; sourceTree = "<group>"; };
+		84C4BB3926BAD011007FE5ED /* SoundEmotionClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SoundEmotionClassifier.mlmodel; sourceTree = "<group>"; };
+		84C4BB3C26BAD0CF007FE5ED /* ExtensionVoice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionVoice.swift; sourceTree = "<group>"; };
+		84C4BB4026BAD215007FE5ED /* ResultObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultObserver.swift; sourceTree = "<group>"; };
 		D85D1AF626B39A6400B8E806 /* VoiceSegregation */ = {isa = PBXFileReference; lastKnownFileType = folder; path = VoiceSegregation; sourceTree = "<group>"; };
 		D85D1AF826B8612200B8E806 /* scoreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scoreType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -403,6 +411,8 @@
 		52B678DB26AA7BBC0080533A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				84C4BB3826BAD011007FE5ED /* InterjectionClassifier.mlmodel */,
+				84C4BB3926BAD011007FE5ED /* SoundEmotionClassifier.mlmodel */,
 				D85D1AFB26B861FB00B8E806 /* MLModel */,
 				D85D1AFA26B861E500B8E806 /* Data */,
 				52B678DC26AA7BCA0080533A /* InterviewModel.swift */,
@@ -454,6 +464,7 @@
 			isa = PBXGroup;
 			children = (
 				21B3B80626BAC9610021D94C /* FaceAndEyeTracking */,
+				84C4BB3726BACBAB007FE5ED /* VoiceMechanism */,
 				84B5E37326B3951800FC9C09 /* PromptQuestionView */,
 				84B5E37226B394F300FC9C09 /* MainPage */,
 			);
@@ -484,6 +495,15 @@
 				84B5E37D26B395E400FC9C09 /* ColorLibrary.swift */,
 			);
 			path = Color;
+			sourceTree = "<group>";
+		};
+		84C4BB3726BACBAB007FE5ED /* VoiceMechanism */ = {
+			isa = PBXGroup;
+			children = (
+				84C4BB3C26BAD0CF007FE5ED /* ExtensionVoice.swift */,
+				84C4BB4026BAD215007FE5ED /* ResultObserver.swift */,
+			);
+			path = VoiceMechanism;
 			sourceTree = "<group>";
 		};
 		D85D1AFA26B861E500B8E806 /* Data */ = {
@@ -593,6 +613,8 @@
 				84B5E36126B25F9500FC9C09 /* ToggleButton.swift in Sources */,
 				21F1A74626A9475F00E6A1B5 /* AppDelegate.swift in Sources */,
 				215847DD26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift in Sources */,
+				84C4BB4126BAD215007FE5ED /* ResultObserver.swift in Sources */,
+				84C4BB3A26BAD011007FE5ED /* InterjectionClassifier.mlmodel in Sources */,
 				84B5E37626B3952D00FC9C09 /* InterviewSimulationViewController.swift in Sources */,
 				525204CF26B01A75006D6E98 /* CustomButton.swift in Sources */,
 				21B3B80826BAC9C30021D94C /* FaceAndEyeTracking.swift in Sources */,
@@ -602,6 +624,7 @@
 				21859E0C26B91C4B00117361 /* FaceEmotionsViewController.swift in Sources */,
 				52B678DD26AA7BCA0080533A /* InterviewModel.swift in Sources */,
 				52B678E426AA8D270080533A /* HomeViewController.swift in Sources */,
+				84C4BB3D26BAD0CF007FE5ED /* ExtensionVoice.swift in Sources */,
 				52B678E126AA7F3A0080533A /* ScoreTypeModel.swift in Sources */,
 				52B678D426AA79450080533A /* AssessmentEntity+CoreDataClass.swift in Sources */,
 				21F1A74826A9475F00E6A1B5 /* SceneDelegate.swift in Sources */,
@@ -614,6 +637,7 @@
 				217F467826B3CD7F00AE6AFA /* InterviewEntity+CoreDataClass.swift in Sources */,
 				52B678D526AA79450080533A /* AssessmentEntity+CoreDataProperties.swift in Sources */,
 				21F1A75026A9475F00E6A1B5 /* Esmeka_MC3.xcdatamodeld in Sources */,
+				84C4BB3B26BAD011007FE5ED /* SoundEmotionClassifier.mlmodel in Sources */,
 				525204DE26B02A4E006D6E98 /* VideoTableViewCell.swift in Sources */,
 				217F467926B3CD7F00AE6AFA /* InterviewEntity+CoreDataProperties.swift in Sources */,
 			);
