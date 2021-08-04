@@ -7,35 +7,111 @@
 
 import UIKit
 import ARKit
+import AVFoundation
+import SoundAnalysis
 
-class InterviewSimulationViewController: UIViewController {
+struct Coordinate {
+    var x: Int
+    var y: Int
+}
+
+class InterviewSimulationViewController: UIViewController, SegregationClassifierDelegate, EmotionClassifierDelegate {
+    
+    func countEmotionParameter(identifier: String, confidence: Double) {
+        DispatchQueue.main.async {
+                   if self.keepCounting{
+                       self.totalEmotions += 1
+                    self.binaryEmotions[self.availableEmotions[identifier]!]! += 1
+                  
+            }
+            print("Output Voice Emotion : ", self.totalEmotions)
+        }
+    }
+    
     @IBOutlet weak var scene: ARSCNView!
     @IBOutlet weak var recordButton: UIButton!
+    @IBAction func startRecordingAction(_ sender: Any) {
+        
+    }
+    
+    //Face Emotion
+    //private let model = try! VNCoreMLModel(for: CNNEmotions().model)
+    var totalEmotion = 0
+    var goodEmotion = 0
+    var faceEmotionScore:Int = 0
+    
+    //EyeTracking
+    var listOfCoordinate:[Coordinate] = []
+    var listOfCoordinateTemp:[Coordinate] = []
+    var countFrameRenderer = 0
+    let globalQueue = DispatchQueue.global(qos: .default)
+    var countMiss = 0
+    var countMissInSecond = 0
+    var countMissFrameRenderer = 0
+    
+//    VOICE
+    var segregationObserver = SegregationObserver()
+    var emotionObserver = EmotionObserver()
+    let audioEngine = AVAudioEngine()
+    let voiceSegregetion = InterjectionClassifier()
+    let voiceEmotion = SoundEmotionClassifier()
+    var inputFormat : AVAudioFormat!
+    var analyzer: SNAudioStreamAnalyzer!
+    let analysisQueue = DispatchQueue(label: "com.custom.AnalysisQueue")
+    var audioOn = false
+    var interjection = 0
+    var keepCounting = true
+    //--------------- Voice Analyzer Variable --------------
+    // -------------------- Timer -------------------------
+    var timerTimeNow : Double = 0
+    var timerToMinute : Double = 0
+    var timer : Timer?
+    
+    var isStart : Bool = false
+    var idealInterjectionNumber : Double = 0
+    var outputInterjection : Double = 0
+    //    ----------------Voice Emotion ----------------
+    var availableEmotions : [String : String] = ["angry":"bad", "disgust":"bad", "fear":"bad", "happy":"good", "neutral":"good", "ps":"good", "sad":"bad"]
+    var totalEmotions = 0
+    var binaryEmotions:[String: Int] = ["good":0, "bad":0]
+    var voiceEmotionScore:Int = 0
+    // ---------------------------------------------------
     
     var isRecording = false
     
     override func viewDidLoad() {
+        segregationObserver.delegate = self
+        emotionObserver.delegate = self
+        inputFormat = audioEngine.inputNode.inputFormat(forBus: 0)
+        analyzer = SNAudioStreamAnalyzer(format: inputFormat)
         super.viewDidLoad()
+        buttonSetup()
         setup()
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        let config = ARFaceTrackingConfiguration()
+        scene.session.run(config)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        scene.session.pause()
     }
     
     func setup() {
         guard ARWorldTrackingConfiguration.isSupported else { return }
         scene.delegate = self
+        scene.showsStatistics = true
+        scene.session.run(ARFaceTrackingConfiguration(), options: [.resetTracking, .removeExistingAnchors])
         scene.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
     //        scene.showsStatistics = true
         buttonSetup()
     }
+    
     func buttonSetup(){
         recordButton.layer.cornerRadius = recordButton.frame.height / 2
         recordButton.backgroundColor = UIColor.ColorLibrary.blueAccent
@@ -55,23 +131,33 @@ class InterviewSimulationViewController: UIViewController {
         
     }
     
+    func saveFaceEmotionScore() {
+        faceEmotionScore = Int(goodEmotion * 100 / totalEmotion)
+        //save to core data
+    }
+    
+    
     ///MARK: set it to @IBAction, and add appropriate functions
     @IBAction func recordButtonTapped(_sender: Any){
-        if !isRecording{
-            isRecording = true
+        if isStart {
+            removeAudioEngine()
+           toCompletedPage()
+            
+        } else {
             recordButton.backgroundColor = .white
             recordButton.tintColor = UIColor.ColorLibrary.blueAccent
             recordButton.setImage(UIImage(systemName: "square.fill"), for: .normal)
             
-            startTimerView()
             callPromptWindow()
             startRecording()
+            //          Call this : VOICE
+            startAudioEngine()
+            
         }
-        else{
-            isRecording = false
-            stopRecording()
-            toCompletedPage()
-        }
+        isStart = !isStart
+        //        Call this : VOICE
+        calculateOutputInterjection()
+        timerInterview()
         
     }
     
@@ -94,4 +180,4 @@ class InterviewSimulationViewController: UIViewController {
     
 }
 
-extension InterviewSimulationViewController: ARSCNViewDelegate{}
+
