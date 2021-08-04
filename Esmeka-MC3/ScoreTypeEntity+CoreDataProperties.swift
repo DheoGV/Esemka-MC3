@@ -2,7 +2,7 @@
 //  ScoreTypeEntity+CoreDataProperties.swift
 //  Esmeka-MC3
 //
-//  Created by Christopher Teddy  on 23/07/21.
+//  Created by Christopher Teddy  on 04/08/21.
 //
 //
 
@@ -16,7 +16,6 @@ extension ScoreTypeEntity {
         return NSFetchRequest<ScoreTypeEntity>(entityName: "ScoreTypeEntity")
     }
 
-    @NSManaged public var score_type_id: Int32
     @NSManaged public var score_type_name: String?
     @NSManaged public var score_value: Int32
     @NSManaged public var ofInterviewScores: InterviewEntity?

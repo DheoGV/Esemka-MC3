@@ -35,6 +35,7 @@ struct SimulasiDataManager {
         }
     }
     
+    /*
     func fetchSimulasi() -> [InterviewModel]?{
         let context = SimulasiDataManager.shared.persistentContainer.viewContext
         let fetchInterview = NSFetchRequest<NSManagedObject>(entityName: "InterviewEntity")
@@ -51,4 +52,5 @@ struct SimulasiDataManager {
             return nil
         }
     }
+     */
 }

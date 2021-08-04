@@ -8,7 +8,7 @@
 import Foundation
 
 
-enum scoreType{
+enum scoreType : String{
     case voiceEmotion
     case voiceSegregation
     case facialExpression

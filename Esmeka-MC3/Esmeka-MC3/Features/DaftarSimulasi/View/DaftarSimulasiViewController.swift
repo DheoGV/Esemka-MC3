@@ -26,7 +26,7 @@ class DaftarSimulasiViewController: UIViewController {
         title = "Daftar Simulasi"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
-        fetchSimulasi()
+ //       fetchSimulasi()
         isSimulasiExist()
         
         collectionView.dataSource = self
@@ -34,9 +34,9 @@ class DaftarSimulasiViewController: UIViewController {
         collectionView.register(SimulasiCollectionViewCell.nib(), forCellWithReuseIdentifier: SimulasiCollectionViewCell.identifier)
     }
     
-    func fetchSimulasi() {
-        simulasiData = SimulasiDataManager.shared.fetchSimulasi()
-    }
+//    func fetchSimulasi() {
+//        simulasiData = SimulasiDataManager.shared.fetchSimulasi()
+//    }
     
     func isSimulasiExist(){
         if simulasiData?.count == 0 {

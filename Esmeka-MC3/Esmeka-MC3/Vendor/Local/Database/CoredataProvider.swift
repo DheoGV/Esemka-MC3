@@ -26,9 +26,8 @@ class CoredataProvider {
         let interviewEntity = InterviewEntity(context: taskContext)
         interviewEntity.interview_date = interviewModel.interviewDate
         interviewEntity.interview_duration = Int32(interviewModel.duration ?? 0)
-        interviewEntity.interview_id = Int32(interviewModel.interviewId ?? 0)
-        interviewEntity.interview_title = interviewModel.interviewTitle
         interviewEntity.interview_video_url_path = interviewModel.interviewURLPath
+        interviewEntity.interview_id = Int32(interviewModel.interviewId)
         
         //MARK:: Refer to Assessment Entity
         listAssessmentModel.forEach { model in
@@ -43,8 +42,7 @@ class CoredataProvider {
         //MARK:: Refer to Score Type Entity
         listScoreTypeModel.forEach { model in
             let scoreEntity = ScoreTypeEntity(context: taskContext)
-            scoreEntity.score_type_id = Int32(model.scoreTypeId ?? 0)
-            scoreEntity.score_type_name = model.scoreTypeName
+            scoreEntity.score_type_name = model.scoreTypeName?.rawValue
             scoreEntity.score_value = Int32(model.score ?? 0)
             
             //MARK:: Add Score Entity to Interview Entity
@@ -97,5 +95,27 @@ class CoredataProvider {
         
         
         return listInterviewEntity
+    }
+    
+    //MARK:: Call Single Interviewentity
+    func getScoresByInteviewId(interviewId: Int) -> [ScoreTypeEntity] {
+        var listScoresEntity = [ScoreTypeEntity]()
+        let interviewEntityResult: [InterviewEntity]?
+        do {
+            let fetchRequest : NSFetchRequest<InterviewEntity> = InterviewEntity.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "(interview_id == %d)", interviewId)
+            interviewEntityResult = try context?.fetch(fetchRequest)
+            
+            if let singleInterviewEntity = interviewEntityResult?.first {
+                let scores = singleInterviewEntity.scores?.allObjects as! [ScoreTypeEntity]
+                scores.forEach { score in
+                    listScoresEntity.append(score)
+                   
+                }
+            }
+        } catch {
+            print("Can't get scores by interview data")
+        }
+        return listScoresEntity
     }
 }
