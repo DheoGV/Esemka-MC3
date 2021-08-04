@@ -19,10 +19,10 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
     
     func countEmotionParameter(identifier: String, confidence: Double) {
         DispatchQueue.main.async {
-                   if self.keepCounting{
-                       self.totalEmotions += 1
-                    self.binaryEmotions[self.availableEmotions[identifier]!]! += 1
-                  
+            if self.keepCounting{
+                self.totalEmotions += 1
+                self.binaryEmotions[self.availableEmotions[identifier]!]! += 1
+                
             }
             print("Output Voice Emotion : ", self.totalEmotions)
         }
@@ -35,7 +35,7 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
     }
     
     //Face Emotion
-    //private let model = try! VNCoreMLModel(for: CNNEmotions().model)
+    //let model = try! VNCoreMLModel(for: CNNEmotions().model)
     var totalEmotion = 0
     var goodEmotion = 0
     var faceEmotionScore:Int = 0
@@ -49,7 +49,7 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
     var countMissInSecond = 0
     var countMissFrameRenderer = 0
     
-//    VOICE
+    //    VOICE
     var segregationObserver = SegregationObserver()
     var emotionObserver = EmotionObserver()
     let audioEngine = AVAudioEngine()
@@ -95,7 +95,7 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
         let config = ARFaceTrackingConfiguration()
         scene.session.run(config)
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
@@ -108,7 +108,7 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
         scene.showsStatistics = true
         scene.session.run(ARFaceTrackingConfiguration(), options: [.resetTracking, .removeExistingAnchors])
         scene.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
-    //        scene.showsStatistics = true
+        //        scene.showsStatistics = true
         buttonSetup()
     }
     
@@ -119,8 +119,8 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
     }
     
     func callPromptWindow(){
-//        Bundle.loadNibNamed("PromptQuestionView", owner: self, options: nil)
-//        promptWindow.prepareForInterfaceBuilder()
+        //        Bundle.loadNibNamed("PromptQuestionView", owner: self, options: nil)
+        //        promptWindow.prepareForInterfaceBuilder()
         let topMargin = view.safeAreaInsets.top
         let leadMargin = view.safeAreaInsets.left
         let height = view.frame.size.height/4
@@ -133,6 +133,7 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
     
     func saveFaceEmotionScore() {
         faceEmotionScore = Int(goodEmotion * 100 / totalEmotion)
+        print("Score face Emotion: \(faceEmotionScore)")
         //save to core data
     }
     
@@ -141,7 +142,7 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
     @IBAction func recordButtonTapped(_sender: Any){
         if isStart {
             removeAudioEngine()
-           toCompletedPage()
+            toCompletedPage()
             
         } else {
             recordButton.backgroundColor = .white
@@ -157,6 +158,7 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
         isStart = !isStart
         //        Call this : VOICE
         calculateOutputInterjection()
+        saveFaceEmotionScore()
         timerInterview()
         
     }
@@ -172,7 +174,7 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
     func stopRecording(){
         
     }
-
+    
     func toCompletedPage(){
         let completedVC = CompleteViewController(nibName: "CompleteViewController", bundle: nil)
         navigationController?.pushViewController(completedVC, animated: true)
