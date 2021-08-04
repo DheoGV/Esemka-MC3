@@ -16,6 +16,7 @@
 		21859E0D26B91C4B00117361 /* FaceEmotionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21859E0B26B91C4B00117361 /* FaceEmotionsViewController.xib */; };
 		219747EE26B0125B00A81309 /* DaftarSimulasiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219747EC26B0125B00A81309 /* DaftarSimulasiViewController.swift */; };
 		219747EF26B0125B00A81309 /* DaftarSimulasiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 219747ED26B0125B00A81309 /* DaftarSimulasiViewController.xib */; };
+		21B3B80826BAC9C30021D94C /* FaceAndEyeTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B3B80726BAC9C30021D94C /* FaceAndEyeTracking.swift */; };
 		21F1A74626A9475F00E6A1B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F1A74526A9475F00E6A1B5 /* AppDelegate.swift */; };
 		21F1A74826A9475F00E6A1B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F1A74726A9475F00E6A1B5 /* SceneDelegate.swift */; };
 		21F1A75026A9475F00E6A1B5 /* Esmeka_MC3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21F1A74E26A9475F00E6A1B5 /* Esmeka_MC3.xcdatamodeld */; };
@@ -71,6 +72,7 @@
 		21859E0B26B91C4B00117361 /* FaceEmotionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FaceEmotionsViewController.xib; sourceTree = "<group>"; };
 		219747EC26B0125B00A81309 /* DaftarSimulasiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaftarSimulasiViewController.swift; sourceTree = "<group>"; };
 		219747ED26B0125B00A81309 /* DaftarSimulasiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaftarSimulasiViewController.xib; sourceTree = "<group>"; };
+		21B3B80726BAC9C30021D94C /* FaceAndEyeTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceAndEyeTracking.swift; sourceTree = "<group>"; };
 		21F1A74226A9475F00E6A1B5 /* Esmeka-MC3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Esmeka-MC3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21F1A74526A9475F00E6A1B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21F1A74726A9475F00E6A1B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +173,14 @@
 				217F467026B3B07400AE6AFA /* SimulasiDataManager.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		21B3B80626BAC9610021D94C /* FaceAndEyeTracking */ = {
+			isa = PBXGroup;
+			children = (
+				21B3B80726BAC9C30021D94C /* FaceAndEyeTracking.swift */,
+			);
+			path = FaceAndEyeTracking;
 			sourceTree = "<group>";
 		};
 		21CB53B426A99351005EB944 /* Features */ = {
@@ -453,6 +463,7 @@
 		84B5E37126B394E000FC9C09 /* InterviewSimulation */ = {
 			isa = PBXGroup;
 			children = (
+				21B3B80626BAC9610021D94C /* FaceAndEyeTracking */,
 				84C4BB3726BACBAB007FE5ED /* VoiceMechanism */,
 				84B5E37326B3951800FC9C09 /* PromptQuestionView */,
 				84B5E37226B394F300FC9C09 /* MainPage */,
@@ -606,6 +617,7 @@
 				84C4BB3A26BAD011007FE5ED /* InterjectionClassifier.mlmodel in Sources */,
 				84B5E37626B3952D00FC9C09 /* InterviewSimulationViewController.swift in Sources */,
 				525204CF26B01A75006D6E98 /* CustomButton.swift in Sources */,
+				21B3B80826BAC9C30021D94C /* FaceAndEyeTracking.swift in Sources */,
 				52B678DF26AA7EB10080533A /* AssessmentModel.swift in Sources */,
 				525204D826B02A21006D6E98 /* ScoreTableViewCell.swift in Sources */,
 				84B5E37E26B395E400FC9C09 /* ColorLibrary.swift in Sources */,

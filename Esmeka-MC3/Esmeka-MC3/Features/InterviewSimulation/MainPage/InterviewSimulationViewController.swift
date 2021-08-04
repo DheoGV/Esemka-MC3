@@ -10,6 +10,12 @@ import ARKit
 import AVFoundation
 import SoundAnalysis
 
+struct Coordinate {
+    var x: Int
+    var y: Int
+}
+
+class InterviewSimulationViewController: UIViewController {
 class InterviewSimulationViewController: UIViewController, SegregationClassifierDelegate, EmotionClassifierDelegate {
     
     func countEmotionParameter(identifier: String, confidence: Double) {
@@ -28,6 +34,21 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
     @IBAction func startRecordingAction(_ sender: Any) {
         
     }
+    
+    //Face Emotion
+    //private let model = try! VNCoreMLModel(for: CNNEmotions().model)
+    var totalEmotion = 0
+    var goodEmotion = 0
+    var faceEmotionScore:Int = 0
+    
+    //EyeTracking
+    var listOfCoordinate:[Coordinate] = []
+    var listOfCoordinateTemp:[Coordinate] = []
+    var countFrameRenderer = 0
+    let globalQueue = DispatchQueue.global(qos: .default)
+    var countMiss = 0
+    var countMissInSecond = 0
+    var countMissFrameRenderer = 0
     
 //    VOICE
     var segregationObserver = SegregationObserver()
@@ -72,20 +93,26 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        let config = ARFaceTrackingConfiguration()
+        scene.session.run(config)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        scene.session.pause()
     }
     
     func setup() {
         guard ARWorldTrackingConfiguration.isSupported else { return }
         scene.delegate = self
+        scene.showsStatistics = true
+        scene.session.run(ARFaceTrackingConfiguration(), options: [.resetTracking, .removeExistingAnchors])
         scene.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
     //        scene.showsStatistics = true
         buttonSetup()
     }
+    
     func buttonSetup(){
         recordButton.layer.cornerRadius = recordButton.frame.height / 2
         recordButton.backgroundColor = UIColor.ColorLibrary.blueAccent
@@ -104,6 +131,12 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
         view.addSubview(promptWindow)
         
     }
+    
+    func saveFaceEmotionScore() {
+        faceEmotionScore = Int(goodEmotion * 100 / totalEmotion)
+        //save to core data
+    }
+    
     
     ///MARK: set it to @IBAction, and add appropriate functions
     @IBAction func recordButtonTapped(_sender: Any){
@@ -148,4 +181,4 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
     
 }
 
-extension InterviewSimulationViewController: ARSCNViewDelegate{}
+
