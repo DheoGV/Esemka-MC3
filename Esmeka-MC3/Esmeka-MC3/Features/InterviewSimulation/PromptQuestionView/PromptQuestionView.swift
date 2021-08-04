@@ -14,7 +14,24 @@ class PromptQuestionView: UIView {
     @IBOutlet weak var buttonSelanjutnya:UIButton!
 
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+//        setupAll()
+    }
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+//        setupAll()
+    }
+    
     override func prepareForInterfaceBuilder() {
+        setupView()
+        setupTitle()
+        setupIsi()
+        setupIndicator()
+        setupButton()
+    }
+    
+    func setupAll(){
         setupView()
         setupTitle()
         setupIsi()
@@ -42,6 +59,9 @@ class PromptQuestionView: UIView {
     @IBAction func next(_sender: UIButton){
         if self.currentQuestion <= self.totalQuestion {
             self.currentQuestion += 1
+            if self.currentQuestion == self.totalQuestion{
+                buttonSelanjutnya.isHidden = true
+            }
         }else{
             //stop recording
         }
