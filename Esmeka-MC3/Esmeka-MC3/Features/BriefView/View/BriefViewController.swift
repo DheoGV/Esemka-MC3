@@ -34,6 +34,11 @@ class BriefViewController: UIViewController {
         startButton.layer.cornerRadius = 25
   
     }
+    
+    @IBAction func startSimulation(_sender: UIButton){
+        let simulationVC = InterviewSimulationViewController(nibName: "InterviewSimulationViewController", bundle: nil)
+        self.navigationController?.pushViewController(simulationVC, animated: true)
+    }
 
 }
 
