@@ -35,7 +35,7 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
     }
     
     //Face Emotion
-    //let model = try! VNCoreMLModel(for: CNNEmotions().model)
+    let model = try! VNCoreMLModel(for: CNNEmotions().model)
     var totalEmotion = 0
     var goodEmotion = 0
     var faceEmotionScore:Int = 0
