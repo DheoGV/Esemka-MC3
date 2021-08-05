@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ScoreProtocolDelegate: AnyObject {
+    func changeIcon()
+}
+
 class ScoreTableViewCell: UITableViewCell {
 static let identifer = "scorecell"
     @IBOutlet weak var lblScore: UILabel!
@@ -14,6 +18,10 @@ static let identifer = "scorecell"
     @IBOutlet weak var lblDefaultPoint: UILabel!
     @IBOutlet weak var ivLogo: UIImageView!
     @IBOutlet weak var viewContainer: UIView!
+    @IBOutlet weak var lblTextArea: UITextView!
+    @IBOutlet weak var imageArrow: UIImageView!
+    
+    var delegate: ScoreProtocolDelegate?
     
     static var nib: UINib {
         get {
@@ -24,8 +32,8 @@ static let identifer = "scorecell"
         super.awakeFromNib()
         // Initialization code
         setupView()
+        
     }
-    
     private func setupView() {
         viewContainer.layer.cornerRadius = 10
         lblScore.textColor = .white
