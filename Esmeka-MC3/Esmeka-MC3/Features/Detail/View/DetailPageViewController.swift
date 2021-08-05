@@ -97,6 +97,8 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
             let uiColor = dataScore3[indexPath.section][indexPath.row].colorCell
             cell.lblScore.text = "\(String(describing: score))"
             cell.viewContainer.backgroundColor = uiColor
+    
+            
             return cell
             
         case 1 :
@@ -113,6 +115,7 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: ScoreTableViewCell.identifer) as! ScoreTableViewCell
             let score = dataScore3[indexPath.section][indexPath.row].score!
             let uiColor = dataScore3[indexPath.section][indexPath.row].colorCell
+      
             
             print(indexPath.section)
             
@@ -123,24 +126,27 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: ScoreTableViewCell.identifer) as! ScoreTableViewCell
             let score = dataScore3[indexPath.section][indexPath.row].score!
             let uiColor = dataScore3[indexPath.section][indexPath.row].colorCell
+
             
             print(indexPath.section)
             
             cell.lblScore.text = "\(String(describing: score))"
             cell.viewContainer.backgroundColor = uiColor
+          
+            
             return cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "videocell") as! VideoTableViewCell
             cell.ivThumbail.image = UIImage(named: dataSimulasi[0][indexPath.row].imageURL)
             
-            cell.videoDelegate = self
+          
             
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "videocell") as! VideoTableViewCell
             cell.ivThumbail.image = UIImage(named: dataSimulasi[0][indexPath.row].imageURL)
             
-            cell.videoDelegate = self
+            
             
             return cell
         }
@@ -313,3 +319,4 @@ extension DetailPageViewController: DataSendingDelegateProtocol{
     }
     
 }
+
