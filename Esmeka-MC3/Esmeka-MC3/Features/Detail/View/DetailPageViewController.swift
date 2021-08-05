@@ -11,6 +11,7 @@ import AVKit
 struct Score {
     var score: Int?
     var colorCell: UIColor?
+    var isCollapse: Bool?
 }
 
 struct Video {
@@ -25,15 +26,17 @@ class DetailPageViewController: UIViewController{
     
     let dateCurrent = Date()
     
+    let selectedIndex = -1
+    
     let sections:[String] = ["Nilai Simulasi","","","", "Rekaman Simulasi"]
-    let dataScore3: [[Score]] = [[
-                                    Score(score: 81, colorCell: UIColor(red: 0.11, green: 0.44, blue: 0.53, alpha: 1.00))],
+    var dataScore3: [[Score]] = [[
+                                    Score(score: 81, colorCell: UIColor(red: 0.11, green: 0.44, blue: 0.53, alpha: 1.00), isCollapse: false)],
                                  [
-                                    Score(score: 82, colorCell: UIColor(red: 0.28, green: 0.20, blue: 0.83, alpha: 1.00))],
+                                    Score(score: 82, colorCell: UIColor(red: 0.28, green: 0.20, blue: 0.83, alpha: 1.00), isCollapse:  false)],
                                  [
-                                    Score(score: 83, colorCell: UIColor(red: 0.20, green: 0.29, blue: 0.37, alpha: 1.00)),],
+                                    Score(score: 83, colorCell: UIColor(red: 0.20, green: 0.29, blue: 0.37, alpha: 1.00), isCollapse: false),],
                                  [
-                                    Score(score: 84, colorCell: UIColor(red: 0.56, green: 0.27, blue: 0.68, alpha: 1.00)),],
+                                    Score(score: 84, colorCell: UIColor(red: 0.56, green: 0.27, blue: 0.68, alpha: 1.00), isCollapse: false),],
     ]
     
     let dataSimulasi:[[Video]] = [[Video(imageURL: "gambar")]]
@@ -94,6 +97,8 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
             let uiColor = dataScore3[indexPath.section][indexPath.row].colorCell
             cell.lblScore.text = "\(String(describing: score))"
             cell.viewContainer.backgroundColor = uiColor
+    
+            
             return cell
             
         case 1 :
@@ -110,6 +115,7 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: ScoreTableViewCell.identifer) as! ScoreTableViewCell
             let score = dataScore3[indexPath.section][indexPath.row].score!
             let uiColor = dataScore3[indexPath.section][indexPath.row].colorCell
+      
             
             print(indexPath.section)
             
@@ -120,24 +126,27 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: ScoreTableViewCell.identifer) as! ScoreTableViewCell
             let score = dataScore3[indexPath.section][indexPath.row].score!
             let uiColor = dataScore3[indexPath.section][indexPath.row].colorCell
+
             
             print(indexPath.section)
             
             cell.lblScore.text = "\(String(describing: score))"
             cell.viewContainer.backgroundColor = uiColor
+          
+            
             return cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "videocell") as! VideoTableViewCell
             cell.ivThumbail.image = UIImage(named: dataSimulasi[0][indexPath.row].imageURL)
             
-            cell.videoDelegate = self
+          
             
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "videocell") as! VideoTableViewCell
             cell.ivThumbail.image = UIImage(named: dataSimulasi[0][indexPath.row].imageURL)
             
-            cell.videoDelegate = self
+            
             
             return cell
         }
@@ -168,10 +177,39 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if ( indexPath.section == 4) {
-            return 190
-        } else {
-            return 90
+        //        if ( indexPath.section == 4) {
+        //            return 190
+        //        } else {
+        //            return 90
+        //        }
+        //
+        switch indexPath.section {
+        case 0:
+            if dataScore3[0][indexPath.row].isCollapse == true {
+                return 150
+            } else{
+                return 90
+            }
+        case 1 :
+            if dataScore3[1][indexPath.row].isCollapse == true {
+                return 150
+            } else{
+                return 90
+            }
+        case 2 :
+            if dataScore3[2][indexPath.row].isCollapse == true {
+                return 150
+            } else{
+                return 90
+            }
+        case 3 :
+            if dataScore3[3][indexPath.row].isCollapse == true {
+                return 150
+            } else{
+                return 90
+            }
+        default:
+            return 60
         }
     }
     
@@ -197,11 +235,65 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            tvDetail.deselectRow(at: indexPath, animated: true)
+            
+            if dataScore3[0][indexPath.row].isCollapse == false {
+                self.dataScore3[0][indexPath.row].isCollapse = !self.dataScore3[0][indexPath.row].isCollapse!
+            } else {
+                self.dataScore3[0][indexPath.row].isCollapse = false
+            }
+            
+            // self.selectedIndex = indexPath.row
+            tvDetail.reloadRows(at: [indexPath], with: .automatic)
+            
+            
+           
+        case 1:
+            tvDetail.deselectRow(at: indexPath, animated: true)
+            
+            if dataScore3[1][indexPath.row].isCollapse == false {
+                self.dataScore3[1][indexPath.row].isCollapse = !self.dataScore3[1][indexPath.row].isCollapse!
+            } else {
+                self.dataScore3[1][indexPath.row].isCollapse = false
+            }
+            
+            // self.selectedIndex = indexPath.row
+            tvDetail.reloadRows(at: [indexPath], with: .automatic)
+        case 2 :
+            tvDetail.deselectRow(at: indexPath, animated: true)
+            
+            if dataScore3[2][indexPath.row].isCollapse == false {
+                self.dataScore3[2][indexPath.row].isCollapse = !self.dataScore3[2][indexPath.row].isCollapse!
+            } else {
+                self.dataScore3[2][indexPath.row].isCollapse = false
+            }
+            
+            // self.selectedIndex = indexPath.row
+            tvDetail.reloadRows(at: [indexPath], with: .automatic)
+        case 3 :
+            tvDetail.deselectRow(at: indexPath, animated: true)
+            
+            if dataScore3[3][indexPath.row].isCollapse == false {
+                self.dataScore3[3][indexPath.row].isCollapse = !self.dataScore3[3][indexPath.row].isCollapse!
+            } else {
+                self.dataScore3[3][indexPath.row].isCollapse = false
+            }
+            
+            // self.selectedIndex = indexPath.row
+            tvDetail.reloadRows(at: [indexPath], with: .automatic)
+        default :
+            print("ASD")
+        }
+    }
+    
 }
 
 extension DetailPageViewController : VideoProtocolDelegate {
     func playVideo() {
-       print("TEST")
+        print("TEST")
         if let path = Bundle.main.path(forResource: "s1c1", ofType: "mp4") {
             let video = AVPlayer(url: URL(fileURLWithPath: path))
             let videoPlayerController = AVPlayerViewController()
@@ -217,13 +309,14 @@ extension DetailPageViewController : VideoProtocolDelegate {
 extension DetailPageViewController: DataSendingDelegateProtocol{
     //function from protocoldelegate
     func sendDataToDetailPage() {
-       //
+        //
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "getDataSegue" {
-//            let secondVC: SecondViewController = segue.destination as! SecondViewController
-//            secondVC.delegate = self
-//        }
+        //        if segue.identifier == "getDataSegue" {
+        //            let secondVC: SecondViewController = segue.destination as! SecondViewController
+        //            secondVC.delegate = self
+        //        }
     }
     
 }
+
