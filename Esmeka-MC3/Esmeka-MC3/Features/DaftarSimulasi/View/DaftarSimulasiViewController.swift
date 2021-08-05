@@ -16,6 +16,7 @@ class DaftarSimulasiViewController: UIViewController {
     
     var simulasiData: [InterviewModel]?
     let sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+    let userDefault = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,8 +54,25 @@ class DaftarSimulasiViewController: UIViewController {
     }
     
     @IBAction func simulasiButtonAction(_ sender: Any) {
+        let readBriefSetting = userDefault.object(forKey: "showBrief") as? Bool ?? true
+        
+        if(readBriefSetting){
+            goToBriefView()
+            
+        } else {
+           goToSimulation()
+            
+        }
+       
+    }
+    
+    func goToBriefView() {
         let briefVC = BriefViewController(nibName: "BriefViewController", bundle: nil)
         self.navigationController?.pushViewController(briefVC, animated: true)
+    }
+    func goToSimulation()  {
+        let simulationVC = InterviewSimulationViewController(nibName: "InterviewSimulationViewController", bundle: nil)
+    navigationController?.pushViewController(simulationVC, animated: true)
     }
     
 }
