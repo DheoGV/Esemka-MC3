@@ -83,7 +83,7 @@ extension InterviewSimulationViewController {
     }
     
     @objc func printTimer() {
-        if isStart {
+        if isRecording {
             timerToMinute = (timerTimeNow/60)
             idealInterjectionNumber = timerToMinute*15
 //            print("Seconds : ",timerTimeNow)
