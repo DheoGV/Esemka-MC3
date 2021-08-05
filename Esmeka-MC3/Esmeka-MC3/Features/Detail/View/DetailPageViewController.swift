@@ -96,6 +96,10 @@ class DetailPageViewController: UIViewController{
             print("Nilai ", score)
             scores.append(score)
             print("Nilai 1", scores[0])
+            
+            //Crash disini
+            print("Nilai 1", scores[1])
+            
             print("Count", scores.count)
            
             dataScore3.append(scores)
