@@ -15,14 +15,27 @@ class BriefViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var ShowAgainSwitch: UISwitch!
     @IBOutlet weak var showAgainButton: UIButton!
- 
+    
+    
+    let userDefault = UserDefaults.standard
+    
     var briefInstructions : [BriefModel] = BriefModel.BriefData
     
     override func viewDidLoad() {
+        let readBriefSetting = userDefault.object(forKey: "showBrief") as? Bool ?? true
+        
+        if(readBriefSetting){
         super.viewDidLoad()
-        setView()
-        // Do any additional setup after loading the view.
+            setView()
+            
+        } else {
+        goToSimulation()
+            
+        }
+        
     }
+    
+    
 
     // MARK: - Setup View
     func setView() {
@@ -36,7 +49,7 @@ class BriefViewController: UIViewController {
     }
     
     @IBAction func briefInstructionAction(_ sender: Any) {
-        print("in")
+        userDefault.setValue(false, forKey: "showBrief")
     }
     @IBAction func startSimulation(_sender: UIButton){
         goToSimulation()
@@ -45,7 +58,7 @@ class BriefViewController: UIViewController {
     
     func goToSimulation()  {
         let simulationVC = InterviewSimulationViewController(nibName: "InterviewSimulationViewController", bundle: nil)
-        self.navigationController?.pushViewController(simulationVC, animated: true)
+    navigationController?.pushViewController(simulationVC, animated: true)
     }
 }
 
