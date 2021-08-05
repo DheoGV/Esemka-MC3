@@ -57,6 +57,9 @@
 		84C4BB4126BAD215007FE5ED /* ResultObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4BB4026BAD215007FE5ED /* ResultObserver.swift */; };
 		D85D1AF926B8612200B8E806 /* scoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85D1AF826B8612200B8E806 /* scoreType.swift */; };
 		D85D1B2F26BB0ED600B8E806 /* RecordingFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85D1B2E26BB0ED600B8E806 /* RecordingFeature.swift */; };
+		D867CC5826BC0668007B3EE3 /* InterviewQuestionsSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D867CC5726BC0668007B3EE3 /* InterviewQuestionsSource.swift */; };
+		D867CC5D26BC4F6C007B3EE3 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D867CC5C26BC4F6C007B3EE3 /* TimerView.swift */; };
+		D867CC5F26BC4F7A007B3EE3 /* TimerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D867CC5E26BC4F7A007B3EE3 /* TimerView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +115,9 @@
 		84C4BB4026BAD215007FE5ED /* ResultObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultObserver.swift; sourceTree = "<group>"; };
 		D85D1AF826B8612200B8E806 /* scoreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scoreType.swift; sourceTree = "<group>"; };
 		D85D1B2E26BB0ED600B8E806 /* RecordingFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingFeature.swift; sourceTree = "<group>"; };
+		D867CC5726BC0668007B3EE3 /* InterviewQuestionsSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterviewQuestionsSource.swift; sourceTree = "<group>"; };
+		D867CC5C26BC4F6C007B3EE3 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		D867CC5E26BC4F7A007B3EE3 /* TimerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,6 +349,7 @@
 				52B678E026AA7F3A0080533A /* ScoreTypeModel.swift */,
 				84B5E36E26B260BD00FC9C09 /* BriefInstructionModel.swift */,
 				D85D1AF826B8612200B8E806 /* scoreType.swift */,
+				D867CC5726BC0668007B3EE3 /* InterviewQuestionsSource.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -386,6 +393,7 @@
 		84B5E37126B394E000FC9C09 /* InterviewSimulation */ = {
 			isa = PBXGroup;
 			children = (
+				D867CC5B26BC4F47007B3EE3 /* TimerView */,
 				21B3B80626BAC9610021D94C /* FaceAndEyeTracking */,
 				84C4BB3726BACBAB007FE5ED /* VoiceMechanism */,
 				84B5E37326B3951800FC9C09 /* PromptQuestionView */,
@@ -437,6 +445,15 @@
 				84C4BB3826BAD011007FE5ED /* InterjectionClassifier.mlmodel */,
 			);
 			path = MLModel;
+			sourceTree = "<group>";
+		};
+		D867CC5B26BC4F47007B3EE3 /* TimerView */ = {
+			isa = PBXGroup;
+			children = (
+				D867CC5C26BC4F6C007B3EE3 /* TimerView.swift */,
+				D867CC5E26BC4F7A007B3EE3 /* TimerView.xib */,
+			);
+			path = TimerView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -506,6 +523,7 @@
 				21F1A75526A9476000E6A1B5 /* LaunchScreen.storyboard in Resources */,
 				21F1A75226A9476000E6A1B5 /* Assets.xcassets in Resources */,
 				525204CC26B01A4C006D6E98 /* CustomButton.xib in Resources */,
+				D867CC5F26BC4F7A007B3EE3 /* TimerView.xib in Resources */,
 				219747EF26B0125B00A81309 /* DaftarSimulasiViewController.xib in Resources */,
 				215847DE26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib in Resources */,
 				52B678E526AA8D270080533A /* HomeViewController.xib in Resources */,
@@ -531,6 +549,8 @@
 				84B5E36126B25F9500FC9C09 /* ToggleButton.swift in Sources */,
 				21F1A74626A9475F00E6A1B5 /* AppDelegate.swift in Sources */,
 				215847DD26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift in Sources */,
+				D867CC5D26BC4F6C007B3EE3 /* TimerView.swift in Sources */,
+				D867CC5826BC0668007B3EE3 /* InterviewQuestionsSource.swift in Sources */,
 				84C4BB4126BAD215007FE5ED /* ResultObserver.swift in Sources */,
 				84C4BB3A26BAD011007FE5ED /* InterjectionClassifier.mlmodel in Sources */,
 				84B5E37626B3952D00FC9C09 /* InterviewSimulationViewController.swift in Sources */,

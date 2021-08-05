@@ -49,8 +49,8 @@ extension InterviewSimulationViewController: ARSCNViewDelegate {
         let batasMinX = listOfCoordinateTemp[0].x - 75
         
         
-        print("batas Max X \(batasMaxX)")
-        print("batas Min X \(batasMinX)")
+//        print("batas Max X \(batasMaxX)")
+//        print("batas Min X \(batasMinX)")
         
         DispatchQueue.global(qos: .userInteractive).async { [self] in
             
@@ -58,26 +58,26 @@ extension InterviewSimulationViewController: ARSCNViewDelegate {
             
             if(countFrameRenderer == 30) {
                 countFrameRenderer = 0
-                print("Jumlah ", listOfCoordinate.count)
+//                print("Jumlah ", listOfCoordinate.count)
                 DispatchQueue.main.async { [self] in
                     if ( listOfCoordinate.count >= 2) {
                         for(index,_) in listOfCoordinate.enumerated() {
-                            print("Batas Max", batasMaxX)
-                            print("Batas Min", batasMinX)
-                            print("Nilai X ",listOfCoordinate[index].x)
+//                            print("Batas Max", batasMaxX)
+//                            print("Batas Min", batasMinX)
+//                            print("Nilai X ",listOfCoordinate[index].x)
                             
                             
                             if listOfCoordinate[index].x > batasMaxX || listOfCoordinate[index].x < batasMinX  {
                                 
                                 self.countMissFrameRenderer += 1
                                 
-                                print("Coun miss Frame", countFrameRenderer)
+//                                print("Coun miss Frame", countFrameRenderer)
         
                                 DispatchQueue.main.asyncAfter(deadline: .now()+1) {
                                     countMiss += 1
                                     countMissInSecond = countMiss / 60
-                                    print("Coun Miss", countMissInSecond)
-                                    print("Coun Miss second", countMissInSecond)
+//                                    print("Coun Miss", countMissInSecond)
+//                                    print("Coun Miss second", countMissInSecond)
                                     
                                 }
                                 

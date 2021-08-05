@@ -28,11 +28,8 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
         }
     }
     
-    @IBOutlet weak var scene: ARSCNView!
+    var scene = ARSCNView(frame: UIScreen.main.bounds)
     @IBOutlet weak var recordButton: UIButton!
-    @IBAction func startRecordingAction(_ sender: Any) {
-        
-    }
     
     //Face Emotion
     //let model = try! VNCoreMLModel(for: CNNEmotions().model)
@@ -103,15 +100,15 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
     
     func setup() {
         guard ARWorldTrackingConfiguration.isSupported else { return }
+        view.addSubview(scene)
         scene.delegate = self
-        scene.showsStatistics = true
+//        scene.showsStatistics = true
         scene.session.run(ARFaceTrackingConfiguration(), options: [.resetTracking, .removeExistingAnchors])
-        scene.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
-        //        scene.showsStatistics = true
         buttonSetup()
     }
     
     func buttonSetup(){
+        view.bringSubviewToFront(recordButton)
         recordButton.layer.cornerRadius = recordButton.frame.height / 2
         recordButton.backgroundColor = UIColor.ColorLibrary.blueAccent
         recordButton.tintColor = .white
@@ -150,27 +147,49 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
             toCompletedPage()
             
         } else {
-            recordButton.backgroundColor = .white
-            recordButton.tintColor = UIColor.ColorLibrary.blueAccent
-            recordButton.setImage(UIImage(systemName: "square.fill"), for: .normal)
-            
-            callPromptWindow()
             startRecording()
-            //          Call this : VOICE
-            startAudioEngine()
-            
         }
-        isRecording = !isRecording
-        //        Call this : VOICE
-        calculateOutputInterjection()
-        saveFaceEmotionScore()
-        timerInterview()
         
     }
     
-    func startTimerView(){
-        
+    func allowedRecording(){
+        isRecording = !isRecording
+        recordButton.isHidden = false
+        recordButton.backgroundColor = .white
+        recordButton.tintColor = UIColor.ColorLibrary.blueAccent
+        recordButton.setImage(UIImage(systemName: "square.fill"), for: .normal)
+        callPromptWindow()
+        //          Call this : VOICE
+        startAudioEngine()
+        calculateOutputInterjection()
+        saveFaceEmotionScore()
+        timerInterview()
     }
+    
+    func startTimerView(){
+        recordButton.isHidden = true
+        let timerView = TimerView(frame: UIScreen.main.bounds)
+        let bgView = UIView(frame: UIScreen.main.bounds)
+        bgView.backgroundColor = .black
+        bgView.alpha = 0.1
+        view.addSubview(bgView)
+        view.addSubview(timerView)
+        
+        
+        var runCount = 0
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            timerView.setCounter(number: 2-runCount)
+            runCount += 1
+
+            if runCount == 3 {
+                timer.invalidate()
+                timerView.removeFromSuperview()
+                bgView.removeFromSuperview()
+                self.allowedRecording()
+            }
+        }
+    }
+    
     
     func toCompletedPage(){
         let completedVC = CompleteViewController(nibName: "CompleteViewController", bundle: nil)
