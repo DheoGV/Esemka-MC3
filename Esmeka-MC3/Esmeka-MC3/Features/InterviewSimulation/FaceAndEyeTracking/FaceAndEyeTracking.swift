@@ -96,21 +96,21 @@ extension InterviewSimulationViewController: ARSCNViewDelegate {
         }
         
         
-//        try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: .right, options: [:]).perform([VNCoreMLRequest(model: model) { [weak self] request, error in
-//
-//            guard let firstResult = (request.results as? [VNClassificationObservation])?.first else { return }
-//            DispatchQueue.main.async { [self] in
-//
-//                if firstResult.confidence > 0.92 {
-//                    print(firstResult.identifier)
-//                    self?.totalEmotion += 1
-//                    if firstResult.identifier == "Happy" || firstResult.identifier == "Neutral" || firstResult.identifier == "Surprise"{
-//                        self?.goodEmotion += 1
-//                    }
-//                }
-//
-//            }
-//        }])
+        try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: .right, options: [:]).perform([VNCoreMLRequest(model: model) { [weak self] request, error in
+
+            guard let firstResult = (request.results as? [VNClassificationObservation])?.first else { return }
+            DispatchQueue.main.async { [self] in
+
+                if firstResult.confidence > 0.92 {
+                    print(firstResult.identifier)
+                    self?.totalEmotion += 1
+                    if firstResult.identifier == "Happy" || firstResult.identifier == "Neutral" || firstResult.identifier == "Surprise"{
+                        self?.goodEmotion += 1
+                    }
+                }
+
+            }
+        }])
         
         faceGeometry.update(from: faceAnchor.geometry)
         
