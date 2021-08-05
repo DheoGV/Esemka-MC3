@@ -16,14 +16,18 @@ class SimulasiCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var durasiSimulasiLbl: UILabel!
     
     var didClick: (() -> ())?
+    let timeFormatter = DateFormatter()
+    let dateFormatter = DateFormatter()
     static let identifier = "SimulasiCollectionViewCell"
     
     
     var simulasi: InterviewModel?{
         didSet{
             if let filled = simulasi{
-                waktuSimulasiLbl.text = "Test AM "
-                tanggalSimulasiLbl.text = "\(filled.interviewDate)"
+                timeFormatter.dateStyle = .short
+                waktuSimulasiLbl.text = timeFormatter.string(from: filled.interviewDate)
+                dateFormatter.dateStyle = .long
+                tanggalSimulasiLbl.text = dateFormatter.string(from: filled.interviewDate)
                 durasiSimulasiLbl.text = "\(filled.duration) Menit "
                 let tap = UITapGestureRecognizer(target: self, action: #selector(self.simulasiPressed(_:)))
                 viewSimulasiCell.addGestureRecognizer(tap)
