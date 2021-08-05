@@ -12,6 +12,9 @@ struct Score {
     var score: Int?
     var colorCell: UIColor?
     var isCollapse: Bool?
+    var scoreTypeName: String?
+    var scoreExplanation: String?
+    var imageIcon: UIImage?
 }
 
 struct Video {
@@ -29,21 +32,31 @@ class DetailPageViewController: UIViewController{
     let selectedIndex = -1
     
     let sections:[String] = ["Nilai Simulasi","","","", "Rekaman Simulasi"]
-    var dataScore3: [[Score]] = [[
-                                    Score(score: 81, colorCell: UIColor(red: 0.11, green: 0.44, blue: 0.53, alpha: 1.00), isCollapse: false)],
-                                 [
-                                    Score(score: 82, colorCell: UIColor(red: 0.28, green: 0.20, blue: 0.83, alpha: 1.00), isCollapse:  false)],
-                                 [
-                                    Score(score: 83, colorCell: UIColor(red: 0.20, green: 0.29, blue: 0.37, alpha: 1.00), isCollapse: false),],
-                                 [
-                                    Score(score: 84, colorCell: UIColor(red: 0.56, green: 0.27, blue: 0.68, alpha: 1.00), isCollapse: false),],
-    ]
+//    var dataScore3: [[Score]] = [[
+//                                    Score(score: 81, colorCell: UIColor(red: 0.11, green: 0.44, blue: 0.53, alpha: 1.00), isCollapse: false, scoreTypeName: "a")],
+//                                 [
+//                                    Score(score: 82, colorCell: UIColor(red: 0.28, green: 0.20, blue: 0.83, alpha: 1.00), isCollapse:  false, scoreTypeName: "a")],
+//                                 [
+//                                    Score(score: 83, colorCell: UIColor(red: 0.20, green: 0.29, blue: 0.37, alpha: 1.00), isCollapse: false, scoreTypeName: "a"),],
+//                                 [
+//                                    Score(score: 84, colorCell: UIColor(red: 0.56, green: 0.27, blue: 0.68, alpha: 1.00), isCollapse: false, scoreTypeName: "a"),],
+//    ]
+    var dataScore3 = [[Score]]()
+    var scores = [Score]()
+    
     
     let dataSimulasi:[[Video]] = [[Video(imageURL: "gambar")]]
+    
+    private lazy var coredataProvider: CoredataProvider = {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return CoredataProvider(appDelegate)
+    }()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getScoresByInterviewId(interviewId: 1)
+        getSingleInterviewId(interviewId: 1)
         setupView()
     }
     
@@ -65,6 +78,53 @@ class DetailPageViewController: UIViewController{
         
         tvDetail.register(UINib(nibName: "VideoTableViewCell", bundle: nil), forCellReuseIdentifier: "videocell")
     }
+    
+    
+    private func getScoresByInterviewId(interviewId: Int) {
+        //MARK:: Example How to Get Scores by Single Interview
+        
+        let scoresInterview = coredataProvider.getScoresByInteviewId(interviewId: interviewId)
+
+        scoresInterview.forEach { score in
+            print("Score Type Name", score.value(forKey: "score_type_name") as! String)
+            let scoreTypeName = score.value(forKey: "score_type_name") as! String
+            let scoreValue = score.value(forKey: "score_value") as! Int
+            
+            if (scoreTypeName == "facialExpression") {
+                let score = Score(score: scoreValue, colorCell:  UIColor(red: 0.11, green: 0.44, blue: 0.53, alpha: 1.00), isCollapse: false, scoreTypeName: "Ekspresi Wajah", scoreExplanation: "HEHE", imageIcon: UIImage(systemName : "smiley.fill"))
+                
+                scores.append(score)
+            } else if (scoreTypeName == "eyeMovement") {
+                let score = Score(score: scoreValue, colorCell: UIColor(red: 0.56, green: 0.27, blue: 0.68, alpha: 1.00), isCollapse: false, scoreTypeName: "Kontak Mata", scoreExplanation: "HEHE", imageIcon: UIImage(systemName: "eye.fill"))
+                
+                scores.append(score)
+            } else if (scoreTypeName == "voiceEmotion") {
+                let score = Score(score: scoreValue, colorCell: UIColor(red: 0.28, green: 0.20, blue: 0.83, alpha: 1.00), isCollapse: false, scoreTypeName: "Emosi Suara", scoreExplanation: "HEHE", imageIcon: UIImage(systemName: "volume.2.fill"))
+                
+                scores.append(score)
+            } else  if (scoreTypeName == "voiceSegregation") {
+                let score = Score(score: scoreValue, colorCell: UIColor(red: 0.20, green: 0.29, blue: 0.37, alpha: 1.00), isCollapse: false, scoreTypeName: "Kelancaran Berbicara", scoreExplanation: "HEHE", imageIcon: UIImage(systemName: "mic.fill"))
+                
+                scores.append(score)
+            }
+         
+          
+        }
+        
+        dataScore3.append([scores[0]])
+        dataScore3.append([scores[1]])
+        dataScore3.append([scores[2]])
+        dataScore3.append([scores[3]])
+        
+    }
+     
+    
+    private func getSingleInterviewId(interviewId: Int) {
+        let interview = coredataProvider.getSingleInterview(interviewId: interviewId)
+        var date = interview.value(forKey: "interview_date")!
+        lblDate.text = "\(date)"
+    }
+    
 }
 
 extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
@@ -81,8 +141,7 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
         switch section {
         case 0:
             return dataScore3[section].count
-        case 1:
-            return dataSimulasi[0].count
+      
         default:
             return dataSimulasi.count
         }
@@ -95,9 +154,13 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: ScoreTableViewCell.identifer) as! ScoreTableViewCell
             let score = dataScore3[indexPath.section][indexPath.row].score!
             let uiColor = dataScore3[indexPath.section][indexPath.row].colorCell
+            let scoreTypeName = dataScore3[indexPath.section][indexPath.row].scoreTypeName!
+            
             cell.lblScore.text = "\(String(describing: score))"
+            cell.lblEkspresi.text = "\(String(describing: scoreTypeName))"
             cell.viewContainer.backgroundColor = uiColor
-    
+            let imageIcon = dataScore3[indexPath.section][indexPath.row].imageIcon!
+            cell.ivLogo.image = imageIcon
             
             return cell
             
@@ -105,41 +168,50 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: ScoreTableViewCell.identifer) as! ScoreTableViewCell
             let score = dataScore3[indexPath.section][indexPath.row].score!
             let uiColor = dataScore3[indexPath.section][indexPath.row].colorCell
-            
+            let scoreTypeName = dataScore3[indexPath.section][indexPath.row].scoreTypeName!
+            let imageIcon = dataScore3[indexPath.section][indexPath.row].imageIcon!
+            cell.ivLogo.image = imageIcon
             print(indexPath.section)
             
             cell.lblScore.text = "\(String(describing: score))"
+            cell.lblEkspresi.text = "\(String(describing: scoreTypeName))"
             cell.viewContainer.backgroundColor = uiColor
             return cell
         case 2 :
             let cell = tableView.dequeueReusableCell(withIdentifier: ScoreTableViewCell.identifer) as! ScoreTableViewCell
             let score = dataScore3[indexPath.section][indexPath.row].score!
             let uiColor = dataScore3[indexPath.section][indexPath.row].colorCell
-      
+            let scoreTypeName = dataScore3[indexPath.section][indexPath.row].scoreTypeName!
+            let imageIcon = dataScore3[indexPath.section][indexPath.row].imageIcon!
+            cell.ivLogo.image = imageIcon
             
             print(indexPath.section)
             
             cell.lblScore.text = "\(String(describing: score))"
+            cell.lblEkspresi.text = "\(String(describing: scoreTypeName))"
             cell.viewContainer.backgroundColor = uiColor
             return cell
         case 3 :
             let cell = tableView.dequeueReusableCell(withIdentifier: ScoreTableViewCell.identifer) as! ScoreTableViewCell
             let score = dataScore3[indexPath.section][indexPath.row].score!
             let uiColor = dataScore3[indexPath.section][indexPath.row].colorCell
-
+            let scoreTypeName = dataScore3[indexPath.section][indexPath.row].scoreTypeName!
+            let imageIcon = dataScore3[indexPath.section][indexPath.row].imageIcon!
             
             print(indexPath.section)
             
             cell.lblScore.text = "\(String(describing: score))"
+            cell.lblEkspresi.text = "\(String(describing: scoreTypeName))"
             cell.viewContainer.backgroundColor = uiColor
-          
+            cell.ivLogo.image = imageIcon
+            
             
             return cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "videocell") as! VideoTableViewCell
             cell.ivThumbail.image = UIImage(named: dataSimulasi[0][indexPath.row].imageURL)
+            cell.videoDelegate = self
             
-          
             
             return cell
         default:
@@ -208,6 +280,8 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
             } else{
                 return 90
             }
+        case 4 :
+            return 190
         default:
             return 60
         }
@@ -250,7 +324,7 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
             tvDetail.reloadRows(at: [indexPath], with: .automatic)
             
             
-           
+            
         case 1:
             tvDetail.deselectRow(at: indexPath, animated: true)
             

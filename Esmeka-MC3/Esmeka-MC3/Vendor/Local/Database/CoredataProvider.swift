@@ -69,6 +69,25 @@ class CoredataProvider {
         return listInterviewEntity
     }
     
+    //MARK:: Get SingleInterviewEntity
+    func getSingleInterview(interviewId: Int)->InterviewEntity {
+        var interviewEntity: InterviewEntity?
+        let interviewEntityResult: [InterviewEntity]?
+        do {
+            let fetchRequest : NSFetchRequest<InterviewEntity> = InterviewEntity.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "(interview_id == %d)", interviewId)
+            interviewEntityResult = try context?.fetch(fetchRequest)
+            
+            if let singleInterviewEntity = interviewEntityResult?.first {
+                interviewEntity = singleInterviewEntity
+            }
+        } catch {
+            print("Can't get scores by interview data")
+        }
+        
+        return interviewEntity ?? InterviewEntity()
+    }
+    
     func getAllScores()->[ScoreTypeEntity] {
         var listInterviewEntity = [ScoreTypeEntity]()
         do {
