@@ -54,9 +54,9 @@ class DetailPageViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getScoresByInterviewId(interviewId: 1)
+        getSingleInterviewId(interviewId: 1)
         setupView()
-        
-        getDataFromDB(interviewId: 1)
     }
     
     private func setupView() {
@@ -79,7 +79,7 @@ class DetailPageViewController: UIViewController{
     }
     
     
-    private func getDataFromDB(interviewId: Int) {
+    private func getScoresByInterviewId(interviewId: Int) {
         //MARK:: Example How to Get Scores by Single Interview
         
         let scoresInterview = coredataProvider.getScoresByInteviewId(interviewId: interviewId)
@@ -87,17 +87,26 @@ class DetailPageViewController: UIViewController{
             print("Score Type Name", score.value(forKey: "score_type_name") as! String)
             var scoreTypeName = score.value(forKey: "score_type_name") as! String
             var scoreValue = score.value(forKey: "score_value") as! Int
+        
             
             print("Score Type name \(scoreTypeName) Score Value \(scoreValue)")
             
             let score = Score(score: scoreValue, colorCell:  UIColor(red: 0.11, green: 0.44, blue: 0.53, alpha: 1.00), isCollapse: false, scoreTypeName: scoreTypeName, scoreExplanation: "HEHE")
             
+            print("Nilai ", score)
             scores.append(score)
-            print("Hitung", scores.count)
+            print("Nilai 1", scores[0])
+            print("Count", scores.count)
+           
             dataScore3.append(scores)
             print("Hitung 2", dataScore3.count)
         }
-        dataScore3.append(scores)
+    }
+    
+    private func getSingleInterviewId(interviewId: Int) {
+        let interview = coredataProvider.getSingleInterview(interviewId: interviewId)
+        var date = interview.value(forKey: "interview_date")!
+        lblDate.text = "\(date)"
     }
     
 }
