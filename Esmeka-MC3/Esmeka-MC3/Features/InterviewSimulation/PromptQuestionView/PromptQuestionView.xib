@@ -8,9 +8,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PromptQuestionView" customModule="Esmeka_MC3" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PromptQuestionView" customModule="Esmeka_MC3" customModuleProvider="target">
+            <connections>
+                <outlet property="indikatorPertanyaan" destination="Yt8-KG-Rro" id="sDg-xo-nq5"/>
+                <outlet property="nextButton" destination="Kzs-Ar-wmv" id="wPi-jT-0gU"/>
+                <outlet property="pertanyaanInterviewTitle" destination="7cI-QH-qfs" id="iSH-kP-7BE"/>
+                <outlet property="pertanyaanIsi" destination="gPG-2A-sVj" id="Vy0-cd-9xw"/>
+                <outlet property="view" destination="7Jm-hH-2vd" id="Ygw-Zl-Wen"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="7Jm-hH-2vd" customClass="PromptQuestionView" customModule="Esmeka_MC3" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="7Jm-hH-2vd">
             <rect key="frame" x="0.0" y="0.0" width="390" height="158"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -41,6 +49,9 @@
                     <rect key="frame" x="295" y="116" width="79" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" title="Selanjutnya"/>
+                    <connections>
+                        <action selector="nextWith_sender:" destination="-1" eventType="touchUpInside" id="6E7-B3-0kM"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="akX-MX-ZTo"/>
@@ -52,18 +63,14 @@
                 <constraint firstItem="akX-MX-ZTo" firstAttribute="bottom" secondItem="Yt8-KG-Rro" secondAttribute="bottom" constant="20" id="LMO-WL-Jvr"/>
                 <constraint firstItem="akX-MX-ZTo" firstAttribute="trailing" secondItem="7cI-QH-qfs" secondAttribute="trailing" constant="16" id="SjS-e7-tTO"/>
                 <constraint firstItem="Yt8-KG-Rro" firstAttribute="leading" secondItem="akX-MX-ZTo" secondAttribute="leading" constant="16" id="VRs-rL-JZU"/>
+                <constraint firstItem="7cI-QH-qfs" firstAttribute="top" secondItem="7Jm-hH-2vd" secondAttribute="top" constant="25" id="VnO-m9-8nW"/>
                 <constraint firstItem="gPG-2A-sVj" firstAttribute="top" secondItem="7cI-QH-qfs" secondAttribute="bottom" constant="8" symbolic="YES" id="Wak-qB-rLk"/>
-                <constraint firstItem="akX-MX-ZTo" firstAttribute="top" secondItem="7cI-QH-qfs" secondAttribute="top" constant="19" id="XcX-T9-iwn"/>
                 <constraint firstItem="gPG-2A-sVj" firstAttribute="leading" secondItem="akX-MX-ZTo" secondAttribute="leading" constant="16" id="ZM2-Ds-bHQ"/>
                 <constraint firstItem="akX-MX-ZTo" firstAttribute="trailing" secondItem="Kzs-Ar-wmv" secondAttribute="trailing" constant="16" id="oSN-cc-hD5"/>
             </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="buttonSelanjutnya" destination="Kzs-Ar-wmv" id="G0c-Zb-4uf"/>
-                <outlet property="indikatorPertanyaan" destination="Yt8-KG-Rro" id="Tb8-pB-rAH"/>
-                <outlet property="pertanyaanInterviewTitle" destination="7cI-QH-qfs" id="T2g-BL-obi"/>
-                <outlet property="pertanyaanIsi" destination="gPG-2A-sVj" id="0W5-Rv-6pb"/>
-            </connections>
             <point key="canvasLocation" x="-439.13043478260875" y="118.52678571428571"/>
         </view>
     </objects>

@@ -7,61 +7,77 @@
 
 import UIKit
 
-class PromptQuestionView: UIView {
-    @IBOutlet weak var pertanyaanInterviewTitle:UILabel!
-    @IBOutlet weak var pertanyaanIsi:UILabel!
-    @IBOutlet weak var indikatorPertanyaan:UILabel!
-    @IBOutlet weak var buttonSelanjutnya:UIButton!
+@IBDesignable class PromptQuestionView: UIView {
+    @IBOutlet var view: UIView!
+    @IBOutlet var pertanyaanInterviewTitle:UILabel!
+    @IBOutlet var pertanyaanIsi:UILabel!
+    @IBOutlet var indikatorPertanyaan:UILabel!
+    @IBOutlet var nextButton:UIButton!
 
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        setupAll()
+        commonInit()
     }
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-//        setupAll()
+        commonInit()
+    }
+    
+    func loadViewFromNib(nibName:String)->UIView{
+        let bundle = Bundle(for: type(of: self))
+        let nib = UINib(nibName: nibName, bundle: bundle)
+        let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
+        
+        return view
     }
     
     override func prepareForInterfaceBuilder() {
-        setupView()
+        
+    }
+    
+    func commonInit(){
+        loadQuestions()
+        view = loadViewFromNib(nibName: "PromptQuestionView")
+        view.backgroundColor = bgColor
+        view.layer.cornerRadius = cornerRadius
+        view.alpha = 0.8
+        view.autoresizingMask = [.flexibleHeight , .flexibleWidth]
+        view.frame = self.bounds
+        addSubview(view)
         setupTitle()
         setupIsi()
         setupIndicator()
         setupButton()
-    }
-    
-    func setupAll(){
-        setupView()
-        setupTitle()
-        setupIsi()
-        setupIndicator()
-        setupButton()
-    }
-    
-    func setupView(){
-        self.backgroundColor = bgColor
-        self.layer.cornerRadius = cornerRadius
     }
     func setupTitle(){
         pertanyaanInterviewTitle.text = "Pertanyaan Interview"
+        pertanyaanInterviewTitle.font = UIFont.boldSystemFont(ofSize: 17.0)
     }
     func setupIsi(){
-        pertanyaanIsi.text = question
+        pertanyaanIsi.text = questions[currentQuestion-1]
     }
     func setupIndicator(){
         indikatorPertanyaan.text = "\(currentQuestion) dari \(totalQuestion)"
     }
     func setupButton() {
-        buttonSelanjutnya.backgroundColor = UIColor.ColorLibrary.blueAccent
+        nextButton.tintColor = UIColor.ColorLibrary.blueAccent
+    }
+    
+    func loadQuestions(){
+        for i in 0..<totalQuestion{
+            questions.append("question \(i+1)")
+        }
     }
     
     @IBAction func next(_sender: UIButton){
         if self.currentQuestion <= self.totalQuestion {
             self.currentQuestion += 1
             if self.currentQuestion == self.totalQuestion{
-                buttonSelanjutnya.isHidden = true
+                nextButton.isEnabled = false
             }
+            setupIsi()
+            setupIndicator()
         }else{
             //stop recording
         }
@@ -69,7 +85,7 @@ class PromptQuestionView: UIView {
     
     var bgColor: UIColor = .white
     var cornerRadius: CGFloat = 20
-    var question = ""
+    var questions:[String] = []
     var currentQuestion = 1
     var totalQuestion = 6
     
