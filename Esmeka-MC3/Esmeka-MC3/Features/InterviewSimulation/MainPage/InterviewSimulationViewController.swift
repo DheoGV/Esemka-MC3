@@ -120,9 +120,9 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
     func callPromptWindow(){
         //        Bundle.loadNibNamed("PromptQuestionView", owner: self, options: nil)
         //        promptWindow.prepareForInterfaceBuilder()
-        let topMargin = view.safeAreaInsets.top
-        let leadMargin = view.safeAreaInsets.left
-        let height = view.frame.size.height/4
+        let topMargin = view.safeAreaInsets.top + 25
+        let leadMargin = view.safeAreaInsets.left + 16
+        let height = view.frame.size.height/5
         let width = view.frame.size.width - (2*leadMargin)
         let frame = CGRect(x: leadMargin, y: topMargin, width: width, height: height)
         let promptWindow = PromptQuestionView(frame: frame)
