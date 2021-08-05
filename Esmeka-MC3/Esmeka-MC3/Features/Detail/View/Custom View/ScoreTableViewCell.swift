@@ -14,6 +14,8 @@ static let identifer = "scorecell"
     @IBOutlet weak var lblDefaultPoint: UILabel!
     @IBOutlet weak var ivLogo: UIImageView!
     @IBOutlet weak var viewContainer: UIView!
+    @IBOutlet weak var lblTextArea: UITextView!
+    @IBOutlet weak var imageArrow: UIImageView!
     
     static var nib: UINib {
         get {
