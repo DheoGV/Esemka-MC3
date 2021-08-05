@@ -56,6 +56,7 @@
 		84C4BB3D26BAD0CF007FE5ED /* ExtensionVoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4BB3C26BAD0CF007FE5ED /* ExtensionVoice.swift */; };
 		84C4BB4126BAD215007FE5ED /* ResultObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4BB4026BAD215007FE5ED /* ResultObserver.swift */; };
 		D85D1AF926B8612200B8E806 /* scoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85D1AF826B8612200B8E806 /* scoreType.swift */; };
+		D85D1B2F26BB0ED600B8E806 /* RecordingFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85D1B2E26BB0ED600B8E806 /* RecordingFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +111,7 @@
 		84C4BB3C26BAD0CF007FE5ED /* ExtensionVoice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionVoice.swift; sourceTree = "<group>"; };
 		84C4BB4026BAD215007FE5ED /* ResultObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultObserver.swift; sourceTree = "<group>"; };
 		D85D1AF826B8612200B8E806 /* scoreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scoreType.swift; sourceTree = "<group>"; };
+		D85D1B2E26BB0ED600B8E806 /* RecordingFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -397,6 +399,7 @@
 			children = (
 				84B5E37426B3952D00FC9C09 /* InterviewSimulationViewController.swift */,
 				84B5E37526B3952D00FC9C09 /* InterviewSimulationViewController.xib */,
+				D85D1B2E26BB0ED600B8E806 /* RecordingFeature.swift */,
 			);
 			path = MainPage;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 				5218FE1A26BAD55B0075D75F /* InterviewEntity+CoreDataProperties.swift in Sources */,
 				5218FE1826BAD55B0075D75F /* AssessmentEntity+CoreDataProperties.swift in Sources */,
 				52B678DA26AA799D0080533A /* CoredataProvider.swift in Sources */,
+				D85D1B2F26BB0ED600B8E806 /* RecordingFeature.swift in Sources */,
 				84B5E36726B25FAE00FC9C09 /* BriefCell.swift in Sources */,
 				219747EE26B0125B00A81309 /* DaftarSimulasiViewController.swift in Sources */,
 				21F1A75026A9475F00E6A1B5 /* Esmeka_MC3.xcdatamodeld in Sources */,
@@ -691,7 +695,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A79CU8U5L7;
+				DEVELOPMENT_TEAM = HLL562LRK4;
 				INFOPLIST_FILE = "Esmeka-MC3/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -710,7 +714,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A79CU8U5L7;
+				DEVELOPMENT_TEAM = HLL562LRK4;
 				INFOPLIST_FILE = "Esmeka-MC3/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

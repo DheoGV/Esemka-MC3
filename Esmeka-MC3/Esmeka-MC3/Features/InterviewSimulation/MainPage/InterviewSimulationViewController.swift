@@ -67,7 +67,7 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
     var timerToMinute : Double = 0
     var timer : Timer?
     
-    var isStart : Bool = false
+    var isRecording : Bool = false
     var idealInterjectionNumber : Double = 0
     var outputInterjection : Double = 0
     //    ----------------Voice Emotion ----------------
@@ -77,7 +77,6 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
     var voiceEmotionScore:Int = 0
     // ---------------------------------------------------
     
-    var isRecording = false
     
     override func viewDidLoad() {
         segregationObserver.delegate = self
@@ -132,7 +131,12 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
     }
     
     func saveFaceEmotionScore() {
-        faceEmotionScore = Int(goodEmotion * 100 / totalEmotion)
+        if goodEmotion > 0 {
+            faceEmotionScore = Int(goodEmotion * 100 / totalEmotion)
+        }
+        else{
+            faceEmotionScore = 0
+        }
         print("Score face Emotion: \(faceEmotionScore)")
         //save to core data
     }
@@ -140,8 +144,9 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
     
     ///MARK: set it to @IBAction, and add appropriate functions
     @IBAction func recordButtonTapped(_sender: Any){
-        if isStart {
+        if isRecording {
             removeAudioEngine()
+            stopRecording()
             toCompletedPage()
             
         } else {
@@ -155,7 +160,7 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
             startAudioEngine()
             
         }
-        isStart = !isStart
+        isRecording = !isRecording
         //        Call this : VOICE
         calculateOutputInterjection()
         saveFaceEmotionScore()
@@ -164,14 +169,6 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
     }
     
     func startTimerView(){
-        
-    }
-    
-    func startRecording(){
-        
-    }
-    
-    func stopRecording(){
         
     }
     
