@@ -35,11 +35,18 @@ class BriefViewController: UIViewController {
   
     }
     
+    @IBAction func briefInstructionAction(_ sender: Any) {
+        print("in")
+    }
     @IBAction func startSimulation(_sender: UIButton){
+        goToSimulation()
+    }
+
+    
+    func goToSimulation()  {
         let simulationVC = InterviewSimulationViewController(nibName: "InterviewSimulationViewController", bundle: nil)
         self.navigationController?.pushViewController(simulationVC, animated: true)
     }
-
 }
 
 extension BriefViewController : UITableViewDelegate, UITableViewDataSource {
