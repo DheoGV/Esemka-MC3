@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2147F83126BBA194002D115B /* CNNEmotions.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2147F83026BBA194002D115B /* CNNEmotions.mlmodel */; };
 		215847DD26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215847DB26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift */; };
 		215847DE26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 215847DC26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib */; };
 		219747EE26B0125B00A81309 /* DaftarSimulasiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219747EC26B0125B00A81309 /* DaftarSimulasiViewController.swift */; };
@@ -60,6 +61,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2147F83026BBA194002D115B /* CNNEmotions.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = CNNEmotions.mlmodel; path = ../../../../../../CNNEmotions.mlmodel; sourceTree = "<group>"; };
 		215847DB26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulasiCollectionViewCell.swift; sourceTree = "<group>"; };
 		215847DC26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimulasiCollectionViewCell.xib; sourceTree = "<group>"; };
 		219747EC26B0125B00A81309 /* DaftarSimulasiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaftarSimulasiViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 		21B3B80626BAC9610021D94C /* FaceAndEyeTracking */ = {
 			isa = PBXGroup;
 			children = (
+				2147F83026BBA194002D115B /* CNNEmotions.mlmodel */,
 				21B3B80726BAC9C30021D94C /* FaceAndEyeTracking.swift */,
 			);
 			path = FaceAndEyeTracking;
@@ -533,6 +536,7 @@
 				215847DD26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift in Sources */,
 				84C4BB4126BAD215007FE5ED /* ResultObserver.swift in Sources */,
 				84C4BB3A26BAD011007FE5ED /* InterjectionClassifier.mlmodel in Sources */,
+				2147F83126BBA194002D115B /* CNNEmotions.mlmodel in Sources */,
 				84B5E37626B3952D00FC9C09 /* InterviewSimulationViewController.swift in Sources */,
 				525204CF26B01A75006D6E98 /* CustomButton.swift in Sources */,
 				5218FE1626BAD55B0075D75F /* ScoreTypeEntity+CoreDataProperties.swift in Sources */,
@@ -695,7 +699,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HLL562LRK4;
+				DEVELOPMENT_TEAM = A79CU8U5L7;
 				INFOPLIST_FILE = "Esmeka-MC3/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -714,7 +718,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HLL562LRK4;
+				DEVELOPMENT_TEAM = A79CU8U5L7;
 				INFOPLIST_FILE = "Esmeka-MC3/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
