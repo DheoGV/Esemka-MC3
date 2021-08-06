@@ -18,8 +18,7 @@ extension InterviewSimulationViewController : RPPreviewViewControllerDelegate{
             if let unwrappedError = error {
                 print(unwrappedError.localizedDescription)
             } else {
-                
-            }
+                startTimerView()        }
         }
     }
     

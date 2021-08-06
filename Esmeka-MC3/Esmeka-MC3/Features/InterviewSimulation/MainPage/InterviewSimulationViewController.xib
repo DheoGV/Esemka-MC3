@@ -12,8 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InterviewSimulationViewController" customModule="Esmeka_MC3" customModuleProvider="target">
             <connections>
-                <outlet property="recordButton" destination="ZOk-t1-CTl" id="X8o-cE-TAQ"/>
-                <outlet property="scene" destination="gxd-vJ-GeV" id="eHz-ya-Sc4"/>
+                <outlet property="recordButton" destination="ZOk-t1-CTl" id="VnI-i1-0at"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,9 +21,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gxd-vJ-GeV">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                </arscnView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOk-t1-CTl">
                     <rect key="frame" x="172" y="792" width="70" height="70"/>
                     <color key="backgroundColor" name="AccentColor"/>
@@ -39,20 +35,15 @@
                         <imageReference key="image" image="video.fill.badge.plus" catalog="system" symbolScale="large"/>
                     </state>
                     <connections>
-                        <action selector="recordButtonTappedWith_sender:" destination="-1" eventType="touchUpInside" id="qB9-CQ-0iz"/>
-                        <action selector="startRecordingAction:" destination="-1" eventType="touchUpInside" id="d9F-7W-0X1"/>
+                        <action selector="recordButtonTappedWith_sender:" destination="-1" eventType="touchUpInside" id="IJ7-3T-7tf"/>
                     </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gxd-vJ-GeV" secondAttribute="trailing" id="1hv-R1-thc"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="gxd-vJ-GeV" secondAttribute="bottom" id="3xD-l3-gP0"/>
-                <constraint firstItem="gxd-vJ-GeV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="EKP-lK-lg5"/>
-                <constraint firstItem="ZOk-t1-CTl" firstAttribute="bottom" secondItem="gxd-vJ-GeV" secondAttribute="bottom" id="Mel-nQ-CUW"/>
-                <constraint firstItem="ZOk-t1-CTl" firstAttribute="centerX" secondItem="gxd-vJ-GeV" secondAttribute="centerX" id="ha5-fy-sfQ"/>
-                <constraint firstItem="gxd-vJ-GeV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pUX-to-9TT"/>
+                <constraint firstItem="ZOk-t1-CTl" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Qck-jo-VeH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ZOk-t1-CTl" secondAttribute="bottom" id="tFJ-ni-nWM"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="88.392857142857139"/>
         </view>
