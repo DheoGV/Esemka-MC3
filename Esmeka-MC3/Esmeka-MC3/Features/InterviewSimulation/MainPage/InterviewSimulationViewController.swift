@@ -45,6 +45,8 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
     var countMiss = 0
     var countMissInSecond = 0
     var countMissFrameRenderer = 0
+    var resultValueEye = 100
+    var tempResult = 0.0
     
     //    VOICE
     var segregationObserver = SegregationObserver()
@@ -72,7 +74,6 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
     var totalEmotions = 0
     var binaryEmotions:[String: Int] = ["good":0, "bad":0]
     var voiceEmotionScore:Int = 0
-    // ---------------------------------------------------
     
     
     override func viewDidLoad() {
@@ -164,6 +165,10 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
         calculateOutputInterjection()
         saveFaceEmotionScore()
         timerInterview()
+
+        //MARK:: Count Eye Tracking
+        countEyeTrackingMiss()
+
     }
     
     func startTimerView(){

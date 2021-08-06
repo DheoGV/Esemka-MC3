@@ -90,6 +90,7 @@ class DetailPageViewController: UIViewController{
             let scoreTypeName = score.value(forKey: "score_type_name") as! String
             let scoreValue = score.value(forKey: "score_value") as! Int
             
+            //Change to Switch Maybe (?)
             if (scoreTypeName == "facialExpression") {
                 let score = Score(score: scoreValue, colorCell:  UIColor(red: 0.11, green: 0.44, blue: 0.53, alpha: 1.00), isCollapse: false, scoreTypeName: "Ekspresi Wajah", scoreExplanation: "HEHE", imageIcon: UIImage(systemName : "smiley.fill"))
                 
