@@ -65,9 +65,8 @@ import UIKit
     }
     
     func loadQuestions(){
-        for i in 0..<totalQuestion{
-            questions.append("question \(i+1)")
-        }
+        questions = InterviewQuestionsSource().getQuestions()
+        totalQuestion = InterviewQuestionsSource().getTotalQs()
     }
     
     @IBAction func next(_sender: UIButton){
