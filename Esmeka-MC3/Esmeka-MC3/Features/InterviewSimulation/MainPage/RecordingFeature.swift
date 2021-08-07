@@ -18,7 +18,9 @@ extension InterviewSimulationViewController : RPPreviewViewControllerDelegate{
             if let unwrappedError = error {
                 print(unwrappedError.localizedDescription)
             } else {
-                startTimerView()        }
+                prevVideo = VideoFetchClass().loadLastVideo()
+                startCountdownView()
+            }
         }
     }
     
@@ -34,6 +36,11 @@ extension InterviewSimulationViewController : RPPreviewViewControllerDelegate{
     
     func previewControllerDidFinish(_ previewController: RPPreviewViewController) {
         dismiss(animated: true)
+        let currVideo = VideoFetchClass().loadLastVideo()
+        if VideoFetchClass().areDifferentAssets(asset1: currVideo, asset2: prevVideo){
+            isVideoSaved = true
+        }
+        saveData()
     }
     
 }

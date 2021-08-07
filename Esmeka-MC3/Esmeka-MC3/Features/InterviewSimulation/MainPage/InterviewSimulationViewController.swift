@@ -9,6 +9,7 @@ import UIKit
 import ARKit
 import AVFoundation
 import SoundAnalysis
+import Photos
 
 struct Coordinate {
     var x: Int
@@ -30,7 +31,8 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
     
     var scene = ARSCNView(frame: UIScreen.main.bounds)
     @IBOutlet weak var recordButton: UIButton!
-    
+    var prevVideo:PHAsset!
+    var isVideoSaved = false
     //Face Emotion
     //let model = try! VNCoreMLModel(for: CNNEmotions().model)
     var totalEmotion = 0
@@ -171,7 +173,7 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
 
     }
     
-    func startTimerView(){
+    func startCountdownView(){
         recordButton.isHidden = true
         let timerView = TimerView(frame: UIScreen.main.bounds)
         let bgView = UIView(frame: UIScreen.main.bounds)
@@ -201,6 +203,19 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
         navigationController?.pushViewController(completedVC, animated: true)
     }
     
+    func saveData(){
+        var currVideo = VideoFetchClass().loadLastVideo()
+        var duration = 0.0
+        
+        //kalau video disave oleh user
+        if isVideoSaved{
+            currVideo = VideoFetchClass().loadLastVideo()
+            duration = currVideo.duration
+        }
+        let interviewId = 0//it's in seconds
+        isVideoSaved = false
+//        let temp = InterviewModel(interviewId: interviewId, duration: Int(duration), interviewDate: Date(), interviewURLPath: <#String#>)
+    }
 }
 
 
