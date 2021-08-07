@@ -7,17 +7,46 @@
 
 import UIKit
 import Photos
-class VideoFetchClass{
+class VideoFetchClass {
+    
+    
     func loadLastVideo()->PHAsset{
         
         let fetchResult =  PHAsset.fetchAssets(with: .video, options: fetchOptions()).lastObject
+        
         PHImageManager().requestAVAsset(forVideo: fetchResult!, options: nil, resultHandler: { (avurlAsset, audioMix, dict) in
             if let newObj = avurlAsset as? AVURLAsset{
                 print(newObj.url)
+                
             } else {
+                
             }
         })
+    
         return fetchResult!
+    }
+    
+    func loadLastVideoWithTypeData()->Data {
+        let fetchResult =  PHAsset.fetchAssets(with: .video, options: fetchOptions()).lastObject
+        
+        var data = Data()
+        
+        PHImageManager().requestAVAsset(forVideo: fetchResult!, options: nil, resultHandler: { (avurlAsset, audioMix, dict) in
+            if let newObj = avurlAsset as? AVURLAsset{
+                print("PATH", newObj.url)
+                do {
+                    data = try Data(contentsOf: newObj.url)
+                    print("SUCCESS", data)
+                } catch {
+                    print("ERROR")
+                }
+              
+            } else {
+                
+            }
+        })
+    
+        return data
     }
     
     func areDifferentAssets(asset1:PHAsset, asset2:PHAsset)->Bool{

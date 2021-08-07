@@ -17,12 +17,12 @@
 		21F1A75026A9475F00E6A1B5 /* Esmeka_MC3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21F1A74E26A9475F00E6A1B5 /* Esmeka_MC3.xcdatamodeld */; };
 		21F1A75226A9476000E6A1B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21F1A75126A9476000E6A1B5 /* Assets.xcassets */; };
 		21F1A75526A9476000E6A1B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21F1A75326A9476000E6A1B5 /* LaunchScreen.storyboard */; };
-		5218FE1526BAD55B0075D75F /* ScoreTypeEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5218FE0F26BAD55B0075D75F /* ScoreTypeEntity+CoreDataClass.swift */; };
-		5218FE1626BAD55B0075D75F /* ScoreTypeEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5218FE1026BAD55B0075D75F /* ScoreTypeEntity+CoreDataProperties.swift */; };
-		5218FE1726BAD55B0075D75F /* AssessmentEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5218FE1126BAD55B0075D75F /* AssessmentEntity+CoreDataClass.swift */; };
-		5218FE1826BAD55B0075D75F /* AssessmentEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5218FE1226BAD55B0075D75F /* AssessmentEntity+CoreDataProperties.swift */; };
-		5218FE1926BAD55B0075D75F /* InterviewEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5218FE1326BAD55B0075D75F /* InterviewEntity+CoreDataClass.swift */; };
-		5218FE1A26BAD55B0075D75F /* InterviewEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5218FE1426BAD55B0075D75F /* InterviewEntity+CoreDataProperties.swift */; };
+		520C280826BE9BEA0036C365 /* InterviewEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C280226BE9BE90036C365 /* InterviewEntity+CoreDataClass.swift */; };
+		520C280926BE9BEA0036C365 /* InterviewEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C280326BE9BEA0036C365 /* InterviewEntity+CoreDataProperties.swift */; };
+		520C280A26BE9BEA0036C365 /* ScoreTypeEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C280426BE9BEA0036C365 /* ScoreTypeEntity+CoreDataClass.swift */; };
+		520C280B26BE9BEA0036C365 /* ScoreTypeEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C280526BE9BEA0036C365 /* ScoreTypeEntity+CoreDataProperties.swift */; };
+		520C280C26BE9BEA0036C365 /* AssessmentEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C280626BE9BEA0036C365 /* AssessmentEntity+CoreDataClass.swift */; };
+		520C280D26BE9BEA0036C365 /* AssessmentEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C280726BE9BEA0036C365 /* AssessmentEntity+CoreDataProperties.swift */; };
 		52433A3326B7D37A0048C0D4 /* s1c1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 52433A3226B7D37A0048C0D4 /* s1c1.mp4 */; };
 		525204C726B00E0E006D6E98 /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525204C526B00E0E006D6E98 /* DetailPageViewController.swift */; };
 		525204C826B00E0E006D6E98 /* DetailPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525204C626B00E0E006D6E98 /* DetailPageViewController.xib */; };
@@ -77,12 +77,12 @@
 		21F1A75126A9476000E6A1B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21F1A75426A9476000E6A1B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21F1A75626A9476000E6A1B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5218FE0F26BAD55B0075D75F /* ScoreTypeEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScoreTypeEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		5218FE1026BAD55B0075D75F /* ScoreTypeEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScoreTypeEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		5218FE1126BAD55B0075D75F /* AssessmentEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AssessmentEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		5218FE1226BAD55B0075D75F /* AssessmentEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AssessmentEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		5218FE1326BAD55B0075D75F /* InterviewEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterviewEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		5218FE1426BAD55B0075D75F /* InterviewEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterviewEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		520C280226BE9BE90036C365 /* InterviewEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterviewEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		520C280326BE9BEA0036C365 /* InterviewEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterviewEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		520C280426BE9BEA0036C365 /* ScoreTypeEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScoreTypeEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		520C280526BE9BEA0036C365 /* ScoreTypeEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScoreTypeEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		520C280626BE9BEA0036C365 /* AssessmentEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AssessmentEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		520C280726BE9BEA0036C365 /* AssessmentEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AssessmentEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		52433A3226B7D37A0048C0D4 /* s1c1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = s1c1.mp4; sourceTree = "<group>"; };
 		525204C526B00E0E006D6E98 /* DetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewController.swift; sourceTree = "<group>"; };
 		525204C626B00E0E006D6E98 /* DetailPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPageViewController.xib; sourceTree = "<group>"; };
@@ -326,12 +326,12 @@
 		52B678CB26AA71E70080533A /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				5218FE0F26BAD55B0075D75F /* ScoreTypeEntity+CoreDataClass.swift */,
-				5218FE1026BAD55B0075D75F /* ScoreTypeEntity+CoreDataProperties.swift */,
-				5218FE1126BAD55B0075D75F /* AssessmentEntity+CoreDataClass.swift */,
-				5218FE1226BAD55B0075D75F /* AssessmentEntity+CoreDataProperties.swift */,
-				5218FE1326BAD55B0075D75F /* InterviewEntity+CoreDataClass.swift */,
-				5218FE1426BAD55B0075D75F /* InterviewEntity+CoreDataProperties.swift */,
+				520C280226BE9BE90036C365 /* InterviewEntity+CoreDataClass.swift */,
+				520C280326BE9BEA0036C365 /* InterviewEntity+CoreDataProperties.swift */,
+				520C280426BE9BEA0036C365 /* ScoreTypeEntity+CoreDataClass.swift */,
+				520C280526BE9BEA0036C365 /* ScoreTypeEntity+CoreDataProperties.swift */,
+				520C280626BE9BEA0036C365 /* AssessmentEntity+CoreDataClass.swift */,
+				520C280726BE9BEA0036C365 /* AssessmentEntity+CoreDataProperties.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -545,10 +545,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				520C280826BE9BEA0036C365 /* InterviewEntity+CoreDataClass.swift in Sources */,
+				520C280B26BE9BEA0036C365 /* ScoreTypeEntity+CoreDataProperties.swift in Sources */,
 				525204C726B00E0E006D6E98 /* DetailPageViewController.swift in Sources */,
 				84B5E36F26B260BD00FC9C09 /* BriefInstructionModel.swift in Sources */,
-				5218FE1926BAD55B0075D75F /* InterviewEntity+CoreDataClass.swift in Sources */,
-				5218FE1726BAD55B0075D75F /* AssessmentEntity+CoreDataClass.swift in Sources */,
 				D85D1AF926B8612200B8E806 /* scoreType.swift in Sources */,
 				84B5E36026B25F9500FC9C09 /* BriefViewController.swift in Sources */,
 				84B5E37A26B3953700FC9C09 /* PromptQuestionView.swift in Sources */,
@@ -558,23 +558,23 @@
 				D867CC5D26BC4F6C007B3EE3 /* TimerView.swift in Sources */,
 				D867CC5826BC0668007B3EE3 /* InterviewQuestionsSource.swift in Sources */,
 				84C4BB4126BAD215007FE5ED /* ResultObserver.swift in Sources */,
+				520C280926BE9BEA0036C365 /* InterviewEntity+CoreDataProperties.swift in Sources */,
+				520C280A26BE9BEA0036C365 /* ScoreTypeEntity+CoreDataClass.swift in Sources */,
 				84C4BB3A26BAD011007FE5ED /* InterjectionClassifier.mlmodel in Sources */,
+				520C280C26BE9BEA0036C365 /* AssessmentEntity+CoreDataClass.swift in Sources */,
 				84B5E37626B3952D00FC9C09 /* InterviewSimulationViewController.swift in Sources */,
 				525204CF26B01A75006D6E98 /* CustomButton.swift in Sources */,
-				5218FE1626BAD55B0075D75F /* ScoreTypeEntity+CoreDataProperties.swift in Sources */,
 				21B3B80826BAC9C30021D94C /* FaceAndEyeTracking.swift in Sources */,
 				52B678DF26AA7EB10080533A /* AssessmentModel.swift in Sources */,
 				525204D826B02A21006D6E98 /* ScoreTableViewCell.swift in Sources */,
 				84B5E37E26B395E400FC9C09 /* ColorLibrary.swift in Sources */,
 				52B678DD26AA7BCA0080533A /* InterviewModel.swift in Sources */,
 				52B678E426AA8D270080533A /* HomeViewController.swift in Sources */,
+				520C280D26BE9BEA0036C365 /* AssessmentEntity+CoreDataProperties.swift in Sources */,
 				84C4BB3D26BAD0CF007FE5ED /* ExtensionVoice.swift in Sources */,
 				52B678E126AA7F3A0080533A /* ScoreTypeModel.swift in Sources */,
 				21F1A74826A9475F00E6A1B5 /* SceneDelegate.swift in Sources */,
 				84B5E36C26B2600600FC9C09 /* CompleteViewController.swift in Sources */,
-				5218FE1526BAD55B0075D75F /* ScoreTypeEntity+CoreDataClass.swift in Sources */,
-				5218FE1A26BAD55B0075D75F /* InterviewEntity+CoreDataProperties.swift in Sources */,
-				5218FE1826BAD55B0075D75F /* AssessmentEntity+CoreDataProperties.swift in Sources */,
 				52B678DA26AA799D0080533A /* CoredataProvider.swift in Sources */,
 				D85D1B2F26BB0ED600B8E806 /* RecordingFeature.swift in Sources */,
 				84B5E36726B25FAE00FC9C09 /* BriefCell.swift in Sources */,
@@ -723,7 +723,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A79CU8U5L7;
+				DEVELOPMENT_TEAM = T4NVTRVW5X;
 				INFOPLIST_FILE = "Esmeka-MC3/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -742,7 +742,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A79CU8U5L7;
+				DEVELOPMENT_TEAM = T4NVTRVW5X;
 				INFOPLIST_FILE = "Esmeka-MC3/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

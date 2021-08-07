@@ -15,10 +15,15 @@ class HomeViewController: UIViewController {
         return CoredataProvider(appDelegate)
     }()
     
+    var data = Data()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        insertSecondInterview()
+      //  insertInterview()
+      //  insertInterview()
+        
+        getAllInterview()
     }
     
     //MARK:: Example to Insert the Data
@@ -36,10 +41,25 @@ class HomeViewController: UIViewController {
            let scoreModelFour = ScoreTypeModel(scoreTypeName: scoreType.voiceSegregation, score: 9)
            
            listScore.append(contentsOf: [scoreModelOne, scoreModelTwo, scoreModelThree, scoreModelFour])
-           
-           let interviewModel = InterviewModel(interviewId: 1,duration: 5, interviewDate: date, interviewURLPath: "URL PATH")
-           
-           coredataProvider.addInterview(interviewModel: interviewModel, listAssessmentModel: listAssessment, listScoreTypeModel: listScore)
+           let currVideo =  VideoFetchClass().loadLastVideo()
+            currVideo.getURL { [self] url in
+            do {
+                data = try Data(contentsOf: url!)
+                print("SUCCESS", self.data)
+                
+                let interviewModel = InterviewModel(interviewId: 1,duration: 5, interviewDate: date, interviewURLPath: data)
+                
+                print("Interview Model \(interviewModel.interviewURLPath)")
+                DispatchQueue.main.async {
+                    coredataProvider.addInterview(interviewModel: interviewModel, listAssessmentModel: listAssessment, listScoreTypeModel: listScore)
+                }
+              
+            } catch {
+                print("ERROR")
+            }
+        
+           }
+         
        }
        
        //MARK:: Example How to Insert the Data
@@ -58,7 +78,8 @@ class HomeViewController: UIViewController {
            
            listScore.append(contentsOf: [scoreModelOne, scoreModelTwo, scoreModelThree, scoreModelFour])
            
-           let interviewModel = InterviewModel(interviewId: 2,duration: 10, interviewDate: date, interviewURLPath: "URL PATH")
+           var currVideo =  VideoFetchClass().loadLastVideoWithTypeData()
+           let interviewModel = InterviewModel(interviewId: 2,duration: 10, interviewDate: date, interviewURLPath: currVideo)
            
            coredataProvider.addInterview(interviewModel: interviewModel, listAssessmentModel: listAssessment, listScoreTypeModel: listScore)
        }
@@ -73,6 +94,7 @@ class HomeViewController: UIViewController {
                print("Duration", result.interview_duration)
                print("Question", result.assessments?.value(forKey: "assessment_question"))
                print("Interview id", result.interview_id)
+               print("URL WOYYYY", result.interview_video_url_path)
            }
            
            let listScoresEntity = coredataProvider.getAllScores()

@@ -30,11 +30,14 @@ class DaftarSimulasiViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //setup()
-        print(listInterviewData.count)
+        setup()
+        listInterviewData = coredataProvider.getAllInterview()
+        print("Hitug", listInterviewData.count)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        setup()
+       
     }
     
     func setup() {
@@ -56,13 +59,11 @@ class DaftarSimulasiViewController: UIViewController {
             imgNoData.isHidden = false
             noData1Lbl.isHidden = false
             noData2Lbl.isHidden = false
-            print("HUA AA")
             collectionView.isHidden = true
         } else if listInterviewData.count > 0{
             imgNoData.isHidden = true
             noData1Lbl.isHidden = true
             noData2Lbl.isHidden = true
-            print("HUA")
             collectionView.reloadData()
         }
     }
@@ -75,7 +76,6 @@ class DaftarSimulasiViewController: UIViewController {
             
         } else {
            goToSimulation()
-            
         }
        
     }
@@ -90,9 +90,10 @@ class DaftarSimulasiViewController: UIViewController {
     }
     
     //MARK::Example Get All the interview
+    
     private func getAllInterview(){
         listInterviewData = coredataProvider.getAllInterview()
-        
+        print("count nya bro \(listInterviewData)")
         if listInterviewData.count == 0 {
             print("Null")
         } else {
@@ -101,12 +102,16 @@ class DaftarSimulasiViewController: UIViewController {
                 print("Scores Type Name", result.scores?.value(forKey: "score_type_name"))
                 print("Date", result.interview_date)
                 print("Duration", result.interview_duration)
-                print("Question", result.assessments?.value(forKey: "assessment_question"))
                 print("Interview id", result.interview_id)
+                print("URL WOY", result.interview_video_url_path)
                 
-                let interviewModel = InterviewModel(interviewId: Int(result.interview_id), duration: Int(result.interview_duration), interviewDate: result.interview_date!, interviewURLPath: result.interview_video_url_path!)
-                
-                simulasiData.append(interviewModel)
+                if result.interview_video_url_path != nil {
+                    print("URL WOY", result.interview_video_url_path)
+                    let interviewModel = InterviewModel(interviewId: Int(result.interview_id), duration: Int(result.interview_duration), interviewDate: result.interview_date!, interviewURLPath: result.interview_video_url_path!)
+                    
+                    simulasiData.append(interviewModel)
+                    self.collectionView.reloadData()
+                }
             }
             
             let listScoresEntity = coredataProvider.getAllScores()
@@ -121,9 +126,8 @@ class DaftarSimulasiViewController: UIViewController {
                 print("Question", score)
             }
         }
-        
-      
     }
+ 
     
 }
 
@@ -141,6 +145,9 @@ extension DaftarSimulasiViewController: UICollectionViewDataSource, UICollection
         cell.layer.cornerRadius = 10
         
         cell.didClick = { [weak self] in
+            
+            print("ID ONCLICKKKK", self!.simulasiData[indexPath.row].interviewId)
+            
             let simulasiDetailVC = DetailPageViewController(nibName: "DetailPageViewController", bundle: nil)
             simulasiDetailVC.id = self!.simulasiData[indexPath.row].interviewId
             

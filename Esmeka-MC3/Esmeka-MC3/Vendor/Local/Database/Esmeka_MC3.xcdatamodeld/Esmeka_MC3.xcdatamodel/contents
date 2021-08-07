@@ -9,7 +9,7 @@
         <attribute name="interview_date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="interview_duration" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="interview_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="interview_video_url_path" optional="YES" attributeType="String"/>
+        <attribute name="interview_video_url_path" optional="YES" attributeType="Binary" customClassName="PHAsset"/>
         <relationship name="assessments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AssessmentEntity" inverseName="ofInterviewAssessment" inverseEntity="AssessmentEntity"/>
         <relationship name="scores" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ScoreTypeEntity" inverseName="ofInterviewScores" inverseEntity="ScoreTypeEntity"/>
     </entity>

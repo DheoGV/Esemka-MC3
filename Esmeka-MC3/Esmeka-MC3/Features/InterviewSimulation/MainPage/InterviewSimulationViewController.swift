@@ -18,6 +18,12 @@ struct Coordinate {
 
 class InterviewSimulationViewController: UIViewController, SegregationClassifierDelegate, EmotionClassifierDelegate {
     
+    //MARK:: Make Lazy for single isntance only, it prevent memory leak
+    private lazy var coredataProvider: CoredataProvider = {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return CoredataProvider(appDelegate)
+    }()
+    
     func countEmotionParameter(identifier: String, confidence: Double) {
         DispatchQueue.main.async {
             if self.keepCounting{
@@ -33,7 +39,6 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
     @IBOutlet weak var recordButton: UIButton!
     var prevVideo:PHAsset!
     var isVideoSaved = false
-    var interviewId = 0
     //Face Emotion
     //let model = try! VNCoreMLModel(for: CNNEmotions().model)
     var totalEmotion = 0
@@ -78,6 +83,9 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
     var binaryEmotions:[String: Int] = ["good":0, "bad":0]
     var voiceEmotionScore:Int = 0
     
+    //-------------- User Default Key ------------------
+    var idKey = "idKey"
+    var id:Int = 0
     
     override func viewDidLoad() {
         segregationObserver.delegate = self
@@ -198,26 +206,79 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
         }
     }
     
+    
     func toCompletedPage(){
         let completedVC = CompleteViewController(nibName: "CompleteViewController", bundle: nil)
-        completedVC.interviewId = interviewId
         navigationController?.pushViewController(completedVC, animated: true)
     }
     
     func saveData(){
-        var currVideo = VideoFetchClass().loadLastVideo()
-        var duration = 0.0
         
-        //kalau video disave oleh user
+        var listScore: [ScoreTypeModel] = []
+        let voiceEmotion = ScoreTypeModel(scoreTypeName: .voiceEmotion, score: voiceEmotionScore)
+        let voiceSegregation = ScoreTypeModel(scoreTypeName: .voiceSegregation, score: Int(outputInterjection))
+        let faceEmotion = ScoreTypeModel(scoreTypeName: .facialExpression, score: faceEmotionScore)
+        let eyeMovement = ScoreTypeModel(scoreTypeName: .eyeMovement, score: resultValueEye)
+        
+        listScore.append(contentsOf: [voiceEmotion, voiceSegregation, faceEmotion, eyeMovement])
+        
+        //MARK:: User Default
+        let preferences = UserDefaults.standard
+        if preferences.object(forKey: idKey) != nil {
+            id = preferences.integer(forKey: idKey)
+        }
+        var currVideoPHAsset = VideoFetchClass().loadLastVideo()
+        var duration = 0.0
+        var data = Data()
+        //MARK:: If user saved the video
         if isVideoSaved{
-            currVideo = VideoFetchClass().loadLastVideo()
-            duration = currVideo.duration
+            currVideoPHAsset = VideoFetchClass().loadLastVideo()
+            duration = currVideoPHAsset.duration
+            currVideoPHAsset.getURL { url in
+                do {
+                    data = try Data(contentsOf: url!)
+                    print("SUCCESS", data)
+                    
+                    let interviewModel = InterviewModel(interviewId: self.id,duration: Int(duration), interviewDate: Date(), interviewURLPath: data)
+                    
+                    print("Interview Model \(interviewModel.interviewURLPath)")
+                    DispatchQueue.main.async {
+                        self.coredataProvider.addInterview(interviewModel: interviewModel, listAssessmentModel: [], listScoreTypeModel: listScore)
+                    }
+                  
+                } catch {
+                    print("ERROR")
+                }
+
+            }
+            
+            preferences.setValue(id+1, forKey: idKey)
+        } else {
+            currVideoPHAsset.getURL { url in
+                do {
+                    data = try Data(contentsOf: url!)
+                    print("SUCCESS", data)
+                    
+                    let interviewModel = InterviewModel(interviewId: self.id,duration: Int(duration), interviewDate: Date(), interviewURLPath: data)
+                    
+                    print("Interview Model \(interviewModel.interviewURLPath)")
+                    DispatchQueue.main.async {
+                        self.coredataProvider.addInterview(interviewModel: interviewModel, listAssessmentModel: [], listScoreTypeModel: listScore)
+                    }
+                  
+                } catch {
+                    print("ERROR")
+                }
+
+            }
+            
+            preferences.setValue(id+1, forKey: idKey)
         }
         
-        interviewId = 0//it's in seconds
+        
         isVideoSaved = false
 //        let temp = InterviewModel(interviewId: interviewId, duration: Int(duration), interviewDate: Date(), interviewURLPath: <#String#>)
     }
-
-   
 }
+
+

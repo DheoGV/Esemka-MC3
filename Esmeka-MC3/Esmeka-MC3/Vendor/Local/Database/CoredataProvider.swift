@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import Photos
 
 class CoredataProvider {
     
@@ -25,9 +26,12 @@ class CoredataProvider {
         //MARK:: Refer to Interview Entity
         let interviewEntity = InterviewEntity(context: taskContext)
         interviewEntity.interview_date = interviewModel.interviewDate
-        interviewEntity.interview_duration = Int32(interviewModel.duration ?? 0)
+        interviewEntity.interview_duration = Int32(interviewModel.duration)
         interviewEntity.interview_video_url_path = interviewModel.interviewURLPath
         interviewEntity.interview_id = Int32(interviewModel.interviewId)
+        
+        print("Waktu Saved", interviewEntity.interview_video_url_path)
+        
         
         //MARK:: Refer to Assessment Entity
         listAssessmentModel.forEach { model in
@@ -52,10 +56,11 @@ class CoredataProvider {
         
         do {
             try taskContext.save()
+            print("Interview Saved")
         } catch {
             print("Can't Save the data")
         }
-        print("Interview Saved")
+       
     }
     
     //MARK:: Get All Interview data from Interview Entity

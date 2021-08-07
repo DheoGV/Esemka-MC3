@@ -57,8 +57,8 @@ class DetailPageViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getScoresByInterviewId(interviewId: id ?? 0)
-        getSingleInterviewId(interviewId: id ?? 0)
+        getScoresByInterviewId(interviewId: 0)
+        getSingleInterviewId(interviewId: 0)
         setupView()
     }
     
@@ -86,7 +86,7 @@ class DetailPageViewController: UIViewController{
         //MARK:: Example How to Get Scores by Single Interview
         
         let scoresInterview = coredataProvider.getScoresByInteviewId(interviewId: interviewId)
-
+        print("Scores Interview", scoresInterview)
         scoresInterview.forEach { score in
             print("Score Type Name", score.value(forKey: "score_type_name") as! String)
             let scoreTypeName = score.value(forKey: "score_type_name") as! String
@@ -124,8 +124,8 @@ class DetailPageViewController: UIViewController{
     
     private func getSingleInterviewId(interviewId: Int) {
         let interview = coredataProvider.getSingleInterview(interviewId: interviewId)
-        var date = interview.value(forKey: "interview_date")!
-        lblDate.text = "\(date)"
+        let date = interview.value(forKey: "interview_date")!
+        lblDate.text = "asd"
     }
     
 }
@@ -371,15 +371,38 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
 extension DetailPageViewController : VideoProtocolDelegate {
     func playVideo() {
         print("TEST")
-        if let path = Bundle.main.path(forResource: "s1c1", ofType: "mp4") {
-            let video = AVPlayer(url: URL(fileURLWithPath: path))
-            let videoPlayerController = AVPlayerViewController()
-            videoPlayerController.player = video
-            
-            present(videoPlayerController, animated: true) {
-                video.play()
+        
+        let currVideo = VideoFetchClass().loadLastVideo()
+        var duration = 0.0
+        duration = currVideo.duration
+        
+        if duration == 0.0 {
+            print("No Video")
+        } else {
+            currVideo.getURL { url in
+                DispatchQueue.main.async {
+                    let video = AVPlayer(url: url!)
+                    let videoPlayerController = AVPlayerViewController()
+                    videoPlayerController.player = video
+                    
+                    self.present(videoPlayerController, animated: true) {
+                        video.play()
+                    }
+                }
             }
         }
+         
+      
+        
+//        if let path = Bundle.main.path(forResource: "s1c1", ofType: "mp4") {
+//            let video = AVPlayer(url: URL(fileURLWithPath: path))
+//            let videoPlayerController = AVPlayerViewController()
+//            videoPlayerController.player = video
+//
+//            present(videoPlayerController, animated: true) {
+//                video.play()
+//            }
+//        }
     }
 }
 

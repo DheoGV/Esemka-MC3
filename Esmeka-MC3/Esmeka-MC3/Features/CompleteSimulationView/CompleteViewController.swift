@@ -7,6 +7,9 @@
 
 import UIKit
 
+protocol DataSendingDelegateProtocol {
+    func sendDataToDetailPage() //isi tipe data InterviewEntity
+}
 
 // MARK: - Complete View
 class CompleteViewController: UIViewController {
@@ -21,7 +24,7 @@ class CompleteViewController: UIViewController {
     }
     
     var delegate: DataSendingDelegateProtocol? = nil
-    var interviewId = 0
+    
     // customize view
     func setView() {
         CongratulationLabel.font = UIFont.boldSystemFont(ofSize: 22)
@@ -54,8 +57,12 @@ class CompleteViewController: UIViewController {
     
     // delegate function waiting for clear database
     @IBAction func toSimulationResult(_sender: Any){
+        if self.delegate != nil{
+//            let dataToBeSent = //object Interview
+//            self.delegate?.sendDataToDetailPage(myData: dataToBeSent!)
+//            dismiss(animated: true, completion: nil)
+        }
         let detailVC = DetailPageViewController(nibName: "DetailPageViewController", bundle: nil)
-        detailVC.id = interviewId
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
     
