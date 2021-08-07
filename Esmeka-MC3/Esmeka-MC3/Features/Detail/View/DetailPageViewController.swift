@@ -57,8 +57,8 @@ class DetailPageViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getScoresByInterviewId(interviewId: 1)
-        getSingleInterviewId(interviewId: 1)
+        getScoresByInterviewId(interviewId: 0)
+        getSingleInterviewId(interviewId: 0)
         setupView()
     }
     

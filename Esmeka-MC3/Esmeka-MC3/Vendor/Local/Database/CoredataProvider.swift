@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import Photos
 
 class CoredataProvider {
     
@@ -26,7 +27,7 @@ class CoredataProvider {
         let interviewEntity = InterviewEntity(context: taskContext)
         interviewEntity.interview_date = interviewModel.interviewDate
         interviewEntity.interview_duration = Int32(interviewModel.duration ?? 0)
-      //  interviewEntity.interview_video_url_path = interviewModel.interviewURLPath
+        interviewEntity.interview_video_url_path = interviewModel.interviewURLPath
         interviewEntity.interview_id = Int32(interviewModel.interviewId)
         
         //MARK:: Refer to Assessment Entity

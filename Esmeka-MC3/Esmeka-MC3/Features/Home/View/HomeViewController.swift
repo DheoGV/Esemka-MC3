@@ -37,8 +37,8 @@ class HomeViewController: UIViewController {
            let scoreModelFour = ScoreTypeModel(scoreTypeName: scoreType.voiceSegregation, score: 9)
            
            listScore.append(contentsOf: [scoreModelOne, scoreModelTwo, scoreModelThree, scoreModelFour])
-           
-           let interviewModel = InterviewModel(interviewId: 1,duration: 5, interviewDate: date, interviewURLPath: "URL PATH")
+        var currVideo =  VideoFetchClass().loadLastVideo()
+           let interviewModel = InterviewModel(interviewId: 1,duration: 5, interviewDate: date, interviewURLPath: currVideo)
            
            coredataProvider.addInterview(interviewModel: interviewModel, listAssessmentModel: listAssessment, listScoreTypeModel: listScore)
        }
@@ -59,7 +59,8 @@ class HomeViewController: UIViewController {
            
            listScore.append(contentsOf: [scoreModelOne, scoreModelTwo, scoreModelThree, scoreModelFour])
            
-           let interviewModel = InterviewModel(interviewId: 2,duration: 10, interviewDate: date, interviewURLPath: "URL PATH")
+           var currVideo =  VideoFetchClass().loadLastVideo()
+           let interviewModel = InterviewModel(interviewId: 2,duration: 10, interviewDate: date, interviewURLPath: currVideo)
            
            coredataProvider.addInterview(interviewModel: interviewModel, listAssessmentModel: listAssessment, listScoreTypeModel: listScore)
        }

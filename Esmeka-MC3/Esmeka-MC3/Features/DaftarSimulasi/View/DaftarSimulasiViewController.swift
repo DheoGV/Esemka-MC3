@@ -90,7 +90,7 @@ class DaftarSimulasiViewController: UIViewController {
     }
     
     //MARK::Example Get All the interview
-    /*
+    
     private func getAllInterview(){
         listInterviewData = coredataProvider.getAllInterview()
         
@@ -102,7 +102,6 @@ class DaftarSimulasiViewController: UIViewController {
                 print("Scores Type Name", result.scores?.value(forKey: "score_type_name"))
                 print("Date", result.interview_date)
                 print("Duration", result.interview_duration)
-                print("Question", result.assessments?.value(forKey: "assessment_question"))
                 print("Interview id", result.interview_id)
                 
                 let interviewModel = InterviewModel(interviewId: Int(result.interview_id), duration: Int(result.interview_duration), interviewDate: result.interview_date!, interviewURLPath: result.interview_video_url_path!)
@@ -123,7 +122,7 @@ class DaftarSimulasiViewController: UIViewController {
             }
         }
     }
- */
+ 
     
 }
 
