@@ -17,6 +17,7 @@ struct Coordinate {
 
 class InterviewSimulationViewController: UIViewController, SegregationClassifierDelegate, EmotionClassifierDelegate {
     
+    //----------- Voice Emotion  ---------------
     func countEmotionParameter(identifier: String, confidence: Double) {
         DispatchQueue.main.async {
             if self.keepCounting{
@@ -27,6 +28,15 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
             print("Output Voice Emotion : ", self.totalEmotions)
         }
     }
+    
+    func countEmotionVoice()  {
+        self.voiceEmotionScore = self.binaryEmotions["good"] ?? 0/self.totalEmotions*100
+        print("Score voice Emotion :",self.voiceEmotionScore)
+        print("good", self.binaryEmotions["good"])
+        print("bad", self.binaryEmotions["bad"])
+    }
+    
+    //----------- Voice Emotion End ---------------
     
     var scene = ARSCNView(frame: UIScreen.main.bounds)
     @IBOutlet weak var recordButton: UIButton!
@@ -144,6 +154,8 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
     @IBAction func recordButtonTapped(_sender: Any){
         if isRecording {
             removeAudioEngine()
+            // If recordinng stops, we call the calculation function to set the end result here
+            
             stopRecording()
             toCompletedPage()
             
@@ -151,6 +163,17 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
             startRecording()
         }
         
+    }
+    
+    func totalResult()  {
+        // "outputInterjection" to hold the value
+        calculateOutputInterjection()
+        // "voiceEmotionScore" to hold the value
+        countEmotionVoice()
+        //
+        saveFaceEmotionScore()
+        
+        // Save to db called here after all of the 4 parameters
     }
     
     func allowedRecording(){
@@ -162,8 +185,6 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
         callPromptWindow()
         //          Call this : VOICE
         startAudioEngine()
-        calculateOutputInterjection()
-        saveFaceEmotionScore()
         timerInterview()
 
         //MARK:: Count Eye Tracking
