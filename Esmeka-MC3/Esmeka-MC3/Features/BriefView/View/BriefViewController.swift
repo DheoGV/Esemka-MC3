@@ -23,7 +23,7 @@ class BriefViewController: UIViewController {
     
     override func viewDidLoad() {
         let readBriefSetting = userDefault.object(forKey: "showBrief") as? Bool ?? true
-        
+        navigationController?.navigationBar.prefersLargeTitles = false
         if(readBriefSetting){
         super.viewDidLoad()
             setView()

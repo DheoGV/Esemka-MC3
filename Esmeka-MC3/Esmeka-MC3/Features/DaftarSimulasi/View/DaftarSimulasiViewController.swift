@@ -29,8 +29,12 @@ class DaftarSimulasiViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
+        //setup()
         print(listInterviewData.count)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setup()
     }
     
     func setup() {
