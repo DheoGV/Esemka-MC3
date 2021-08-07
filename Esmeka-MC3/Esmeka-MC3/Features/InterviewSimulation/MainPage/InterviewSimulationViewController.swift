@@ -39,7 +39,6 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
     @IBOutlet weak var recordButton: UIButton!
     var prevVideo:PHAsset!
     var isVideoSaved = false
-    var interviewId = 0
     //Face Emotion
     //let model = try! VNCoreMLModel(for: CNNEmotions().model)
     var totalEmotion = 0
@@ -207,9 +206,9 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
         }
     }
     
+    
     func toCompletedPage(){
         let completedVC = CompleteViewController(nibName: "CompleteViewController", bundle: nil)
-        completedVC.interviewId = interviewId
         navigationController?.pushViewController(completedVC, animated: true)
     }
     
@@ -276,9 +275,10 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
             preferences.setValue(id+1, forKey: idKey)
         }
         
+        
         isVideoSaved = false
 //        let temp = InterviewModel(interviewId: interviewId, duration: Int(duration), interviewDate: Date(), interviewURLPath: <#String#>)
     }
-
-   
 }
+
+
