@@ -372,19 +372,27 @@ extension DetailPageViewController : VideoProtocolDelegate {
     func playVideo() {
         print("TEST")
         
-        var currVideo = VideoFetchClass().loadLastVideo()
+        let currVideo = VideoFetchClass().loadLastVideo()
+        var duration = 0.0
+        duration = currVideo.duration
         
-        currVideo.getURL { url in
-            DispatchQueue.main.async {
-                let video = AVPlayer(url: url!)
-                let videoPlayerController = AVPlayerViewController()
-                videoPlayerController.player = video
-                
-                self.present(videoPlayerController, animated: true) {
-                    video.play()
+        if duration == 0.0 {
+            print("No Video")
+        } else {
+            currVideo.getURL { url in
+                DispatchQueue.main.async {
+                    let video = AVPlayer(url: url!)
+                    let videoPlayerController = AVPlayerViewController()
+                    videoPlayerController.player = video
+                    
+                    self.present(videoPlayerController, animated: true) {
+                        video.play()
+                    }
                 }
             }
         }
+         
+      
         
 //        if let path = Bundle.main.path(forResource: "s1c1", ofType: "mp4") {
 //            let video = AVPlayer(url: URL(fileURLWithPath: path))
