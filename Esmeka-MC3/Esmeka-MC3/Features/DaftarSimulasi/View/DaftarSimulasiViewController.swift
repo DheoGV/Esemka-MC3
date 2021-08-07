@@ -42,7 +42,7 @@ class DaftarSimulasiViewController: UIViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
         //MARK:: Ted
-     //   getAllInterview()
+        getAllInterview()
         isSimulationDataExists()
         
         collectionView.dataSource = self
@@ -93,7 +93,7 @@ class DaftarSimulasiViewController: UIViewController {
     
     private func getAllInterview(){
         listInterviewData = coredataProvider.getAllInterview()
-        
+        print("count nya bro \(listInterviewData)")
         if listInterviewData.count == 0 {
             print("Null")
         } else {

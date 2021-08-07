@@ -57,8 +57,8 @@ class DetailPageViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getScoresByInterviewId(interviewId: 0)
-        getSingleInterviewId(interviewId: 0)
+        getScoresByInterviewId(interviewId: 1)
+        getSingleInterviewId(interviewId: 1)
         setupView()
     }
     
@@ -86,7 +86,7 @@ class DetailPageViewController: UIViewController{
         //MARK:: Example How to Get Scores by Single Interview
         
         let scoresInterview = coredataProvider.getScoresByInteviewId(interviewId: interviewId)
-
+        print("Scores Interview", scoresInterview)
         scoresInterview.forEach { score in
             print("Score Type Name", score.value(forKey: "score_type_name") as! String)
             let scoreTypeName = score.value(forKey: "score_type_name") as! String
@@ -114,18 +114,18 @@ class DetailPageViewController: UIViewController{
           
         }
         
-        dataScore3.append([scores[0]])
-        dataScore3.append([scores[1]])
-        dataScore3.append([scores[2]])
-        dataScore3.append([scores[3]])
+//        dataScore3.append([scores[0]])
+//        dataScore3.append([scores[1]])
+//        dataScore3.append([scores[2]])
+//        dataScore3.append([scores[3]])
         
     }
      
     
     private func getSingleInterviewId(interviewId: Int) {
         let interview = coredataProvider.getSingleInterview(interviewId: interviewId)
-        var date = interview.value(forKey: "interview_date")!
-        lblDate.text = "\(date)"
+        let date = interview.value(forKey: "interview_date")!
+        lblDate.text = "asd"
     }
     
 }

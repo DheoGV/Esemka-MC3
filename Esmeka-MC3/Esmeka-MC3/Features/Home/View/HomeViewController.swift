@@ -18,8 +18,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+      //  insertInterview()
         insertInterview()
-        
     }
     
     //MARK:: Example to Insert the Data
@@ -37,7 +37,7 @@ class HomeViewController: UIViewController {
            let scoreModelFour = ScoreTypeModel(scoreTypeName: scoreType.voiceSegregation, score: 9)
            
            listScore.append(contentsOf: [scoreModelOne, scoreModelTwo, scoreModelThree, scoreModelFour])
-        var currVideo =  VideoFetchClass().loadLastVideo()
+           let currVideo =  VideoFetchClass().loadLastVideo()
            let interviewModel = InterviewModel(interviewId: 1,duration: 5, interviewDate: date, interviewURLPath: currVideo)
            
            coredataProvider.addInterview(interviewModel: interviewModel, listAssessmentModel: listAssessment, listScoreTypeModel: listScore)
