@@ -57,8 +57,8 @@ class DetailPageViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getScoresByInterviewId(interviewId: id ?? 0)
-        getSingleInterviewId(interviewId: id ?? 0)
+        getScoresByInterviewId(interviewId: 1)
+        getSingleInterviewId(interviewId: 1)
         setupView()
     }
     
@@ -371,15 +371,30 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
 extension DetailPageViewController : VideoProtocolDelegate {
     func playVideo() {
         print("TEST")
-        if let path = Bundle.main.path(forResource: "s1c1", ofType: "mp4") {
-            let video = AVPlayer(url: URL(fileURLWithPath: path))
-            let videoPlayerController = AVPlayerViewController()
-            videoPlayerController.player = video
-            
-            present(videoPlayerController, animated: true) {
-                video.play()
+        
+        var currVideo = VideoFetchClass().loadLastVideo()
+        
+        currVideo.getURL { url in
+            DispatchQueue.main.async {
+                let video = AVPlayer(url: url!)
+                let videoPlayerController = AVPlayerViewController()
+                videoPlayerController.player = video
+                
+                self.present(videoPlayerController, animated: true) {
+                    video.play()
+                }
             }
         }
+        
+//        if let path = Bundle.main.path(forResource: "s1c1", ofType: "mp4") {
+//            let video = AVPlayer(url: URL(fileURLWithPath: path))
+//            let videoPlayerController = AVPlayerViewController()
+//            videoPlayerController.player = video
+//
+//            present(videoPlayerController, animated: true) {
+//                video.play()
+//            }
+//        }
     }
 }
 

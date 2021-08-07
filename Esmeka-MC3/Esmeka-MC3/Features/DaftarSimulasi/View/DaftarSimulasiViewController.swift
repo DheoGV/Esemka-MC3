@@ -42,7 +42,7 @@ class DaftarSimulasiViewController: UIViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
         //MARK:: Ted
-        getAllInterview()
+     //   getAllInterview()
         isSimulationDataExists()
         
         collectionView.dataSource = self
@@ -90,6 +90,7 @@ class DaftarSimulasiViewController: UIViewController {
     }
     
     //MARK::Example Get All the interview
+    /*
     private func getAllInterview(){
         listInterviewData = coredataProvider.getAllInterview()
         
@@ -121,9 +122,8 @@ class DaftarSimulasiViewController: UIViewController {
                 print("Question", score)
             }
         }
-        
-      
     }
+ */
     
 }
 

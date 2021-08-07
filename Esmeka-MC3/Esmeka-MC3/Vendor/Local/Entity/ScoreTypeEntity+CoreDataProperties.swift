@@ -2,7 +2,7 @@
 //  ScoreTypeEntity+CoreDataProperties.swift
 //  Esmeka-MC3
 //
-//  Created by Christopher Teddy  on 04/08/21.
+//  Created by Christopher Teddy  on 07/08/21.
 //
 //
 

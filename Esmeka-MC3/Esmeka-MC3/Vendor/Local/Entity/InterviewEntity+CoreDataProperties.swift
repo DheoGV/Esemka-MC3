@@ -2,13 +2,13 @@
 //  InterviewEntity+CoreDataProperties.swift
 //  Esmeka-MC3
 //
-//  Created by Christopher Teddy  on 04/08/21.
+//  Created by Christopher Teddy  on 07/08/21.
 //
 //
 
 import Foundation
 import CoreData
-
+import Photos
 
 extension InterviewEntity {
 
@@ -19,7 +19,7 @@ extension InterviewEntity {
     @NSManaged public var interview_date: Date?
     @NSManaged public var interview_duration: Int32
     @NSManaged public var interview_id: Int32
-    @NSManaged public var interview_video_url_path: String?
+    @NSManaged public var interview_video_url_path: PHAsset?
     @NSManaged public var assessments: NSSet?
     @NSManaged public var scores: NSSet?
 
