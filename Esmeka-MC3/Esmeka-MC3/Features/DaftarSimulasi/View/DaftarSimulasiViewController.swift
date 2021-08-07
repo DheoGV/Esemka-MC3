@@ -130,7 +130,7 @@ class DaftarSimulasiViewController: UIViewController {
 extension DaftarSimulasiViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return simulasiData.count ?? 0
+        return simulasiData.count
     }
     
     

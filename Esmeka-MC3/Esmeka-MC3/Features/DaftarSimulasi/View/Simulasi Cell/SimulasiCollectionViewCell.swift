@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Photos
 
 class SimulasiCollectionViewCell: UICollectionViewCell {
 
@@ -29,8 +30,10 @@ class SimulasiCollectionViewCell: UICollectionViewCell {
                 dateFormatter.dateStyle = .long
                 tanggalSimulasiLbl.text = dateFormatter.string(from: filled.interviewDate)
                 durasiSimulasiLbl.text = "\(filled.duration) Menit "
+//                imageSimulasi.image = getThumbnail(asset)
                 let tap = UITapGestureRecognizer(target: self, action: #selector(self.simulasiPressed(_:)))
                 viewSimulasiCell.addGestureRecognizer(tap)
+                
             }
         }
     }
@@ -46,6 +49,18 @@ class SimulasiCollectionViewCell: UICollectionViewCell {
     
     @objc func simulasiPressed(_: UITapGestureRecognizer) {
         didClick?()
+    }
+    private func getThumbnail(asset:PHAsset)->UIImage{
+        let manager = PHImageManager.default()
+        let option = PHImageRequestOptions()
+        var thumbnail =  UIImage()
+        option.isSynchronous = true
+        option .isNetworkAccessAllowed = true
+        manager.requestImage(for: asset, targetSize: CGSize(width: viewSimulasiCell.frame.width , height: viewSimulasiCell.frame.width), contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
+            thumbnail = result!
+        })
+        
+        return thumbnail
     }
 
 }
