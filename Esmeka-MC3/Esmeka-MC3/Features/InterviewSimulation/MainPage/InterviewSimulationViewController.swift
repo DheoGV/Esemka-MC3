@@ -227,26 +227,50 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
         if preferences.object(forKey: idKey) != nil {
             id = preferences.integer(forKey: idKey)
         }
-        
-        var currVideo = VideoFetchClass().loadLastVideo()
+        var currVideoPHAsset = VideoFetchClass().loadLastVideo()
         var duration = 0.0
-        
+        var data = Data()
         //MARK:: If user saved the video
         if isVideoSaved{
-            currVideo = VideoFetchClass().loadLastVideo()
-            duration = currVideo.duration
-            
-            let interviewModel = InterviewModel(interviewId: id, duration: Int(duration) , interviewDate: Date(), interviewURLPath: currVideo)
-            
-            coredataProvider.addInterview(interviewModel: interviewModel, listAssessmentModel: [], listScoreTypeModel: listScore)
-            
-            print("id \(id)")
+            currVideoPHAsset = VideoFetchClass().loadLastVideo()
+            duration = currVideoPHAsset.duration
+            currVideoPHAsset.getURL { url in
+                do {
+                    data = try Data(contentsOf: url!)
+                    print("SUCCESS", data)
+                    
+                    let interviewModel = InterviewModel(interviewId: self.id,duration: Int(duration), interviewDate: Date(), interviewURLPath: data)
+                    
+                    print("Interview Model \(interviewModel.interviewURLPath)")
+                    DispatchQueue.main.async {
+                        self.coredataProvider.addInterview(interviewModel: interviewModel, listAssessmentModel: [], listScoreTypeModel: listScore)
+                    }
+                  
+                } catch {
+                    print("ERROR")
+                }
+
+            }
             
             preferences.setValue(id+1, forKey: idKey)
         } else {
-            let interviewModel = InterviewModel(interviewId: id, duration: Int(duration) , interviewDate: Date(), interviewURLPath: currVideo)
-            
-            coredataProvider.addInterview(interviewModel: interviewModel, listAssessmentModel: [], listScoreTypeModel: listScore)
+            currVideoPHAsset.getURL { url in
+                do {
+                    data = try Data(contentsOf: url!)
+                    print("SUCCESS", data)
+                    
+                    let interviewModel = InterviewModel(interviewId: self.id,duration: Int(duration), interviewDate: Date(), interviewURLPath: data)
+                    
+                    print("Interview Model \(interviewModel.interviewURLPath)")
+                    DispatchQueue.main.async {
+                        self.coredataProvider.addInterview(interviewModel: interviewModel, listAssessmentModel: [], listScoreTypeModel: listScore)
+                    }
+                  
+                } catch {
+                    print("ERROR")
+                }
+
+            }
             
             preferences.setValue(id+1, forKey: idKey)
         }

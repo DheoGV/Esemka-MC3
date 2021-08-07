@@ -13,7 +13,7 @@ struct InterviewModel {
     let duration: Int
 //    let interviewTitle: String
     let interviewDate: Date
-    let interviewURLPath: PHAsset
+    let interviewURLPath: Data
 //    let listAssessment: [AssessmentModel]?
 //    let listScore: [ScoreTypeModel]?
 }

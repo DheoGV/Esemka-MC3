@@ -8,7 +8,7 @@
 
 import Foundation
 import CoreData
-import Photos
+
 
 extension InterviewEntity {
 
@@ -19,7 +19,7 @@ extension InterviewEntity {
     @NSManaged public var interview_date: Date?
     @NSManaged public var interview_duration: Int32
     @NSManaged public var interview_id: Int32
-    @NSManaged public var interview_video_url_path: PHAsset?
+    @NSManaged public var interview_video_url_path: Data?
     @NSManaged public var assessments: NSSet?
     @NSManaged public var scores: NSSet?
 
