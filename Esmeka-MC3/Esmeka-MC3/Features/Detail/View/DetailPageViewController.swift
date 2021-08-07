@@ -27,6 +27,8 @@ class DetailPageViewController: UIViewController{
     @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var btnFinish: UIButton!
     
+    var id: Int?
+    
     let dateCurrent = Date()
     
     let selectedIndex = -1
@@ -55,8 +57,8 @@ class DetailPageViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getScoresByInterviewId(interviewId: 1)
-        getSingleInterviewId(interviewId: 1)
+        getScoresByInterviewId(interviewId: id ?? 0)
+        getSingleInterviewId(interviewId: id ?? 0)
         setupView()
     }
     

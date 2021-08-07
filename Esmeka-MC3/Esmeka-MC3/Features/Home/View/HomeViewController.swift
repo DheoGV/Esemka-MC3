@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getSingleInterview(interviewId: 2)
+        insertSecondInterview()
     }
     
     //MARK:: Example to Insert the Data
