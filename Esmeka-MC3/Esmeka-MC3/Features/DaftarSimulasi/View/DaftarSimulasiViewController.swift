@@ -8,48 +8,58 @@
 import UIKit
 
 class DaftarSimulasiViewController: UIViewController {
+    
+    //MARK:: Make Lazy for single isntance only, it prevent memory leak
+    private lazy var coredataProvider: CoredataProvider = {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return CoredataProvider(appDelegate)
+    }()
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var imgNoData: UIImageView!
     @IBOutlet weak var noData1Lbl: UILabel!
     @IBOutlet weak var noData2Lbl: UILabel!
     
-    var simulasiData: [InterviewModel]?
+    var simulasiData = [InterviewModel]()
     let sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     let userDefault = UserDefaults.standard
+    
+    
+    var listInterviewData = [InterviewEntity]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        print(listInterviewData.count)
     }
     
     func setup() {
         title = "Daftar Simulasi"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
-       // fetchSimulasi()
-        isSimulasiExist()
+        //MARK:: Ted
+        getAllInterview()
+        isSimulationDataExists()
         
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(SimulasiCollectionViewCell.nib(), forCellWithReuseIdentifier: SimulasiCollectionViewCell.identifier)
     }
-    
-//    func fetchSimulasi() {
-//        simulasiData = SimulasiDataManager.shared.fetchSimulasi()
-//    }
-    
-    func isSimulasiExist(){
-        if simulasiData?.count == 0 {
+        
+    //MARK:: Ted
+    func isSimulationDataExists() {
+        if listInterviewData.count == 0 {
             imgNoData.isHidden = false
             noData1Lbl.isHidden = false
             noData2Lbl.isHidden = false
+            print("HUA AA")
             collectionView.isHidden = true
-        } else {
-            collectionView.reloadData()
+        } else if listInterviewData.count > 0{
             imgNoData.isHidden = true
             noData1Lbl.isHidden = true
             noData2Lbl.isHidden = true
+            print("HUA")
+            collectionView.reloadData()
         }
     }
     
@@ -75,23 +85,60 @@ class DaftarSimulasiViewController: UIViewController {
     navigationController?.pushViewController(simulationVC, animated: true)
     }
     
+    //MARK::Example Get All the interview
+    private func getAllInterview(){
+        listInterviewData = coredataProvider.getAllInterview()
+        
+        if listInterviewData.count == 0 {
+            print("Null")
+        } else {
+            listInterviewData.forEach { result in
+                print("Scores Value", result.scores?.value(forKey: "score_value"))
+                print("Scores Type Name", result.scores?.value(forKey: "score_type_name"))
+                print("Date", result.interview_date)
+                print("Duration", result.interview_duration)
+                print("Question", result.assessments?.value(forKey: "assessment_question"))
+                print("Interview id", result.interview_id)
+                
+                let interviewModel = InterviewModel(interviewId: Int(result.interview_id), duration: Int(result.interview_duration), interviewDate: result.interview_date!, interviewURLPath: result.interview_video_url_path!)
+                
+                simulasiData.append(interviewModel)
+            }
+            
+            let listScoresEntity = coredataProvider.getAllScores()
+            
+            listScoresEntity.forEach { score in
+                print("Score", score)
+            }
+            
+            let listQuestion = coredataProvider.getAllQuestion()
+            
+            listQuestion.forEach { score in
+                print("Question", score)
+            }
+        }
+        
+      
+    }
+    
 }
 
 extension DaftarSimulasiViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return simulasiData?.count ?? 0
+        return simulasiData.count ?? 0
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SimulasiCollectionViewCell.identifier, for: indexPath) as! SimulasiCollectionViewCell
-        cell.simulasi = self.simulasiData?[indexPath.row]
+        cell.simulasi = self.simulasiData[indexPath.row]
         cell.layer.cornerRadius = 10
         
         cell.didClick = { [weak self] in
-            let simulasiDetailVC = DetailPageViewController(nibName: "DetaiilPageViewController", bundle: nil)
+            let simulasiDetailVC = DetailPageViewController(nibName: "DetailPageViewController", bundle: nil)
+            simulasiDetailVC.id = self!.simulasiData[indexPath.row].interviewId
             
             self?.navigationController?.pushViewController(simulasiDetailVC, animated: true)
         }
