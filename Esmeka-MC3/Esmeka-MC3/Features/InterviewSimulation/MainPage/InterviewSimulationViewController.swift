@@ -245,6 +245,8 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
             let interviewModel = InterviewModel(interviewId: id, duration: Int(duration) , interviewDate: Date(), interviewURLPath: currVideo)
             
             coredataProvider.addInterview(interviewModel: interviewModel, listAssessmentModel: [], listScoreTypeModel: listScore)
+            
+            preferences.setValue(id+1, forKey: idKey)
         }
         
         
