@@ -88,3 +88,4 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+Esmeka-MC3/Esmeka-MC3/Vendor/Local/Model/MLModel/CNNEmotions.mlmodel

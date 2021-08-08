@@ -29,11 +29,13 @@ class DaftarSimulasiViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //setup()
         setup()
         listInterviewData = coredataProvider.getAllInterview()
-        print("Hitug", listInterviewData.count)
         
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        listInterviewData = coredataProvider.getAllInterview()
+        setup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -92,6 +94,7 @@ class DaftarSimulasiViewController: UIViewController {
     //MARK::Example Get All the interview
     
     private func getAllInterview(){
+        simulasiData = []
         listInterviewData = coredataProvider.getAllInterview()
         print("count nya bro \(listInterviewData)")
         if listInterviewData.count == 0 {
@@ -134,7 +137,7 @@ class DaftarSimulasiViewController: UIViewController {
 extension DaftarSimulasiViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return simulasiData.count
+        return listInterviewData.count
     }
     
     

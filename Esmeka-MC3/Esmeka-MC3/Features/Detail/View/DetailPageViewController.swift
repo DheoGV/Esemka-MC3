@@ -366,6 +366,10 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
+    @IBAction func toDaftarSimulasi(_sender: Any){
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
 }
 
 extension DetailPageViewController : VideoProtocolDelegate {
