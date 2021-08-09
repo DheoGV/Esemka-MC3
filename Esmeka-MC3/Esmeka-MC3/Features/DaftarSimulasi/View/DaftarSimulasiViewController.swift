@@ -30,17 +30,19 @@ class DaftarSimulasiViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        listInterviewData = coredataProvider.getAllInterview()
+      //  listInterviewData = coredataProvider.getAllInterview()
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        listInterviewData = coredataProvider.getAllInterview()
+      //  listInterviewData = coredataProvider.getAllInterview()
         setup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-       
+        setup()
     }
+    
+    
     
     func setup() {
         title = "Daftar Simulasi"
