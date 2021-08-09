@@ -61,6 +61,8 @@ class SimulasiCollectionViewCell: UICollectionViewCell {
             thumbnail = result!
         })
         
+        
+        
         return thumbnail
     }
 
