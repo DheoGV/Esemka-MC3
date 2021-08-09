@@ -10,6 +10,7 @@ import ARKit
 import AVFoundation
 import SoundAnalysis
 import Photos
+import PhotosUI
 
 struct Coordinate {
     var x: Int
@@ -119,6 +120,7 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
         buttonSetup()
     }
     
+    
     func buttonSetup(){
         view.bringSubviewToFront(recordButton)
         recordButton.layer.cornerRadius = recordButton.frame.height / 2
@@ -159,7 +161,11 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
             toCompletedPage()
             
         } else {
-            startRecording()
+            PHPhotoLibrary.requestAuthorization(for: .readWrite) { [unowned self] (status) in
+                DispatchQueue.main.async { [unowned self] in
+                    startRecording()
+                }
+            }
         }
         
     }
@@ -277,7 +283,6 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
         
         
         isVideoSaved = false
-//        let temp = InterviewModel(interviewId: interviewId, duration: Int(duration), interviewDate: Date(), interviewURLPath: <#String#>)
     }
 }
 

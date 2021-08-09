@@ -11,7 +11,14 @@ class VideoFetchClass {
     
     
     func loadLastVideo()->PHAsset{
-        
+//        guard PHPhotoLibrary.authorizationStatus() != .authorized else {
+//          completionHandler(true)
+//          return
+//        }
+//        // 2
+//        PHPhotoLibrary.requestAuthorization { status in
+//          completionHandler(status == .authorized)
+//        }
         let fetchResult =  PHAsset.fetchAssets(with: .video, options: fetchOptions()).lastObject
         
         PHImageManager().requestAVAsset(forVideo: fetchResult!, options: nil, resultHandler: { (avurlAsset, audioMix, dict) in
@@ -66,6 +73,31 @@ class VideoFetchClass {
         fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
         return fetchOptions
     }
+    
+//    func writeImage_VideoToLibrary(data: Data, fileDescription: String) {
+//
+//        let date = Date()
+//        self.createDirectory(name: "MyDataApp")
+//        // write data to library camera roll
+//        PHPhotoLibrary.shared().performChanges({
+//            if fileDescription.contains("VIDEO") {
+//                // write video
+//                let url = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("MyDataApp/video_\(date).mov")
+//                try? data.write(to: url)
+//                PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: url)
+//            } else {
+//                //write image
+//                let url = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("MyDataApp/img_\(date).jpeg")
+//                try? data.write(to: url)
+//                PHAssetChangeRequest.creationRequestForAssetFromImage(atFileURL: url)
+//            }
+//            print(fileDescription)
+//        }) { saved, err in
+//            if err != nil {
+//                print(err.debugDescription)
+//            }
+//        }
+//    }
     
 }
 

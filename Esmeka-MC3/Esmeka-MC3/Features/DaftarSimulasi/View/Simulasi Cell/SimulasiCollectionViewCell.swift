@@ -30,7 +30,8 @@ class SimulasiCollectionViewCell: UICollectionViewCell {
                 dateFormatter.dateStyle = .long
                 tanggalSimulasiLbl.text = dateFormatter.string(from: filled.interviewDate)
                 durasiSimulasiLbl.text = "\(filled.duration) Menit "
-//                imageSimulasi.image = getThumbnail(asset)
+                //masih dummy thumbnail
+                imageSimulasi.image = getThumbnail(asset: VideoFetchClass().loadLastVideo())
                 let tap = UITapGestureRecognizer(target: self, action: #selector(self.simulasiPressed(_:)))
                 viewSimulasiCell.addGestureRecognizer(tap)
                 
