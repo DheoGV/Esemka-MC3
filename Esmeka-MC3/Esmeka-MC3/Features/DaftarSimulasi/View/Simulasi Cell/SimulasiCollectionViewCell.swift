@@ -25,7 +25,7 @@ class SimulasiCollectionViewCell: UICollectionViewCell {
     var simulasi: InterviewModel?{
         didSet{
             if let filled = simulasi{
-                timeFormatter.dateStyle = .short
+                timeFormatter.dateFormat = "hh a"
                 waktuSimulasiLbl.text = timeFormatter.string(from: filled.interviewDate)
                 dateFormatter.dateStyle = .long
                 tanggalSimulasiLbl.text = dateFormatter.string(from: filled.interviewDate)

@@ -15,6 +15,7 @@ extension InterviewSimulationViewController: ARSCNViewDelegate {
         let node = SCNNode(geometry: ARSCNFaceGeometry(device: device))
         //Projects the white lines on the face.
         node.geometry?.firstMaterial?.fillMode = .lines
+        
         return node
     }
     
