@@ -7,17 +7,10 @@
 
 import UIKit
 import ARKit
-import AVFoundation
-import SoundAnalysis
 import Photos
 import PhotosUI
 
-struct Coordinate {
-    var x: Int
-    var y: Int
-}
-
-class InterviewSimulationViewController: UIViewController, SegregationClassifierDelegate, EmotionClassifierDelegate {
+class InterviewSimulationViewController: UIViewController{
     
     //MARK:: Make Lazy for single isntance only, it prevent memory leak
     private lazy var coredataProvider: CoredataProvider = {
@@ -25,24 +18,17 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
         return CoredataProvider(appDelegate)
     }()
     
-    func countEmotionParameter(identifier: String, confidence: Double) {
-        DispatchQueue.main.async {
-            if self.keepCounting{
-                self.totalEmotions += 1
-                self.binaryEmotions[self.availableEmotions[identifier]!]! += 1
-                
-            }
-            print("Output Voice Emotion : ", self.totalEmotions)
-        }
-    }
-    
-    var scene = ARSCNView(frame: UIScreen.main.bounds)
     @IBOutlet weak var recordButton: UIButton!
+    var scene = ARSCNView(frame: UIScreen.main.bounds)
     var prevVideo:PHAsset!
     var isVideoSaved = false
+    var isRecording : Bool = false
+    
+    let voiceEngine = VoiceClassifierEngine()
+    
     //Face Emotion
     //let model = try! VNCoreMLModel(for: CNNEmotions().model)
-    var totalEmotion = 0
+    var totalFaceEmotions = 0
     var goodEmotion = 0
     var faceEmotionScore:Int = 0
     
@@ -57,42 +43,11 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
     var resultValueEye = 100
     var tempResult = 0.0
     
-    //    VOICE
-    var segregationObserver = SegregationObserver()
-    var emotionObserver = EmotionObserver()
-    let audioEngine = AVAudioEngine()
-    let voiceSegregetion = InterjectionClassifier()
-    let voiceEmotion = SoundEmotionClassifier()
-    var inputFormat : AVAudioFormat!
-    var analyzer: SNAudioStreamAnalyzer!
-    let analysisQueue = DispatchQueue(label: "com.custom.AnalysisQueue")
-    var audioOn = false
-    var interjection = 0
-    var keepCounting = true
-    //--------------- Voice Analyzer Variable --------------
-    // -------------------- Timer -------------------------
-    var timerTimeNow : Double = 0
-    var timerToMinute : Double = 0
-    var timer : Timer?
-    
-    var isRecording : Bool = false
-    var idealInterjectionNumber : Double = 0
-    var outputInterjection : Double = 0
-    //    ----------------Voice Emotion ----------------
-    var availableEmotions : [String : String] = ["angry":"bad", "disgust":"bad", "fear":"bad", "happy":"good", "neutral":"good", "ps":"good", "sad":"bad"]
-    var totalEmotions = 0
-    var binaryEmotions:[String: Int] = ["good":0, "bad":0]
-    var voiceEmotionScore:Int = 0
-    
     //-------------- User Default Key ------------------
     var idKey = "idKey"
     var id:Int = 0
     
     override func viewDidLoad() {
-        segregationObserver.delegate = self
-        emotionObserver.delegate = self
-        inputFormat = audioEngine.inputNode.inputFormat(forBus: 0)
-        analyzer = SNAudioStreamAnalyzer(format: inputFormat)
         super.viewDidLoad()
         buttonSetup()
         setup()
@@ -129,8 +84,6 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
     }
     
     func callPromptWindow(){
-        //        Bundle.loadNibNamed("PromptQuestionView", owner: self, options: nil)
-        //        promptWindow.prepareForInterfaceBuilder()
         let topMargin = view.safeAreaInsets.top + 25
         let leadMargin = view.safeAreaInsets.left + 16
         let height = view.frame.size.height/5
@@ -138,25 +91,13 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
         let frame = CGRect(x: leadMargin, y: topMargin, width: width, height: height)
         let promptWindow = PromptQuestionView(frame: frame)
         view.addSubview(promptWindow)
-        
-    }
-    
-    func saveFaceEmotionScore() {
-        if goodEmotion > 0 {
-            faceEmotionScore = Int(goodEmotion * 100 / totalEmotion)
-        }
-        else{
-            faceEmotionScore = 0
-        }
-        print("Score face Emotion: \(faceEmotionScore)")
-        //save to core data
     }
     
     
     ///MARK: set it to @IBAction, and add appropriate functions
     @IBAction func recordButtonTapped(_sender: Any){
         if isRecording {
-            removeAudioEngine()
+            voiceEngine.removeEngine()
             stopRecording()
             toCompletedPage()
             
@@ -170,22 +111,12 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
         
     }
     
-    func allowedRecording(){
-        isRecording = !isRecording
-        recordButton.isHidden = false
-        recordButton.backgroundColor = .white
-        recordButton.tintColor = UIColor.ColorLibrary.blueAccent
-        recordButton.setImage(UIImage(systemName: "square.fill"), for: .normal)
-        callPromptWindow()
-        //          Call this : VOICE
-        startAudioEngine()
-        calculateOutputInterjection()
-        saveFaceEmotionScore()
-        timerInterview()
-
-        //MARK:: Count Eye Tracking
-        countEyeTrackingMiss()
-
+    func getFaceEmotionScore()->Int {
+        var score = 0
+        if goodEmotion > 0 {
+            score = Int(goodEmotion * 100 / totalFaceEmotions)
+        }
+        return score
     }
     
     func startCountdownView(){
@@ -196,7 +127,6 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
         bgView.alpha = 0.1
         view.addSubview(bgView)
         view.addSubview(timerView)
-        
         
         var runCount = 0
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
@@ -212,18 +142,31 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
         }
     }
     
+    func allowedRecording(){
+        isRecording = !isRecording
+        recordButton.isHidden = false
+        recordButton.backgroundColor = .white
+        recordButton.tintColor = UIColor.ColorLibrary.blueAccent
+        recordButton.setImage(UIImage(systemName: "square.fill"), for: .normal)
+        callPromptWindow()
+        //          Call this : VOICE
+        voiceEngine.startEngine()
+        //MARK:: Count Eye Tracking
+        countEyeTrackingMiss()
+
+    }
     
     func toCompletedPage(){
         let completedVC = CompleteViewController(nibName: "CompleteViewController", bundle: nil)
+        completedVC.interviewId = id
         navigationController?.pushViewController(completedVC, animated: true)
     }
     
     func saveData(){
-        
         var listScore: [ScoreTypeModel] = []
-        let voiceEmotion = ScoreTypeModel(scoreTypeName: .voiceEmotion, score: voiceEmotionScore)
-        let voiceSegregation = ScoreTypeModel(scoreTypeName: .voiceSegregation, score: Int(outputInterjection))
-        let faceEmotion = ScoreTypeModel(scoreTypeName: .facialExpression, score: faceEmotionScore)
+        let voiceEmotion = ScoreTypeModel(scoreTypeName: .voiceEmotion, score: voiceEngine.getVoiceEmotionScore())
+        let voiceSegregation = ScoreTypeModel(scoreTypeName: .voiceSegregation, score: voiceEngine.getInterjectionScore())
+        let faceEmotion = ScoreTypeModel(scoreTypeName: .facialExpression, score: getFaceEmotionScore())
         let eyeMovement = ScoreTypeModel(scoreTypeName: .eyeMovement, score: resultValueEye)
         
         listScore.append(contentsOf: [voiceEmotion, voiceSegregation, faceEmotion, eyeMovement])
@@ -280,7 +223,6 @@ class InterviewSimulationViewController: UIViewController, SegregationClassifier
             
             preferences.setValue(id+1, forKey: idKey)
         }
-        
         
         isVideoSaved = false
     }
