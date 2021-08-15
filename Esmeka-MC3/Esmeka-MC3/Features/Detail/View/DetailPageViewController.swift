@@ -8,19 +8,6 @@
 import UIKit
 import AVKit
 
-struct Score {
-    var score: Int?
-    var colorCell: UIColor?
-    var isCollapse: Bool?
-    var scoreTypeName: String?
-    var scoreExplanation: String?
-    var imageIcon: UIImage?
-}
-
-struct Video {
-    var imageURL: String
-}
-
 class DetailPageViewController: UIViewController{
     
     @IBOutlet weak var tvDetail: UITableView!
@@ -34,18 +21,10 @@ class DetailPageViewController: UIViewController{
     let selectedIndex = -1
     
     let sections:[String] = ["Nilai Simulasi","","","", "Rekaman Simulasi"]
-//    var dataScore3: [[Score]] = [[
-//                                    Score(score: 81, colorCell: UIColor(red: 0.11, green: 0.44, blue: 0.53, alpha: 1.00), isCollapse: false, scoreTypeName: "a")],
-//                                 [
-//                                    Score(score: 82, colorCell: UIColor(red: 0.28, green: 0.20, blue: 0.83, alpha: 1.00), isCollapse:  false, scoreTypeName: "a")],
-//                                 [
-//                                    Score(score: 83, colorCell: UIColor(red: 0.20, green: 0.29, blue: 0.37, alpha: 1.00), isCollapse: false, scoreTypeName: "a"),],
-//                                 [
-//                                    Score(score: 84, colorCell: UIColor(red: 0.56, green: 0.27, blue: 0.68, alpha: 1.00), isCollapse: false, scoreTypeName: "a"),],
-//    ]
-    var dataScore3 = [[Score]]()
-    var scores = [Score]()
     
+    var dataScore3 = [[Score]]()
+    
+    var scores = [Score]()
     
     let dataSimulasi:[[Video]] = [[Video(imageURL: "gambar")]]
     
@@ -53,7 +32,6 @@ class DetailPageViewController: UIViewController{
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return CoredataProvider(appDelegate)
     }()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +47,6 @@ class DetailPageViewController: UIViewController{
         tvDetail.layer.cornerRadius = 10
         tvDetail.layer.backgroundColor = UIColor(red: 0.98, green: 0.98, blue: 0.98, alpha: 1.00).cgColor
         lblDate.text = dateCurrent.description
-        
         btnFinish.layer.cornerRadius = 10
         btnFinish.backgroundColor = UIColor(red: 0.08, green: 0.20, blue: 0.64, alpha: 1.00)
         tvDetail.showsVerticalScrollIndicator = false
@@ -81,51 +58,37 @@ class DetailPageViewController: UIViewController{
         tvDetail.register(UINib(nibName: "VideoTableViewCell", bundle: nil), forCellReuseIdentifier: "videocell")
     }
     
-    
     private func getScoresByInterviewId(interviewId: Int) {
         //MARK:: Example How to Get Scores by Single Interview
-        
         let scoresInterview = coredataProvider.getScoresByInteviewId(interviewId: interviewId)
         print("Scores Interview", scoresInterview)
         scoresInterview.forEach { score in
-            print("Score Type Name", score.value(forKey: "score_type_name") as! String)
-            let scoreTypeName = score.value(forKey: "score_type_name") as! String
-            let scoreValue = score.value(forKey: "score_value") as! Int
-            
+            let scoreTypeName = score.value(forKey: "score_type_name") as? String
+            let scoreValue = score.value(forKey: "score_value") as? Int
             //Change to Switch Maybe (?)
             if (scoreTypeName == "facialExpression") {
                 let score = Score(score: scoreValue, colorCell:  UIColor(red: 0.11, green: 0.44, blue: 0.53, alpha: 1.00), isCollapse: false, scoreTypeName: "Ekspresi Wajah", scoreExplanation: "HEHE", imageIcon: UIImage(systemName : "smiley.fill"))
-                
                 scores.append(score)
             } else if (scoreTypeName == "eyeMovement") {
                 let score = Score(score: scoreValue, colorCell: UIColor(red: 0.56, green: 0.27, blue: 0.68, alpha: 1.00), isCollapse: false, scoreTypeName: "Kontak Mata", scoreExplanation: "HEHE", imageIcon: UIImage(systemName: "eye.fill"))
-                
                 scores.append(score)
             } else if (scoreTypeName == "voiceEmotion") {
                 let score = Score(score: scoreValue, colorCell: UIColor(red: 0.28, green: 0.20, blue: 0.83, alpha: 1.00), isCollapse: false, scoreTypeName: "Emosi Suara", scoreExplanation: "HEHE", imageIcon: UIImage(systemName: "volume.2.fill"))
-                
                 scores.append(score)
             } else  if (scoreTypeName == "voiceSegregation") {
                 let score = Score(score: scoreValue, colorCell: UIColor(red: 0.20, green: 0.29, blue: 0.37, alpha: 1.00), isCollapse: false, scoreTypeName: "Kelancaran Berbicara", scoreExplanation: "HEHE", imageIcon: UIImage(systemName: "mic.fill"))
-                
                 scores.append(score)
             }
-         
-          
         }
-        
         dataScore3.append([scores[0]])
         dataScore3.append([scores[1]])
         dataScore3.append([scores[2]])
         dataScore3.append([scores[3]])
-        
     }
-     
-    
     private func getSingleInterviewId(interviewId: Int) {
         let interview = coredataProvider.getSingleInterview(interviewId: interviewId)
-        let date = interview.value(forKey: "interview_date")!
-        lblDate.text = "asd"
+        let date = interview.value(forKey: "interview_date") as? Date
+        lblDate.text = "\(String(describing: date))"
     }
     
 }
@@ -154,7 +117,9 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
         
         switch indexPath.section {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: ScoreTableViewCell.identifer) as! ScoreTableViewCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ScoreTableViewCell.identifer) as! ScoreTableViewCell? else {
+              fatalError()
+            }
             let score = dataScore3[indexPath.section][indexPath.row].score!
             let uiColor = dataScore3[indexPath.section][indexPath.row].colorCell
             let scoreTypeName = dataScore3[indexPath.section][indexPath.row].scoreTypeName!
@@ -200,32 +165,22 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
             let uiColor = dataScore3[indexPath.section][indexPath.row].colorCell
             let scoreTypeName = dataScore3[indexPath.section][indexPath.row].scoreTypeName!
             let imageIcon = dataScore3[indexPath.section][indexPath.row].imageIcon!
-            
-            print(indexPath.section)
-            
+        
             cell.lblScore.text = "\(String(describing: score))"
             cell.lblEkspresi.text = "\(String(describing: scoreTypeName))"
             cell.viewContainer.backgroundColor = uiColor
             cell.ivLogo.image = imageIcon
-            
-            
             return cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "videocell") as! VideoTableViewCell
             cell.ivThumbail.image = UIImage(named: dataSimulasi[0][indexPath.row].imageURL)
             cell.videoDelegate = self
-            
-            
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "videocell") as! VideoTableViewCell
             cell.ivThumbail.image = UIImage(named: dataSimulasi[0][indexPath.row].imageURL)
-            
-            
-            
             return cell
         }
-        
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -252,12 +207,6 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        //        if ( indexPath.section == 4) {
-        //            return 190
-        //        } else {
-        //            return 90
-        //        }
-        //
         switch indexPath.section {
         case 0:
             if dataScore3[0][indexPath.row].isCollapse == true {
@@ -322,12 +271,8 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
             } else {
                 self.dataScore3[0][indexPath.row].isCollapse = false
             }
-            
-            // self.selectedIndex = indexPath.row
             tvDetail.reloadRows(at: [indexPath], with: .automatic)
-            
-            
-            
+         
         case 1:
             tvDetail.deselectRow(at: indexPath, animated: true)
             
@@ -337,7 +282,6 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
                 self.dataScore3[1][indexPath.row].isCollapse = false
             }
             
-            // self.selectedIndex = indexPath.row
             tvDetail.reloadRows(at: [indexPath], with: .automatic)
         case 2 :
             tvDetail.deselectRow(at: indexPath, animated: true)
@@ -347,8 +291,6 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
             } else {
                 self.dataScore3[2][indexPath.row].isCollapse = false
             }
-            
-            // self.selectedIndex = indexPath.row
             tvDetail.reloadRows(at: [indexPath], with: .automatic)
         case 3 :
             tvDetail.deselectRow(at: indexPath, animated: true)
@@ -359,54 +301,14 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
                 self.dataScore3[3][indexPath.row].isCollapse = false
             }
             
-            // self.selectedIndex = indexPath.row
             tvDetail.reloadRows(at: [indexPath], with: .automatic)
         default :
-            print("ASD")
+            print("Default")
         }
     }
     
     @IBAction func toDaftarSimulasi(_sender: Any){
         navigationController?.popToRootViewController(animated: true)
-    }
-    
-}
-
-extension DetailPageViewController : VideoProtocolDelegate {
-    func playVideo() {
-        print("TEST")
-        
-        let currVideo = VideoFetchClass().loadLastVideo()
-        var duration = 0.0
-        duration = currVideo.duration
-        
-        if duration == 0.0 {
-            print("No Video")
-        } else {
-            currVideo.getURL { url in
-                DispatchQueue.main.async {
-                    let video = AVPlayer(url: url!)
-                    let videoPlayerController = AVPlayerViewController()
-                    videoPlayerController.player = video
-                    
-                    self.present(videoPlayerController, animated: true) {
-                        video.play()
-                    }
-                }
-            }
-        }
-         
-      
-        
-//        if let path = Bundle.main.path(forResource: "s1c1", ofType: "mp4") {
-//            let video = AVPlayer(url: URL(fileURLWithPath: path))
-//            let videoPlayerController = AVPlayerViewController()
-//            videoPlayerController.player = video
-//
-//            present(videoPlayerController, animated: true) {
-//                video.play()
-//            }
-//        }
     }
 }
 
