@@ -14,7 +14,7 @@ import SoundAnalysis
 
 
 protocol SegregationClassifierDelegate {
-    func displayPredictionResult(identifier: String, confidence: Double)
+    func countInterjection(identifier: String, confidence: Double)
 }
 
 class SegregationObserver: NSObject, SNResultsObserving {
@@ -26,7 +26,7 @@ class SegregationObserver: NSObject, SNResultsObserving {
         let confidence = classification.confidence * 100.0
         
         if confidence > 60 {
-            delegate?.displayPredictionResult(identifier: classification.identifier, confidence: confidence)
+            delegate?.countInterjection(identifier: classification.identifier, confidence: confidence)
         }
     }
 }

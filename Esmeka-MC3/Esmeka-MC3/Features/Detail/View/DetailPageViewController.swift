@@ -410,17 +410,3 @@ extension DetailPageViewController : VideoProtocolDelegate {
     }
 }
 
-extension DetailPageViewController: DataSendingDelegateProtocol{
-    //function from protocoldelegate
-    func sendDataToDetailPage() {
-        //
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //        if segue.identifier == "getDataSegue" {
-        //            let secondVC: SecondViewController = segue.destination as! SecondViewController
-        //            secondVC.delegate = self
-        //        }
-    }
-    
-}
-
