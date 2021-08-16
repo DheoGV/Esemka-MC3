@@ -29,9 +29,7 @@ class CoredataProvider {
         interviewEntity.interview_duration = Int32(interviewModel.duration)
         interviewEntity.interview_video_url_path = interviewModel.interviewURLPath
         interviewEntity.interview_id = Int32(interviewModel.interviewId)
-        
-        print("Waktu Saved", interviewEntity.interview_video_url_path)
-        
+                
         
         //MARK:: Refer to Assessment Entity
         listAssessmentModel.forEach { model in
@@ -115,7 +113,7 @@ class CoredataProvider {
     
     //need this function untuk ambil ScoreTypeEntity yang berhubungan dengan sebuah InterviewModel
     func getScoresWhereInterviewEntityIs(interview:InterviewModel)->[ScoreTypeEntity]{
-        var listInterviewEntity = [ScoreTypeEntity]()
+        let listInterviewEntity = [ScoreTypeEntity]()
         
         
         return listInterviewEntity
