@@ -133,7 +133,9 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
             
         case 1 :
-            let cell = tableView.dequeueReusableCell(withIdentifier: ScoreTableViewCell.identifer) as! ScoreTableViewCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ScoreTableViewCell.identifer) as! ScoreTableViewCell? else {
+                fatalError()
+            }
             let score = dataScore3[indexPath.section][indexPath.row].score!
             let uiColor = dataScore3[indexPath.section][indexPath.row].colorCell
             let scoreTypeName = dataScore3[indexPath.section][indexPath.row].scoreTypeName!
@@ -146,7 +148,10 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
             cell.viewContainer.backgroundColor = uiColor
             return cell
         case 2 :
-            let cell = tableView.dequeueReusableCell(withIdentifier: ScoreTableViewCell.identifer) as! ScoreTableViewCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ScoreTableViewCell.identifer) as! ScoreTableViewCell? else {
+                fatalError()
+            }
+            
             let score = dataScore3[indexPath.section][indexPath.row].score!
             let uiColor = dataScore3[indexPath.section][indexPath.row].colorCell
             let scoreTypeName = dataScore3[indexPath.section][indexPath.row].scoreTypeName!
@@ -160,7 +165,9 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
             cell.viewContainer.backgroundColor = uiColor
             return cell
         case 3 :
-            let cell = tableView.dequeueReusableCell(withIdentifier: ScoreTableViewCell.identifer) as! ScoreTableViewCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ScoreTableViewCell.identifer) as! ScoreTableViewCell? else {
+                fatalError()
+            }
             let score = dataScore3[indexPath.section][indexPath.row].score!
             let uiColor = dataScore3[indexPath.section][indexPath.row].colorCell
             let scoreTypeName = dataScore3[indexPath.section][indexPath.row].scoreTypeName!
@@ -172,12 +179,16 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
             cell.ivLogo.image = imageIcon
             return cell
         case 4:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "videocell") as! VideoTableViewCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "videocell") as! VideoTableViewCell? else {
+                fatalError()
+            }
             cell.ivThumbail.image = UIImage(named: dataSimulasi[0][indexPath.row].imageURL)
             cell.videoDelegate = self
             return cell
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "videocell") as! VideoTableViewCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "videocell") as! VideoTableViewCell? else {
+                fatalError()
+            }
             cell.ivThumbail.image = UIImage(named: dataSimulasi[0][indexPath.row].imageURL)
             return cell
         }
@@ -205,7 +216,6 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
     }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
@@ -238,8 +248,6 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
             return 60
         }
     }
-    
-    
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         if section == 3 {
             let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tvDetail.frame.size.width, height: 0))
