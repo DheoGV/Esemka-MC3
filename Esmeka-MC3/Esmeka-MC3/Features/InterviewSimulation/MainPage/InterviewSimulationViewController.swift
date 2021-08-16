@@ -25,23 +25,9 @@ class InterviewSimulationViewController: UIViewController{
     var isRecording : Bool = false
     
     let voiceEngine = VoiceClassifierEngine()
+    let eyeTracking = EyeTracking()
+    let faceEmotion = FaceEmotion()
     
-    //Face Emotion
-    //let model = try! VNCoreMLModel(for: CNNEmotions().model)
-    var totalFaceEmotions = 0
-    var goodEmotion = 0
-    var faceEmotionScore:Int = 0
-    
-    //EyeTracking
-    var listOfCoordinate:[Coordinate] = []
-    var listOfCoordinateTemp:[Coordinate] = []
-    var countFrameRenderer = 0
-    let globalQueue = DispatchQueue.global(qos: .default)
-    var countMiss = 0
-    var countMissInSecond = 0
-    var countMissFrameRenderer = 0
-    var resultValueEye = 100
-    var tempResult = 0.0
     
     //-------------- User Default Key ------------------
     var idKey = "idKey"
@@ -70,7 +56,6 @@ class InterviewSimulationViewController: UIViewController{
         guard ARWorldTrackingConfiguration.isSupported else { return }
         view.addSubview(scene)
         scene.delegate = self
-//        scene.showsStatistics = true
         scene.session.run(ARFaceTrackingConfiguration(), options: [.resetTracking, .removeExistingAnchors])
         buttonSetup()
     }
@@ -100,7 +85,8 @@ class InterviewSimulationViewController: UIViewController{
             voiceEngine.removeEngine()
             stopRecording()
             toCompletedPage()
-            
+            //MARK:: Count Eye Tracking
+            countEyeTrackingMiss()
         } else {
             PHPhotoLibrary.requestAuthorization(for: .readWrite) { [unowned self] (status) in
                 DispatchQueue.main.async { [unowned self] in
@@ -109,14 +95,6 @@ class InterviewSimulationViewController: UIViewController{
             }
         }
         
-    }
-    
-    func getFaceEmotionScore()->Int {
-        var score = 0
-        if goodEmotion > 0 {
-            score = Int(goodEmotion * 100 / totalFaceEmotions)
-        }
-        return score
     }
     
     func startCountdownView(){
@@ -151,9 +129,6 @@ class InterviewSimulationViewController: UIViewController{
         callPromptWindow()
         //          Call this : VOICE
         voiceEngine.startEngine()
-        //MARK:: Count Eye Tracking
-        countEyeTrackingMiss()
-
     }
     
     func toCompletedPage(){
@@ -166,8 +141,8 @@ class InterviewSimulationViewController: UIViewController{
         var listScore: [ScoreTypeModel] = []
         let voiceEmotion = ScoreTypeModel(scoreTypeName: .voiceEmotion, score: voiceEngine.getVoiceEmotionScore())
         let voiceSegregation = ScoreTypeModel(scoreTypeName: .voiceSegregation, score: voiceEngine.getInterjectionScore())
-        let faceEmotion = ScoreTypeModel(scoreTypeName: .facialExpression, score: getFaceEmotionScore())
-        let eyeMovement = ScoreTypeModel(scoreTypeName: .eyeMovement, score: resultValueEye)
+        let faceEmotion = ScoreTypeModel(scoreTypeName: .facialExpression, score: faceEmotion.getFaceEmotionScore())
+        let eyeMovement = ScoreTypeModel(scoreTypeName: .eyeMovement, score: eyeTracking.resultValueEye)
         
         listScore.append(contentsOf: [voiceEmotion, voiceSegregation, faceEmotion, eyeMovement])
         

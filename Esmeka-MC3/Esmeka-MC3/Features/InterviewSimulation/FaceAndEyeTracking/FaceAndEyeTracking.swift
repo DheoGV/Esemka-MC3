@@ -22,7 +22,6 @@ extension InterviewSimulationViewController: ARSCNViewDelegate {
         let leftEyeX = scene.projectPoint(leftEye).x
         let leftEyeY = scene.projectPoint(leftEye).y
         
-        
         let rightEye = faceAnchor.rightEyeTransform.position()
         let rightEyeX = scene.projectPoint(rightEye).x
         let rightEyeY = scene.projectPoint(rightEye).y
@@ -31,49 +30,38 @@ extension InterviewSimulationViewController: ARSCNViewDelegate {
         let totalY: Float = ( leftEyeY + rightEyeY )/2
         
         let resultCGPoint2 = CGPoint(x: Int(totalX), y: Int(totalY))
-        self.listOfCoordinate.append(Coordinate(x: Int(resultCGPoint2.x), y: Int(resultCGPoint2.y)))
+        eyeTracking.listOfCoordinate.append(Coordinate(x: Int(resultCGPoint2.x), y: Int(resultCGPoint2.y)))
         
-        self.listOfCoordinateTemp.append(Coordinate(x: Int(resultCGPoint2.x), y: Int(resultCGPoint2.y)))
+        eyeTracking.listOfCoordinateTemp.append(Coordinate(x: Int(resultCGPoint2.x), y: Int(resultCGPoint2.y)))
         
-        let batasMaxX = listOfCoordinateTemp[0].x + 75
-        let batasMinX = listOfCoordinateTemp[0].x - 75
-        
-        
-//        print("batas Max X \(batasMaxX)")
-//        print("batas Min X \(batasMinX)")
-        
+        let batasMaxX = eyeTracking.listOfCoordinateTemp[0].x + 75
+        let batasMinX = eyeTracking.listOfCoordinateTemp[0].x - 75
         DispatchQueue.global(qos: .userInteractive).async { [self] in
-            self.countFrameRenderer += 1
+            eyeTracking.countFrameRenderer += 1
             
-            if(countFrameRenderer == 30) {
-                countFrameRenderer = 0
-//                print("Jumlah ", listOfCoordinate.count)
+            if(eyeTracking.countFrameRenderer == 30) {
+                eyeTracking.countFrameRenderer = 0
                 DispatchQueue.main.async { [self] in
-                    if ( listOfCoordinate.count >= 2) {
-                        for(index,_) in listOfCoordinate.enumerated() {
-//                            print("Batas Max", batasMaxX)
-//                            print("Batas Min", batasMinX)
-//                            print("Nilai X ",listOfCoordinate[index].x)
-                            if listOfCoordinate[index].x > batasMaxX || listOfCoordinate[index].x < batasMinX  {
-                                self.countMissFrameRenderer += 1
-//                                print("Coun miss Frame", countFrameRenderer)
+                    if ( eyeTracking.listOfCoordinate.count >= 2) {
+                        for(index,_) in eyeTracking.listOfCoordinate.enumerated() {
+                            if eyeTracking.listOfCoordinate[index].x > batasMaxX || eyeTracking.listOfCoordinate[index].x < batasMinX  {
+                                eyeTracking.countMissFrameRenderer += 1
                                 DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-                                    countMiss += 1
-                                    countMissInSecond = countMiss / 60
-//                                    print("Coun Miss", countMissInSecond)
-//                                    print("Coun Miss second", countMissInSecond)
-                                    
+                                    eyeTracking.countMiss += 1
+                                    eyeTracking.countMissInSecond = eyeTracking.countMiss / 60
                                 }
                             }
                         }
                     }
                 }
                 DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-                    self.listOfCoordinate.removeAll()
+                    eyeTracking.listOfCoordinate.removeAll()
                 }
                 
             }
         }
+        
+        //Face Emotion
 //        try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: .right, options: [:]).perform([VNCoreMLRequest(model: model) { [weak self] request, error in
 //
 //            guard let firstResult = (request.results as? [VNClassificationObservation])?.first else { return }

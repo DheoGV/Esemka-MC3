@@ -9,16 +9,10 @@ import Foundation
 
 extension InterviewSimulationViewController {
     func countEyeTrackingMiss() {
-        if (voiceEngine.timerTimeNow != 0 && countMissInSecond != 0) {
+        if (voiceEngine.timerTimeNow != 0 && eyeTracking.countMissInSecond != 0) {
             //resultValueEye = Int(timerTimeNow) / countMissInSecond
-            tempResult = (Double(countMissInSecond) / voiceEngine.timerTimeNow) * 100
-            print("Temp Result", tempResult)
-            resultValueEye = Int(100 - tempResult)
-            print("Result Value Eye Score", resultValueEye)
+            eyeTracking.tempResult = (Double(eyeTracking.countMissInSecond) / voiceEngine.timerTimeNow) * 100
+            eyeTracking.resultValueEye = Int(100 - eyeTracking.tempResult)
         }
-       
-        print("Total Timer Now", voiceEngine.timerTimeNow)
-        print("Total Timer miss", countMissInSecond)
-        
     }
 }

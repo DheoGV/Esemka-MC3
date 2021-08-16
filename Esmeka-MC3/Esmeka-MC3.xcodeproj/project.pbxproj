@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		215847DD26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215847DB26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift */; };
 		215847DE26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 215847DC26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib */; };
+		217A56D226CA288D0074A83F /* EyeTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217A56D126CA288D0074A83F /* EyeTracking.swift */; };
+		217A56D426CA2B870074A83F /* FaceEmotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217A56D326CA2B870074A83F /* FaceEmotion.swift */; };
 		219747EE26B0125B00A81309 /* DaftarSimulasiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219747EC26B0125B00A81309 /* DaftarSimulasiViewController.swift */; };
 		219747EF26B0125B00A81309 /* DaftarSimulasiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 219747ED26B0125B00A81309 /* DaftarSimulasiViewController.xib */; };
 		21B3B80826BAC9C30021D94C /* FaceAndEyeTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B3B80726BAC9C30021D94C /* FaceAndEyeTracking.swift */; };
@@ -69,6 +71,8 @@
 /* Begin PBXFileReference section */
 		215847DB26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulasiCollectionViewCell.swift; sourceTree = "<group>"; };
 		215847DC26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimulasiCollectionViewCell.xib; sourceTree = "<group>"; };
+		217A56D126CA288D0074A83F /* EyeTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeTracking.swift; sourceTree = "<group>"; };
+		217A56D326CA2B870074A83F /* FaceEmotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceEmotion.swift; sourceTree = "<group>"; };
 		219747EC26B0125B00A81309 /* DaftarSimulasiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaftarSimulasiViewController.swift; sourceTree = "<group>"; };
 		219747ED26B0125B00A81309 /* DaftarSimulasiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaftarSimulasiViewController.xib; sourceTree = "<group>"; };
 		21B3B80726BAC9C30021D94C /* FaceAndEyeTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceAndEyeTracking.swift; sourceTree = "<group>"; };
@@ -171,6 +175,8 @@
 			children = (
 				21B3B80726BAC9C30021D94C /* FaceAndEyeTracking.swift */,
 				52E24F3626BCCAB900CDBA8C /* ExtensionEyeTracking.swift */,
+				217A56D126CA288D0074A83F /* EyeTracking.swift */,
+				217A56D326CA2B870074A83F /* FaceEmotion.swift */,
 			);
 			path = FaceAndEyeTracking;
 			sourceTree = "<group>";
@@ -555,6 +561,8 @@
 				84B5E37626B3952D00FC9C09 /* InterviewSimulationViewController.swift in Sources */,
 				524AECA926C95EA700FEF3C7 /* Video.swift in Sources */,
 				525204CF26B01A75006D6E98 /* CustomButton.swift in Sources */,
+				217A56D226CA288D0074A83F /* EyeTracking.swift in Sources */,
+				217A56D426CA2B870074A83F /* FaceEmotion.swift in Sources */,
 				21B3B80826BAC9C30021D94C /* FaceAndEyeTracking.swift in Sources */,
 				52B678DF26AA7EB10080533A /* AssessmentModel.swift in Sources */,
 				525204D826B02A21006D6E98 /* ScoreTableViewCell.swift in Sources */,
@@ -715,12 +723,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T4NVTRVW5X;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A79CU8U5L7;
 				INFOPLIST_FILE = "Esmeka-MC3/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "AppleDev.Esmeka-MC3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -734,12 +744,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T4NVTRVW5X;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A79CU8U5L7;
 				INFOPLIST_FILE = "Esmeka-MC3/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "AppleDev.Esmeka-MC3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
