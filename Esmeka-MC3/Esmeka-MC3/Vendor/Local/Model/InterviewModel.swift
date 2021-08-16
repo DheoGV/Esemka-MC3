@@ -11,9 +11,6 @@ import Photos
 struct InterviewModel {
     let interviewId: Int
     let duration: Int
-//    let interviewTitle: String
     let interviewDate: Date
     let interviewURLPath: Data
-//    let listAssessment: [AssessmentModel]?
-//    let listScore: [ScoreTypeModel]?
 }
