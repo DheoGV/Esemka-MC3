@@ -10,14 +10,6 @@ import ARKit
 
 extension InterviewSimulationViewController: ARSCNViewDelegate {
     
-//    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-//        guard let device = scene.device else { return nil }
-//        let node = SCNNode(geometry: ARSCNFaceGeometry(device: device))
-//        //Projects the white lines on the face.
-//        node.geometry?.firstMaterial?.fillMode = .lines
-//
-//        return node
-//    }
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         guard let faceAnchor = anchor as? ARFaceAnchor,
 //              let faceGeometry = node.geometry as? ARSCNFaceGeometry,
