@@ -25,14 +25,14 @@ class VoiceClassifierEngine: SegregationClassifierDelegate, EmotionClassifierDel
     private var outputInterjection : Double = 0
     
     //    ----------------Voice Segregation ----------------
-    private let voiceSegregetion = InterjectionClassifier()
+    private let voiceSegregetion = try! InterjectionClassifier(configuration: MLModelConfiguration())
     private var segregationObserver = SegregationObserver()
     private var audioOn = false
     private var interjection = 0
     private var keepCounting = true
     
     //    ----------------Voice Emotion ----------------
-    private let voiceEmotion = SoundEmotionClassifier()
+    private let voiceEmotion = try! SoundEmotionClassifier(configuration: MLModelConfiguration())
     private var emotionObserver = EmotionObserver()
     private var availableEmotions : [String : String] = ["angry":"bad", "disgust":"bad", "fear":"bad", "happy":"good", "neutral":"good", "ps":"good", "sad":"bad"]
     private var totalVoiceEmotions = 0
