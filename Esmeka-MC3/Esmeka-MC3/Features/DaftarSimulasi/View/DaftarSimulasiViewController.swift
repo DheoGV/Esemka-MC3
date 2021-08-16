@@ -30,11 +30,9 @@ class DaftarSimulasiViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-      //  listInterviewData = coredataProvider.getAllInterview()
-        
     }
+    
     override func viewDidAppear(_ animated: Bool) {
-      //  listInterviewData = coredataProvider.getAllInterview()
         setup()
     }
     
@@ -94,7 +92,6 @@ class DaftarSimulasiViewController: UIViewController {
     }
     
     //MARK::Example Get All the interview
-    
     private func getAllInterview(){
         simulasiData = []
         listInterviewData = coredataProvider.getAllInterview()
@@ -102,16 +99,9 @@ class DaftarSimulasiViewController: UIViewController {
         if listInterviewData.count == 0 {
             print("Null")
         } else {
-            listInterviewData.forEach { result in
-                print("Scores Value", result.scores?.value(forKey: "score_value"))
-                print("Scores Type Name", result.scores?.value(forKey: "score_type_name"))
-                print("Date", result.interview_date)
-                print("Duration", result.interview_duration)
-                print("Interview id", result.interview_id)
-                print("URL WOY", result.interview_video_url_path)
-                
+            listInterviewData.forEach { result in                
                 if result.interview_video_url_path != nil {
-                    print("URL WOY", result.interview_video_url_path)
+                    print("URL WOY", result.interview_video_url_path!)
                     let interviewModel = InterviewModel(interviewId: Int(result.interview_id), duration: Int(result.interview_duration), interviewDate: result.interview_date!, interviewURLPath: result.interview_video_url_path!)
                     
                     simulasiData.append(interviewModel)
@@ -145,16 +135,14 @@ extension DaftarSimulasiViewController: UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SimulasiCollectionViewCell.identifier, for: indexPath) as! SimulasiCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SimulasiCollectionViewCell.identifier, for: indexPath) as? SimulasiCollectionViewCell else { fatalError() }
         cell.simulasi = self.simulasiData[indexPath.row]
         cell.layer.cornerRadius = 10
         
         cell.didClick = { [weak self] in
-            
-            print("ID ONCLICKKKK", self!.simulasiData[indexPath.row].interviewId)
-            
+
             let simulasiDetailVC = DetailPageViewController(nibName: "DetailPageViewController", bundle: nil)
-            simulasiDetailVC.id = self!.simulasiData[indexPath.row].interviewId
+            simulasiDetailVC.id = self?.simulasiData[indexPath.row].interviewId
             
             self?.navigationController?.pushViewController(simulasiDetailVC, animated: true)
         }
