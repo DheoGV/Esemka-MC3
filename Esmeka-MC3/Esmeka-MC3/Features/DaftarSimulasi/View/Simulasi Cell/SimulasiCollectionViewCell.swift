@@ -7,6 +7,7 @@
 
 import UIKit
 import Photos
+import AVFoundation
 
 class SimulasiCollectionViewCell: UICollectionViewCell {
 
@@ -21,8 +22,10 @@ class SimulasiCollectionViewCell: UICollectionViewCell {
     let dateFormatter = DateFormatter()
     static let identifier = "SimulasiCollectionViewCell"
     
-    
     var simulasi: InterviewModel?{
+        
+      
+        
         didSet{
             if let filled = simulasi{
                 timeFormatter.dateFormat = "hh a"
@@ -31,10 +34,20 @@ class SimulasiCollectionViewCell: UICollectionViewCell {
                 tanggalSimulasiLbl.text = dateFormatter.string(from: filled.interviewDate)
                 durasiSimulasiLbl.text = "\(filled.duration) Menit "
                 //masih dummy thumbnail
-                imageSimulasi.image = getThumbnail(asset: VideoFetchClass().loadLastVideo())
+             //   imageSimulasi.image = getThumbnail(asset: VideoFetchClass().loadLastVideo())
+                
+                //Teddy Test Image
+                
+                guard let interviewVideoURL = simulasi?.interviewURL else {return}
+                
+
+                if let thumbnailImage = getThumbnailImage(forUrl: interviewVideoURL) {
+                        imageSimulasi.image = thumbnailImage
+                }
+                
+              
                 let tap = UITapGestureRecognizer(target: self, action: #selector(self.simulasiPressed(_:)))
                 viewSimulasiCell.addGestureRecognizer(tap)
-                
             }
         }
     }
@@ -61,9 +74,22 @@ class SimulasiCollectionViewCell: UICollectionViewCell {
             thumbnail = result!
         })
         
-        
-        
         return thumbnail
+    }
+    
+    private func getThumbnailImage(forUrl url: URL) -> UIImage? {
+        let asset: AVAsset = AVAsset(url: url)
+        let imageGenerator = AVAssetImageGenerator(asset: asset)
+
+        do {
+            let thumbnailImage = try imageGenerator.copyCGImage(at: CMTimeMake(value: 1, timescale: 60) , actualTime: nil)
+            
+            return UIImage(cgImage: thumbnailImage)
+        } catch let error {
+            print(error)
+        }
+
+        return nil
     }
 
 }

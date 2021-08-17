@@ -29,6 +29,7 @@ class CoredataProvider {
         interviewEntity.interview_duration = Int32(interviewModel.duration)
         interviewEntity.interview_video_url_path = interviewModel.interviewURLPath
         interviewEntity.interview_id = Int32(interviewModel.interviewId)
+        interviewEntity.interview_video_url_link = interviewModel.interviewURL
                 
         
         //MARK:: Refer to Assessment Entity

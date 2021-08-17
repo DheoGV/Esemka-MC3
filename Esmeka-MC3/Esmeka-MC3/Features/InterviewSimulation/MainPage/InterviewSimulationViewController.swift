@@ -141,7 +141,8 @@ class InterviewSimulationViewController: UIViewController{
             }
         }
     }
-    
+
+
     func allowedRecording(){
         isRecording = !isRecording
         recordButton.isHidden = false
@@ -185,15 +186,17 @@ class InterviewSimulationViewController: UIViewController{
             duration = currVideoPHAsset.duration
             currVideoPHAsset.getURL { url in
                 do {
-                    data = try Data(contentsOf: url!)
-                    print("SUCCESS", data)
+                    data = try Data(contentsOf: url!)                    
+                    guard let url = url else {
+                        return
+                    }
                     
-                    let interviewModel = InterviewModel(interviewId: self.id,duration: Int(duration), interviewDate: Date(), interviewURLPath: data)
+                    let interviewModel = InterviewModel(interviewId: self.id,duration: Int(duration), interviewDate: Date(), interviewURLPath: data, interviewURL: url)
                     
                     print("Interview Model \(interviewModel.interviewURLPath)")
-                    DispatchQueue.main.async {
+//                    DispatchQueue.main.async {
                         self.coredataProvider.addInterview(interviewModel: interviewModel, listAssessmentModel: [], listScoreTypeModel: listScore)
-                    }
+//                    }
                   
                 } catch {
                     print("ERROR")
@@ -204,11 +207,12 @@ class InterviewSimulationViewController: UIViewController{
             preferences.setValue(id+1, forKey: idKey)
         } else {
             currVideoPHAsset.getURL { url in
+                print("URL", url)
                 do {
                     data = try Data(contentsOf: url!)
                     print("SUCCESS", data)
                     
-                    let interviewModel = InterviewModel(interviewId: self.id,duration: Int(duration), interviewDate: Date(), interviewURLPath: data)
+                    let interviewModel = InterviewModel(interviewId: self.id,duration: Int(duration), interviewDate: Date(), interviewURLPath: data, interviewURL: url!)
                     
                     print("Interview Model \(interviewModel.interviewURLPath)")
                     DispatchQueue.main.async {
