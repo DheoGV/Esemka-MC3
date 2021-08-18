@@ -95,7 +95,6 @@ class DaftarSimulasiViewController: UIViewController {
     private func getAllInterview(){
         simulasiData = []
         listInterviewData = coredataProvider.getAllInterview()
-        print("count nya bro \(listInterviewData)")
         if listInterviewData.count == 0 {
             print("Null")
         } else {
@@ -125,43 +124,6 @@ class DaftarSimulasiViewController: UIViewController {
             listQuestion.forEach { score in
                 print("Question", score)
             }
-        }
-    }
-    
-    private func writeVideoToLibrary(url: URL) {
-        // write data to library camera roll
-        PHPhotoLibrary.shared().performChanges({
-            let phAsset = PHAsset()
-            let changeRequest = PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: url)
-            print("Success Changes")
-            /*
-             let manager = PHImageManager.default()
-             let option = PHImageRequestOptions()
-             var thumbnail =  UIImage()
-             option.isSynchronous = true
-             option .isNetworkAccessAllowed = true
-             manager.requestImage(for: self, targetSize: CGSize(width: 100 , height: 100), contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
-             thumbnail = result!
-             })
-             */
-            
-            let contentEditing = changeRequest?.contentEditingOutput
-            
-        }) { saved, err in
-            if err != nil {
-                print(err.debugDescription)
-            }
-        }
-    }
-    
-    func toggleFavorite(for asset: PHAsset) {
-        PHPhotoLibrary.shared().performChanges {
-            // Create a change request from the asset to be modified.
-            let request = PHAssetChangeRequest(for: asset)
-            // Set a property of the request to change the asset itself.
-            request.isFavorite = !asset.isFavorite
-        } completionHandler: { success, error in
-            print("Finished updating asset. " + (success ? "Success." : error!.localizedDescription))
         }
     }
 }
