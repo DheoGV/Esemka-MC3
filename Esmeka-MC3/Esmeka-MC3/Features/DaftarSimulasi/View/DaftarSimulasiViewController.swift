@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Photos
 
 class DaftarSimulasiViewController: UIViewController {
     
@@ -14,7 +15,7 @@ class DaftarSimulasiViewController: UIViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return CoredataProvider(appDelegate)
     }()
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var imgNoData: UIImageView!
     @IBOutlet weak var noData1Lbl: UILabel!
@@ -54,7 +55,7 @@ class DaftarSimulasiViewController: UIViewController {
         collectionView.delegate = self
         collectionView.register(SimulasiCollectionViewCell.nib(), forCellWithReuseIdentifier: SimulasiCollectionViewCell.identifier)
     }
-        
+    
     //MARK:: Ted
     func isSimulationDataExists() {
         if listInterviewData.count == 0 {
@@ -75,11 +76,10 @@ class DaftarSimulasiViewController: UIViewController {
         
         if(readBriefSetting){
             goToBriefView()
-            
         } else {
-           goToSimulation()
+            goToSimulation()
         }
-       
+        
     }
     
     func goToBriefView() {
@@ -88,7 +88,7 @@ class DaftarSimulasiViewController: UIViewController {
     }
     func goToSimulation()  {
         let simulationVC = InterviewSimulationViewController(nibName: "InterviewSimulationViewController", bundle: nil)
-    navigationController?.pushViewController(simulationVC, animated: true)
+        navigationController?.pushViewController(simulationVC, animated: true)
     }
     
     //MARK::Example Get All the interview
@@ -101,10 +101,15 @@ class DaftarSimulasiViewController: UIViewController {
         } else {
             listInterviewData.forEach { result in                
                 if result.interview_video_url_path != nil {
-                    print("URL WOY", result.interview_video_url_path!)
-                    let interviewModel = InterviewModel(interviewId: Int(result.interview_id), duration: Int(result.interview_duration), interviewDate: result.interview_date!, interviewURLPath: result.interview_video_url_path!)
+                    guard let interviewVideoURL = result.interview_video_url_path, let interviewVideoURLLink = result.interview_video_url_link else {
+                        return
+                    }
+                    let interviewModel = InterviewModel(interviewId: Int(result.interview_id), duration: Int(result.interview_duration), interviewDate: result.interview_date!, interviewURLPath: interviewVideoURL, interviewURL: interviewVideoURLLink)
                     
-                    simulasiData.append(interviewModel)
+                    print("URL Data", interviewVideoURL)
+                    print("URL type URL", interviewVideoURLLink)
+                    
+                   simulasiData.append(interviewModel)
                     self.collectionView.reloadData()
                 }
             }
@@ -122,8 +127,43 @@ class DaftarSimulasiViewController: UIViewController {
             }
         }
     }
- 
     
+    private func writeVideoToLibrary(url: URL) {
+        // write data to library camera roll
+        PHPhotoLibrary.shared().performChanges({
+            let phAsset = PHAsset()
+            let changeRequest = PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: url)
+            print("Success Changes")
+            /*
+             let manager = PHImageManager.default()
+             let option = PHImageRequestOptions()
+             var thumbnail =  UIImage()
+             option.isSynchronous = true
+             option .isNetworkAccessAllowed = true
+             manager.requestImage(for: self, targetSize: CGSize(width: 100 , height: 100), contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
+             thumbnail = result!
+             })
+             */
+            
+            let contentEditing = changeRequest?.contentEditingOutput
+            
+        }) { saved, err in
+            if err != nil {
+                print(err.debugDescription)
+            }
+        }
+    }
+    
+    func toggleFavorite(for asset: PHAsset) {
+        PHPhotoLibrary.shared().performChanges {
+            // Create a change request from the asset to be modified.
+            let request = PHAssetChangeRequest(for: asset)
+            // Set a property of the request to change the asset itself.
+            request.isFavorite = !asset.isFavorite
+        } completionHandler: { success, error in
+            print("Finished updating asset. " + (success ? "Success." : error!.localizedDescription))
+        }
+    }
 }
 
 extension DaftarSimulasiViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -140,7 +180,7 @@ extension DaftarSimulasiViewController: UICollectionViewDataSource, UICollection
         cell.layer.cornerRadius = 10
         
         cell.didClick = { [weak self] in
-
+            
             let simulasiDetailVC = DetailPageViewController(nibName: "DetailPageViewController", bundle: nil)
             simulasiDetailVC.id = self?.simulasiData[indexPath.row].interviewId
             
