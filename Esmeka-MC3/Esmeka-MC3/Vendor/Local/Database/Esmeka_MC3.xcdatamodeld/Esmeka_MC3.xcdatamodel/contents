@@ -11,8 +11,8 @@
         <attribute name="interview_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="interview_video_url_link" optional="YES" attributeType="Transformable" customClassName="URL"/>
         <attribute name="interview_video_url_path" optional="YES" attributeType="Binary" customClassName="PHAsset"/>
-        <relationship name="assessments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AssessmentEntity" inverseName="ofInterviewAssessment" inverseEntity="AssessmentEntity"/>
-        <relationship name="scores" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ScoreTypeEntity" inverseName="ofInterviewScores" inverseEntity="ScoreTypeEntity"/>
+        <relationship name="assessments" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="AssessmentEntity" inverseName="ofInterviewAssessment" inverseEntity="AssessmentEntity"/>
+        <relationship name="scores" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ScoreTypeEntity" inverseName="ofInterviewScores" inverseEntity="ScoreTypeEntity"/>
     </entity>
     <entity name="ScoreTypeEntity" representedClassName="ScoreTypeEntity" syncable="YES">
         <attribute name="score_type_name" optional="YES" attributeType="Transformable" customClassName="String"/>

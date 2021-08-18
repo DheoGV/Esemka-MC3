@@ -137,8 +137,6 @@ class CoredataProvider {
                 }
             }
             
-            
-            
         } catch {
             print("Can't get scores by interview data")
         }
@@ -147,13 +145,7 @@ class CoredataProvider {
     
     //MARK:: Delete Single Interview
     func deleteSingleInterview(interviewId: Int) {
-     //   var interviewEntity: InterviewEntity?
         let interviewEntityResult: [InterviewEntity]?
-        
-        guard let taskContext = context else {
-            return
-        }
-      //  interviewEntity = InterviewEntity(context: taskContext)
         do {
             let fetchRequest:NSFetchRequest<InterviewEntity> = InterviewEntity.fetchRequest()
             fetchRequest.predicate = NSPredicate(format: "(interview_id == %d)", interviewId)

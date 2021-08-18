@@ -41,8 +41,6 @@ class DaftarSimulasiViewController: UIViewController {
         setup()
     }
     
-    
-    
     func setup() {
         title = "Daftar Simulasi"
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -185,7 +183,8 @@ extension DaftarSimulasiViewController: UICollectionViewDataSource, UICollection
             let deleteAction = UIAction(title: NSLocalizedString("Delete", comment: ""), image: UIImage(systemName: "trash"),attributes: .destructive) { [self] action in
                 let id = simulasiData[indexPath.row].interviewId
                 coredataProvider.deleteSingleInterview(interviewId: id)
-                self.getAllInterview()
+                getAllInterview()
+                isSimulationDataExists()
                 collectionView.reloadData()
             }
             
