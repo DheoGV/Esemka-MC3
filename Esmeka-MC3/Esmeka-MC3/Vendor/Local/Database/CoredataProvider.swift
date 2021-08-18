@@ -52,9 +52,12 @@ class CoredataProvider {
             interviewEntity.addToScores(scoreEntity)
         }
         
+        print("List Score Type \(listScoreTypeModel)")
+        
         do {
             try taskContext.save()
             print("Interview Saved")
+            print("List Score Type \(listScoreTypeModel)")
         } catch {
             print("Can't Save the data")
         }
@@ -124,14 +127,14 @@ class CoredataProvider {
         let interviewEntityResult: [InterviewEntity]?
         do {
             let fetchRequest : NSFetchRequest<InterviewEntity> = InterviewEntity.fetchRequest()
-            fetchRequest.predicate = NSPredicate(format: "(interview_id == %d)", interviewId)
+            fetchRequest.predicate = NSPredicate(format: "interview_id == \(interviewId)")
             interviewEntityResult = try context?.fetch(fetchRequest)
             
             if let singleInterviewEntity = interviewEntityResult?.first {
                 let scores = singleInterviewEntity.scores?.allObjects as! [ScoreTypeEntity]
                 scores.forEach { score in
                     listScoresEntity.append(score)
-                    
+                    print("Score Entity \(score)")
                 }
             }
             

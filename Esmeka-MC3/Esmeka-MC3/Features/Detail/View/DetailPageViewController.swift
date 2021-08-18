@@ -28,6 +28,8 @@ class DetailPageViewController: UIViewController{
     
     let dataSimulasi:[[Video]] = [[Video(imageURL: "gambar")]]
     
+    var imageThumbnailURL: URL?
+    
     private lazy var coredataProvider: CoredataProvider = {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return CoredataProvider(appDelegate)
@@ -35,8 +37,8 @@ class DetailPageViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getScoresByInterviewId(interviewId: 0)
-        getSingleInterviewId(interviewId: 0)
+        getScoresByInterviewId(interviewId: id!)
+        getSingleInterviewId(interviewId: id!)
         setupView()
     }
     
@@ -88,7 +90,9 @@ class DetailPageViewController: UIViewController{
     private func getSingleInterviewId(interviewId: Int) {
         let interview = coredataProvider.getSingleInterview(interviewId: interviewId)
         let date = interview.value(forKey: "interview_date") as? Date
+        imageThumbnailURL = interview.value(forKey: "interview_video_url_link") as! URL
         lblDate.text = "\(String(describing: date))"
+     
     }
     
 }
@@ -182,8 +186,13 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "videocell") as! VideoTableViewCell? else {
                 fatalError()
             }
-            cell.ivThumbail.image = UIImage(named: dataSimulasi[0][indexPath.row].imageURL)
+          //  cell.ivThumbail.image = UIImage(named: dataSimulasi[0][indexPath.row].imageURL)
             cell.videoDelegate = self
+            
+            if let thumbnailImage = getThumbnailImage(forUrl: imageThumbnailURL!) {
+                cell.ivThumbail.image = thumbnailImage
+            }
+            
             return cell
         default:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "videocell") as! VideoTableViewCell? else {
@@ -317,6 +326,21 @@ extension DetailPageViewController: UITableViewDataSource, UITableViewDelegate {
     
     @IBAction func toDaftarSimulasi(_sender: Any){
         navigationController?.popToRootViewController(animated: true)
+    }
+    
+    private func getThumbnailImage(forUrl url: URL) -> UIImage? {
+        let asset: AVAsset = AVAsset(url: url)
+        let imageGenerator = AVAssetImageGenerator(asset: asset)
+
+        do {
+            let thumbnailImage = try imageGenerator.copyCGImage(at: CMTimeMake(value: 1, timescale: 60) , actualTime: nil)
+            
+            return UIImage(cgImage: thumbnailImage)
+        } catch let error {
+            print(error)
+        }
+
+        return nil
     }
 }
 

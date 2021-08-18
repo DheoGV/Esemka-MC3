@@ -18,7 +18,7 @@ class CompleteViewController: UIViewController {
         super.viewDidLoad()
         setView()
     }
-    var interviewId = 0
+    var interviewId: Int?
     
     // customize view
     func setView() {
@@ -36,6 +36,8 @@ class CompleteViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        print("ID bro \(interviewId)")
     }
 
     override func viewWillDisappear(_ animated: Bool) {
