@@ -30,7 +30,7 @@ class CoredataProvider {
         interviewEntity.interview_video_url_path = interviewModel.interviewURLPath
         interviewEntity.interview_id = Int32(interviewModel.interviewId)
         interviewEntity.interview_video_url_link = interviewModel.interviewURL
-                
+        
         
         //MARK:: Refer to Assessment Entity
         listAssessmentModel.forEach { model in
@@ -41,7 +41,7 @@ class CoredataProvider {
             //MARK:: Add Assessment Entity to Interview Entity
             interviewEntity.addToAssessments(assessmentEntity)
         }
-       
+        
         //MARK:: Refer to Score Type Entity
         listScoreTypeModel.forEach { model in
             let scoreEntity = ScoreTypeEntity(context: taskContext)
@@ -59,7 +59,7 @@ class CoredataProvider {
         } catch {
             print("Can't Save the data")
         }
-       
+        
     }
     
     //MARK:: Get All Interview data from Interview Entity
@@ -133,12 +133,39 @@ class CoredataProvider {
                 let scores = singleInterviewEntity.scores?.allObjects as! [ScoreTypeEntity]
                 scores.forEach { score in
                     listScoresEntity.append(score)
-                   
+                    
                 }
             }
+            
+            
+            
         } catch {
             print("Can't get scores by interview data")
         }
         return listScoresEntity
+    }
+    
+    //MARK:: Delete Single Interview
+    func deleteSingleInterview(interviewId: Int) {
+     //   var interviewEntity: InterviewEntity?
+        let interviewEntityResult: [InterviewEntity]?
+        
+        guard let taskContext = context else {
+            return
+        }
+      //  interviewEntity = InterviewEntity(context: taskContext)
+        do {
+            let fetchRequest:NSFetchRequest<InterviewEntity> = InterviewEntity.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "(interview_id == %d)", interviewId)
+            
+            interviewEntityResult = try context?.fetch(fetchRequest)
+            for data in interviewEntityResult! {
+                context?.delete(data)
+            }
+            try context?.save()
+            
+        } catch {
+            print("Not Found")
+        }
     }
 }

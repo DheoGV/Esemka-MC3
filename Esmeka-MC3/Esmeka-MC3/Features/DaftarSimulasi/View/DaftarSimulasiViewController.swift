@@ -127,33 +127,6 @@ class DaftarSimulasiViewController: UIViewController {
             }
         }
     }
-    
-    private func writeVideoToLibrary(url: URL) {
-        // write data to library camera roll
-        PHPhotoLibrary.shared().performChanges({
-            let phAsset = PHAsset()
-            let changeRequest = PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: url)
-            print("Success Changes")
-            /*
-             let manager = PHImageManager.default()
-             let option = PHImageRequestOptions()
-             var thumbnail =  UIImage()
-             option.isSynchronous = true
-             option .isNetworkAccessAllowed = true
-             manager.requestImage(for: self, targetSize: CGSize(width: 100 , height: 100), contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
-             thumbnail = result!
-             })
-             */
-            
-            let contentEditing = changeRequest?.contentEditingOutput
-            
-        }) { saved, err in
-            if err != nil {
-                print(err.debugDescription)
-            }
-        }
-    }
-    
     func toggleFavorite(for asset: PHAsset) {
         PHPhotoLibrary.shared().performChanges {
             // Create a change request from the asset to be modified.
@@ -206,4 +179,17 @@ extension DaftarSimulasiViewController: UICollectionViewDataSource, UICollection
         sectionInset.left
     }
     
+    //Context Menu
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { action in
+            let deleteAction = UIAction(title: NSLocalizedString("Delete", comment: ""), image: UIImage(systemName: "trash"),attributes: .destructive) { [self] action in
+                let id = simulasiData[indexPath.row].interviewId
+                coredataProvider.deleteSingleInterview(interviewId: id)
+                self.getAllInterview()
+                collectionView.reloadData()
+            }
+            
+            return UIMenu(title: "", children: [deleteAction])
+        }
+    }
 }
