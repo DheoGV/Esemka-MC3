@@ -3,7 +3,7 @@
     <entity name="AssessmentEntity" representedClassName="AssessmentEntity" syncable="YES">
         <attribute name="assessment_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="assessment_question" optional="YES" attributeType="String"/>
-        <relationship name="ofInterviewAssessment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="InterviewEntity" inverseName="assessments" inverseEntity="InterviewEntity"/>
+        <relationship name="ofInterviewAssessment" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="InterviewEntity" inverseName="assessments" inverseEntity="InterviewEntity"/>
     </entity>
     <entity name="InterviewEntity" representedClassName="InterviewEntity" syncable="YES">
         <attribute name="interview_date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -17,7 +17,7 @@
     <entity name="ScoreTypeEntity" representedClassName="ScoreTypeEntity" syncable="YES">
         <attribute name="score_type_name" optional="YES" attributeType="Transformable" customClassName="String"/>
         <attribute name="score_value" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="ofInterviewScores" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="InterviewEntity" inverseName="scores" inverseEntity="InterviewEntity"/>
+        <relationship name="ofInterviewScores" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="InterviewEntity" inverseName="scores" inverseEntity="InterviewEntity"/>
     </entity>
     <elements>
         <element name="AssessmentEntity" positionX="-54" positionY="-9" width="128" height="74"/>

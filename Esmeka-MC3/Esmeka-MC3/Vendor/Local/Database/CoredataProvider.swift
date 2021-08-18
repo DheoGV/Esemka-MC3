@@ -52,14 +52,12 @@ class CoredataProvider {
             interviewEntity.addToScores(scoreEntity)
         }
         
-        
         do {
             try taskContext.save()
             print("Interview Saved")
         } catch {
             print("Can't Save the data")
         }
-        
     }
     
     //MARK:: Get All Interview data from Interview Entity
