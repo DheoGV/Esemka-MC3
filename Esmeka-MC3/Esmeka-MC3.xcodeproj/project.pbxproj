@@ -42,6 +42,8 @@
 		52D5538226CB838D00990907 /* InterviewEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D5537C26CB838D00990907 /* InterviewEntity+CoreDataClass.swift */; };
 		52D5538326CB838D00990907 /* InterviewEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D5537D26CB838D00990907 /* InterviewEntity+CoreDataProperties.swift */; };
 		52E24F3726BCCAB900CDBA8C /* ExtensionEyeTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E24F3626BCCAB900CDBA8C /* ExtensionEyeTracking.swift */; };
+		84B35FE726CD09B6005F5C7E /* TimerRecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B35FE626CD09B6005F5C7E /* TimerRecordingView.swift */; };
+		84B35FEA26CD4FD0005F5C7E /* TimerToMinute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B35FE926CD4FD0005F5C7E /* TimerToMinute.swift */; };
 		84B5E36026B25F9500FC9C09 /* BriefViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5E35D26B25F9500FC9C09 /* BriefViewController.swift */; };
 		84B5E36126B25F9500FC9C09 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5E35E26B25F9500FC9C09 /* ToggleButton.swift */; };
 		84B5E36226B25F9500FC9C09 /* BriefViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B5E35F26B25F9500FC9C09 /* BriefViewController.xib */; };
@@ -106,6 +108,8 @@
 		52D5537C26CB838D00990907 /* InterviewEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterviewEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		52D5537D26CB838D00990907 /* InterviewEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterviewEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		52E24F3626BCCAB900CDBA8C /* ExtensionEyeTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionEyeTracking.swift; sourceTree = "<group>"; };
+		84B35FE626CD09B6005F5C7E /* TimerRecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerRecordingView.swift; sourceTree = "<group>"; };
+		84B35FE926CD4FD0005F5C7E /* TimerToMinute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerToMinute.swift; sourceTree = "<group>"; };
 		84B5E35D26B25F9500FC9C09 /* BriefViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BriefViewController.swift; sourceTree = "<group>"; };
 		84B5E35E26B25F9500FC9C09 /* ToggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
 		84B5E35F26B25F9500FC9C09 /* BriefViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BriefViewController.xib; sourceTree = "<group>"; };
@@ -300,6 +304,7 @@
 		52B678CA26AA71B20080533A /* Local */ = {
 			isa = PBXGroup;
 			children = (
+				84B35FE826CD4FBB005F5C7E /* Struct */,
 				84B5E37C26B395BE00FC9C09 /* Color */,
 				52B678DB26AA7BBC0080533A /* Model */,
 				52B678D826AA79910080533A /* Database */,
@@ -347,6 +352,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		84B35FDF26CCC54F005F5C7E /* TimerRecording */ = {
+			isa = PBXGroup;
+			children = (
+				84B35FE626CD09B6005F5C7E /* TimerRecordingView.swift */,
+			);
+			path = TimerRecording;
+			sourceTree = "<group>";
+		};
+		84B35FE826CD4FBB005F5C7E /* Struct */ = {
+			isa = PBXGroup;
+			children = (
+				84B35FE926CD4FD0005F5C7E /* TimerToMinute.swift */,
+			);
+			path = Struct;
+			sourceTree = "<group>";
+		};
 		84B5E35C26B25F7000FC9C09 /* BriefView */ = {
 			isa = PBXGroup;
 			children = (
@@ -386,6 +407,7 @@
 		84B5E37126B394E000FC9C09 /* InterviewSimulation */ = {
 			isa = PBXGroup;
 			children = (
+				84B35FDF26CCC54F005F5C7E /* TimerRecording */,
 				D86661A026C581DC00295FED /* Features */,
 				D867CC5B26BC4F47007B3EE3 /* TimerView */,
 				21B3B80626BAC9610021D94C /* FaceAndEyeTracking */,
@@ -582,8 +604,10 @@
 				21F1A75026A9475F00E6A1B5 /* Esmeka_MC3.xcdatamodeld in Sources */,
 				84C4BB3B26BAD011007FE5ED /* SoundEmotionClassifier.mlmodel in Sources */,
 				52D5537E26CB838D00990907 /* ScoreTypeEntity+CoreDataClass.swift in Sources */,
+				84B35FEA26CD4FD0005F5C7E /* TimerToMinute.swift in Sources */,
 				525204DE26B02A4E006D6E98 /* VideoTableViewCell.swift in Sources */,
 				D867CC6326BDCB9D007B3EE3 /* VideoFetchClass.swift in Sources */,
+				84B35FE726CD09B6005F5C7E /* TimerRecordingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

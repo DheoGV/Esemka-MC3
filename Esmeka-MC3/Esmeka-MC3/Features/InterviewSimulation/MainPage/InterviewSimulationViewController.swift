@@ -12,6 +12,7 @@ import PhotosUI
 
 class InterviewSimulationViewController: UIViewController{
     
+    
     //MARK:: Make Lazy for single isntance only, it prevent memory leak
     private lazy var coredataProvider: CoredataProvider = {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -32,6 +33,8 @@ class InterviewSimulationViewController: UIViewController{
     //-------------- User Default Key ------------------
     var idKey = "idKey"
     var id:Int = 0
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,8 +88,8 @@ class InterviewSimulationViewController: UIViewController{
             voiceEngine.removeEngine()
             stopRecording()
             toCompletedPage()
-            //MARK:: Count Eye Tracking
             countEyeTrackingMiss()
+            
         } else {
             PHPhotoLibrary.requestAuthorization(for: .readWrite) { [unowned self] (status) in
                 DispatchQueue.main.async { [unowned self] in
@@ -118,6 +121,11 @@ class InterviewSimulationViewController: UIViewController{
                 self.allowedRecording()
             }
         }
+    }
+    
+    func startRecordCountView() {
+        let recordView = TimerRecordingView()
+        view.addSubview(recordView)
     }
 
 

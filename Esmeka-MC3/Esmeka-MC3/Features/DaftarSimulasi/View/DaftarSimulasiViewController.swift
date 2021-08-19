@@ -10,6 +10,7 @@ import Photos
 
 class DaftarSimulasiViewController: UIViewController {
     
+    
     //MARK:: Make Lazy for single isntance only, it prevent memory leak
     private lazy var coredataProvider: CoredataProvider = {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -31,10 +32,12 @@ class DaftarSimulasiViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         setup()
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
