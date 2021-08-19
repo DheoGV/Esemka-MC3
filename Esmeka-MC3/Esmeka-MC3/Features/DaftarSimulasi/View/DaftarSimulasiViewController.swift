@@ -174,7 +174,7 @@ extension DaftarSimulasiViewController: UICollectionViewDataSource, UICollection
         
         guard let sectionHeaderView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MyCollectionReusableView.identifier, for: indexPath) as? MyCollectionReusableView else { fatalError() }
         
-        sectionHeaderView.section = self.simulasiData[indexPath.row]
+        //sectionHeaderView.section = self.simulasiData[indexPath.section]
         
         
         return sectionHeaderView
