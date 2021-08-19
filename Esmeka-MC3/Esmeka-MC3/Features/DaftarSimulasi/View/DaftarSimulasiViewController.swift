@@ -55,6 +55,7 @@ class DaftarSimulasiViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(SimulasiCollectionViewCell.nib(), forCellWithReuseIdentifier: SimulasiCollectionViewCell.identifier)
+        collectionView.register(MyCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MyCollectionReusableView.identifier)
     }
     
     //MARK:: Ted
@@ -167,6 +168,17 @@ extension DaftarSimulasiViewController: UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         sectionInset.left
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        guard let sectionHeaderView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MyCollectionReusableView.identifier, for: indexPath) as? MyCollectionReusableView else { fatalError() }
+        
+        sectionHeaderView.section = self.simulasiData[indexPath.row]
+        
+        
+        return sectionHeaderView
+        
     }
     
     //Context Menu
