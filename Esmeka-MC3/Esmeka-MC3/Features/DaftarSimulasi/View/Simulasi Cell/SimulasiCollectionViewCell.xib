@@ -23,6 +23,10 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 23" translatesAutoresizingMaskIntoConstraints="NO" id="F6e-ae-Ja3">
                                 <rect key="frame" x="0.0" y="0.0" width="166" height="240"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Filter" translatesAutoresizingMaskIntoConstraints="NO" id="jMt-EY-f00">
+                                <rect key="frame" x="0.0" y="0.0" width="166" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08:45 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rov-bc-7VQ">
                                 <rect key="frame" x="15" y="165" width="136" height="16"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
@@ -79,6 +83,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="Filter" width="166" height="240"/>
         <image name="Rectangle 23" width="166" height="240"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
