@@ -30,7 +30,7 @@ class CoredataProvider {
         interviewEntity.interview_video_url_path = interviewModel.interviewURLPath
         interviewEntity.interview_id = Int32(interviewModel.interviewId)
         interviewEntity.interview_video_url_link = interviewModel.interviewURL
-                
+        
         
         //MARK:: Refer to Assessment Entity
         listAssessmentModel.forEach { model in
@@ -41,7 +41,7 @@ class CoredataProvider {
             //MARK:: Add Assessment Entity to Interview Entity
             interviewEntity.addToAssessments(assessmentEntity)
         }
-       
+        
         //MARK:: Refer to Score Type Entity
         listScoreTypeModel.forEach { model in
             let scoreEntity = ScoreTypeEntity(context: taskContext)
@@ -52,14 +52,15 @@ class CoredataProvider {
             interviewEntity.addToScores(scoreEntity)
         }
         
+        print("List Score Type \(listScoreTypeModel)")
         
         do {
             try taskContext.save()
             print("Interview Saved")
+            print("List Score Type \(listScoreTypeModel)")
         } catch {
             print("Can't Save the data")
         }
-       
     }
     
     //MARK:: Get All Interview data from Interview Entity
@@ -126,19 +127,38 @@ class CoredataProvider {
         let interviewEntityResult: [InterviewEntity]?
         do {
             let fetchRequest : NSFetchRequest<InterviewEntity> = InterviewEntity.fetchRequest()
-            fetchRequest.predicate = NSPredicate(format: "(interview_id == %d)", interviewId)
+            fetchRequest.predicate = NSPredicate(format: "interview_id == \(interviewId)")
             interviewEntityResult = try context?.fetch(fetchRequest)
             
             if let singleInterviewEntity = interviewEntityResult?.first {
                 let scores = singleInterviewEntity.scores?.allObjects as! [ScoreTypeEntity]
                 scores.forEach { score in
                     listScoresEntity.append(score)
-                   
+                    print("Score Entity \(score)")
                 }
             }
+            
         } catch {
             print("Can't get scores by interview data")
         }
         return listScoresEntity
+    }
+    
+    //MARK:: Delete Single Interview
+    func deleteSingleInterview(interviewId: Int) {
+        let interviewEntityResult: [InterviewEntity]?
+        do {
+            let fetchRequest:NSFetchRequest<InterviewEntity> = InterviewEntity.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "(interview_id == %d)", interviewId)
+            
+            interviewEntityResult = try context?.fetch(fetchRequest)
+            for data in interviewEntityResult! {
+                context?.delete(data)
+            }
+            try context?.save()
+            
+        } catch {
+            print("Not Found")
+        }
     }
 }
