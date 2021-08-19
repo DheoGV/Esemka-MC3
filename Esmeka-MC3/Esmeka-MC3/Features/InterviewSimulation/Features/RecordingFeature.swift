@@ -20,6 +20,7 @@ extension InterviewSimulationViewController : RPPreviewViewControllerDelegate{
             } else {
                 prevVideo = VideoFetchClass().loadLastVideo()
                 startCountdownView()
+                startRecordCountView()
             }
         }
     }
