@@ -12,7 +12,7 @@ extension InterviewSimulationViewController: ARSCNViewDelegate {
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         guard let faceAnchor = anchor as? ARFaceAnchor,
-//              let faceGeometry = node.geometry as? ARSCNFaceGeometry,
+              //              let faceGeometry = node.geometry as? ARSCNFaceGeometry,
               let pixelBuffer = self.scene.session.currentFrame?.capturedImage
         else {
             return
@@ -62,23 +62,23 @@ extension InterviewSimulationViewController: ARSCNViewDelegate {
         }
         
         //Face Emotion
-//        try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: .right, options: [:]).perform([VNCoreMLRequest(model: model) { [weak self] request, error in
-//
-//            guard let firstResult = (request.results as? [VNClassificationObservation])?.first else { return }
-//            DispatchQueue.main.async { [self] in
-//
-//                if firstResult.confidence > 0.92 {
+        try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: .right, options: [:]).perform([VNCoreMLRequest(model: faceEmotion.model) { [weak self] request, error in
+            
+            guard let firstResult = (request.results as? [VNClassificationObservation])?.first else { return }
+            DispatchQueue.main.async { [self] in
+                
+                if firstResult.confidence > 0.1 {
 //                    print(firstResult.identifier)
-//                    self?.totalEmotion += 1
-//                    if firstResult.identifier == "Happy" || firstResult.identifier == "Neutral" || firstResult.identifier == "Surprise"{
-//                        self?.goodEmotion += 1
-//                    }
-//                }
-//
-//            }
-//        }])
+                    self?.faceEmotion.totalFaceEmotions += 1
+                    if firstResult.identifier == "good"{
+                        self?.faceEmotion.goodEmotion += 1
+                    }
+                }
+                
+            }
+        }])
         
-//        faceGeometry.update(from: faceAnchor.geometry)
+        //        faceGeometry.update(from: faceAnchor.geometry)
     }
 }
 

@@ -9,7 +9,7 @@ import UIKit
 import ARKit
 
 class FaceEmotion {
-    //let model = try! VNCoreMLModel(for: CNNEmotions().model)
+    let model = try! VNCoreMLModel(for: FaceEmotionSentimentClassifier().model)
     var totalFaceEmotions = 0
     var goodEmotion = 0
     var faceEmotionScore:Int = 0
