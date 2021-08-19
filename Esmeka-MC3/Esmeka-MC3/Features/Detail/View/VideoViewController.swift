@@ -17,9 +17,9 @@ extension DetailPageViewController : VideoProtocolDelegate {
         if duration == 0.0 {
             print("No Video")
         } else {
-            currVideo.getURL { url in
+           // currVideo.getURL { url in
                 DispatchQueue.main.async {
-                    let video = AVPlayer(url: url!)
+                    let video = AVPlayer(url: self.imageThumbnailURL!)
                     let videoPlayerController = AVPlayerViewController()
                     videoPlayerController.player = video
                     
@@ -27,7 +27,7 @@ extension DetailPageViewController : VideoProtocolDelegate {
                         video.play()
                     }
                 }
-            }
+            //}
         }
     }
 }

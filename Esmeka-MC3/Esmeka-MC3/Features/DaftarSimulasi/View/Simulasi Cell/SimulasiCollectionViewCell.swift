@@ -39,13 +39,11 @@ class SimulasiCollectionViewCell: UICollectionViewCell {
                 //Teddy Test Image
                 
                 guard let interviewVideoURL = simulasi?.interviewURL else {return}
-                
-
+            
                 if let thumbnailImage = getThumbnailImage(forUrl: interviewVideoURL) {
                         imageSimulasi.image = thumbnailImage
                 }
                 
-              
                 let tap = UITapGestureRecognizer(target: self, action: #selector(self.simulasiPressed(_:)))
                 viewSimulasiCell.addGestureRecognizer(tap)
             }

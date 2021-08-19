@@ -133,6 +133,10 @@ class InterviewSimulationViewController: UIViewController{
     }
     
     func toCompletedPage(){
+        let preferences = UserDefaults.standard
+        if preferences.object(forKey: idKey) != nil {
+            id = preferences.integer(forKey: idKey)
+        }
         let completedVC = CompleteViewController(nibName: "CompleteViewController", bundle: nil)
         completedVC.interviewId = id
         navigationController?.pushViewController(completedVC, animated: true)

@@ -41,8 +41,6 @@ class DaftarSimulasiViewController: UIViewController {
         setup()
     }
     
-    
-    
     func setup() {
         title = "Daftar Simulasi"
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -168,4 +166,18 @@ extension DaftarSimulasiViewController: UICollectionViewDataSource, UICollection
         sectionInset.left
     }
     
+    //Context Menu
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { action in
+            let deleteAction = UIAction(title: NSLocalizedString("Delete", comment: ""), image: UIImage(systemName: "trash"),attributes: .destructive) { [self] action in
+                let id = simulasiData[indexPath.row].interviewId
+                coredataProvider.deleteSingleInterview(interviewId: id)
+                getAllInterview()
+                isSimulationDataExists()
+                collectionView.reloadData()
+            }
+            
+            return UIMenu(title: "", children: [deleteAction])
+        }
+    }
 }
