@@ -23,9 +23,6 @@ class SimulasiCollectionViewCell: UICollectionViewCell {
     static let identifier = "SimulasiCollectionViewCell"
     
     var simulasi: InterviewModel?{
-        
-      
-        
         didSet{
             if let filled = simulasi{
                 timeFormatter.dateFormat = "hh a"

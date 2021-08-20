@@ -36,8 +36,6 @@ class CompleteViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
-        
-        print("ID bro \(interviewId)")
     }
 
     override func viewWillDisappear(_ animated: Bool) {

@@ -11,6 +11,8 @@
 		215847DE26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 215847DC26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib */; };
 		217A56D226CA288D0074A83F /* EyeTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217A56D126CA288D0074A83F /* EyeTracking.swift */; };
 		217A56D426CA2B870074A83F /* FaceEmotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217A56D326CA2B870074A83F /* FaceEmotion.swift */; };
+		219619FB26CF3EB800DCC7F5 /* SectionCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219619F926CF3EB800DCC7F5 /* SectionCollectionReusableView.swift */; };
+		219619FC26CF3EB800DCC7F5 /* SectionCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 219619FA26CF3EB800DCC7F5 /* SectionCollectionReusableView.xib */; };
 		219747EE26B0125B00A81309 /* DaftarSimulasiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219747EC26B0125B00A81309 /* DaftarSimulasiViewController.swift */; };
 		219747EF26B0125B00A81309 /* DaftarSimulasiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 219747ED26B0125B00A81309 /* DaftarSimulasiViewController.xib */; };
 		21B3B80826BAC9C30021D94C /* FaceAndEyeTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B3B80726BAC9C30021D94C /* FaceAndEyeTracking.swift */; };
@@ -76,6 +78,8 @@
 		215847DC26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimulasiCollectionViewCell.xib; sourceTree = "<group>"; };
 		217A56D126CA288D0074A83F /* EyeTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeTracking.swift; sourceTree = "<group>"; };
 		217A56D326CA2B870074A83F /* FaceEmotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceEmotion.swift; sourceTree = "<group>"; };
+		219619F926CF3EB800DCC7F5 /* SectionCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCollectionReusableView.swift; sourceTree = "<group>"; };
+		219619FA26CF3EB800DCC7F5 /* SectionCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionCollectionReusableView.xib; sourceTree = "<group>"; };
 		219747EC26B0125B00A81309 /* DaftarSimulasiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaftarSimulasiViewController.swift; sourceTree = "<group>"; };
 		219747ED26B0125B00A81309 /* DaftarSimulasiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaftarSimulasiViewController.xib; sourceTree = "<group>"; };
 		21B3B80726BAC9C30021D94C /* FaceAndEyeTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceAndEyeTracking.swift; sourceTree = "<group>"; };
@@ -158,6 +162,15 @@
 			path = "Simulasi Cell";
 			sourceTree = "<group>";
 		};
+		216740CB26CE1F5600252C1B /* Header Cell */ = {
+			isa = PBXGroup;
+			children = (
+				219619F926CF3EB800DCC7F5 /* SectionCollectionReusableView.swift */,
+				219619FA26CF3EB800DCC7F5 /* SectionCollectionReusableView.xib */,
+			);
+			path = "Header Cell";
+			sourceTree = "<group>";
+		};
 		219747EA26B0122300A81309 /* DaftarSimulasi */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +185,7 @@
 				219747EC26B0125B00A81309 /* DaftarSimulasiViewController.swift */,
 				219747ED26B0125B00A81309 /* DaftarSimulasiViewController.xib */,
 				215847DA26B148A700CCBEC9 /* Simulasi Cell */,
+				216740CB26CE1F5600252C1B /* Header Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -190,12 +204,12 @@
 		21CB53B426A99351005EB944 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				21F1A75326A9476000E6A1B5 /* LaunchScreen.storyboard */,
 				84B5E37126B394E000FC9C09 /* InterviewSimulation */,
 				84B5E36926B25FF400FC9C09 /* CompleteSimulationView */,
 				84B5E35C26B25F7000FC9C09 /* BriefView */,
 				525204CA26B01A3F006D6E98 /* Custom View */,
 				219747EA26B0122300A81309 /* DaftarSimulasi */,
-				21F1A75326A9476000E6A1B5 /* LaunchScreen.storyboard */,
 				525204C226B00DD9006D6E98 /* Detail */,
 			);
 			path = Features;
@@ -543,6 +557,7 @@
 				52433A3326B7D37A0048C0D4 /* s1c1.mp4 in Resources */,
 				84B5E36D26B2600600FC9C09 /* CompleteViewController.xib in Resources */,
 				84B5E37726B3952D00FC9C09 /* InterviewSimulationViewController.xib in Resources */,
+				219619FC26CF3EB800DCC7F5 /* SectionCollectionReusableView.xib in Resources */,
 				525204DF26B02A4E006D6E98 /* VideoTableViewCell.xib in Resources */,
 				525204D926B02A21006D6E98 /* ScoreTableViewCell.xib in Resources */,
 				84B5E36826B25FAE00FC9C09 /* BriefCell.xib in Resources */,
@@ -570,6 +585,7 @@
 				52D5538126CB838D00990907 /* AssessmentEntity+CoreDataProperties.swift in Sources */,
 				D85D1AF926B8612200B8E806 /* scoreType.swift in Sources */,
 				84B5E36026B25F9500FC9C09 /* BriefViewController.swift in Sources */,
+				219619FB26CF3EB800DCC7F5 /* SectionCollectionReusableView.swift in Sources */,
 				84B5E37A26B3953700FC9C09 /* PromptQuestionView.swift in Sources */,
 				84B5E36126B25F9500FC9C09 /* ToggleButton.swift in Sources */,
 				21F1A74626A9475F00E6A1B5 /* AppDelegate.swift in Sources */,
@@ -752,7 +768,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = HLL562LRK4;
+				DEVELOPMENT_TEAM = A79CU8U5L7;
 				INFOPLIST_FILE = "Esmeka-MC3/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -773,7 +789,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = HLL562LRK4;
+				DEVELOPMENT_TEAM = A79CU8U5L7;
 				INFOPLIST_FILE = "Esmeka-MC3/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
