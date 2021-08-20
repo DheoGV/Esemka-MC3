@@ -55,7 +55,7 @@ class DaftarSimulasiViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(SimulasiCollectionViewCell.nib(), forCellWithReuseIdentifier: SimulasiCollectionViewCell.identifier)
-        collectionView.register(SectionCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionCollectionReusableView.identifier)
+        collectionView.register(UINib(nibName: "SectionCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionCollectionReusableView.identifier)
     }
     
     //MARK:: Ted
@@ -172,12 +172,13 @@ extension DaftarSimulasiViewController: UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        guard let sectionHeaderView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionCollectionReusableView.identifier, for: indexPath) as? SectionCollectionReusableView else { fatalError() }
+        guard let sectionHeaderView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionCollectionReusableView.identifier, for: indexPath) as? SectionCollectionReusableView else { fatalError() }
         
         if (simulasiData.count != 0 ){
             sectionHeaderView.section = self.simulasiData[indexPath.section]
         }
         
+       // sectionHeaderView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         return sectionHeaderView
         
     }

@@ -90,7 +90,7 @@ class DetailPageViewController: UIViewController{
     private func getSingleInterviewId(interviewId: Int) {
         let interview = coredataProvider.getSingleInterview(interviewId: interviewId)
         let date = interview.value(forKey: "interview_date") as? Date
-        imageThumbnailURL = interview.value(forKey: "interview_video_url_link") as! URL
+        imageThumbnailURL = interview.value(forKey: "interview_video_url_link") as? URL
         lblDate.text = "\(String(describing: date))"
      
     }

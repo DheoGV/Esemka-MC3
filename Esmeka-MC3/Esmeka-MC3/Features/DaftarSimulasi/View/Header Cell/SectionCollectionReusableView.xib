@@ -14,15 +14,14 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VRO-KN-Dlf">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRO-KN-Dlf">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Tb-3l-lv3">
-                            <rect key="frame" x="8" y="15" width="42" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f29-8Z-NXW">
+                            <rect key="frame" x="20" y="15" width="245" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -30,8 +29,14 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <constraints>
+                <constraint firstItem="VRO-KN-Dlf" firstAttribute="bottom" secondItem="VXr-Tz-HHm" secondAttribute="bottom" id="5SC-Ni-WmT"/>
+                <constraint firstItem="VRO-KN-Dlf" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="6Re-po-cLs"/>
+                <constraint firstItem="VRO-KN-Dlf" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="Mx0-9r-EGB"/>
+                <constraint firstItem="VRO-KN-Dlf" firstAttribute="trailing" secondItem="VXr-Tz-HHm" secondAttribute="trailing" id="RV8-Kd-Wqt"/>
+            </constraints>
             <connections>
-                <outlet property="sectionHeaderLbl" destination="2Tb-3l-lv3" id="bvN-Oq-PcS"/>
+                <outlet property="sectionHeaderLbl" destination="f29-8Z-NXW" id="VXB-ai-aXz"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="83.705357142857139"/>
         </collectionReusableView>

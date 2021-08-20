@@ -194,7 +194,6 @@ class InterviewSimulationViewController: UIViewController{
             preferences.setValue(id+1, forKey: idKey)
         } else {
             currVideoPHAsset.getURL { url in
-                print("URL", url)
                 do {
                     data = try Data(contentsOf: url!)
                     print("SUCCESS", data)
