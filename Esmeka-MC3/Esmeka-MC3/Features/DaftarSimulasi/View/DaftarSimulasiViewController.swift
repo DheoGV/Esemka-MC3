@@ -10,6 +10,7 @@ import Photos
 
 class DaftarSimulasiViewController: UIViewController {
     
+    
     //MARK:: Make Lazy for single isntance only, it prevent memory leak
     private lazy var coredataProvider: CoredataProvider = {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -31,17 +32,17 @@ class DaftarSimulasiViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         setup()
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
         setup()
     }
-    
-    
     
     func setup() {
         title = "Daftar Simulasi"
@@ -168,4 +169,18 @@ extension DaftarSimulasiViewController: UICollectionViewDataSource, UICollection
         sectionInset.left
     }
     
+    //Context Menu
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { action in
+            let deleteAction = UIAction(title: NSLocalizedString("Delete", comment: ""), image: UIImage(systemName: "trash"),attributes: .destructive) { [self] action in
+                let id = simulasiData[indexPath.row].interviewId
+                coredataProvider.deleteSingleInterview(interviewId: id)
+                getAllInterview()
+                isSimulationDataExists()
+                collectionView.reloadData()
+            }
+            
+            return UIMenu(title: "", children: [deleteAction])
+        }
+    }
 }
