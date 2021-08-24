@@ -10,6 +10,7 @@ import Foundation
 
 enum InterviewQsType:CaseIterable{
     case Profil_Kandidat
+    case Profil_Kandidat_SMK
     case Team_Work
     case Resiliensi
     case Eager_to_Learn
@@ -19,6 +20,9 @@ enum InterviewQsType:CaseIterable{
 struct InterviewQuestionsSource{
     private let questions: [InterviewQsType:[String]] = [
         .Profil_Kandidat : ["Ceritakan tentang diri Anda beserta kelebihan dan kekurangan."],
+        .Profil_Kandidat_SMK : ["Mengapa Anda memilih untuk bersekolah di SMK dan apa saja yang Anda pelajari di sekolah yang dapat menunjang Karir?",
+                                "Apakah Anda memiliki rencana untuk melanjutkan pendidikan kuliah? Berikan alasannya."
+        ],
         .Team_Work : ["Ceritakan tentang pengalaman saat bekerja dalam tim dan peran Anda dalam tim?",
                       "Jika Anda bekerja dalam tim dan rekan kerja Anda tidak bekerja secara maksimal sehingga menghambat tujuan tim, apa yang akan Anda lakukan?",
                       "Jika Anda memiliki rekan kerja tim yang secara personal karakternya tidak cocok dengan karakter Anda, bagaimana Anda akan bersikap?",
@@ -31,17 +35,19 @@ struct InterviewQuestionsSource{
         .Eager_to_Learn : ["Apakah motivasi Anda dalam bekerja dan apa ekspektasi Anda terhadap perusahaan?",
                            "Ceritakan pengalaman kesuksesan yang pernah Anda raih dan bagaiman proses Anda meraih kesuksesan tersebut?"],
     ]
-    private let pattern = [1,2,1,1]
+    private let pattern = [1,2,1,1,1]
     
     private func aspectNumber(index:Int)->InterviewQsType{
         switch index {
         case 0:
             return .Profil_Kandidat
         case 1:
-            return .Team_Work
+            return .Profil_Kandidat_SMK
         case 2:
-            return .Resiliensi
+            return .Team_Work
         case 3:
+            return .Resiliensi
+        case 4:
             return .Eager_to_Learn
         default:
             return .Profil_Kandidat
