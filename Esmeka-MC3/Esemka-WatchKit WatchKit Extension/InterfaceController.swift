@@ -19,17 +19,7 @@ class InterfaceController: WKInterfaceController {
     }
     @IBAction func btnTest() {
         lblFlipCoin.setText("Flipping the coin...")
-        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-            self.lblFlipCoin.setText("Flipping the coin...")
-            DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-                let randomFlip = Bool.random()
-                if (randomFlip) {
-                    self.lblFlipCoin.setText("Head")
-                } else {
-                    self.lblFlipCoin.setText("Tail")
-                }
-            }
-        }
+        
     }
     
     override func willActivate() {

@@ -154,6 +154,7 @@
 		5222BAA526D506F60074CEE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5222BAA726D506F60074CEE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5222BAA826D506F60074CEE6 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		5222BAB426D514620074CEE6 /* Esmeka-MC3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Esmeka-MC3.entitlements"; sourceTree = "<group>"; };
 		52433A3226B7D37A0048C0D4 /* s1c1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = s1c1.mp4; sourceTree = "<group>"; };
 		524AECA626C95E7C00FEF3C7 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		524AECA826C95EA700FEF3C7 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
@@ -327,6 +328,7 @@
 		21F1A74426A9475F00E6A1B5 /* Esmeka-MC3 */ = {
 			isa = PBXGroup;
 			children = (
+				5222BAB426D514620074CEE6 /* Esmeka-MC3.entitlements */,
 				21CB53B526A99360005EB944 /* Vendor */,
 				21CB53B426A99351005EB944 /* Features */,
 				21CB53BC26A99458005EB944 /* Resources */,
@@ -985,9 +987,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Esmeka-MC3/Esmeka-MC3.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = A79CU8U5L7;
+				DEVELOPMENT_TEAM = T4NVTRVW5X;
 				INFOPLIST_FILE = "Esmeka-MC3/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1006,9 +1009,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Esmeka-MC3/Esmeka-MC3.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = A79CU8U5L7;
+				DEVELOPMENT_TEAM = T4NVTRVW5X;
 				INFOPLIST_FILE = "Esmeka-MC3/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
