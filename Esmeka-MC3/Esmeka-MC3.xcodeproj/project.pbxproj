@@ -21,6 +21,15 @@
 		21F1A75026A9475F00E6A1B5 /* Esmeka_MC3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21F1A74E26A9475F00E6A1B5 /* Esmeka_MC3.xcdatamodeld */; };
 		21F1A75226A9476000E6A1B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21F1A75126A9476000E6A1B5 /* Assets.xcassets */; };
 		21F1A75526A9476000E6A1B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21F1A75326A9476000E6A1B5 /* LaunchScreen.storyboard */; };
+		5222BA8A26D506F40074CEE6 /* Esemka-WatchKit WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5222BA8926D506F40074CEE6 /* Esemka-WatchKit WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5222BA9026D506F40074CEE6 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5222BA8E26D506F40074CEE6 /* Interface.storyboard */; };
+		5222BA9226D506F50074CEE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5222BA9126D506F50074CEE6 /* Assets.xcassets */; };
+		5222BA9926D506F50074CEE6 /* Esemka-WatchKit WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5222BA9826D506F50074CEE6 /* Esemka-WatchKit WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5222BA9E26D506F50074CEE6 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5222BA9D26D506F50074CEE6 /* InterfaceController.swift */; };
+		5222BAA026D506F50074CEE6 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5222BA9F26D506F50074CEE6 /* ExtensionDelegate.swift */; };
+		5222BAA226D506F50074CEE6 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5222BAA126D506F50074CEE6 /* NotificationController.swift */; };
+		5222BAA426D506F50074CEE6 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5222BAA326D506F50074CEE6 /* ComplicationController.swift */; };
+		5222BAA626D506F60074CEE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5222BAA526D506F60074CEE6 /* Assets.xcassets */; };
 		52433A3326B7D37A0048C0D4 /* s1c1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 52433A3226B7D37A0048C0D4 /* s1c1.mp4 */; };
 		524AECA726C95E7C00FEF3C7 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524AECA626C95E7C00FEF3C7 /* Score.swift */; };
 		524AECA926C95EA700FEF3C7 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524AECA826C95EA700FEF3C7 /* Video.swift */; };
@@ -73,6 +82,48 @@
 		D8A6CCAF26CED06600700823 /* FaceEmotionSentimentClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D8A6CCAE26CED06600700823 /* FaceEmotionSentimentClassifier.mlmodel */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5222BA8B26D506F40074CEE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21F1A73A26A9475F00E6A1B5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5222BA8826D506F40074CEE6;
+			remoteInfo = "Esemka-WatchKit WatchKit App";
+		};
+		5222BA9A26D506F50074CEE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21F1A73A26A9475F00E6A1B5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5222BA9726D506F50074CEE6;
+			remoteInfo = "Esemka-WatchKit WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5222BAAB26D506F60074CEE6 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				5222BA8A26D506F40074CEE6 /* Esemka-WatchKit WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5222BAAE26D506F60074CEE6 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5222BA9926D506F50074CEE6 /* Esemka-WatchKit WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		215847DB26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulasiCollectionViewCell.swift; sourceTree = "<group>"; };
 		215847DC26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimulasiCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -90,6 +141,19 @@
 		21F1A75126A9476000E6A1B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21F1A75426A9476000E6A1B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21F1A75626A9476000E6A1B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5222BA8626D506F30074CEE6 /* Esemka-WatchKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Esemka-WatchKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5222BA8926D506F40074CEE6 /* Esemka-WatchKit WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Esemka-WatchKit WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5222BA8F26D506F40074CEE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		5222BA9126D506F50074CEE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5222BA9326D506F50074CEE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5222BA9826D506F50074CEE6 /* Esemka-WatchKit WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Esemka-WatchKit WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5222BA9D26D506F50074CEE6 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		5222BA9F26D506F50074CEE6 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		5222BAA126D506F50074CEE6 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		5222BAA326D506F50074CEE6 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		5222BAA526D506F60074CEE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5222BAA726D506F60074CEE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5222BAA826D506F60074CEE6 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		52433A3226B7D37A0048C0D4 /* s1c1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = s1c1.mp4; sourceTree = "<group>"; };
 		524AECA626C95E7C00FEF3C7 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		524AECA826C95EA700FEF3C7 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
@@ -144,6 +208,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		21F1A73F26A9475F00E6A1B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5222BA9526D506F50074CEE6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -236,6 +307,8 @@
 			isa = PBXGroup;
 			children = (
 				21F1A74426A9475F00E6A1B5 /* Esmeka-MC3 */,
+				5222BA8D26D506F40074CEE6 /* Esemka-WatchKit WatchKit App */,
+				5222BA9C26D506F50074CEE6 /* Esemka-WatchKit WatchKit Extension */,
 				21F1A74326A9475F00E6A1B5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -244,6 +317,9 @@
 			isa = PBXGroup;
 			children = (
 				21F1A74226A9475F00E6A1B5 /* Esmeka-MC3.app */,
+				5222BA8626D506F30074CEE6 /* Esemka-WatchKit.app */,
+				5222BA8926D506F40074CEE6 /* Esemka-WatchKit WatchKit App.app */,
+				5222BA9826D506F50074CEE6 /* Esemka-WatchKit WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -259,6 +335,30 @@
 				21F1A75626A9476000E6A1B5 /* Info.plist */,
 			);
 			path = "Esmeka-MC3";
+			sourceTree = "<group>";
+		};
+		5222BA8D26D506F40074CEE6 /* Esemka-WatchKit WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				5222BA8E26D506F40074CEE6 /* Interface.storyboard */,
+				5222BA9126D506F50074CEE6 /* Assets.xcassets */,
+				5222BA9326D506F50074CEE6 /* Info.plist */,
+			);
+			path = "Esemka-WatchKit WatchKit App";
+			sourceTree = "<group>";
+		};
+		5222BA9C26D506F50074CEE6 /* Esemka-WatchKit WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5222BA9D26D506F50074CEE6 /* InterfaceController.swift */,
+				5222BA9F26D506F50074CEE6 /* ExtensionDelegate.swift */,
+				5222BAA126D506F50074CEE6 /* NotificationController.swift */,
+				5222BAA326D506F50074CEE6 /* ComplicationController.swift */,
+				5222BAA526D506F60074CEE6 /* Assets.xcassets */,
+				5222BAA726D506F60074CEE6 /* Info.plist */,
+				5222BAA826D506F60074CEE6 /* PushNotificationPayload.apns */,
+			);
+			path = "Esemka-WatchKit WatchKit Extension";
 			sourceTree = "<group>";
 		};
 		52433A3126B7D31C0048C0D4 /* Videos */ = {
@@ -517,6 +617,57 @@
 			productReference = 21F1A74226A9475F00E6A1B5 /* Esmeka-MC3.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5222BA8526D506F30074CEE6 /* Esemka-WatchKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5222BAB326D506F60074CEE6 /* Build configuration list for PBXNativeTarget "Esemka-WatchKit" */;
+			buildPhases = (
+				5222BA8426D506F30074CEE6 /* Resources */,
+				5222BAAB26D506F60074CEE6 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5222BA8C26D506F40074CEE6 /* PBXTargetDependency */,
+			);
+			name = "Esemka-WatchKit";
+			productName = "Esemka-WatchKit";
+			productReference = 5222BA8626D506F30074CEE6 /* Esemka-WatchKit.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		5222BA8826D506F40074CEE6 /* Esemka-WatchKit WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5222BAB226D506F60074CEE6 /* Build configuration list for PBXNativeTarget "Esemka-WatchKit WatchKit App" */;
+			buildPhases = (
+				5222BA8726D506F40074CEE6 /* Resources */,
+				5222BAAE26D506F60074CEE6 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5222BA9B26D506F50074CEE6 /* PBXTargetDependency */,
+			);
+			name = "Esemka-WatchKit WatchKit App";
+			productName = "Esemka-WatchKit WatchKit App";
+			productReference = 5222BA8926D506F40074CEE6 /* Esemka-WatchKit WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		5222BA9726D506F50074CEE6 /* Esemka-WatchKit WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5222BAB126D506F60074CEE6 /* Build configuration list for PBXNativeTarget "Esemka-WatchKit WatchKit Extension" */;
+			buildPhases = (
+				5222BA9426D506F50074CEE6 /* Sources */,
+				5222BA9526D506F50074CEE6 /* Frameworks */,
+				5222BA9626D506F50074CEE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Esemka-WatchKit WatchKit Extension";
+			productName = "Esemka-WatchKit WatchKit Extension";
+			productReference = 5222BA9826D506F50074CEE6 /* Esemka-WatchKit WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -528,6 +679,15 @@
 				TargetAttributes = {
 					21F1A74126A9475F00E6A1B5 = {
 						CreatedOnToolsVersion = 12.5.1;
+					};
+					5222BA8526D506F30074CEE6 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					5222BA8826D506F40074CEE6 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					5222BA9726D506F50074CEE6 = {
+						CreatedOnToolsVersion = 12.5;
 					};
 				};
 			};
@@ -545,6 +705,9 @@
 			projectRoot = "";
 			targets = (
 				21F1A74126A9475F00E6A1B5 /* Esmeka-MC3 */,
+				5222BA8526D506F30074CEE6 /* Esemka-WatchKit */,
+				5222BA8826D506F40074CEE6 /* Esemka-WatchKit WatchKit App */,
+				5222BA9726D506F50074CEE6 /* Esemka-WatchKit WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -570,6 +733,30 @@
 				215847DE26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib in Resources */,
 				84B5E36226B25F9500FC9C09 /* BriefViewController.xib in Resources */,
 				84B5E37B26B3953700FC9C09 /* PromptQuestionView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5222BA8426D506F30074CEE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5222BA8726D506F40074CEE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5222BA9226D506F50074CEE6 /* Assets.xcassets in Resources */,
+				5222BA9026D506F40074CEE6 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5222BA9626D506F50074CEE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5222BAA626D506F60074CEE6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,7 +818,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5222BA9426D506F50074CEE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5222BAA226D506F50074CEE6 /* NotificationController.swift in Sources */,
+				5222BAA426D506F50074CEE6 /* ComplicationController.swift in Sources */,
+				5222BAA026D506F50074CEE6 /* ExtensionDelegate.swift in Sources */,
+				5222BA9E26D506F50074CEE6 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5222BA8C26D506F40074CEE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5222BA8826D506F40074CEE6 /* Esemka-WatchKit WatchKit App */;
+			targetProxy = 5222BA8B26D506F40074CEE6 /* PBXContainerItemProxy */;
+		};
+		5222BA9B26D506F50074CEE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5222BA9726D506F50074CEE6 /* Esemka-WatchKit WatchKit Extension */;
+			targetProxy = 5222BA9A26D506F50074CEE6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		21F1A75326A9476000E6A1B5 /* LaunchScreen.storyboard */ = {
@@ -640,6 +851,14 @@
 				21F1A75426A9476000E6A1B5 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5222BA8E26D506F40074CEE6 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5222BA8F26D506F40074CEE6 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -803,6 +1022,116 @@
 			};
 			name = Release;
 		};
+		5222BAA926D506F60074CEE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T4NVTRVW5X;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.teddy.Esemka-WatchKit";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5222BAAA26D506F60074CEE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T4NVTRVW5X;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.teddy.Esemka-WatchKit";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		5222BAAC26D506F60074CEE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T4NVTRVW5X;
+				IBSC_MODULE = Esemka_WatchKit_WatchKit_Extension;
+				INFOPLIST_FILE = "Esemka-WatchKit WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.teddy.Esemka-WatchKit.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		5222BAAD26D506F60074CEE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T4NVTRVW5X;
+				IBSC_MODULE = Esemka_WatchKit_WatchKit_Extension;
+				INFOPLIST_FILE = "Esemka-WatchKit WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.teddy.Esemka-WatchKit.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Release;
+		};
+		5222BAAF26D506F60074CEE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T4NVTRVW5X;
+				INFOPLIST_FILE = "Esemka-WatchKit WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.teddy.Esemka-WatchKit.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		5222BAB026D506F60074CEE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T4NVTRVW5X;
+				INFOPLIST_FILE = "Esemka-WatchKit WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.teddy.Esemka-WatchKit.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -820,6 +1149,33 @@
 			buildConfigurations = (
 				21F1A75A26A9476000E6A1B5 /* Debug */,
 				21F1A75B26A9476000E6A1B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5222BAB126D506F60074CEE6 /* Build configuration list for PBXNativeTarget "Esemka-WatchKit WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5222BAAF26D506F60074CEE6 /* Debug */,
+				5222BAB026D506F60074CEE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5222BAB226D506F60074CEE6 /* Build configuration list for PBXNativeTarget "Esemka-WatchKit WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5222BAAC26D506F60074CEE6 /* Debug */,
+				5222BAAD26D506F60074CEE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5222BAB326D506F60074CEE6 /* Build configuration list for PBXNativeTarget "Esemka-WatchKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5222BAA926D506F60074CEE6 /* Debug */,
+				5222BAAA26D506F60074CEE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
