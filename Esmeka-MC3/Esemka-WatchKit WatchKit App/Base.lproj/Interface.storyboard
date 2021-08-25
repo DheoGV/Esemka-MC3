@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="18122" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch38"/>
+    <device id="watch44"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="18022"/>
@@ -11,10 +11,17 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Esemka_WatchKit_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label width="136" height="72" alignment="left" text="Flip the Coin" textAlignment="center" id="9mO-kS-Neq"/>
-                        <button width="1" alignment="left" title="Button" id="NnE-Pr-Z79">
+                        <label width="136" height="35" alignment="left" text="Selamat Datang!" textAlignment="center" numberOfLines="0" id="9mO-kS-Neq">
+                            <variation key="device=watch44mm" width="180"/>
+                        </label>
+                        <label width="136" height="102" alignment="left" text="SiCara akan berfungsi optimal jika pengaturan “Saat Tangan Diangkat” dinyalakan dan diatur ke Selalu." textAlignment="center" numberOfLines="0" id="tnz-Nn-jmM">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                            <variation key="device=watch44mm" width="180"/>
+                        </label>
+                        <button width="1" alignment="left" title="Selanjutnya" id="NnE-Pr-Z79">
                             <connections>
                                 <action selector="btnTest" destination="AgC-eL-Hgc" id="lm9-NV-BTr"/>
+                                <segue destination="0kK-UN-EgZ" kind="modal" id="eza-RY-1or"/>
                             </connections>
                         </button>
                     </items>
@@ -24,38 +31,95 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="132" y="321"/>
+            <point key="canvasLocation" x="131.56521739130434" y="278.52678571428572"/>
         </scene>
-        <!--Static Notification Interface Controller-->
-        <scene sceneID="AEw-b0-oYE">
+        <!--Interface Controller-->
+        <scene sceneID="ZRh-5r-qBD">
             <objects>
-                <notificationController id="YCC-NB-fut">
+                <controller id="0kK-UN-EgZ">
                     <items>
-                        <label alignment="left" text="Alert Label" numberOfLines="0" id="IdU-wH-bcW"/>
+                        <label width="136" height="43" alignment="left" textAlignment="center" numberOfLines="0" id="cdM-M1-xlB">
+                            <string key="text">Hampir Siap!
+</string>
+                            <variation key="device=watch44mm" width="180"/>
+                        </label>
+                        <label width="136" height="91" alignment="left" text="Buka Aplikasi SiCara pada iPhone Anda" textAlignment="center" numberOfLines="0" id="Vxt-Ha-U7E">
+                            <variation key="device=watch44mm" width="180"/>
+                        </label>
+                        <button width="1" alignment="left" title="Detect" id="otD-bY-I33">
+                            <connections>
+                                <action selector="btnTest" destination="AgC-eL-Hgc" id="rt3-Vm-V2O"/>
+                                <segue destination="O4o-on-Wqx" kind="modal" id="TaJ-DJ-KnI"/>
+                            </connections>
+                        </button>
                     </items>
-                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
-                    <connections>
-                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
-                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
-                        <segue destination="eXb-UN-Cd0" kind="relationship" relationship="dynamicInteractiveNotificationInterface" id="mpB-YA-K8N"/>
-                    </connections>
-                </notificationController>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="132" y="643"/>
+            <point key="canvasLocation" x="391" y="279"/>
         </scene>
-        <!--Notification Controller-->
-        <scene sceneID="ZPc-GJ-vnh">
+        <!--Interface Controller-->
+        <scene sceneID="Gcx-lF-GHS">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Esemka_WatchKit_WatchKit_App" customModuleProvider="target"/>
+                <controller id="O4o-on-Wqx">
+                    <items>
+                        <label width="136" height="38" alignment="left" text="Mulai Simulasi!" textAlignment="center" numberOfLines="0" id="xqn-z3-oHO">
+                            <variation key="device=watch44mm" width="180"/>
+                        </label>
+                        <button width="130" height="110" alignment="left" backgroundImage="video.fill.badge.plus" catalog="system" id="xRG-FI-5YQ">
+                            <color key="backgroundColor" red="0.22745098039215686" green="0.29019607843137252" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" pointSize="10"/>
+                            <variation key="device=watch44mm" width="180"/>
+                            <connections>
+                                <segue destination="7NT-cS-KA4" kind="modal" id="AeV-O9-7JH"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="468" y="767"/>
+            <point key="canvasLocation" x="649.695652173913" y="278.52678571428572"/>
         </scene>
-        <!--Notification Controller-->
-        <scene sceneID="Niz-AI-uX2">
+        <!--Interface Controller-->
+        <scene sceneID="J3r-XU-X4S">
             <objects>
-                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="Esemka_WatchKit_WatchKit_App" customModuleProvider="target"/>
+                <controller id="7NT-cS-KA4">
+                    <items>
+                        <label width="136" height="36" alignment="left" text="Pertanyaan x dari y" textAlignment="center" numberOfLines="0" id="0Cv-pp-jsQ">
+                            <variation key="device=watch44mm" width="180"/>
+                        </label>
+                        <button width="130" height="110" alignment="left" backgroundImage="forward.fill" catalog="system" id="JpW-4b-Kgj">
+                            <color key="backgroundColor" red="0.19607843137254902" green="0.48627450980392156" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" pointSize="10"/>
+                            <variation key="device=watch44mm" width="180"/>
+                            <connections>
+                                <segue destination="3UQ-jn-3K4" kind="modal" id="cbz-pA-hhC"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="468" y="418"/>
+            <point key="canvasLocation" x="892.86956521739125" y="278.52678571428572"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="qdM-6h-ElJ">
+            <objects>
+                <controller id="3UQ-jn-3K4">
+                    <items>
+                        <label width="136" height="38" alignment="left" text="Pertanyaan 6 dari 6" textAlignment="center" numberOfLines="0" id="4Pb-dv-cQU">
+                            <variation key="device=watch44mm" width="180"/>
+                        </label>
+                        <button width="1" height="151" alignment="left" backgroundImage="stop.circle.fill" catalog="system" id="act-2T-oLs">
+                            <color key="backgroundColor" red="0.1960784314" green="0.2901960784" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" pointSize="10"/>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1143" y="279"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="forward.fill" catalog="system" width="128" height="77"/>
+        <image name="stop.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="video.fill.badge.plus" catalog="system" width="128" height="91"/>
+    </resources>
 </document>
