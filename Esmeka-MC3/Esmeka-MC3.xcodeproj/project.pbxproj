@@ -53,6 +53,9 @@
 		52D5538226CB838D00990907 /* InterviewEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D5537C26CB838D00990907 /* InterviewEntity+CoreDataClass.swift */; };
 		52D5538326CB838D00990907 /* InterviewEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D5537D26CB838D00990907 /* InterviewEntity+CoreDataProperties.swift */; };
 		52E24F3726BCCAB900CDBA8C /* ExtensionEyeTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E24F3626BCCAB900CDBA8C /* ExtensionEyeTracking.swift */; };
+		84A1684C26D71CE7006B8DFF /* StartSimulationInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A1684B26D71CE7006B8DFF /* StartSimulationInterface.swift */; };
+		84A1684E26D72078006B8DFF /* QuestionCountsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A1684D26D72078006B8DFF /* QuestionCountsInterfaceController.swift */; };
+		84A1685026D720F3006B8DFF /* FinishInterfaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A1684F26D720F3006B8DFF /* FinishInterfaseController.swift */; };
 		84B35FE726CD09B6005F5C7E /* TimerRecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B35FE626CD09B6005F5C7E /* TimerRecordingView.swift */; };
 		84B35FEA26CD4FD0005F5C7E /* TimerToMinute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B35FE926CD4FD0005F5C7E /* TimerToMinute.swift */; };
 		84B5E36026B25F9500FC9C09 /* BriefViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5E35D26B25F9500FC9C09 /* BriefViewController.swift */; };
@@ -178,6 +181,9 @@
 		52D5537C26CB838D00990907 /* InterviewEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterviewEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		52D5537D26CB838D00990907 /* InterviewEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterviewEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		52E24F3626BCCAB900CDBA8C /* ExtensionEyeTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionEyeTracking.swift; sourceTree = "<group>"; };
+		84A1684B26D71CE7006B8DFF /* StartSimulationInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSimulationInterface.swift; sourceTree = "<group>"; };
+		84A1684D26D72078006B8DFF /* QuestionCountsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCountsInterfaceController.swift; sourceTree = "<group>"; };
+		84A1684F26D720F3006B8DFF /* FinishInterfaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishInterfaseController.swift; sourceTree = "<group>"; };
 		84B35FE626CD09B6005F5C7E /* TimerRecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerRecordingView.swift; sourceTree = "<group>"; };
 		84B35FE926CD4FD0005F5C7E /* TimerToMinute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerToMinute.swift; sourceTree = "<group>"; };
 		84B5E35D26B25F9500FC9C09 /* BriefViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BriefViewController.swift; sourceTree = "<group>"; };
@@ -359,6 +365,9 @@
 				5222BAA526D506F60074CEE6 /* Assets.xcassets */,
 				5222BAA726D506F60074CEE6 /* Info.plist */,
 				5222BAA826D506F60074CEE6 /* PushNotificationPayload.apns */,
+				84A1684B26D71CE7006B8DFF /* StartSimulationInterface.swift */,
+				84A1684D26D72078006B8DFF /* QuestionCountsInterfaceController.swift */,
+				84A1684F26D720F3006B8DFF /* FinishInterfaseController.swift */,
 			);
 			path = "Esemka-WatchKit WatchKit Extension";
 			sourceTree = "<group>";
@@ -825,9 +834,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5222BAA226D506F50074CEE6 /* NotificationController.swift in Sources */,
+				84A1685026D720F3006B8DFF /* FinishInterfaseController.swift in Sources */,
+				84A1684E26D72078006B8DFF /* QuestionCountsInterfaceController.swift in Sources */,
 				5222BAA426D506F50074CEE6 /* ComplicationController.swift in Sources */,
 				5222BAA026D506F50074CEE6 /* ExtensionDelegate.swift in Sources */,
 				5222BA9E26D506F50074CEE6 /* InterfaceController.swift in Sources */,
+				84A1684C26D71CE7006B8DFF /* StartSimulationInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
