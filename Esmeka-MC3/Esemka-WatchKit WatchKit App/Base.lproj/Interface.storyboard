@@ -67,10 +67,10 @@
                         </label>
                         <group width="140" height="140" alignment="center" verticalAlignment="center" id="gbQ-il-5DS">
                             <items>
-                                <button width="130" height="86" alignment="center" verticalAlignment="center" backgroundImage="video.fill.badge.plus" catalog="system" id="xRG-FI-5YQ">
+                                <button width="130" height="70" alignment="center" verticalAlignment="center" backgroundImage="video.fill.badge.plus" catalog="system" id="xRG-FI-5YQ">
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="font" type="system" pointSize="10"/>
-                                    <variation key="device=watch44mm" width="110"/>
+                                    <variation key="device=watch44mm" width="100"/>
                                     <connections>
                                         <segue destination="7NT-cS-KA4" kind="modal" id="AeV-O9-7JH"/>
                                     </connections>
@@ -96,10 +96,10 @@
                         </label>
                         <group width="140" height="140" alignment="center" verticalAlignment="center" id="Opw-Pc-wYR">
                             <items>
-                                <button width="130" height="100" alignment="center" verticalAlignment="center" backgroundImage="forward.fill" catalog="system" id="COP-Xz-nWz">
+                                <button width="130" height="80" alignment="center" verticalAlignment="center" backgroundImage="forward.fill" catalog="system" id="COP-Xz-nWz">
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="font" type="system" pointSize="10"/>
-                                    <variation key="device=watch44mm" width="100"/>
+                                    <variation key="device=watch44mm" width="80"/>
                                     <connections>
                                         <segue destination="3UQ-jn-3K4" kind="modal" id="tvZ-6e-hPT"/>
                                     </connections>
