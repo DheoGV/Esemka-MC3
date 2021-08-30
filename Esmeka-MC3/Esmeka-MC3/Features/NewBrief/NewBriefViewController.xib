@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -17,11 +17,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="teH-9m-0Pv">
-                    <rect key="frame" x="0.0" y="44" width="414" height="448"/>
+                    <rect key="frame" x="0.0" y="44" width="390" height="448"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="448" id="Vt2-WT-5Gt"/>
@@ -34,10 +34,32 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Ae1-nP-dst">
-                    <rect key="frame" x="20" y="516" width="374" height="28"/>
+                    <rect key="frame" x="20" y="516" width="350" height="26.333333333333371"/>
                     <color key="pageIndicatorTintColor" red="0.77360397579999995" green="0.82876127960000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <color key="currentPageIndicatorTintColor" red="0.123661004" green="0.18802189829999999" blue="0.66997265819999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </pageControl>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HnQ-aR-y1x">
+                    <rect key="frame" x="20" y="708" width="354" height="48"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tandai untuk tidak menampilkan kembali halaman persiapan simulasi" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Om9-O8-WOK">
+                            <rect key="frame" x="52" y="10" width="337" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFG-K0-RUP" customClass="ToggleButton" customModule="Esmeka_MC3" customModuleProvider="target">
+                            <rect key="frame" x="8" y="7" width="36" height="35"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="image" keyPath="defaultImage" value="􀃳SwitchOff"/>
+                                <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="􀃳SwitchOn"/>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -49,12 +71,22 @@
                 <constraint firstItem="teH-9m-0Pv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="z8y-Bk-Mod"/>
                 <constraint firstItem="Ae1-nP-dst" firstAttribute="top" secondItem="teH-9m-0Pv" secondAttribute="bottom" constant="24" id="zYn-DV-Z7A"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="146"/>
+            <point key="canvasLocation" x="136.92307692307691" y="145.73459715639811"/>
         </view>
     </objects>
+    <designables>
+        <designable name="wFG-K0-RUP">
+            <size key="intrinsicContentSize" width="23" height="23"/>
+        </designable>
+    </designables>
     <resources>
+        <image name="􀃳SwitchOff" width="23" height="23"/>
+        <image name="􀃳SwitchOn" width="23" height="23"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
