@@ -68,7 +68,7 @@ extension NewBriefViewController: UICollectionViewDelegate, UICollectionViewData
         let bounds = UIScreen.main.bounds
         let width = bounds.size.width
         let height = bounds.size.height
-        return CGSize(width: width - 10, height: height - 400)
+        return CGSize(width: width , height: height - 400)
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
