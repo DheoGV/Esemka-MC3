@@ -11,6 +11,11 @@
 		215847DE26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 215847DC26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib */; };
 		217A56D226CA288D0074A83F /* EyeTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217A56D126CA288D0074A83F /* EyeTracking.swift */; };
 		217A56D426CA2B870074A83F /* FaceEmotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217A56D326CA2B870074A83F /* FaceEmotion.swift */; };
+		218261BE26DC956F0076FCB4 /* BriefSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218261BD26DC956F0076FCB4 /* BriefSlide.swift */; };
+		218261C226DC965C0076FCB4 /* BriefViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218261C026DC965C0076FCB4 /* BriefViewController.swift */; };
+		218261C326DC965C0076FCB4 /* BriefViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218261C126DC965C0076FCB4 /* BriefViewController.xib */; };
+		218261C726DC978D0076FCB4 /* BriefCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218261C526DC978D0076FCB4 /* BriefCollectionViewCell.swift */; };
+		218261C826DC978D0076FCB4 /* BriefCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218261C626DC978D0076FCB4 /* BriefCollectionViewCell.xib */; };
 		219619FB26CF3EB800DCC7F5 /* SectionCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219619F926CF3EB800DCC7F5 /* SectionCollectionReusableView.swift */; };
 		219619FC26CF3EB800DCC7F5 /* SectionCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 219619FA26CF3EB800DCC7F5 /* SectionCollectionReusableView.xib */; };
 		219747EE26B0125B00A81309 /* DaftarSimulasiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219747EC26B0125B00A81309 /* DaftarSimulasiViewController.swift */; };
@@ -78,6 +83,11 @@
 		215847DC26B1490600CCBEC9 /* SimulasiCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimulasiCollectionViewCell.xib; sourceTree = "<group>"; };
 		217A56D126CA288D0074A83F /* EyeTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeTracking.swift; sourceTree = "<group>"; };
 		217A56D326CA2B870074A83F /* FaceEmotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceEmotion.swift; sourceTree = "<group>"; };
+		218261BD26DC956F0076FCB4 /* BriefSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefSlide.swift; sourceTree = "<group>"; };
+		218261C026DC965C0076FCB4 /* BriefViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefViewController.swift; sourceTree = "<group>"; };
+		218261C126DC965C0076FCB4 /* BriefViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BriefViewController.xib; sourceTree = "<group>"; };
+		218261C526DC978D0076FCB4 /* BriefCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefCollectionViewCell.swift; sourceTree = "<group>"; };
+		218261C626DC978D0076FCB4 /* BriefCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BriefCollectionViewCell.xib; sourceTree = "<group>"; };
 		219619F926CF3EB800DCC7F5 /* SectionCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCollectionReusableView.swift; sourceTree = "<group>"; };
 		219619FA26CF3EB800DCC7F5 /* SectionCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionCollectionReusableView.xib; sourceTree = "<group>"; };
 		219747EC26B0125B00A81309 /* DaftarSimulasiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaftarSimulasiViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +181,25 @@
 			path = "Header Cell";
 			sourceTree = "<group>";
 		};
+		218261BF26DC96290076FCB4 /* NewBrief */ = {
+			isa = PBXGroup;
+			children = (
+				218261C026DC965C0076FCB4 /* BriefViewController.swift */,
+				218261C126DC965C0076FCB4 /* BriefViewController.xib */,
+				218261C426DC97640076FCB4 /* Breif Cell */,
+			);
+			path = NewBrief;
+			sourceTree = "<group>";
+		};
+		218261C426DC97640076FCB4 /* Breif Cell */ = {
+			isa = PBXGroup;
+			children = (
+				218261C526DC978D0076FCB4 /* BriefCollectionViewCell.swift */,
+				218261C626DC978D0076FCB4 /* BriefCollectionViewCell.xib */,
+			);
+			path = "Breif Cell";
+			sourceTree = "<group>";
+		};
 		219747EA26B0122300A81309 /* DaftarSimulasi */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +233,7 @@
 		21CB53B426A99351005EB944 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				218261BF26DC96290076FCB4 /* NewBrief */,
 				21F1A75326A9476000E6A1B5 /* LaunchScreen.storyboard */,
 				84B5E37126B394E000FC9C09 /* InterviewSimulation */,
 				84B5E36926B25FF400FC9C09 /* CompleteSimulationView */,
@@ -380,6 +410,7 @@
 			isa = PBXGroup;
 			children = (
 				84B35FE926CD4FD0005F5C7E /* TimerToMinute.swift */,
+				218261BD26DC956F0076FCB4 /* BriefSlide.swift */,
 			);
 			path = Struct;
 			sourceTree = "<group>";
@@ -561,6 +592,8 @@
 				525204DF26B02A4E006D6E98 /* VideoTableViewCell.xib in Resources */,
 				525204D926B02A21006D6E98 /* ScoreTableViewCell.xib in Resources */,
 				84B5E36826B25FAE00FC9C09 /* BriefCell.xib in Resources */,
+				218261C826DC978D0076FCB4 /* BriefCollectionViewCell.xib in Resources */,
+				218261C326DC965C0076FCB4 /* BriefViewController.xib in Resources */,
 				525204C826B00E0E006D6E98 /* DetailPageViewController.xib in Resources */,
 				21F1A75526A9476000E6A1B5 /* LaunchScreen.storyboard in Resources */,
 				21F1A75226A9476000E6A1B5 /* Assets.xcassets in Resources */,
@@ -591,7 +624,9 @@
 				21F1A74626A9475F00E6A1B5 /* AppDelegate.swift in Sources */,
 				215847DD26B1490600CCBEC9 /* SimulasiCollectionViewCell.swift in Sources */,
 				524AECA726C95E7C00FEF3C7 /* Score.swift in Sources */,
+				218261BE26DC956F0076FCB4 /* BriefSlide.swift in Sources */,
 				D867CC5D26BC4F6C007B3EE3 /* TimerView.swift in Sources */,
+				218261C226DC965C0076FCB4 /* BriefViewController.swift in Sources */,
 				D867CC5826BC0668007B3EE3 /* InterviewQuestionsSource.swift in Sources */,
 				84C4BB4126BAD215007FE5ED /* ResultObserver.swift in Sources */,
 				84C4BB3A26BAD011007FE5ED /* InterjectionClassifier.mlmodel in Sources */,
@@ -609,6 +644,7 @@
 				D86661A226C5821A00295FED /* Coordinate.swift in Sources */,
 				52B678E126AA7F3A0080533A /* ScoreTypeModel.swift in Sources */,
 				21F1A74826A9475F00E6A1B5 /* SceneDelegate.swift in Sources */,
+				218261C726DC978D0076FCB4 /* BriefCollectionViewCell.swift in Sources */,
 				52D5538326CB838D00990907 /* InterviewEntity+CoreDataProperties.swift in Sources */,
 				84B5E36C26B2600600FC9C09 /* CompleteViewController.swift in Sources */,
 				52D5537F26CB838D00990907 /* ScoreTypeEntity+CoreDataProperties.swift in Sources */,
