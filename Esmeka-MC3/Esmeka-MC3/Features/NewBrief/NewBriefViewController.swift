@@ -9,6 +9,9 @@ import UIKit
 
 class NewBriefViewController: UIViewController {
 
+    @IBAction func DontShowAgainAction(_ sender: Any) {
+        userDefault.setValue(false, forKey: "showBrief")
+    }
     @IBOutlet weak var CustomStartView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
@@ -16,20 +19,24 @@ class NewBriefViewController: UIViewController {
     @IBAction func StartNowAction(_ sender: Any) {
         goToSimulation()
     }
+    
+    
     func goToSimulation()  {
         let simulationVC = InterviewSimulationViewController(nibName: "InterviewSimulationViewController", bundle: nil)
     navigationController?.pushViewController(simulationVC, animated: true)
     }
+    
+    let userDefault = UserDefaults.standard
     let cellIdentifier = "BriefCollectionViewCell"
     var slides: [SlideBrief] = []
     var currentPage = 0 {
         didSet{
             if currentPage == slides.count - 1 {
                 CustomStartView.isHidden = false
-                //button is hidden = false
+         
             } else {
                 CustomStartView.isHidden = true
-                //button is hidden = true
+            
             }
             print(currentPage)
         }

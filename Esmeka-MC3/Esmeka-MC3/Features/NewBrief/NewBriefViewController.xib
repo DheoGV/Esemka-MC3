@@ -58,6 +58,9 @@
                                 <userDefinedRuntimeAttribute type="image" keyPath="defaultImage" value="􀃳SwitchOff"/>
                                 <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="􀃳SwitchOn"/>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="DontShowAgainAction:" destination="-1" eventType="touchUpInside" id="zag-KC-Ish"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XjV-76-3gK">
                             <rect key="frame" x="8" y="68" width="346" height="49"/>
