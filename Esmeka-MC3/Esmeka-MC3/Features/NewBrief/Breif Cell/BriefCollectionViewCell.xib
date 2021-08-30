@@ -20,7 +20,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aX1-LJ-Agy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illustration_brief dua_1x" translatesAutoresizingMaskIntoConstraints="NO" id="ajj-hk-5RN">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illustration_brief_dua" translatesAutoresizingMaskIntoConstraints="NO" id="ajj-hk-5RN">
                                 <rect key="frame" x="47" y="0.0" width="320" height="320"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="320" id="HbN-R0-I1L"/>
@@ -64,11 +64,16 @@
                 <constraint firstItem="aX1-LJ-Agy" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="qZZ-vM-Ssi"/>
                 <constraint firstItem="aX1-LJ-Agy" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xT6-YW-W8L"/>
             </constraints>
+            <connections>
+                <outlet property="briefImg" destination="ajj-hk-5RN" id="bul-eJ-tyd"/>
+                <outlet property="subTitleLbl" destination="bai-p2-rIs" id="0fQ-SQ-oJd"/>
+                <outlet property="titleLbl" destination="9XN-WZ-zwA" id="GCT-w0-wM6"/>
+            </connections>
             <point key="canvasLocation" x="2.8985507246376816" y="108.48214285714285"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="illustration_brief dua_1x" width="320" height="320"/>
+        <image name="illustration_brief_dua" width="320" height="320"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

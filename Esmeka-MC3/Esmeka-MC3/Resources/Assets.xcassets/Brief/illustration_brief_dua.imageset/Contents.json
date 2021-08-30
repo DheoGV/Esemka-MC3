@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "illustration_brief tiga_1x.png",
+      "filename" : "illustration_brief_dua.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "illustration_brief tiga_2x.png",
+      "filename" : "illustration_brief_dua_2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "illustration_brief tiga_3x.png",
+      "filename" : "illustration_brief_dua_3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
