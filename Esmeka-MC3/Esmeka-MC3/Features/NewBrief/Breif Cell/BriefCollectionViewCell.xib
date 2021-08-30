@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -42,7 +41,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ajj-hk-5RN" firstAttribute="leading" secondItem="aX1-LJ-Agy" secondAttribute="leading" constant="47" id="Hda-BH-tbe"/>
                             <constraint firstItem="ajj-hk-5RN" firstAttribute="top" secondItem="aX1-LJ-Agy" secondAttribute="top" id="Yq3-JR-mAk"/>
@@ -74,8 +72,5 @@
     </objects>
     <resources>
         <image name="illustration_brief_dua" width="320" height="320"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
