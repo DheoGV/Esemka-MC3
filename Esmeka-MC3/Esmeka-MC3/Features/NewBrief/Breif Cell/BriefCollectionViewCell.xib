@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="BriefCollectionViewCell" customModule="Esmeka_MC3" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aX1-LJ-Agy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illustration_brief_dua" translatesAutoresizingMaskIntoConstraints="NO" id="ajj-hk-5RN">
+                                <rect key="frame" x="47" y="0.0" width="320" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="HbN-R0-I1L"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ekspresi Wajah dan Kontak Mata" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9XN-WZ-zwA">
+                                <rect key="frame" x="20" y="360" width="374" height="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Perhatikan volume dan kecepatan berbicara saat proses wawancara dan minimalisir penggunaan uhm, ee, uh, ah" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bai-p2-rIs">
+                                <rect key="frame" x="32" y="385" width="350" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="FDM-Ey-pNa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ajj-hk-5RN" firstAttribute="leading" secondItem="aX1-LJ-Agy" secondAttribute="leading" constant="47" id="Hda-BH-tbe"/>
+                            <constraint firstItem="ajj-hk-5RN" firstAttribute="top" secondItem="aX1-LJ-Agy" secondAttribute="top" id="Yq3-JR-mAk"/>
+                            <constraint firstAttribute="trailing" secondItem="9XN-WZ-zwA" secondAttribute="trailing" constant="20" id="cWT-Fv-8e2"/>
+                            <constraint firstItem="9XN-WZ-zwA" firstAttribute="top" secondItem="ajj-hk-5RN" secondAttribute="bottom" constant="40" id="d3q-J6-Oxe"/>
+                            <constraint firstAttribute="trailing" secondItem="ajj-hk-5RN" secondAttribute="trailing" constant="47" id="gB0-ge-OQl"/>
+                            <constraint firstItem="bai-p2-rIs" firstAttribute="leading" secondItem="aX1-LJ-Agy" secondAttribute="leading" constant="32" id="gcr-cr-dna"/>
+                            <constraint firstAttribute="trailing" secondItem="bai-p2-rIs" secondAttribute="trailing" constant="32" id="j0A-jh-Wr5"/>
+                            <constraint firstItem="bai-p2-rIs" firstAttribute="top" secondItem="9XN-WZ-zwA" secondAttribute="bottom" constant="8" id="orn-ha-ASd"/>
+                            <constraint firstItem="9XN-WZ-zwA" firstAttribute="leading" secondItem="aX1-LJ-Agy" secondAttribute="leading" constant="20" id="pix-7J-WzI"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="aX1-LJ-Agy" secondAttribute="trailing" id="Jmc-ug-KK4"/>
+                <constraint firstAttribute="bottom" secondItem="aX1-LJ-Agy" secondAttribute="bottom" id="g57-lQ-Tyv"/>
+                <constraint firstItem="aX1-LJ-Agy" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="qZZ-vM-Ssi"/>
+                <constraint firstItem="aX1-LJ-Agy" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xT6-YW-W8L"/>
+            </constraints>
+            <connections>
+                <outlet property="briefImg" destination="ajj-hk-5RN" id="bul-eJ-tyd"/>
+                <outlet property="subTitleLbl" destination="bai-p2-rIs" id="0fQ-SQ-oJd"/>
+                <outlet property="titleLbl" destination="9XN-WZ-zwA" id="GCT-w0-wM6"/>
+            </connections>
+            <point key="canvasLocation" x="2.8985507246376816" y="108.48214285714285"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="illustration_brief_dua" width="320" height="320"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

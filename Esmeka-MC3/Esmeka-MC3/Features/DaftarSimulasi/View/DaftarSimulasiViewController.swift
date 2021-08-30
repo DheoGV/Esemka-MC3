@@ -85,7 +85,9 @@ class DaftarSimulasiViewController: UIViewController {
     }
     
     func goToBriefView() {
-        let briefVC = BriefViewController(nibName: "BriefViewController", bundle: nil)
+//        let briefVC = BriefViewController(nibName: "BriefViewController", bundle: nil)
+//        self.navigationController?.pushViewController(briefVC, animated: true)
+        let briefVC = NewBriefViewController(nibName: "NewBriefViewController", bundle: nil)
         self.navigationController?.pushViewController(briefVC, animated: true)
     }
     func goToSimulation()  {
