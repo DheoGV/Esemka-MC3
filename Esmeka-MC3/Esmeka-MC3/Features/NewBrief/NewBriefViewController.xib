@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewBriefViewController" customModule="Esmeka_MC3" customModuleProvider="target">
             <connections>
+                <outlet property="CustomStartView" destination="HnQ-aR-y1x" id="ZYD-w7-oBD"/>
+                <outlet property="StartNowButton" destination="XjV-76-3gK" id="ht1-kL-rao"/>
                 <outlet property="collectionView" destination="teH-9m-0Pv" id="Z6p-U7-ucN"/>
                 <outlet property="pageControl" destination="Ae1-nP-dst" id="0Gn-3F-Kdv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -39,7 +41,7 @@
                     <color key="currentPageIndicatorTintColor" red="0.123661004" green="0.18802189829999999" blue="0.66997265819999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </pageControl>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HnQ-aR-y1x">
-                    <rect key="frame" x="20" y="708" width="354" height="48"/>
+                    <rect key="frame" x="20" y="675" width="354" height="125"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tandai untuk tidak menampilkan kembali halaman persiapan simulasi" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Om9-O8-WOK">
@@ -57,8 +59,19 @@
                                 <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="􀃳SwitchOn"/>
                             </userDefinedRuntimeAttributes>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XjV-76-3gK">
+                            <rect key="frame" x="8" y="68" width="346" height="49"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.1137254902" green="0.20392156859999999" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                            <state key="normal" title="Mulai Sekarang">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="StartNowAction:" destination="-1" eventType="touchUpInside" id="eJG-4S-47E"/>
+                            </connections>
+                        </button>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemIndigoColor"/>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -84,9 +97,6 @@
         <image name="􀃳SwitchOn" width="23" height="23"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

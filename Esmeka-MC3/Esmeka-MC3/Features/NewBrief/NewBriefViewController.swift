@@ -9,18 +9,29 @@ import UIKit
 
 class NewBriefViewController: UIViewController {
 
+    @IBOutlet weak var CustomStartView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
-    
+    @IBOutlet weak var StartNowButton: UIButton!
+    @IBAction func StartNowAction(_ sender: Any) {
+        goToSimulation()
+    }
+    func goToSimulation()  {
+        let simulationVC = InterviewSimulationViewController(nibName: "InterviewSimulationViewController", bundle: nil)
+    navigationController?.pushViewController(simulationVC, animated: true)
+    }
     let cellIdentifier = "BriefCollectionViewCell"
     var slides: [SlideBrief] = []
     var currentPage = 0 {
         didSet{
             if currentPage == slides.count - 1 {
+                CustomStartView.isHidden = false
                 //button is hidden = false
-            } else if currentPage == slides.count - 2 {
+            } else {
+                CustomStartView.isHidden = true
                 //button is hidden = true
             }
+            print(currentPage)
         }
     }
     
@@ -31,11 +42,13 @@ class NewBriefViewController: UIViewController {
 
     func setup(){
         title = "Persiapan simulasi"
+        CustomStartView.isHidden = true
         self.navigationController?.navigationBar.prefersLargeTitles = true
         collectionView.delegate = self
         collectionView.dataSource = self
         self.collectionView.register(UINib(nibName: "BriefCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
         //button id hidden = true
+        StartNowButton.layer.cornerRadius = 20
         
         slides = [
             SlideBrief(briefImage: UIImage(named: "illustration_brief_satu") ?? UIImage(), title: "Tata Krama dan Bahasa Tubuh", subTitle: "Berpakaianlah dengan rapi dan menjaga postur tubuh dengan duduk tegak menghadap kamera."),
